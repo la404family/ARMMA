@@ -1,0 +1,1667 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project name="Mission">
+    <Package name="Player">
+        <Key ID="STR_TUE_RoeAction_Changed">
+            <Original>New Rules of Engagement -&gt; %1</Original>
+            <English>New Rules of Engagement -&gt; %1</English>
+            <French>Nouvelles Règles d'Engagement -&gt; %1</French>
+            <Spanish>Nuevas reglas de enfrentamiento -&gt; %1</Spanish>
+            <Italian>Nuove regole di ingaggio -&gt; %1</Italian>
+            <German>Neue Einsatzregeln -&gt; %1</German>
+            <Polish>Nowe zasady zaangażowania -&gt; %1</Polish>
+            <Russian>Новые правила ведения боя -&gt; %1</Russian>
+            <Turkish>Yeni angajman kuralları -&gt; %1</Turkish>
+            <Japanese>新しい交戦規定 -&gt; %1</Japanese>
+            <Korean>새로운 교전 수칙 -&gt; %1</Korean>
+            <Chinese>新交战规则 -&gt; %1</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Infiltration">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Infiltración&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Infiltrazione&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Infiltration&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Infiltracja&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Проникновение&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sızma&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 潜入&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 침투&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 渗透&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Patrol">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Patrulla&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Pattuglia&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Patrouille&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Patrol&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Патруль&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Devriye&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] パトロール&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 순찰&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 巡逻&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Vigilance">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Vigilancia&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Vigilanza&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Wachsamkeit&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Czujność&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Бдительность&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Teyakkuz&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 警戒&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 경계&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 警戒&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Assault">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Asalto&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Assalto&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Angriff&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szturm&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Штурм&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Saldırı&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 強襲&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 강습&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 突击&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Charge">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Carga&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Carica&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Ansturm&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szarża&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Атака&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Hücum&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 突撃&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 돌격&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 冲锋&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Defense">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Defensa&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Difesa&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Verteidigung&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Obrona&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Оборона&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Savunma&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 防衛&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 방어&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 防御&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Reset">
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reiniciar&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ripristina&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Zurücksetzen&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Reset&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сброс&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sıfırla&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] リセット&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Name_Stealth">
+            <Original>Infiltration</Original>
+            <English>Infiltration</English>
+            <French>Infiltration</French>
+            <Spanish>Infiltración</Spanish>
+            <Italian>Infiltrazione</Italian>
+            <German>Infiltration</German>
+            <Polish>Infiltracja</Polish>
+            <Russian>Проникновение</Russian>
+            <Turkish>Sızma</Turkish>
+            <Japanese>潜入</Japanese>
+            <Korean>침투</Korean>
+            <Chinese>渗透</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Name_Normal">
+            <Original>Normal</Original>
+            <English>Normal</English>
+            <French>Normal</French>
+            <Spanish>Normal</Spanish>
+            <Italian>Normale</Italian>
+            <German>Normal</German>
+            <Polish>Normalny</Polish>
+            <Russian>Нормальный</Russian>
+            <Turkish>Normal</Turkish>
+            <Japanese>通常</Japanese>
+            <Korean>보통</Korean>
+            <Chinese>正常</Chinese>
+        </Key>
+        <Key ID="STR_TUE_RoeAction_Name_Assault">
+            <Original>Assault</Original>
+            <English>Assault</English>
+            <French>Assaut agressif</French>
+            <Spanish>Asalto</Spanish>
+            <Italian>Assalto</Italian>
+            <German>Angriff</German>
+            <Polish>Szturm</Polish>
+            <Russian>Штурм</Russian>
+            <Turkish>Saldırı</Turkish>
+            <Japanese>強襲</Japanese>
+            <Korean>강습</Korean>
+            <Chinese>突击</Chinese>
+        </Key>
+        <Key ID="STR_TUE_AssignLeader_Changed">
+            <Original>Tactical command has been transferred.</Original>
+            <English>Tactical command has been transferred.</English>
+            <French>Le commandement tactique a été transféré.</French>
+            <Spanish>El mando táctico ha sido transferido.</Spanish>
+            <Italian>Il comando tattico è stato trasferito.</Italian>
+            <German>Das taktische Kommando wurde übertragen.</German>
+            <Polish>Dowództwo taktyczne zostało przekazane.</Polish>
+            <Russian>Тактическое командование передано.</Russian>
+            <Turkish>Taktik komuta devredildi.</Turkish>
+            <Japanese>戦術指揮が移譲されました。</Japanese>
+            <Korean>전술 지휘권이 이양되었습니다.</Korean>
+            <Chinese>战术指挥权已移交。</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Lore_Title">
+            <Original>Lore</Original>
+            <English>Lore</English>
+            <French>Lore</French>
+            <Spanish>Lore</Spanish>
+            <Italian>Lore</Italian>
+            <German>Hintergrundgeschichte</German>
+            <Polish>Fabuła</Polish>
+            <Russian>Лор</Russian>
+            <Turkish>Hikaye</Turkish>
+            <Japanese>伝承</Japanese>
+            <Korean>배경 이야기</Korean>
+            <Chinese>背景故事</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Lore_Text">
+            <Original>Story details.</Original>
+            <English>Story details.</English>
+            <French>Détails de l'histoire.</French>
+            <Spanish>Detalles de la historia.</Spanish>
+            <Italian>Dettagli della storia.</Italian>
+            <German>Geschichtsdetails.</German>
+            <Polish>Szczegóły historii.</Polish>
+            <Russian>Подробности сюжета.</Russian>
+            <Turkish>Hikaye detayları.</Turkish>
+            <Japanese>ストーリーの詳細。</Japanese>
+            <Korean>이야기 세부 정보.</Korean>
+            <Chinese>故事细节。</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Factions_Title">
+            <Original>Factions</Original>
+            <English>Factions</English>
+            <French>Factions</French>
+            <Spanish>Facciones</Spanish>
+            <Italian>Fazioni</Italian>
+            <German>Fraktionen</German>
+            <Polish>Frakcje</Polish>
+            <Russian>Фракции</Russian>
+            <Turkish>Gruplar</Turkish>
+            <Japanese>派閥</Japanese>
+            <Korean>세력</Korean>
+            <Chinese>派系</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Factions_Text">
+            <Original>Factions details.</Original>
+            <English>Factions details.</English>
+            <French>Détails des factions.</French>
+            <Spanish>Detalles de las facciones.</Spanish>
+            <Italian>Dettagli delle fazioni.</Italian>
+            <German>Fraktionsdetails.</German>
+            <Polish>Szczegóły frakcji.</Polish>
+            <Russian>Подробности о фракциях.</Russian>
+            <Turkish>Grup detayları.</Turkish>
+            <Japanese>派閥の詳細。</Japanese>
+            <Korean>세력 세부 정보.</Korean>
+            <Chinese>派系细节。</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Context_Title">
+            <Original>Context</Original>
+            <English>Context</English>
+            <French>Contexte</French>
+            <Spanish>Contexto</Spanish>
+            <Italian>Contesto</Italian>
+            <German>Kontext</German>
+            <Polish>Kontekst</Polish>
+            <Russian>Контекст</Russian>
+            <Turkish>Bağlam</Turkish>
+            <Japanese>コンテキスト</Japanese>
+            <Korean>배경</Korean>
+            <Chinese>背景</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Diary_Context_Text">
+            <Original>Mission context.</Original>
+            <English>Mission context.</English>
+            <French>Contexte de la mission.</French>
+            <Spanish>Contexto de la misión.</Spanish>
+            <Italian>Contesto della missione.</Italian>
+            <German>Missionskontext.</German>
+            <Polish>Kontekst misji.</Polish>
+            <Russian>Контекст миссии.</Russian>
+            <Turkish>Görev bağlamı.</Turkish>
+            <Japanese>ミッションの背景。</Japanese>
+            <Korean>임무 배경.</Korean>
+            <Chinese>任务背景。</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Briefing_Title">
+            <Original>Briefing</Original>
+            <English>Briefing</English>
+            <French>Briefing</French>
+            <Spanish>Sesión informativa</Spanish>
+            <Italian>Briefing</Italian>
+            <German>Briefing</German>
+            <Polish>Odprawa</Polish>
+            <Russian>Инструктаж</Russian>
+            <Turkish>Bilgilendirme</Turkish>
+            <Japanese>ブリーフィング</Japanese>
+            <Korean>브리핑</Korean>
+            <Chinese>简报</Chinese>
+        </Key>
+        <Key ID="STR_TUE_Briefing_Text">
+            <Original>Welcome to the ORA Mod!&lt;br/&gt;&lt;br/&gt;Here is how the gameplay loop works:&lt;br/&gt;&lt;br/&gt;1. **Request a Task**: The squad leader can request a new mission at any time using the action scroll menu.&lt;br/&gt;2. **Chain Infinitely**: You can complete as many tasks as you want, without any limits.&lt;br/&gt;3. **End the Game (Extraction)**: When you are ready to finish the session, simply request an extraction via the scroll menu. The helicopter will extract your squad, and returning to base will complete the mission.</Original>
+            <English>Welcome to the ORA Mod!&lt;br/&gt;&lt;br/&gt;Here is how the gameplay loop works:&lt;br/&gt;&lt;br/&gt;1. **Request a Task**: The squad leader can request a new mission at any time using the action scroll menu.&lt;br/&gt;2. **Chain Infinitely**: You can complete as many tasks as you want, without any limits.&lt;br/&gt;3. **End the Game (Extraction)**: When you are ready to finish the session, simply request an extraction via the scroll menu. The helicopter will extract your squad, and returning to base will complete the mission.</English>
+            <French>Bienvenue dans le mod ORA !&lt;br/&gt;&lt;br/&gt;Voici comment fonctionne la boucle de gameplay :&lt;br/&gt;&lt;br/&gt;1. **Demander une mission** : Le chef de groupe peut demander une nouvelle tâche à tout moment via le menu d'action de la molette.&lt;br/&gt;2. **Enchaîner à l'infini** : Vous pouvez accomplir autant de tâches que vous le souhaitez, de manière illimitée.&lt;br/&gt;3. **Finir la partie (Extraction)** : Quand vous en avez assez et souhaitez terminer la mission, demandez simplement une extraction via le menu d'action. L'hélicoptère viendra vous récupérer et le retour à la base mettra fin à la partie.</French>
+            <Spanish>¡Bienvenido al mod ORA!&lt;br/&gt;&lt;br/&gt;Así es como funciona el bucle de juego:&lt;br/&gt;&lt;br/&gt;1. **Solicitar una misión**: El líder del grupo puede solicitar una nueva tarea en cualquier momento a través del menú de acción de la rueda.&lt;br/&gt;2. **Encadenar al infinito**: Puedes completar tantas tareas como quieras, de forma ilimitada.&lt;br/&gt;3. **Terminar la partida (Extracción)**: Cuando quieras terminar la misión, simplemente solicita una extracción a través del menú de acción. El helicóptero vendrá a recogerte y volver a la base pondrá fin a la partida.</Spanish>
+            <Italian>Benvenuto nella mod ORA!&lt;br/&gt;&lt;br/&gt;Ecco come funziona il ciclo di gioco:&lt;br/&gt;&lt;br/&gt;1. **Richiedere una missione**: Il caposquadra può richiedere una nuova attività in qualsiasi momento tramite il menu delle azioni della rotellina.&lt;br/&gt;2. **Continuare all'infinito**: Puoi completare quante attività desideri, senza limiti.&lt;br/&gt;3. **Terminare la partita (Estrazione)**: Quando vuoi finire la missione, richiedi semplicemente un'estrazione tramite il menu delle azioni. L'elicottero verrà a prenderti e il rientro alla base porrà fine alla partita.</Italian>
+            <German>Willkommen zur ORA-Mod!&lt;br/&gt;&lt;br/&gt;So funktioniert die Gameplay-Schleife:&lt;br/&gt;&lt;br/&gt;1. **Mission anfordern**: Der Gruppenführer kann jederzeit eine neue Aufgabe über das Aktionsmenü (Mausrad) anfordern.&lt;br/&gt;2. **Unendlich verketten**: Sie können unbegrenzt viele Aufgaben nacheinander erledigen.&lt;br/&gt;3. **Spiel beenden (Evakuierung)**: Wenn Sie die Mission beenden möchten, fordern Sie einfach eine Evakuierung über das Aktionsmenü an. Der Hubschrauber holt Sie ab, und die Rückkehr zur Basis beendet das Spiel.</German>
+            <Polish>Witaj w modzie ORA!&lt;br/&gt;&lt;br/&gt;Oto jak działa pętla rozgrywki:&lt;br/&gt;&lt;br/&gt;1. **Zażądaj misji**: Dowódca drużyny może w dowolnym momencie poprosić o nowe zadanie za pomocą menu akcji (rolki myszy).&lt;br/&gt;2. **Graj w nieskończoność**: Możesz wykonywać dowolną liczbę zadań, bez żadnych ograniczeń.&lt;br/&gt;3. **Koniec gry (Ewakuacja)**: Gdy zechcesz zakończyć misję, po prostu poproś o ewakuację z menu akcji. Helikopter przyleci po was, a powrót do bazy zakończy rozgrywkę.</Polish>
+            <Russian>Добро пожаловать в мод ORA!&lt;br/&gt;&lt;br/&gt;Вот как работает игровой цикл:&lt;br/&gt;&lt;br/&gt;1. **Запросить миссию**: Командир отделения может в любой момент запросить новое задание через меню действий (колесико мыши).&lt;br/&gt;2. **Играть бесконечно**: Вы можете выполнять сколько угодно заданий подряд без ограничений.&lt;br/&gt;3. **Завершить игру (Эвакуация)**: Когда будете готовы закончить миссию, просто запросите эвакуацию через меню действий. Вертолет заберет вас, и возвращение на базу завершит игру.</Russian>
+            <Turkish>ORA moduna hoş geldiniz!&lt;br/&gt;&lt;br/&gt;Oynanış döngüsü şu şekilde çalışır:&lt;br/&gt;&lt;br/&gt;1. **Görev İste**: Grup lideri, fare tekerleği eylem menüsünden istediği zaman yeni bir görev talep edebilir.&lt;br/&gt;2. **Sonsuza Kadar Oyna**: Herhangi bir sınır olmadan dilediğiniz kadar görev tamamlayabilirsiniz.&lt;br/&gt;3. **Oyunu Bitir (Tahliye)**: Görevi bitirmek istediğinizde, eylem menüsünden tahliye talep etmeniz yeterlidir. Helikopter sizi alacak ve üsse geri döndüğünüzde oyun sona erecektir.</Turkish>
+            <Japanese>ORA Modへようこそ！&lt;br/&gt;&lt;br/&gt;ゲームプレイループの流れ：&lt;br/&gt;&lt;br/&gt;1. **ミッション要求**：分隊長はいつでもアクションメニューから新しいタスクを要求できます。&lt;br/&gt;2. **無限ループ**：制限なしで好きなだけタスクを連続してクリアできます。&lt;br/&gt;3. **ゲーム終了（回収）**：ミッションを終了したい時は、アクションメニューから回収を要求してください。ヘリコプターが部隊を回収し、基地に戻ることでゲームクリアとなります。</Japanese>
+            <Korean>ORA 모드에 오신 것을 환영합니다!&lt;br/&gt;&lt;br/&gt;게임플레이 루프 작동 방식:&lt;br/&gt;&lt;br/&gt;1. **임무 요청**: 분대장은 언제든지 마우스 휠 액션 메뉴를 통해 새로운 임무를 요청할 수 있습니다.&lt;br/&gt;2. **무한 플레이**: 제한 없이 원하는 만큼 임무를 계속 수행할 수 있습니다.&lt;br/&gt;3. **게임 종료 (탈출)**: 임무를 끝내고 싶을 때는 액션 메뉴에서 탈출을 요청하십시오. 헬리콥터가 아군을 구출하고, 기지로 복귀하면 임무가 완료됩니다.</Korean>
+            <Chinese>欢迎使用 ORA 模组！&lt;br/&gt;&lt;br/&gt;游戏核心玩法流程：&lt;br/&gt;&lt;br/&gt;1. **请求任务**：小队长可以随时通过滚轮动作菜单请求新任务。&lt;br/&gt;2. **无限游玩**：你可以无限制地连续完成任意数量的任务。&lt;br/&gt;3. **结束游戏（撤离）**：当你想结束游戏时，只需通过动作菜单请求撤离。直升机将接送你们，返回基地即可结束任务并通关。</Chinese>
+        </Key>
+    </Package>
+    <Package name="Task">
+        <Key ID="STR_LL_Intro_Author">
+            <Original>Operation Royal Alliance</Original>
+            <French>Operation Royal Alliance</French>
+            <English>Operation Royal Alliance</English>
+            <Spanish>Operation Royal Alliance</Spanish>
+            <Italian>Operation Royal Alliance</Italian>
+            <German>Operation Royal Alliance</German>
+            <Polish>Operation Royal Alliance</Polish>
+            <Russian>Operation Royal Alliance</Russian>
+            <Turkish>Operation Royal Alliance</Turkish>
+            <Japanese>Operation Royal Alliance</Japanese>
+            <Korean>Operation Royal Alliance</Korean>
+            <Chinese>Operation Royal Alliance</Chinese>
+        </Key>
+        <Key ID="STR_LL_Intro_Presents">
+            <Original>Infiltration, high-tech equipment and tactical objectives</Original>
+            <French>Inflitration, technologie de pointe et objectifs dynamiques</French>
+            <English>Infiltration, high-tech equipment and tactical objectives</English>
+            <Spanish>Infiltración, tecnología avanzada y objetivos tácticos</Spanish>
+            <Italian>Infiltrazione, equipaggiamento high-tech e obiettivi tattici</Italian>
+            <German>Infiltration, hochmoderne Ausrüstung und taktische Ziele</German>
+            <Polish>Infiltracja, zaawansowany sprzęt i cele taktyczne</Polish>
+            <Russian>Инфильтрация, современное вооружение и тактические цели</Russian>
+            <Turkish>Infiltrasyon, ileri teknoloji ekipman ve taktik hedefler</Turkish>
+            <Japanese>潜入、最先端の装備と戦術的な目標</Japanese>
+            <Korean>잠입, 최첨단 장비 및 전술 목표</Korean>
+            <Chinese>潜入、尖端技术与战术目标</Chinese>
+        </Key>
+        <Key ID="STR_LL_Intro_Location">
+            <Original>June 29, 2030</Original>
+            <French>29 Juin 2030</French>
+            <English>June 29, 2030</English>
+            <Spanish>29 de Junio de 2030</Spanish>
+            <Italian>29 Giugno 2030</Italian>
+            <German>29. Juni 2030</German>
+            <Polish>29 Czerwca 2030</Polish>
+            <Russian>29 июня 2030 г.</Russian>
+            <Turkish>29 Haziran 2030</Turkish>
+            <Japanese>2030年6月29日</Japanese>
+            <Korean>2030년 6월 29일</Korean>
+            <Chinese>2030年6月29日</Chinese>
+        </Key>
+        <Key ID="STR_LL_Intro_MissionStartSubtitle">
+            <Original>Review the operational briefing if you value your life.</Original>
+            <French>Consultez le briefing opérationnel si vous tenez à votre peau.</French>
+            <English>Review the operational briefing if you value your life.</English>
+            <Spanish>Consulte el informe operativo si valora su vida.</Spanish>
+            <Italian>Consulta il briefing operativo se tieni alla pelle.</Italian>
+            <German>Missionsbriefing lesen, wenn Sie am Leben bleiben wollen.</German>
+            <Polish>Zapoznaj się z odprawą operacyjną, jeśli zależy ci na życiu.</Polish>
+            <Russian>Ознакомьтесь с оперативным брифингом, если хотите остаться в живых.</Russian>
+            <Turkish>Hayatta kalmak istiyorsanız operasyonel brifingi inceleyin.</Turkish>
+            <Japanese>命が惜しければ作戦説明を確認せよ。</Japanese>
+            <Korean>살고 싶다면 작전 브리핑을 정독하십시오.</Korean>
+            <Chinese>如果想活命，请仔细阅读作战简报。</Chinese>
+        </Key>
+        <Key ID="STR_LL_StartArsenal_Marker">
+            <Original>PREPARATION (Arsenal)</Original>
+            <French>PREPARATIFS (Arsenal)</French>
+            <English>PREPARATION (Arsenal)</English>
+            <Spanish>PREPARACIÓN (Arsenal)</Spanish>
+            <Italian>PREPARAZIONE (Arsenal)</Italian>
+            <German>VORBEREITUNG (Arsenal)</German>
+            <Polish>PRZYGOTOWANIE (Arsenał)</Polish>
+            <Russian>ПОДГОТОВКА (Арсенал)</Russian>
+            <Turkish>HAZIRLIK (Arsenal)</Turkish>
+            <Japanese>準備 (アーセナル)</Japanese>
+            <Korean>준비 (아스날)</Korean>
+            <Chinese>准备 (兵器库)</Chinese>
+        </Key>
+        <Key ID="STR_LL_Diary_Task00_Title">
+            <Original>OPORD : Exfiltration d'otage</Original>
+            <French>OPORD : Exfiltration d'otage</French>
+            <English>OPORD: Hostage Exfiltration</English>
+            <Turkish>OPORD: Rehine Tahliyesi</Turkish>
+            <Korean>OPORD: 인질 구출</Korean>
+            <Spanish>OPORD: Extracción de rehén</Spanish>
+            <Japanese>OPORD: 人質救出</Japanese>
+            <Chinese>OPORD: 人质撤离</Chinese>
+            <Russian>OPORD: Эвакуация заложника</Russian>
+            <German>OPORD: Geiselexfiltration</German>
+            <Italian>OPORD: Esfiltrazione ostaggio</Italian>
+            <Polish>OPORD: Ewakuacja zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task00_Text">
+            <Original>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</Original>
+            <French>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</French>
+            <English>An allied civilian has been captured. We have identified several probable detention zones. Locate him, secure the area and free him. The helicopter will pick him up once rescued.</English>
+            <Turkish>Müttefik bir sivil esir alındı. Muhtemel birkaç gözaltı bölgesi tespit ettik. Onu bulun, bölgeyi güvenceye alın ve serbest bırakın. Kurtarıldıktan sonra helikopter onu alacak.</Turkish>
+            <Korean>아군 민간인이 포로로 잡혔습니다. 구금될 가능성이 있는 곳을 여러 군데 확인했습니다. 위치를 파악하고 지역을 확보하여 구출하십시오. 구조되면 헬리콥터가 데리러 올 것입니다.</Korean>
+            <Spanish>Un civil aliado ha sido capturado. Hemos identificado varias zonas de detención probables. Localízalo, asegura el área y libéralo. El helicóptero lo recogerá una vez rescatado.</Spanish>
+            <Japanese>同盟国の民間人が捕らえられました。いくつか拘束されている可能性のある場所を特定しました。見つけてエリアを確保し、解放してください。救出後、ヘリコプターが迎えに来ます。</Japanese>
+            <Chinese>一名盟军平民被俘。我们已经确定了几个可能的关押区。找到他，确保该区域的安全并释放他。获救后直升机会来接他。</Chinese>
+            <Russian>Союзный гражданский был захвачен в плен. Мы определили несколько вероятных зон содержания. Найдите его, обезопасьте район и освободите. Как только он будет спасен, за ним прилетит вертолет.</Russian>
+            <German>Ein alliierter Zivilist wurde gefangen genommen. Wir haben mehrere wahrscheinliche Haftzonen identifiziert. Lokalisieren Sie ihn, sichern Sie das Gebiet und befreien Sie ihn. Der Hubschrauber wird ihn nach der Rettung abholen.</German>
+            <Italian>Un civile alleato è stato catturato. Abbiamo identificato diverse probabili zone di detenzione. Individualo, metti al sicuro l'area e liberalo. L'elicottero lo verrà a prendere una volta salvato.</Italian>
+            <Polish>Sojuszniczy cywil został schwytany. Zidentyfikowaliśmy kilka prawdopodobnych stref przetrzymywania. Zlokalizuj go, zabezpiecz obszar i uwolnij. Po uratowaniu odbierze go helikopter.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Action">
+            <Original>Libérer l'otage</Original>
+            <French>Libérer l'otage</French>
+            <English>Free hostage</English>
+            <Turkish>Rehineyi serbest bırak</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Liberar rehén</Spanish>
+            <Japanese>人質を解放する</Japanese>
+            <Chinese>释放人质</Chinese>
+            <Russian>Освободить заложника</Russian>
+            <German>Geisel befreien</German>
+            <Italian>Libera l'ostaggio</Italian>
+            <Polish>Uwolnij zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_ExtractAction">
+            <Original>Embarquer l'otage</Original>
+            <French>Embarquer l'otage</French>
+            <English>Extract Hostage</English>
+            <Turkish>Rehineyi tahliye et</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Extraer rehén</Spanish>
+            <Japanese>人質を回収する</Japanese>
+            <Chinese>撤离人质</Chinese>
+            <Russian>Эвакуировать заложника</Russian>
+            <German>Geisel extrahieren</German>
+            <Italian>Estrai l'ostaggio</Italian>
+            <Polish>Ewakuuj zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Title">
+            <Original>Exfiltration d'otage</Original>
+            <French>Exfiltration d'otage</French>
+            <English>Hostage Exfiltration</English>
+            <Turkish>Rehine Tahliyesi</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Extracción de rehén</Spanish>
+            <Japanese>人質救出</Japanese>
+            <Chinese>人质撤离</Chinese>
+            <Russian>Эвакуация заложника</Russian>
+            <German>Geiselexfiltration</German>
+            <Italian>Esfiltrazione ostaggio</Italian>
+            <Polish>Ewakuacja zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Desc">
+            <Original>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</Original>
+            <French>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</French>
+            <English>Locate and extract the hostage held in one of the search zones indicated on your map. Then call for extraction helicopter.</English>
+            <Turkish>Haritanızda belirtilen arama bölgelerinden birinde tutulan rehineyi bulun ve kurtarın. Ardından tahliye helikopteri çağırın.</Turkish>
+            <Korean>지도에 표시된 수색 구역 중 한 곳에 억류된 인질을 찾아 구출하십시오. 그런 다음 구출 헬기를 호출하십시오.</Korean>
+            <Spanish>Localiza y extrae al rehén retenido en una de las zonas de búsqueda indicadas en tu mapa. Luego llama al helicóptero de extracción.</Spanish>
+            <Japanese>マップに示された捜索ゾーンのいずれかに捕らわれている人質を見つけて救出してください。その後、救出ヘリコプターを呼んでください。</Japanese>
+            <Chinese>找到并营救被关押在地图上指示的搜索区域之一的人质。然后呼叫撤离直升机。</Chinese>
+            <Russian>Найдите и эвакуируйте заложника, удерживаемого в одной из зон поиска, указанных на вашей карте. Затем вызовите эвакуационный вертолет.</Russian>
+            <German>Lokalisieren und extrahieren Sie die Geisel, die in einer der auf Ihrer Karte markierten Suchzonen festgehalten wird. Rufen Sie dann den Evakuierungshubschrauber.</German>
+            <Italian>Individua ed estrai l'ostaggio tenuto in una delle zone di ricerca indicate sulla mappa. Quindi chiama l'elicottero di estrazione.</Italian>
+            <Polish>Zlokalizuj i ewakuuj zakładnika przetrzymywanego w jednej ze stref poszukiwań wskazanych na mapie. Następnie wezwij śmigłowiec ewakuacyjny.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Marker">
+            <Original>Zone de Recherche</Original>
+            <French>Zone de Recherche</French>
+            <English>Search Zone</English>
+            <Turkish>Arama Bölgesi</Turkish>
+            <Korean>수색 구역</Korean>
+            <Spanish>Zona de búsqueda</Spanish>
+            <Japanese>捜索ゾーン</Japanese>
+            <Chinese>搜索区域</Chinese>
+            <Russian>Зона поиска</Russian>
+            <German>Suchzone</German>
+            <Italian>Zona di ricerca</Italian>
+            <Polish>Strefa poszukiwań</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_MarkerMain">
+            <Original>Secteur d'opération</Original>
+            <French>Secteur d'opération</French>
+            <English>Area of operations</English>
+            <Turkish>Operasyon bölgesi</Turkish>
+            <Korean>작전 지역</Korean>
+            <Spanish>Área de operaciones</Spanish>
+            <Japanese>作戦エリア</Japanese>
+            <Chinese>行动区域</Chinese>
+            <Russian>Район операции</Russian>
+            <German>Einsatzgebiet</German>
+            <Italian>Area di operazione</Italian>
+            <Polish>Obszar operacji</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task01_Title">
+            <Original>OPORD : Opération Cibles Multiples</Original>
+            <French>OPORD : Opération Cibles Multiples</French>
+            <English>OPORD: Operation Multiple Targets</English>
+            <Turkish>Harekât Emri: Çoklu Hedefler Operasyonu</Turkish>
+            <Korean>작전 명령: 다중 목표 작전</Korean>
+            <Spanish>OPORD: Operación Múltiples Objetivos</Spanish>
+            <Japanese>作戦命令: 複数ターゲット作戦</Japanese>
+            <Chinese>作战命令：多个目标行动</Chinese>
+            <Russian>Боевой приказ: Операция "Множественные цели"</Russian>
+            <German>OPORD: Operation Mehrere Ziele</German>
+            <Italian>OPORD: Operazione Obiettivi Multipli</Italian>
+            <Polish>OPORD: Operacja Wiele Celów</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task01_Text">
+            <Original>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</Original>
+            <French>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</French>
+            <English>Command has identified several enemy officers in the area. We believe one of them is carrying highly classified documents. Eliminate the targets and search their bodies to secure the intelligence.</English>
+            <Turkish>Komuta merkezi bölgede birkaç düşman subayı tespit etti. Bunlardan birinin son derece gizli belgeler taşıdığına inanıyoruz. Hedefleri etkisiz hale getirin ve istihbaratı güvenceye almak için cesetleri arayın.</Turkish>
+            <Korean>사령부가 해당 지역에서 여러 명의 적 장교를 식별했습니다. 그들 중 한 명이 최고 기밀 문서를 소지하고 있을 것으로 추정됩니다. 목표를 제거하고 시체를 수색하여 정보 자료를 확보하십시오.</Korean>
+            <Spanish>El mando ha identificado a varios oficiales enemigos en la zona. Creemos que uno de ellos lleva documentos altamente clasificados. Elimine los objetivos y registre sus cuerpos para asegurar la información.</Spanish>
+            <Japanese>司令部がエリア内に複数の敵将校を確認した。そのうちの1人が最高機密書類を持っていると考えられる。標的を排除し、死体を捜索して機密情報を確保せよ。</Japanese>
+            <Chinese>指挥部在防区发现了多名敌方军官。我们认为其中一人携带了绝密文件。消灭目标并搜查尸体以获取情报。</Chinese>
+            <Russian>Командование выявило в этом районе нескольких вражеских офицеров. Мы полагаем, что один из них перевозит строго секретные документы. Устраните цели и обыщите их тела, чтобы заполучить разведданные.</Russian>
+            <German>Das Kommando hat mehrere feindliche Offiziere im Gebiet ausgemacht. Wir gehen davon aus, dass einer von ihnen streng geheime Dokumente bei sich trägt. Schalten Sie die Ziele aus und durchsuchen Sie die Leichen, um die Informationen zu sichern.</German>
+            <Italian>Il comando ha individuato diversi ufficiali nemici nell'area. Crediamo che uno di loro abbia dei documenti altamente classificati. Eliminate i bersagli e perquisite i cadaveri per recuperare le informazioni.</Italian>
+            <Polish>Dowództwo zidentyfikowało w okolicy kilku wrogich oficerów. Uważamy, że jeden z nich przenosi wysoce tajne dokumenty. Zlikwiduj cele i przeszukaj zwłoki, aby zabezpieczyć dane wywiadowcze.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Title">
+            <Original>Cibles Multiples</Original>
+            <French>Cibles Multiples</French>
+            <English>Multiple Targets</English>
+            <Turkish>Çoklu Hedefler</Turkish>
+            <Korean>다중 목표</Korean>
+            <Spanish>Múltiples Objetivos</Spanish>
+            <Japanese>複数ターゲット</Japanese>
+            <Chinese>多个目标</Chinese>
+            <Russian>Множественные цели</Russian>
+            <German>Mehrere Ziele</German>
+            <Italian>Obiettivi Multipli</Italian>
+            <Polish>Wiele celów</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Desc">
+            <Original>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</Original>
+            <French>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</French>
+            <English>Enemy officers have been located in the sector. One of them holds classified documents. Neutralize the officers and retrieve the documents from the right corpse.</English>
+            <Turkish>Bölgede düşman subayları tespit edildi. İçlerinden birinde gizli belgeler var. Subayları etkisiz hale getirin ve doğru cesetten belgeleri alın.</Turkish>
+            <Korean>구역 내에 적 장교들이 위치해 있습니다. 그들 중 한 명이 기밀 문서를 소지하고 있습니다. 장교들을 무력화하고 올바른 시체에서 문서를 회수하십시오.</Korean>
+            <Spanish>Se han localizado oficiales enemigos en el sector. Uno de ellos tiene documentos clasificados. Neutraliza a los oficiales y recupera los documentos del cadáver correcto.</Spanish>
+            <Japanese>セクター内で敵の将校が発見された。彼らのうちの1人が機密書類を持っている。将校たちを無力化し、正しい死体から書類を回収しろ。</Japanese>
+            <Chinese>在防区发现了敌方军官。其中一人持有绝密文件。消灭军官并从正确的尸体上取回文件。</Chinese>
+            <Russian>В секторе обнаружены вражеские офицеры. У одного из них есть секретные документы. Нейтрализуйте офицеров и заберите документы с нужного трупа.</Russian>
+            <German>Feindliche Offiziere wurden im Sektor gesichtet. Einer von ihnen trägt Geheimdokumente bei sich. Schalten Sie die Offiziere aus und sichern Sie die Dokumente vom richtigen Leichnam.</German>
+            <Italian>Sono stati individuati ufficiali nemici nel settore. Uno di loro è in possesso di documenti classificati. Neutralizza gli ufficiali e recupera i documenti dal cadavere giusto.</Italian>
+            <Polish>W sektorze zlokalizowano wrogich oficerów. Jeden z nich ma tajne dokumenty. Zneutralizuj oficerów i odzyskaj dokumenty z właściwych zwłok.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Marker">
+            <Original>Officier Cible</Original>
+            <French>Officier Cible</French>
+            <English>Target Officer</English>
+            <Turkish>Hedef Subay</Turkish>
+            <Korean>목표 장교</Korean>
+            <Spanish>Oficial Objetivo</Spanish>
+            <Japanese>標的の将校</Japanese>
+            <Chinese>目标军官</Chinese>
+            <Russian>Офицер-цель</Russian>
+            <German>Ziel-Offizier</German>
+            <Italian>Ufficiale Bersaglio</Italian>
+            <Polish>Cel: Oficer</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_MarkerDoc">
+            <Original>Documents</Original>
+            <French>Documents</French>
+            <English>Documents</English>
+            <Turkish>Belgeler</Turkish>
+            <Korean>문서</Korean>
+            <Spanish>Documentos</Spanish>
+            <Japanese>書類</Japanese>
+            <Chinese>文件</Chinese>
+            <Russian>Документы</Russian>
+            <German>Dokumente</German>
+            <Italian>Documenti</Italian>
+            <Polish>Dokumenty</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Action">
+            <Original>Fouiller l'officier</Original>
+            <French>Fouiller l'officier</French>
+            <English>Search officer</English>
+            <Turkish>Subayı ara</Turkish>
+            <Korean>장교 수색</Korean>
+            <Spanish>Registrar oficial</Spanish>
+            <Japanese>将校を捜索</Japanese>
+            <Chinese>搜查军官</Chinese>
+            <Russian>Обыскать офицера</Russian>
+            <German>Offizier durchsuchen</German>
+            <Italian>Perquisisci ufficiale</Italian>
+            <Polish>Przeszukaj oficera</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task02_Title">
+            <Original>OPORD: Opération Bouclier</Original>
+            <French>OPORD: Opération Bouclier</French>
+            <English>OPORD: Operation Shield</English>
+            <Turkish>OPORD: Kalkan Operasyonu</Turkish>
+            <Korean>작전 명령: 방패 작전</Korean>
+            <Spanish>OPORD: Operación Escudo</Spanish>
+            <Japanese>作戦命令: シールド作戦</Japanese>
+            <Chinese>作战命令：盾牌行动</Chinese>
+            <Russian>Боевой приказ: Операция Щит</Russian>
+            <German>OPORD: Operation Schild</German>
+            <Italian>OPORD: Operazione Scudo</Italian>
+            <Polish>OPORD: Operacja Tarcza</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task02_Text">
+            <Original>Les services de renseignement indiquent que les forces ennemies ont piégé plusieurs bâtiments avec des IED. Votre escouade doit sécuriser la zone et désamorcer les engins. Vous avez entre 25 et 45 minutes avant qu'ils n'explosent. Engagez les gardes ennemis avec prudence pour éviter de déclencher les explosifs prématurément.</Original>
+            <French>Les services de renseignement indiquent que les forces ennemies ont piégé plusieurs bâtiments avec des IED. Votre escouade doit sécuriser la zone et désamorcer les engins. Vous avez entre 25 et 45 minutes avant qu'ils n'explosent. Engagez les gardes ennemis avec prudence pour éviter de déclencher les explosifs prématurément.</French>
+            <English>Intelligence reports indicate that enemy forces have rigged several buildings with IEDs. Your squad must secure the area and defuse the devices. You have an estimated 25 to 45 minutes before they detonate. Engage enemy guards with caution to avoid triggering the explosives prematurely.</English>
+            <Turkish>İstihbarat raporları, düşman güçlerinin birkaç binaya el yapımı patlayıcılar (IED) tuzakladığını gösteriyor. Ekibiniz bölgeyi güven altına almalı ve cihazları etkisiz hale getirmelidir. Patlamadan önce tahmini 25 ila 45 dakikanız var. Patlayıcıları erken tetiklememek için düşman muhafızlarıyla dikkatlice çatışmaya girin.</Turkish>
+            <Korean>정보 보고에 따르면 적군이 여러 건물에 IED를 설치했습니다. 귀하의 분대는 해당 지역을 확보하고 장치를 해체해야 합니다. 폭발하기 전까지 약 25분에서 45분의 시간이 있습니다. 폭발물이 조기에 터지는 것을 방지하기 위해 주의해서 적 경비병과 교전하십시오.</Korean>
+            <Spanish>Los informes de inteligencia indican que las fuerzas enemigas han manipulado varios edificios con IEDs. Tu escuadrón debe asegurar la zona y desactivar los dispositivos. Tienes un estimado de 25 a 45 minutos antes de que detonen. Enfrenta a los guardias enemigos con precaución para evitar activar los explosivos prematuramente.</Spanish>
+            <Japanese>情報報告によると、敵部隊が複数の建物にIEDを仕掛けたようだ。君の分隊はエリアを確保し、装置を解除しなければならない。爆発まで推定25〜45分の猶予がある。爆発物を誤爆させないよう、敵の警備兵とは慎重に交戦せよ。</Japanese>
+            <Chinese>情报报告显示，敌军在几栋建筑物中布置了简易爆炸装置。你的小队必须控制该区域并拆除这些装置。在它们引爆前，你大约有 25 到 45 分钟的时间。谨慎交战以避免提前引爆炸药。</Chinese>
+            <Russian>По данным разведки, вражеские силы заминировали несколько зданий с помощью СВУ. Ваш отряд должен обезопасить район и обезвредить устройства. У вас есть примерно 25-45 минут до их детонации. Вступайте в бой с вражеской охраной с осторожностью, чтобы избежать преждевременного срабатывания взрывчатки.</Russian>
+            <German>Geheimdienstberichte deuten darauf hin, dass feindliche Truppen mehrere Gebäude mit Sprengsätzen versehen haben. Dein Trupp muss das Gebiet sichern und die Geräte entschärfen. Du hast schätzungsweise 25 bis 45 Minuten, bevor sie detonieren. Greife feindliche Wachen mit Vorsicht an, um zu vermeiden, dass die Sprengstoffe vorzeitig ausgelöst werden.</German>
+            <Italian>I rapporti dell'intelligence indicano che le forze nemiche hanno minato diversi edifici con IED. La tua squadra deve mettere al sicuro l'area e disinnescare gli ordigni. Hai dai 25 ai 45 minuti prima che esplodano. Affronta le guardie nemiche con cautela per evitare di innescare prematuramente gli esplosivi.</Italian>
+            <Polish>Raporty wywiadu wskazują, że siły wroga zaminowały kilka budynków ładunkami IED. Twój oddział musi zabezpieczyć obszar i rozbroić ładunki. Macie szacunkowo od 25 do 45 minut, zanim wybuchną. Angażuj się w walkę ze strażnikami z ostrożnością, aby uniknąć przedwczesnego odpalenia materiałów wybuchowych.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_Title">
+            <Original>Désamorcer les Explosifs</Original>
+            <French>Désamorcer les Explosifs</French>
+            <English>Defuse the Explosives</English>
+            <Turkish>Patlayıcıları Etkisiz Hale Getir</Turkish>
+            <Korean>폭발물 해체</Korean>
+            <Spanish>Desactivar los explosivos</Spanish>
+            <Japanese>爆発物を解除せよ</Japanese>
+            <Chinese>拆除爆炸物</Chinese>
+            <Russian>Обезвредить взрывчатку</Russian>
+            <German>Entschärfen Sie die Sprengstoffe</German>
+            <Italian>Disinnesca gli esplosivi</Italian>
+            <Polish>Rozbrój materiały wybuchowe</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_Desc">
+            <Original>Des IED ont été posés dans la zone. Localisez-les et désamorcez-les avant la fin du temps imparti. En cas d'échec, ils exploseront.</Original>
+            <French>Des IED ont été posés dans la zone. Localisez-les et désamorcez-les avant la fin du temps imparti. En cas d'échec, ils exploseront.</French>
+            <English>IEDs have been planted in the area. Locate and defuse them before the timer runs out. Failure to defuse them will result in an explosion.</English>
+            <Turkish>Bölgeye IED'ler yerleştirildi. Süre dolmadan onları bulun ve etkisiz hale getirin. Etkisiz hale getirilmezlerse patlayacaklar.</Turkish>
+            <Korean>이 지역에 IED가 설치되었습니다. 타이머가 끝나기 전에 그것들을 찾아 해체하십시오. 해체하지 못하면 폭발할 것입니다.</Korean>
+            <Spanish>Se han plantado IEDs en la zona. Localízalos y desactívalos antes de que se agote el tiempo. Si no los desactivas, se producirá una explosión.</Spanish>
+            <Japanese>エリアにIEDが設置された。制限時間が切れる前に発見して解除せよ。解除に失敗すると爆発する。</Japanese>
+            <Chinese>该区域安放了简易爆炸装置。在计时器结束前找到并拆除它们。如果未能拆除，将导致爆炸。</Chinese>
+            <Russian>В этом районе были заложены СВУ. Найдите и обезвредьте их до истечения времени. Неспособность обезвредить их приведет к взрыву.</Russian>
+            <German>In der Gegend wurden Sprengsätze platziert. Lokalisieren und entschärfen Sie diese, bevor der Timer abläuft. Wenn Sie sie nicht entschärfen, kommt es zu einer Explosion.</German>
+            <Italian>Degli IED sono stati piazzati nell'area. Individuali e disinnescali prima dello scadere del tempo. Il mancato disinnesco causerà un'esplosione.</Italian>
+            <Polish>W okolicy podłożono IED. Zlokalizuj je i rozbrój przed upływem czasu. Niepowodzenie doprowadzi do wybuchu.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_MarkerMain">
+            <Original>Zone de désamorçage</Original>
+            <French>Zone de désamorçage</French>
+            <English>Defusal Zone</English>
+            <Turkish>Etkisiz Hale Getirme Bölgesi</Turkish>
+            <Korean>해체 구역</Korean>
+            <Spanish>Zona de desactivación</Spanish>
+            <Japanese>解除ゾーン</Japanese>
+            <Chinese>拆除区域</Chinese>
+            <Russian>Зона обезвреживания</Russian>
+            <German>Entschärfungszone</German>
+            <Italian>Zona di disinnesco</Italian>
+            <Polish>Strefa rozbrajania</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_Marker">
+            <Original>Zone Suspecte</Original>
+            <French>Zone Suspecte</French>
+            <English>Suspect Area</English>
+            <Turkish>Şüpheli Bölge</Turkish>
+            <Korean>의심 구역</Korean>
+            <Spanish>Área sospechosa</Spanish>
+            <Japanese>疑わしいエリア</Japanese>
+            <Chinese>可疑区域</Chinese>
+            <Russian>Подозрительная зона</Russian>
+            <German>Verdächtiger Bereich</German>
+            <Italian>Area sospetta</Italian>
+            <Polish>Podejrzany obszar</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_Action">
+            <Original>Désamorcer l'IED</Original>
+            <French>Désamorcer l'IED</French>
+            <English>Defuse IED</English>
+            <Turkish>IED'yi Etkisiz Hale Getir</Turkish>
+            <Korean>IED 해체</Korean>
+            <Spanish>Desactivar IED</Spanish>
+            <Japanese>IEDを解除</Japanese>
+            <Chinese>拆除简易爆炸装置</Chinese>
+            <Russian>Обезвредить СВУ</Russian>
+            <German>IED entschärfen</German>
+            <Italian>Disinnesca IED</Italian>
+            <Polish>Rozbrój IED</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_02_Defused">
+            <Original>IED désamorcé avec succès.</Original>
+            <French>IED désamorcé avec succès.</French>
+            <English>IED Defused successfully.</English>
+            <Turkish>IED başarıyla etkisiz hale getirildi.</Turkish>
+            <Korean>IED가 성공적으로 해체되었습니다.</Korean>
+            <Spanish>IED desactivado con éxito.</Spanish>
+            <Japanese>IEDの解除に成功した。</Japanese>
+            <Chinese>简易爆炸装置已成功拆除。</Chinese>
+            <Russian>СВУ успешно обезврежено.</Russian>
+            <German>IED erfolgreich entschärft.</German>
+            <Italian>IED disinnescato con successo.</Italian>
+            <Polish>IED rozbrojone pomyślnie.</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task03_Title">
+            <Original>OPORD: Opération Silence</Original>
+            <French>OPORD: Opération Silence</French>
+            <English>OPORD: Operation Silence</English>
+            <Turkish>OPORD: Sessizlik Operasyonu</Turkish>
+            <Korean>작전 명령: 침묵 작전</Korean>
+            <Spanish>OPORD: Operación Silencio</Spanish>
+            <Japanese>作戦命令: サイレンス作戦</Japanese>
+            <Chinese>作战命令：寂静行动</Chinese>
+            <Russian>Боевой приказ: Операция Тишина</Russian>
+            <German>OPORD: Operation Stille</German>
+            <Italian>OPORD: Operazione Silenzio</Italian>
+            <Polish>OPORD: Operacja Cisza</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task03_Text">
+            <Original>L'ennemi a déployé des postes de communication avancés dans la région pour coordonner ses attaques. Votre objectif est de trouver ces terminaux radio et de les détruire. Approchez-vous de chaque relais, posez une charge explosive (40 secondes de délai) et mettez-vous à l'abri. Attendez-vous à une forte résistance autour des terminaux.</Original>
+            <French>L'ennemi a déployé des postes de communication avancés dans la région pour coordonner ses attaques. Votre objectif est de trouver ces terminaux radio et de les détruire. Approchez-vous de chaque relais, posez une charge explosive (40 secondes de délai) et mettez-vous à l'abri. Attendez-vous à une forte résistance autour des terminaux.</French>
+            <English>The enemy has deployed advanced communication outposts in the region to coordinate their attacks. Your objective is to find these radio terminals and destroy them. Approach each relay, plant an explosive charge (40 seconds timer), and take cover. Expect heavy resistance around the terminals.</English>
+            <Turkish>Düşman, saldırılarını koordine etmek için bölgede gelişmiş iletişim karakolları kurdu. Amacınız bu radyo terminallerini bulmak ve yok etmektir. Her röleye yaklaşın, patlayıcı bir şarj (40 saniyelik zamanlayıcı) yerleştirin ve siper alın. Terminallerin etrafında şiddetli bir direniş bekleyin.</Turkish>
+            <Korean>적군이 공격을 조율하기 위해 이 지역에 첨단 통신 전초기지를 배치했습니다. 귀하의 목표는 이 무전기 단말기를 찾아 파괴하는 것입니다. 각 중계소에 접근하여 폭발물(40초 타이머)을 설치하고 엄폐하십시오. 단말기 주변에서 강력한 저항이 예상됩니다.</Korean>
+            <Spanish>El enemigo ha desplegado puestos de comunicación avanzados en la región para coordinar sus ataques. Tu objetivo es encontrar estas terminales de radio y destruirlas. Acércate a cada relé, coloca una carga explosiva (temporizador de 40 segundos) y ponte a cubierto. Espera una fuerte resistencia alrededor de las terminales.</Spanish>
+            <Japanese>敵は攻撃を調整するために、この地域に高度な通信前哨基地を配備した。君の目標はこれらの無線端末を発見し破壊することだ。各中継所に接近し、爆薬（40秒タイマー）を設置して身を隠せ。端末周辺では激しい抵抗が予想される。</Japanese>
+            <Chinese>敌军在该地区部署了先进的通讯前哨站以协调进攻。你的目标是找到这些无线电终端并将其摧毁。靠近每个中继站，安放炸药（40秒计时器），然后寻找掩护。预计终端周围会有强烈抵抗。</Chinese>
+            <Russian>Противник развернул передовые узлы связи в этом районе для координации своих атак. Ваша цель — найти эти радиотерминалы и уничтожить их. Подойдите к каждому реле, установите заряд взрывчатки (таймер 40 секунд) и укройтесь. Ожидайте сильного сопротивления вокруг терминалов.</Russian>
+            <German>Der Feind hat in der Region fortschrittliche Kommunikationsaußenposten eingerichtet, um seine Angriffe zu koordinieren. Ihr Ziel ist es, diese Funkterminals zu finden und zu zerstören. Nähern Sie sich jedem Relais, platzieren Sie eine Sprengladung (40 Sekunden Timer) und gehen Sie in Deckung. Erwarten Sie starken Widerstand um die Terminals.</German>
+            <Italian>Il nemico ha dispiegato avamposti di comunicazione avanzati nella regione per coordinare i propri attacchi. Il tuo obiettivo è trovare questi terminali radio e distruggerli. Avvicinati a ogni relè, piazza una carica esplosiva (timer di 40 secondi) e mettiti al riparo. Aspettati una forte resistenza attorno ai terminali.</Italian>
+            <Polish>Wróg rozmieścił w regionie zaawansowane placówki komunikacyjne, aby koordynować swoje ataki. Twoim celem jest znalezienie tych terminali radiowych i ich zniszczenie. Podejdź do każdego przekaźnika, podłóż ładunek wybuchowy (zapalnik 40-sekundowy) i schowaj się. Spodziewaj się silnego oporu wokół terminali.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Title">
+            <Original>Détruire le Matériel Radio</Original>
+            <French>Détruire le Matériel Radio</French>
+            <English>Destroy Radio Equipment</English>
+            <Turkish>Radyo Ekipmanını Yok Et</Turkish>
+            <Korean>무전기 장비 파괴</Korean>
+            <Spanish>Destruir el equipo de radio</Spanish>
+            <Japanese>無線設備を破壊せよ</Japanese>
+            <Chinese>摧毁无线电通讯设备</Chinese>
+            <Russian>Уничтожить радиооборудование</Russian>
+            <German>Funkgeräte zerstören</German>
+            <Italian>Distruggi l'equipaggiamento radio</Italian>
+            <Polish>Zniszcz sprzęt radiowy</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Desc">
+            <Original>Les forces ennemies ont mis en place des terminaux radio renforcés dans la zone. Localisez-les et détruisez-les pour couper leurs communications.</Original>
+            <French>Les forces ennemies ont mis en place des terminaux radio renforcés dans la zone. Localisez-les et détruisez-les pour couper leurs communications.</French>
+            <English>Enemy forces have set up rugged radio terminals in the area. Locate and destroy them to cut off their communications.</English>
+            <Turkish>Düşman kuvvetleri bölgede güçlendirilmiş radyo terminalleri kurdu. İletişimlerini kesmek için onları bulun ve yok edin.</Turkish>
+            <Korean>적군이 이 지역에 견고한 무전기 단말기를 설치했습니다. 통신을 차단하기 위해 그것들을 찾아 파괴하십시오.</Korean>
+            <Spanish>Las fuerzas enemigas han establecido terminales de radio reforzadas en la zona. Localízalas y destrúyelas para cortar sus comunicaciones.</Spanish>
+            <Japanese>敵部隊がエリアに強化無線端末を設置した。通信を遮断するためにそれらを発見し、破壊せよ。</Japanese>
+            <Chinese>敌军在该区域设置了坚固的无线电终端。找到并摧毁它们以切断他们的通讯。</Chinese>
+            <Russian>Вражеские силы установили в этом районе укрепленные радиотерминалы. Найдите и уничтожьте их, чтобы прервать их связь.</Russian>
+            <German>Feindliche Truppen haben in dem Gebiet verstärkte Funkterminals eingerichtet. Lokalisieren und zerstören Sie sie, um ihre Kommunikation zu unterbrechen.</German>
+            <Italian>Le forze nemiche hanno allestito terminali radio rinforzati nell'area. Individuali e distruggili per interrompere le loro comunicazioni.</Italian>
+            <Polish>Siły wroga założyły w okolicy wzmocnione terminale radiowe. Zlokalizuj je i zniszcz, aby odciąć ich komunikację.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_MarkerMain">
+            <Original>Zone d'Opération</Original>
+            <French>Zone d'Opération</French>
+            <English>Area of Operations</English>
+            <Turkish>Operasyon Bölgesi</Turkish>
+            <Korean>작전 구역</Korean>
+            <Spanish>Área de operaciones</Spanish>
+            <Japanese>作戦エリア</Japanese>
+            <Chinese>作战区域</Chinese>
+            <Russian>Зона операций</Russian>
+            <German>Einsatzgebiet</German>
+            <Italian>Area delle operazioni</Italian>
+            <Polish>Strefa operacji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Marker">
+            <Original>Relais Radio</Original>
+            <French>Relais Radio</French>
+            <English>Radio Relay</English>
+            <Turkish>Radyo Rölesi</Turkish>
+            <Korean>무전기 중계소</Korean>
+            <Spanish>Relé de radio</Spanish>
+            <Japanese>無線中継所</Japanese>
+            <Chinese>无线电中继站</Chinese>
+            <Russian>Радиорелейная станция</Russian>
+            <German>Funkrelais</German>
+            <Italian>Ponte radio</Italian>
+            <Polish>Przekaźnik radiowy</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Marker_Destroyed">
+            <Original>Détruit</Original>
+            <French>Détruit</French>
+            <English>Destroyed</English>
+            <Turkish>Yok Edildi</Turkish>
+            <Korean>파괴됨</Korean>
+            <Spanish>Destruido</Spanish>
+            <Japanese>破壊完了</Japanese>
+            <Chinese>已摧毁</Chinese>
+            <Russian>Уничтожено</Russian>
+            <German>Zerstört</German>
+            <Italian>Distrutto</Italian>
+            <Polish>Zniszczono</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Action">
+            <Original>Poser un explosif (40s)</Original>
+            <French>Poser un explosif (40s)</French>
+            <English>Plant explosive (40s)</English>
+            <Turkish>Patlayıcı yerleştir (40s)</Turkish>
+            <Korean>폭발물 설치 (40초)</Korean>
+            <Spanish>Colocar explosivo (40s)</Spanish>
+            <Japanese>爆薬を設置 (40秒)</Japanese>
+            <Chinese>安放炸药 (40秒)</Chinese>
+            <Russian>Установить взрывчатку (40с)</Russian>
+            <German>Sprengstoff platzieren (40s)</German>
+            <Italian>Piazza esplosivo (40s)</Italian>
+            <Polish>Podłóż ładunek wybuchowy (40s)</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Warning">
+            <Original>Écartez-vous !</Original>
+            <French>Écartez-vous !</French>
+            <English>Get back!</English>
+            <Turkish>Geri çekilin!</Turkish>
+            <Korean>물러서십시오!</Korean>
+            <Spanish>¡Atrás!</Spanish>
+            <Japanese>下がれ！</Japanese>
+            <Chinese>退后！</Chinese>
+            <Russian>Отойдите!</Russian>
+            <German>Zurücktreten!</German>
+            <Italian>Indietro!</Italian>
+            <Polish>Cofnij się!</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task04_Title">
+            <Original>OPORD : Convoi Chimique</Original>
+            <French>OPORD : Convoi Chimique</French>
+            <English>OPORD: Chemical Convoy</English>
+            <Spanish>OPORD: Convoy Químico</Spanish>
+            <Italian>OPORD: Convoglio Chimico</Italian>
+            <German>OPORD: Chemiekonvoi</German>
+            <Portuguese>OPORD: Comboio Químico</Portuguese>
+            <Polish>OPORD: Konwój Chemiczny</Polish>
+            <Russian>OPORD: Химический конвой</Russian>
+            <Czech>OPORD: Chemický konvoj</Czech>
+            <Turkish>OPORD: Kimyasal Konvoy</Turkish>
+            <Korean>작전 명령: 화학 수송대</Korean>
+            <Japanese>作戦命令: 化学コンボイ</Japanese>
+            <Chinese>作战命令：化学车队</Chinese>
+        </Key>
+        <Key ID="STR_LL_Diary_Task04_Text">
+            <Original>&lt;font size='16' color='#ff8800'&gt;SITUATION :&lt;/font&gt;&lt;br/&gt;
+Un camion contenant des agents chimiques toxiques est actuellement immobilisé dans la région. L'ennemi a mis en place un périmètre de défense composé d'unités d'infanterie.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION :&lt;/font&gt;&lt;br/&gt;
+1. Éliminez l'escorte à pied.&lt;br/&gt;
+2. Protégez le camion à tout prix. Ne tirez pas dessus avec des armes lourdes ou explosives. Toute fuite provoquera un nuage toxique.&lt;br/&gt;
+3. Utilisez l'ordinateur de bord du camion pour appeler l'extraction par hélicoptère (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RÈGLES D'ENGAGEMENT :&lt;/font&gt;&lt;br/&gt;
+Interdiction absolue d'utiliser des explosifs près du véhicule cible.</Original>
+            <French>&lt;font size='16' color='#ff8800'&gt;SITUATION :&lt;/font&gt;&lt;br/&gt;
+Un camion contenant des agents chimiques toxiques est actuellement immobilisé dans la région. L'ennemi a mis en place un périmètre de défense composé d'unités d'infanterie.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION :&lt;/font&gt;&lt;br/&gt;
+1. Éliminez l'escorte à pied.&lt;br/&gt;
+2. Protégez le camion à tout prix. Ne tirez pas dessus avec des armes lourdes ou explosives. Toute fuite provoquera un nuage toxique.&lt;br/&gt;
+3. Utilisez l'ordinateur de bord du camion pour appeler l'extraction par hélicoptère (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RÈGLES D'ENGAGEMENT :&lt;/font&gt;&lt;br/&gt;
+Interdiction absolue d'utiliser des explosifs près du véhicule cible.</French>
+            <English>&lt;font size='16' color='#ff8800'&gt;SITUATION:&lt;/font&gt;&lt;br/&gt;
+A truck containing toxic chemical agents is currently immobilized in the region. The enemy has set up a defensive perimeter consisting of infantry units.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION:&lt;/font&gt;&lt;br/&gt;
+1. Eliminate the foot escort.&lt;br/&gt;
+2. Protect the truck at all costs. Do not fire upon it with heavy weapons or explosives. Any leak will cause a toxic cloud.&lt;br/&gt;
+3. Use the truck's onboard computer to call in the helicopter extraction (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RULES OF ENGAGEMENT:&lt;/font&gt;&lt;br/&gt;
+Strictly forbidden to use explosives near the target vehicle.</English>
+            <Spanish>&lt;font size='16' color='#ff8800'&gt;SITUACIÓN:&lt;/font&gt;&lt;br/&gt;
+Un camión con agentes químicos tóxicos está inmovilizado en la zona. El enemigo ha establecido un perímetro defensivo de infantería.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISIÓN:&lt;/font&gt;&lt;br/&gt;
+1. Elimina la escolta.&lt;br/&gt;
+2. Protege el camión a toda costa. No utilices armas pesadas ni explosivos contra él. Cualquier fuga generará una nube tóxica.&lt;br/&gt;
+3. Usa la radio del camión para pedir la extracción en helicóptero (Eslingado).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGLAS DE ENFRENTAMIENTO:&lt;/font&gt;&lt;br/&gt;
+Prohibido el uso de explosivos cerca del vehículo objetivo.</Spanish>
+            <Italian>&lt;font size='16' color='#ff8800'&gt;SITUAZIONE:&lt;/font&gt;&lt;br/&gt;
+Un camion contenente agenti chimici tossici è attualmente bloccato nella regione. Il nemico ha stabilito un perimetro difensivo composto da fanteria.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSIONE:&lt;/font&gt;&lt;br/&gt;
+1. Elimina la scorta.&lt;br/&gt;
+2. Proteggi il camion a tutti i costi. Non sparare con armi pesanti o esplosivi. Qualsiasi perdita provocherà una nube tossica.&lt;br/&gt;
+3. Utilizza la radio del camion per chiamare l'estrazione in elicottero.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGOLE D'INGAGGIO:&lt;/font&gt;&lt;br/&gt;
+Assolutamente vietato utilizzare esplosivi vicino al bersaglio.</Italian>
+            <German>&lt;font size='16' color='#ff8800'&gt;LAGE:&lt;/font&gt;&lt;br/&gt;
+Ein LKW mit giftigen chemischen Kampfstoffen ist in der Region liegen geblieben. Der Feind hat einen Verteidigungsparameter mit Infanterie eingerichtet.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;AUFTRAG:&lt;/font&gt;&lt;br/&gt;
+1. Schalten Sie die Eskorte aus.&lt;br/&gt;
+2. Schützen Sie den LKW um jeden Preis. Verwenden Sie keine schweren Waffen oder Sprengstoff in seiner Nähe. Jedes Leck führt zu einer giftigen Wolke.&lt;br/&gt;
+3. Benutzen Sie das Funkgerät des LKWs, um die Hubschrauberevakuierung anzufordern.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;EINSATZREGELN:&lt;/font&gt;&lt;br/&gt;
+Absolutes Sprengstoffverbot in der Nähe des Zielfahrzeugs.</German>
+            <Portuguese>&lt;font size='16' color='#ff8800'&gt;SITUAÇÃO:&lt;/font&gt;&lt;br/&gt;
+Um caminhão contendo agentes químicos tóxicos está imobilizado na região. O inimigo montou um perímetro defensivo de infantaria.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSÃO:&lt;/font&gt;&lt;br/&gt;
+1. Elimine a escolta.&lt;br/&gt;
+2. Proteja o caminhão a todo custo. Não atire nele com armas pesadas ou explosivos. Qualquer vazamento causará uma nuvem tóxica.&lt;br/&gt;
+3. Use o rádio do caminhão para chamar a extração de helicóptero.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGRAS DE ENGAJAMENTO:&lt;/font&gt;&lt;br/&gt;
+Proibido o uso de explosivos perto do alvo.</Portuguese>
+            <Polish>&lt;font size='16' color='#ff8800'&gt;SYTUACJA:&lt;/font&gt;&lt;br/&gt;
+Ciężarówka z toksycznymi środkami chemicznymi jest obecnie unieruchomiona w regionie. Wróg ustawił perymetr obronny złożony z piechoty.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ZADANIE:&lt;/font&gt;&lt;br/&gt;
+1. Zlikwiduj eskortę.&lt;br/&gt;
+2. Chroń ciężarówkę za wszelką cenę. Nie strzelaj do niej z broni ciężkiej ani materiałów wybuchowych. Każdy wyciek spowoduje toksyczną chmurę.&lt;br/&gt;
+3. Użyj radia w ciężarówce, aby wezwać helikopter ewakuacyjny.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ZASADY UŻYCIA BRONI:&lt;/font&gt;&lt;br/&gt;
+Całkowity zakaz używania materiałów wybuchowych w pobliżu celu.</Polish>
+            <Russian>&lt;font size='16' color='#ff8800'&gt;ОБСТАНОВКА:&lt;/font&gt;&lt;br/&gt;
+Грузовик с токсичными химическими веществами обездвижен в этом районе. Противник создал оборонительный периметр из пехоты.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ЗАДАЧА:&lt;/font&gt;&lt;br/&gt;
+1. Уничтожить конвой.&lt;br/&gt;
+2. Защитить грузовик любой ценой. Не стреляйте по нему из тяжелого оружия и не используйте взрывчатку. Любая утечка вызовет токсичное облако.&lt;br/&gt;
+3. Используйте бортовой компьютер грузовика для вызова эвакуационного вертолета.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ПРАВИЛА ПРИМЕНЕНИЯ ОРУЖИЯ:&lt;/font&gt;&lt;br/&gt;
+Строго запрещено использовать взрывчатку вблизи целевого автомобиля.</Russian>
+            <Czech>&lt;font size='16' color='#ff8800'&gt;SITUACE:&lt;/font&gt;&lt;br/&gt;
+Náklaďák obsahující toxické chemické látky je momentálně v oblasti imobilizován. Nepřítel vytvořil obranný perimetr skládající se z pěchoty.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ÚKOL:&lt;/font&gt;&lt;br/&gt;
+1. Zlikvidujte eskortu.&lt;br/&gt;
+2. Chraňte náklaďák za každou cenu. Nestřílejte na něj těžkými zbraněmi ani výbušninami. Jakýkoli únik způsobí toxický mrak.&lt;br/&gt;
+3. Pomocí palubního počítače náklaďáku zavolejte extrakční vrtulník.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;PRAVIDLA NASAZENÍ:&lt;/font&gt;&lt;br/&gt;
+Přísný zákaz používání výbušnin v blízkosti cílového vozidla.</Czech>
+            <Turkish>&lt;font size='16' color='#ff8800'&gt;DURUM:&lt;/font&gt;&lt;br/&gt;
+Zehirli kimyasal maddeler içeren bir kamyon şu anda bölgede hareketsiz durumda. Düşman, piyade birliklerinden oluşan bir savunma çemberi oluşturdu.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;GÖREV:&lt;/font&gt;&lt;br/&gt;
+1. Yaya eskortunu ortadan kaldırın.&lt;br/&gt;
+2. Kamyonu ne pahasına olursa olsun koruyun. Üzerine ağır silahlarla veya patlayıcılarla ateş etmeyin. Herhangi bir sızıntı zehirli bir buluta neden olacaktır.&lt;br/&gt;
+3. Helikopter tahliyesi istemek için kamyonun telsizini kullanın.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ÇATIŞMA KURALLARI:&lt;/font&gt;&lt;br/&gt;
+Hedef aracın yakınında patlayıcı kullanmak kesinlikle yasaktır.</Turkish>
+            <Korean>&lt;font size='16' color='#ff8800'&gt;상황:&lt;/font&gt;&lt;br/&gt;
+독성 화학 물질을 실은 트럭이 현재 해당 지역에 고립되어 있습니다. 적은 보병 부대로 방어선을 구축했습니다.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;임무:&lt;/font&gt;&lt;br/&gt;
+1. 보병 호위대를 제거하십시오.&lt;br/&gt;
+2. 트럭을 무조건 보호하십시오. 중화기나 폭발물로 사격하지 마십시오. 유출 시 독성 구름이 발생합니다.&lt;br/&gt;
+3. 트럭의 무전기를 사용하여 헬리콥터 탈출을 요청하십시오.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;교전 수칙:&lt;/font&gt;&lt;br/&gt;
+목표 차량 근처에서 폭발물 사용은 절대 금지됩니다.</Korean>
+            <Japanese>&lt;font size='16' color='#ff8800'&gt;状況:&lt;/font&gt;&lt;br/&gt;
+有毒な化学物質を積んだトラックが現在この地域で立ち往生している。敵は歩兵部隊による防衛線を張っている。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;任務:&lt;/font&gt;&lt;br/&gt;
+1. 徒歩の護衛を排除しろ。&lt;br/&gt;
+2. 何としてもトラックを保護しろ。重火器や爆発物で攻撃するな。漏洩すれば有毒な雲が発生する。&lt;br/&gt;
+3. トラックの無線機を使ってヘリコプターの抽出を要請しろ。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;交戦規定:&lt;/font&gt;&lt;br/&gt;
+目標車両付近での爆発物の使用は厳格に禁止する。</Japanese>
+            <Chinese>&lt;font size='16' color='#ff8800'&gt;情况：&lt;/font&gt;&lt;br/&gt;
+一辆装有有毒化学物质的卡车目前被困在该地区。敌人已经建立了一个由步兵组成的防御圈。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;任务：&lt;/font&gt;&lt;br/&gt;
+1. 消灭步兵护卫。&lt;br/&gt;
+2. 不惜一切代价保护卡车。不要使用重武器或爆炸物向其射击。任何泄漏都会导致毒云。&lt;br/&gt;
+3. 使用卡车上的无线电呼叫直升机撤离。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;交战规则：&lt;/font&gt;&lt;br/&gt;
+严禁在目标车辆附近使用爆炸物。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Title">
+            <Original>Interception de Convoi Chimique</Original>
+            <French>Interception de Convoi Chimique</French>
+            <English>Chemical Convoy Interception</English>
+            <Spanish>Intercepción de Convoy Químico</Spanish>
+            <Italian>Intercettazione di Convoglio Chimico</Italian>
+            <German>Abfangen eines Chemiekonvois</German>
+            <Portuguese>Interceção de Comboio Químico</Portuguese>
+            <Polish>Przechwycenie Konwoju Chemicznego</Polish>
+            <Russian>Перехват химического конвоя</Russian>
+            <Czech>Zadržení chemického konvoje</Czech>
+            <Turkish>Kimyasal Konvoy Önlemesi</Turkish>
+            <Korean>화학물질 수송대 요격</Korean>
+            <Japanese>化学物質コンボイの迎撃</Japanese>
+            <Chinese>化学运输车队拦截</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Desc">
+            <Original>Un camion-citerne ennemi transportant des produits chimiques hautement toxiques a été repéré et bloqué suite à un incident mécanique. L'ennemi a déployé une escorte d'infanterie pour le protéger en attendant des renforts.&lt;br/&gt;&lt;br/&gt;Sécurisez la zone autour du camion. &lt;font color='#ff0000'&gt;ATTENTION : NE DÉTRUISEZ SURTOUT PAS LE CAMION.&lt;/font&gt; Toute explosion libérera un nuage chimique mortel. Une fois la zone sécurisée, demandez l'extraction par hélicoptère pour rapatrier le véhicule.</Original>
+            <French>Un camion-citerne ennemi transportant des produits chimiques hautement toxiques a été repéré et bloqué suite à un incident mécanique. L'ennemi a déployé une escorte d'infanterie pour le protéger en attendant des renforts.&lt;br/&gt;&lt;br/&gt;Sécurisez la zone autour du camion. &lt;font color='#ff0000'&gt;ATTENTION : NE DÉTRUISEZ SURTOUT PAS LE CAMION.&lt;/font&gt; Toute explosion libérera un nuage chimique mortel. Une fois la zone sécurisée, demandez l'extraction par hélicoptère pour rapatrier le véhicule.</French>
+            <English>An enemy tanker truck carrying highly toxic chemicals has been spotted and blocked following a mechanical incident. The enemy has deployed an infantry escort to protect it while awaiting reinforcements.&lt;br/&gt;&lt;br/&gt;Secure the area around the truck. &lt;font color='#ff0000'&gt;WARNING: DO NOT DESTROY THE TRUCK.&lt;/font&gt; Any explosion will release a deadly chemical cloud. Once the area is secure, request a helicopter extraction to recover the vehicle.</English>
+            <Spanish>Un camión cisterna enemigo que transporta productos químicos altamente tóxicos ha sido localizado y bloqueado tras un incidente mecánico. El enemigo ha desplegado una escolta de infantería para protegerlo mientras espera refuerzos.&lt;br/&gt;&lt;br/&gt;Asegura la zona alrededor del camión. &lt;font color='#ff0000'&gt;ATENCIÓN: NO DESTRUYAS EL CAMIÓN.&lt;/font&gt; Cualquier explosión liberará una nube química letal. Una vez asegurada la zona, solicita extracción en helicóptero para recuperar el vehículo.</Spanish>
+            <Italian>Un'autobotte nemica che trasporta sostanze chimiche altamente tossiche è stata individuata e bloccata a seguito di un guasto meccanico. Il nemico ha schierato una scorta di fanteria per proteggerla in attesa di rinforzi.&lt;br/&gt;&lt;br/&gt;Metti in sicurezza l'area attorno al camion. &lt;font color='#ff0000'&gt;ATTENZIONE: NON DISTRUGGERE IL CAMION.&lt;/font&gt; Qualsiasi esplosione rilascerà una nube chimica mortale. Una volta messa in sicurezza l'area, richiedi l'estrazione in elicottero per recuperare il veicolo.</Italian>
+            <German>Ein feindlicher Tankwagen, der hochgiftige Chemikalien transportiert, wurde nach einem mechanischen Zwischenfall entdeckt und blockiert. Der Feind hat eine Infanterie-Eskorte eingesetzt, um ihn bis zum Eintreffen von Verstärkung zu schützen.&lt;br/&gt;&lt;br/&gt;Sichern Sie das Gebiet um den LKW. &lt;font color='#ff0000'&gt;ACHTUNG: ZERSTÖREN SIE DEN LKW NICHT.&lt;/font&gt; Jede Explosion wird eine tödliche chemische Wolke freisetzen. Sobald das Gebiet gesichert ist, fordern Sie eine Hubschrauberevakuierung an, um das Fahrzeug zu bergen.</German>
+            <Portuguese>Um caminhão-cisterna inimigo transportando produtos químicos altamente tóxicos foi localizado e bloqueado após um incidente mecânico. O inimigo mobilizou uma escolta de infantaria para protegê-lo enquanto aguarda reforços.&lt;br/&gt;&lt;br/&gt;Proteja a área ao redor do caminhão. &lt;font color='#ff0000'&gt;AVISO: NÃO DESTRUA O CAMINHÃO.&lt;/font&gt; Qualquer explosão liberará uma nuvem química mortal. Assim que a área estiver segura, solicite uma extração de helicóptero para recuperar o veículo.</Portuguese>
+            <Polish>Wrogi cysterna przewożąca wysoce toksyczne chemikalia została zauważona i unieruchomiona z powodu awarii mechanicznej. Wróg rozmieścił eskortę piechoty, aby jej strzec w oczekiwaniu na posiłki.&lt;br/&gt;&lt;br/&gt;Zabezpiecz teren wokół ciężarówki. &lt;font color='#ff0000'&gt;UWAGA: NIE NISZCZ CIĘŻARÓWKI.&lt;/font&gt; Każda eksplozja uwolni zabójczą chmurę chemiczną. Po zabezpieczeniu terenu wezwij helikopter do ewakuacji pojazdu.</Polish>
+            <Russian>Вражеская автоцистерна с высокотоксичными химикатами была обнаружена и заблокирована в результате механической поломки. В ожидании подкрепления противник выставил пехотное охранение.&lt;br/&gt;&lt;br/&gt;Обезопасьте территорию вокруг грузовика. &lt;font color='#ff0000'&gt;ВНИМАНИЕ: НЕ УНИЧТОЖАЙТЕ ГРУЗОВИК.&lt;/font&gt; Любой взрыв приведет к выбросу смертельно опасного химического облака. Как только зона будет зачищена, запросите эвакуацию на вертолете, чтобы забрать машину.</Russian>
+            <Czech>Nepřátelská cisterna převážející vysoce toxické chemikálie byla zpozorována a zablokována v důsledku mechanické závady. Nepřítel nasadil pěchotní eskortu, aby ji chránila, zatímco čeká na posily.&lt;br/&gt;&lt;br/&gt;Zajistěte oblast kolem náklaďáku. &lt;font color='#ff0000'&gt;VAROVÁNÍ: NENIČTE NÁKLAĎÁK.&lt;/font&gt; Jakákoli exploze uvolní smrtící chemický oblak. Jakmile bude oblast bezpečná, požádejte o extrakci vrtulníkem pro odvoz vozidla.</Czech>
+            <Turkish>Yüksek derecede zehirli kimyasallar taşıyan bir düşman tankeri, mekanik bir arızanın ardından tespit edildi ve bloke edildi. Düşman, takviye beklerken onu korumak için bir piyade eskortu konuşlandırdı.&lt;br/&gt;&lt;br/&gt;Kamyonun etrafındaki alanı güvene alın. &lt;font color='#ff0000'&gt;DİKKAT: KAMYONU KESİNLİKLE YOK ETMEYİN.&lt;/font&gt; Herhangi bir patlama ölümcül bir kimyasal bulut salacaktır. Alan güvene alındıktan sonra aracı kurtarmak için helikopter tahliyesi isteyin.</Turkish>
+            <Korean>맹독성 화학물질을 실은 적의 유조차량(탱크로리)이 기계적 결함으로 정지된 상태로 발견되었습니다. 적은 증원군을 기다리는 동안 차량을 보호하기 위해 보병 호위를 배치했습니다.&lt;br/&gt;&lt;br/&gt;트럭 주변 지역을 확보하십시오. &lt;font color='#ff0000'&gt;경고: 트럭을 절대 파괴하지 마십시오.&lt;/font&gt; 폭발 시 치명적인 화학 구름이 방출됩니다. 지역이 안전해지면 차량을 회수하기 위해 헬리콥터 탈출을 요청하십시오.</Korean>
+            <Japanese>猛毒の化学物質を積んだ敵のタンクローリーが、機械的トラブルにより立ち往生しているのが発見された。敵は増援を待つ間、車両を保護するために歩兵の護衛を配置している。&lt;br/&gt;&lt;br/&gt;トラック周辺を制圧しろ。&lt;font color='#ff0000'&gt;警告：絶対にトラックを破壊するな。&lt;/font&gt;爆発すれば致命的な化学物質の雲が放出される。周囲の安全が確保されたら、車両回収のためにヘリによる抽出を要請しろ。</Japanese>
+            <Chinese>一辆装载着剧毒化学品的敌方油罐车因机械故障被发现并困在原地。敌方已部署步兵护卫进行保护，并等待增援。&lt;br/&gt;&lt;br/&gt;确保卡车周围区域的安全。&lt;font color='#ff0000'&gt;警告：绝对不能摧毁卡车。&lt;/font&gt;任何爆炸都会释放致命的化学毒云。一旦区域安全，请请求直升机撤离以回收车辆。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_MarkerMain">
+            <Original>Camion Chimique</Original>
+            <French>Camion Chimique</French>
+            <English>Chemical Truck</English>
+            <Spanish>Camión Químico</Spanish>
+            <Italian>Camion Chimico</Italian>
+            <German>Chemie-LKW</German>
+            <Portuguese>Caminhão Químico</Portuguese>
+            <Polish>Ciężarówka Chemiczna</Polish>
+            <Russian>Химический грузовик</Russian>
+            <Czech>Chemický náklaďák</Czech>
+            <Turkish>Kimyasal Kamyon</Turkish>
+            <Korean>화학 트럭</Korean>
+            <Japanese>化学トラック</Japanese>
+            <Chinese>化学卡车</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Action">
+            <Original>Demander l'extraction du camion (Treuillage)</Original>
+            <French>Demander l'extraction du camion (Treuillage)</French>
+            <English>Request truck extraction (Slingload)</English>
+            <Spanish>Solicitar extracción del camión (Eslingado)</Spanish>
+            <Italian>Richiedi estrazione camion (Trazione)</Italian>
+            <German>LKW-Evakuierung anfordern (Slingload)</German>
+            <Portuguese>Solicitar extração do caminhão (Slingload)</Portuguese>
+            <Polish>Wezwij ewakuację ciężarówki (Podwieszenie)</Polish>
+            <Russian>Запросить эвакуацию грузовика (на подвесе)</Russian>
+            <Czech>Požádat o vyzvednutí náklaďáku (Podvěs)</Czech>
+            <Turkish>Kamyon tahliyesi iste (Askı yükü)</Turkish>
+            <Korean>트럭 탈출 요청 (슬링로드)</Korean>
+            <Japanese>トラックの抽出を要請（スリングロード）</Japanese>
+            <Chinese>请求卡车撤离（吊挂）</Chinese>
+        </Key>
+        <Key ID="STR_LL_Diary_Task05_Title">
+            <Original>OPORD: Opération Décapitation</Original>
+            <French>OPORD: Opération Décapitation</French>
+            <English>OPORD: Operation Decapitation</English>
+            <Turkish>OPORD: Başkesme Operasyonu</Turkish>
+            <Korean>작전 명령: 참수 작전</Korean>
+            <Spanish>OPORD: Operación Decapitación</Spanish>
+            <Japanese>作戦命令: ディキャピテーション作戦</Japanese>
+            <Chinese>作战命令：斩首行动</Chinese>
+            <Russian>Боевой приказ: Операция Обезглавливание</Russian>
+            <German>OPORD: Operation Enthauptung</German>
+            <Italian>OPORD: Operazione Decapitazione</Italian>
+            <Polish>OPORD: Operacja Dekapitacja</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task05_Text">
+            <Original>Les forces rebelles ont dépêché plusieurs commandants sur le terrain pour superviser l'occupation des bâtiments clés. Votre ordre de mission est d'éliminer chaque chef de milice présent dans la zone. Ces cibles sont mobiles et se déplacent d'un complexe à l'autre avec leurs escortes armées.
+
+ATTENTION : S'ils découvrent l'un des leurs abattu, la coordination des commandants restants s'enclenchera et ils passeront à l'offensive pour vous traquer activement. Préparez-vous à une contre-attaque violente après le premier coup de feu.</Original>
+            <French>Les forces rebelles ont dépêché plusieurs commandants sur le terrain pour superviser l'occupation des bâtiments clés. Votre ordre de mission est d'éliminer chaque chef de milice présent dans la zone. Ces cibles sont mobiles et se déplacent d'un complexe à l'autre avec leurs escortes armées.
+
+ATTENTION : S'ils découvrent l'un des leurs abattu, la coordination des commandants restants s'enclenchera et ils passeront à l'offensive pour vous traquer activement. Préparez-vous à une contre-attaque violente après le premier coup de feu.</French>
+            <English>Rebel forces have dispatched several commanders to the field to oversee the occupation of key buildings. Your mission order is to eliminate every militia chief present in the area. These High-Value Targets are mobile, moving from complex to complex with their armed escorts.
+
+WARNING: If they discover one of their own has been killed, the remaining commanders will coordinate an offensive to actively hunt you down. Prepare for a violent counter-attack after the first shot.</English>
+            <Turkish>İsyancı güçler, kilit binaların işgalini denetlemek için sahaya birkaç komutan gönderdi. Görev emriniz bölgedeki her milis şefini ortadan kaldırmaktır. Bu Önemli Hedefler hareketlidir ve silahlı eskortlarıyla kompleksten komplekse hareket ederler.
+
+UYARI: İçlerinden birinin öldürüldüğünü fark ederlerse, kalan komutanlar sizi aktif olarak avlamak için bir saldırı koordine edeceklerdir. İlk atıştan sonra şiddetli bir karşı saldırıya hazırlanın.</Turkish>
+            <Korean>반군 부대는 주요 건물 점거를 감독하기 위해 여러 명의 지휘관을 현장에 파견했습니다. 귀하의 임무는 해당 지역의 모든 민병대 우두머리를 제거하는 것입니다. 이 주요 표적들은 무장 호위병과 함께 건물에서 건물로 이동합니다.
+
+경고: 그들 중 한 명이 살해된 것을 발견하면 나머지 지휘관들은 즉각적으로 공격 태세로 전환하여 여러분을 추적할 것입니다. 첫 발포 후 강력한 반격에 대비하십시오.</Korean>
+            <Spanish>Las fuerzas rebeldes han enviado a varios comandantes al terreno para supervisar la ocupación de edificios clave. Tu orden de misión es eliminar a cada jefe de la milicia presente en la zona. Estos Objetivos de Alto Valor son móviles y se desplazan de un complejo a otro con sus escoltas armados.
+
+ADVERTENCIA: Si descubren que uno de los suyos ha caído, los comandantes restantes coordinarán una ofensiva para cazarte activamente. Prepárate para un violento contraataque después del primer disparo.</Spanish>
+            <Japanese>反乱軍は重要な建物の占拠を監督するため、複数の司令官を現地に派遣した。君の任務はエリアにいる全ての民兵の指導者を排除することだ。これらの重要ターゲットは移動しており、武装した護衛と共に施設間を行き来している。
+
+警告：味方が倒されたことを彼らが発見した場合、残りの司令官は攻撃を調整し、君たちを積極的に追跡するだろう。最初の一撃の後の激しい反撃に備えよ。</Japanese>
+            <Chinese>叛军已派遣数名指挥官到现场监督关键建筑物的占领工作。你的任务命令是消灭该区域内的每一名民兵头目。这些高价值目标是移动的，在武装护卫的陪伴下从一个建筑群移动到另一个建筑群。
+
+警告：如果他们发现自己人被击毙，剩下的指挥官将协调进攻并主动追捕你。准备在开第一枪后迎接猛烈的反击。</Chinese>
+            <Russian>Повстанческие силы направили на места несколько командиров для руководства захватом ключевых зданий. Ваша задача — ликвидировать всех главарей боевиков в этом районе. Эти важные цели мобильны и перемещаются из одного комплекса в другой вместе со своей вооруженной охраной.
+
+ВНИМАНИЕ: Если они узнают, что один из них убит, оставшиеся командиры скоординируют наступление, чтобы активно охотиться на вас. Будьте готовы к мощной контратаке после первого же выстрела.</Russian>
+            <German>Rebellentruppen haben mehrere Kommandanten ins Feld geschickt, um die Besetzung von Schlüsselgebäuden zu überwachen. Ihr Einsatzbefehl lautet, jeden Milizenführer in diesem Gebiet zu eliminieren. Diese HVT (High-Value Targets) sind mobil und bewegen sich mit bewaffneten Eskorten von einem Komplex zum anderen.
+
+WARNUNG: Wenn sie entdecken, dass einer der Ihren gefallen ist, werden die verbleibenden Kommandanten eine Offensive koordinieren, um Sie aktiv zu jagen. Bereiten Sie sich nach dem ersten Schuss auf einen heftigen Gegenangriff vor.</German>
+            <Italian>Le forze ribelli hanno inviato diversi comandanti sul campo per supervisionare l'occupazione degli edifici chiave. Il tuo ordine di missione è di eliminare ogni capo della milizia presente nell'area. Questi obiettivi di alto valore sono mobili e si spostano da un complesso all'altro con le loro scorte armate.
+
+ATTENZIONE: Se scoprono che uno di loro è stato ucciso, i comandanti rimanenti coordineranno un'offensiva per darti attivamente la caccia. Preparati a un violento contrattacco dopo il primo colpo.</Italian>
+            <Polish>Siły rebeliantów wysłały na miejsce kilkudziesięciu dowódców, aby nadzorowali okupację kluczowych budynków. Twoim rozkazem jest wyeliminowanie każdego dowódcy bojówki w tym rejonie. Te ważne cele są mobilne, przemieszczają się z kompleksu do kompleksu ze swoją zbrojną eskortą.
+
+OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowódcy skoordynują ofensywę i zaczną cię aktywnie tropić. Przygotuj się na brutalny kontratak po oddaniu pierwszego strzału.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_Title">
+            <Original>Éliminer les Chefs de Milice</Original>
+            <French>Éliminer les Chefs de Milice</French>
+            <English>Eliminate Militia Chiefs</English>
+            <Turkish>Milis Şeflerini Ortadan Kaldır</Turkish>
+            <Korean>민병대 우두머리 제거</Korean>
+            <Spanish>Eliminar a los jefes de la milicia</Spanish>
+            <Japanese>民兵の指導者を排除せよ</Japanese>
+            <Chinese>消灭民兵头目</Chinese>
+            <Russian>Ликвидировать главарей боевиков</Russian>
+            <German>Milizenführer ausschalten</German>
+            <Italian>Elimina i capi della milizia</Italian>
+            <Polish>Zlikwiduj dowódców bojówek</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_Desc">
+            <Original>Plusieurs commandants ennemis supervisent les opérations dans le secteur. Localisez-les et neutralisez-les tous. Attention : si l'alerte est donnée, ils pourraient coordonner une contre-attaque contre votre escouade.</Original>
+            <French>Plusieurs commandants ennemis supervisent les opérations dans le secteur. Localisez-les et neutralisez-les tous. Attention : si l'alerte est donnée, ils pourraient coordonner une contre-attaque contre votre escouade.</French>
+            <English>Several enemy commanders are overseeing operations in the sector. Locate and neutralize all of them. Warning: if the alarm is raised, they may coordinate a counter-attack against your squad.</English>
+            <Turkish>Bölgedeki operasyonları denetleyen birkaç düşman komutanı var. Hepsini bulun ve etkisiz hale getirin. Uyarı: Alarm verilirse manganıza karşı bir karşı saldırı koordine edebilirler.</Turkish>
+            <Korean>여러 명의 적 지휘관이 이 구역의 작전을 감독하고 있습니다. 이들을 모두 찾아 무력화하십시오. 경고: 경보가 울리면 분대에 대한 반격을 조율할 수 있습니다.</Korean>
+            <Spanish>Varios comandantes enemigos supervisan las operaciones en el sector. Localízalos y neutralízalos a todos. Advertencia: si se da la alarma, podrían coordinar un contraataque contra tu escuadrón.</Spanish>
+            <Japanese>複数の敵司令官がこのセクターでの作戦を監督している。彼らを全て発見し、無力化せよ。警告：警報が鳴らされた場合、彼らは君の分隊に対して反撃を調整する可能性がある。</Japanese>
+            <Chinese>几名敌军指挥官正在监督该区域的行动。找到并消灭他们所有人。警告：如果发出警报，他们可能会协调对你们小队的反击。</Chinese>
+            <Russian>Несколько вражеских командиров руководят операциями в этом секторе. Найдите и нейтрализуйте их всех. Внимание: если будет поднята тревога, они могут скоординировать контратаку на ваш отряд.</Russian>
+            <German>Mehrere feindliche Kommandanten überwachen die Operationen in diesem Sektor. Lokalisieren und neutralisieren Sie sie alle. Warnung: Wenn Alarm ausgelöst wird, könnten sie einen Gegenangriff auf Ihren Trupp koordinieren.</German>
+            <Italian>Diversi comandanti nemici supervisionano le operazioni nel settore. Individuali e neutralizzali tutti. Attenzione: se viene lanciato l'allarme, potrebbero coordinare un contrattacco contro la tua squadra.</Italian>
+            <Polish>Kilkudziesięciu dowódców wroga nadzoruje operacje w tym sektorze. Zlokalizuj i zneutralizuj ich wszystkich. Ostrzeżenie: jeśli podniesiony zostanie alarm, mogą skoordynować kontratak na twój oddział.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_MarkerMain">
+            <Original>Zone de Recherche</Original>
+            <French>Zone de Recherche</French>
+            <English>Search Area</English>
+            <Turkish>Arama Bölgesi</Turkish>
+            <Korean>수색 구역</Korean>
+            <Spanish>Área de búsqueda</Spanish>
+            <Japanese>捜索エリア</Japanese>
+            <Chinese>搜索区域</Chinese>
+            <Russian>Зона поиска</Russian>
+            <German>Suchgebiet</German>
+            <Italian>Area di ricerca</Italian>
+            <Polish>Strefa poszukiwań</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_Marker">
+            <Original>Cible HVT</Original>
+            <French>Cible HVT</French>
+            <English>HVT Target</English>
+            <Turkish>Önemli Hedef (HVT)</Turkish>
+            <Korean>고가치 표적 (HVT)</Korean>
+            <Spanish>Objetivo HVT</Spanish>
+            <Japanese>重要ターゲット (HVT)</Japanese>
+            <Chinese>高价值目标</Chinese>
+            <Russian>Важная цель (HVT)</Russian>
+            <German>HVT Ziel</German>
+            <Italian>Bersaglio HVT</Italian>
+            <Polish>Cel HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_Marker_Dead">
+            <Original>Cible Éliminée</Original>
+            <French>Cible Éliminée</French>
+            <English>Target Eliminated</English>
+            <Turkish>Hedef Etkisiz Hale Getirildi</Turkish>
+            <Korean>표적 제거됨</Korean>
+            <Spanish>Objetivo eliminado</Spanish>
+            <Japanese>ターゲット排除完了</Japanese>
+            <Chinese>目标已消灭</Chinese>
+            <Russian>Цель устранена</Russian>
+            <German>Ziel eliminiert</German>
+            <Italian>Bersaglio eliminato</Italian>
+            <Polish>Cel zlikwidowany</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_05_Alert">
+            <Original>L'ennemi a été alerté ! Les cibles se dirigent vers vous !</Original>
+            <French>L'ennemi a été alerté ! Les cibles se dirigent vers vous !</French>
+            <English>The enemy is alerted! Targets are moving to your position!</English>
+            <Turkish>Düşman alarma geçti! Hedefler pozisyonunuza doğru ilerliyor!</Turkish>
+            <Korean>적이 경계 태세에 돌입했습니다! 표적들이 귀하의 위치로 이동 중입니다!</Korean>
+            <Spanish>¡El enemigo ha sido alertado! ¡Los objetivos se dirigen hacia ti!</Spanish>
+            <Japanese>敵が警戒している！ターゲットが君の方向に向かっているぞ！</Japanese>
+            <Chinese>敌人已被惊动！目标正朝你的位置移动！</Chinese>
+            <Russian>Враг поднят по тревоге! Цели движутся к вашей позиции!</Russian>
+            <German>Der Feind ist alarmiert! Die Ziele bewegen sich auf Ihre Position zu!</German>
+            <Italian>Il nemico è allertato! I bersagli si stanno dirigendo verso la tua posizione!</Italian>
+            <Polish>Wróg zaalarmowany! Cele zmierzają w waszym kierunku!</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task06_Title">
+            <Original>OPORD : Capture de HVT</Original>
+            <French>OPORD : Capture de HVT</French>
+            <English>OPORD: HVT Capture</English>
+            <Turkish>OPORD: HVT Yakalama</Turkish>
+            <Korean>OPORD: HVT 포획</Korean>
+            <Spanish>OPORD: Captura de HVT</Spanish>
+            <Japanese>OPORD: HVTの捕獲</Japanese>
+            <Chinese>OPORD：抓捕HVT</Chinese>
+            <Russian>OPORD: Захват HVT</Russian>
+            <German>OPORD: HVT-Gefangennahme</German>
+            <Italian>OPORD: Cattura di HVT</Italian>
+            <Polish>OPORD: Pojmanie HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task06_Text">
+            <Original>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</Original>
+            <French>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</French>
+            <English>A key enemy officer has been spotted in a building in the sector. Infiltrate the area, neutralize his close protection, capture the suspect alive and extract him by helicopter.</English>
+            <Turkish>Bölgedeki bir binada önemli bir düşman subayı tespit edildi. Bölgeye sızın, yakın korumasını etkisiz hale getirin, şüpheliyi canlı olarak yakalayın ve helikopterle tahliye edin.</Turkish>
+            <Korean>핵심 적 장교가 해당 구역의 한 건물에서 목격되었습니다. 지역에 침투하여 근접 경호를 무력화하고, 용의자를 생포하여 헬리콥터로 구출하십시오.</Korean>
+            <Spanish>Un oficial enemigo clave ha sido localizado en un edificio del sector. Infíltrese en la zona, neutralice a su escolta, capture al sospechoso con vida y extráigalo en helicóptero.</Spanish>
+            <Japanese>セクター内の建物で重要な敵将校が発見されました。エリアに潜入し、近接護衛を無力化し、容疑者を生け捕りにしてヘリコプターで回収してください。</Japanese>
+            <Chinese>该区域的一栋建筑物内发现了一名关键的敌方军官。潜入该地区，消除他的近身保护，活捉嫌疑人，并通过直升机将其撤离。</Chinese>
+            <Russian>В одном из зданий сектора замечен ключевой офицер противника. Проникните в этот район, нейтрализуйте его личную охрану, захватите подозреваемого живым и эвакуируйте его на вертолете.</Russian>
+            <German>Ein wichtiger feindlicher Offizier wurde in einem Gebäude des Sektors gesichtet. Infiltrieren Sie das Gebiet, schalten Sie seinen Personenschutz aus, nehmen Sie den Verdächtigen lebend gefangen und evakuieren Sie ihn per Hubschrauber.</German>
+            <Italian>Un ufficiale nemico chiave è stato avvistato in un edificio del settore. Infiltrati nell'area, neutralizza la sua scorta, cattura il sospetto vivo ed estrailo in elicottero.</Italian>
+            <Polish>Kluczowy oficer wroga został zauważony w budynku w tym sektorze. Zinfiltruj obszar, zneutralizuj jego ochronę, schwytaj podejrzanego żywego i ewakuuj go helikopterem.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_Action">
+            <Original>Capturer le HVT</Original>
+            <French>Capturer le HVT</French>
+            <English>Capture HVT</English>
+            <Turkish>HVT'yi Yakala</Turkish>
+            <Korean>HVT 포획</Korean>
+            <Spanish>Capturar HVT</Spanish>
+            <Japanese>HVTの捕獲</Japanese>
+            <Chinese>抓捕HVT</Chinese>
+            <Russian>Захватить HVT</Russian>
+            <German>HVT gefangen nehmen</German>
+            <Italian>Cattura HVT</Italian>
+            <Polish>Pojmij HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_ExtractAction">
+            <Original>Embarquer le HVT</Original>
+            <French>Embarquer le HVT</French>
+            <English>Board HVT</English>
+            <Turkish>HVT'yi Bindir</Turkish>
+            <Korean>HVT 탑승</Korean>
+            <Spanish>Embarcar HVT</Spanish>
+            <Japanese>HVTの搭乗</Japanese>
+            <Chinese>押送HVT登机</Chinese>
+            <Russian>Посадить HVT</Russian>
+            <German>HVT an Bord bringen</German>
+            <Italian>Imbarca HVT</Italian>
+            <Polish>Umieść HVT na pokładzie</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_EscortAction">
+            <Original>Escorter le HVT</Original>
+            <French>Escorter le HVT</French>
+            <English>Escort HVT</English>
+            <Turkish>HVT'ye Refakat Et</Turkish>
+            <Korean>HVT 호위</Korean>
+            <Spanish>Escortar HVT</Spanish>
+            <Japanese>HVTの護衛</Japanese>
+            <Chinese>护送HVT</Chinese>
+            <Russian>Конвоировать HVT</Russian>
+            <German>HVT eskortieren</German>
+            <Italian>Scorta HVT</Italian>
+            <Polish>Eskortuj HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_ReleaseAction">
+            <Original>Relâcher le HVT</Original>
+            <French>Relâcher le HVT</French>
+            <English>Release HVT</English>
+            <Turkish>HVT'yi Serbest Bırak</Turkish>
+            <Korean>HVT 석방</Korean>
+            <Spanish>Liberar HVT</Spanish>
+            <Japanese>HVTの解放</Japanese>
+            <Chinese>释放HVT</Chinese>
+            <Russian>Отпустить HVT</Russian>
+            <German>HVT freilassen</German>
+            <Italian>Rilascia HVT</Italian>
+            <Polish>Uwolnij HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_Title">
+            <Original>Capture de HVT</Original>
+            <French>Capture de HVT</French>
+            <English>HVT Capture</English>
+            <Turkish>HVT Yakalama</Turkish>
+            <Korean>HVT 포획</Korean>
+            <Spanish>Captura de HVT</Spanish>
+            <Japanese>HVTの捕獲</Japanese>
+            <Chinese>抓捕HVT</Chinese>
+            <Russian>Захват HVT</Russian>
+            <German>HVT-Gefangennahme</German>
+            <Italian>Cattura di HVT</Italian>
+            <Polish>Pojmanie HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_Desc">
+            <Original>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</Original>
+            <French>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</French>
+            <English>Locate the enemy warlord (HVT), eliminate his guard, force him to surrender upon approach, secure him and extract him alive by helicopter.</English>
+            <Turkish>Düşman savaş ağasının (HVT) yerini tespit edin, korumalarını ortadan kaldırın, yaklaştığınızda teslim olmaya zorlayın, onu güvence altına alın ve helikopterle canlı olarak tahliye edin.</Turkish>
+            <Korean>적 군벌(HVT)의 위치를 파악하고, 경호원을 제거하며, 접근 시 항복하도록 강제한 후 확보하여 헬리콥터로 생포 구출하십시오.</Korean>
+            <Spanish>Localice al señor de la guerra enemigo (HVT), elimine a su guardia, obligue a que se rinda al acercarse, asegúrelo y extráigalo con vida en helicóptero.</Spanish>
+            <Japanese>敵の将軍(HVT)を特定し、護衛を排除し、接近時に降伏を強要し、身柄を確保してヘリコプターで生け捕りにしたまま回収してください。</Japanese>
+            <Chinese>找到敌方军阀（HVT）的位置，消灭他的守卫，在靠近时迫使他投降，将他控制住并通过直升机活着撤离。</Chinese>
+            <Russian>Найдите вражеского полевого командира (HVT), устраните его охрану, заставьте его сдаться при приближении, обеспечьте его безопасность и эвакуируйте живым на вертолете.</Russian>
+            <German>Lokalisieren Sie den feindlichen Kriegsherrn (HVT), eliminieren Sie seine Wache, zwingen Sie ihn bei Annäherung zur Aufgabe, sichern Sie ihn und evakuieren Sie ihn lebend per Hubschrauber.</German>
+            <Italian>Individua il signore della guerra nemico (HVT), elimina la sua guardia, costringilo ad arrendersi al tuo avvicinamento, mettilo in sicurezza ed estrailo vivo in elicottero.</Italian>
+            <Polish>Zlokalizuj wrogiego watażkę (HVT), wyeliminuj jego straż, zmuś go do poddania się po zbliżeniu, zabezpiecz go i ewakuuj żywego helikopterem.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_Marker">
+            <Original>Zone suspecte HVT</Original>
+            <French>Zone suspecte HVT</French>
+            <English>Suspected HVT Zone</English>
+            <Turkish>Şüpheli HVT Bölgesi</Turkish>
+            <Korean>의심되는 HVT 구역</Korean>
+            <Spanish>Zona sospechosa de HVT</Spanish>
+            <Japanese>HVT疑いのある区域</Japanese>
+            <Chinese>疑似HVT区域</Chinese>
+            <Russian>Предполагаемая зона HVT</Russian>
+            <German>Verdächtige HVT-Zone</German>
+            <Italian>Zona sospetta HVT</Italian>
+            <Polish>Podejrzana strefa HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_06_MarkerMain">
+            <Original>Chef de guerre ennemi (HVT)</Original>
+            <French>Chef de guerre ennemi (HVT)</French>
+            <English>Enemy Warlord (HVT)</English>
+            <Turkish>Düşman Savaş Ağası (HVT)</Turkish>
+            <Korean>적 군벌(HVT)</Korean>
+            <Spanish>Señor de la guerra enemigo (HVT)</Spanish>
+            <Japanese>敵の将軍(HVT)</Japanese>
+            <Chinese>敌方军阀（HVT）</Chinese>
+            <Russian>Вражеский полевой командир (HVT)</Russian>
+            <German>Feindlicher Kriegsherr (HVT)</German>
+            <Italian>Signore della guerra nemico (HVT)</Italian>
+            <Polish>Wrogi watażka (HVT)</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task07_Title">
+            <Original>OPORD : Soutenir des civils armés</Original>
+            <French>OPORD : Soutenir des civils armés</French>
+            <English>OPORD: Support Armed Civilians</English>
+            <Turkish>OPORD: Silahlı Sivillere Destek</Turkish>
+            <Korean>OPORD: 무장 민간인 지원</Korean>
+            <Spanish>OPORD: Apoyar a civiles armados</Spanish>
+            <Japanese>OPORD: 武装市民の支援</Japanese>
+            <Chinese>OPORD: 支持武装平民</Chinese>
+            <Russian>OPORD: Поддержка вооруженных гражданских</Russian>
+            <German>OPORD: Bewaffnete Zivilisten unterstützen</German>
+            <Italian>OPORD: Supporto ai civili armati</Italian>
+            <Polish>OPORD: Wsparcie uzbrojonych cywilów</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task07_Text">
+            <Original>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</Original>
+            <French>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</French>
+            <English>Villagers are under constant threat from hostile militias. A faction of armed villagers has grouped to defend their village but needs our tactical support. Meet the militia chief at the rendezvous point, then assist them in clearing the sector while ensuring the survival of the majority of the villagers. If more than half of the armed villagers die, the operation will fail.</English>
+            <Turkish>Köylüler, düşman milislerin sürekli tehdidi altındadır. Silahlı köylülerden oluşan bir grup köylerini savunmak için bir araya geldi ancak taktiksel desteğimize ihtiyaçları var. Buluşma noktasında milis lideriyle görüşün, ardından köylülerin çoğunluğunun hayatta kalmasını sağlayarak sektörü temizlemelerine yardımcı olun. Silahlı köylülerin yarısından fazlası ölürse operasyon başarısız olacaktır.</Turkish>
+            <Korean>민간인들이 적대적인 민병대의 지속적인 위협을 받고 있습니다. 무장한 주민들로 구성된 한 분파가 마을을 지키기 위해 결집했으나 우리의 전술적 지원이 필요합니다. 접선 장소에서 민병대장을 만나 주민 대다수의 생존을 보장하면서 구역을 소탕하도록 도우십시오. 무장 주민의 절반 이상이 사망하면 작전은 실패합니다.</Korean>
+            <Spanish>Los aldeanos están bajo la constante amenaza de milicias hostiles. Una facción de aldeanos armados se ha agrupado para defender su pueblo, pero necesita nuestro apoyo táctico. Reúnete con el jefe de la milicia en el punto de encuentro, luego ayúdalos a limpiar el sector asegurando la supervivencia de la mayoría de los aldeanos. Si más de la mitad de los aldeanos armados muere, la operación fracasará.</Spanish>
+            <Japanese>村人たちは敵対的な民兵組織からの絶え間ない脅威にさらされています。武装した村人の一派が村を守るために結集しましたが、私たちの戦術的支援を必要としています。待ち合わせ場所で民兵のリーダーに会い、村人の大部分の生存を確保しつつセクターの掃討を支援してください。武装した村人の半数以上が死亡した場合、作戦は失敗します。</Japanese>
+            <Chinese>村民们正受到敌对民兵的持续威胁。一群武装村民聚集起来保卫他们的村庄，但需要我们的战术支持。在会合点与民兵首领会面，然后协助他们清理该区域，同时确保大多数村民能够存活。如果超过一半的武装村民死亡，行动将宣告失败。</Chinese>
+            <Russian>Местные жители находятся под постоянной угрозой со стороны враждебных боевиков. Группа вооруженных местных жителей объединилась для защиты своей деревни, но им нужна наша тактическая поддержка. Встретьтесь с командиром ополчения в точке сбора, затем помогите им зачистить сектор, обеспечив выживание большинства жителей. Если погибнет более половины вооруженных ополченцев, операция будет провалена.</Russian>
+            <German>Die Dorfbewohner stehen unter ständiger Bedrohung durch feindliche Milizen. Eine Fraktion bewaffneter Dorfbewohner hat sich zusammengeschlossen, um ihr Dorf zu verteidigen, benötigt jedoch unsere taktische Unterstützung. Treffen Sie den Anführer der Miliz am Treffpunkt und helfen Sie ihnen dann bei der Säuberung des Sektors, während Sie das Überleben der Mehrheit der Dorfbewohner sichern. Wenn mehr als die Hälfte der bewaffneten Dorfbewohner stirbt, scheitert die Operation.</German>
+            <Italian>Gli abitanti sono sotto la costante minaccia di milizie ostili. Una fazione di abitanti armati si è riunita per difendere il proprio villaggio, ma ha bisogno del nostro supporto tattico. Incontra il capo della milizia al punto di ritrovo, quindi aiutali a ripulire il settore garantendo la sopravvivenza della maggior parte degli abitanti. Se più della metà degli abitanti armati muore, l'operazione fallirà.</Italian>
+            <Polish>Mieszkańcy są pod nieustannym naciskiem wrogich bojówek. Grupa uzbrojonych mieszkańców zjednoczyła się w celu obrony swojej wioski, lecz potrzebuje naszego wsparcia taktycznego. Spotkaj się z dowódcą milicji w punkcie zbiórki, a następnie pomóż im oczyścić sektor, dbając o przetrwanie większości mieszkańców. Jeśli zginie ponad połowa uzbrojonych cywilów, operacja zakończy się niepowodzeniem.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Action">
+            <Original>Parler au chef du village</Original>
+            <French>Parler au chef du village</French>
+            <English>Speak to village chief</English>
+            <Turkish>Köy lideriyle konuş</Turkish>
+            <Korean>촌장과 대화하기</Korean>
+            <Spanish>Hablar con el jefe de la aldea</Spanish>
+            <Japanese>村長と話す</Japanese>
+            <Chinese>与村长交谈</Chinese>
+            <Russian>Поговорить со старейшиной</Russian>
+            <German>Mit dem Dorfältesten sprechen</German>
+            <Italian>Parla con il capo del villaggio</Italian>
+            <Polish>Porozmawiaj z sołtysem</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_ActionThanks">
+            <Original>Parler au représentant</Original>
+            <French>Parler au représentant</French>
+            <English>Speak to representative</English>
+            <Turkish>Temsilciyle konuş</Turkish>
+            <Korean>대표와 대화하기</Korean>
+            <Spanish>Hablar con el representante</Spanish>
+            <Japanese>代表者と話す</Japanese>
+            <Chinese>与代表交谈</Chinese>
+            <Russian>Поговорить с представителем</Russian>
+            <German>Mit dem Vertreter sprechen</German>
+            <Italian>Parla con il rappresentante</Italian>
+            <Polish>Porozmawiaj z przedstawicielem</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Title">
+            <Original>Rendez-vous au village</Original>
+            <French>Rendez-vous au village</French>
+            <English>Village Rendezvous</English>
+            <Turkish>Köy Buluşması</Turkish>
+            <Korean>마을 접선</Korean>
+            <Spanish>Punto de encuentro en la aldea</Spanish>
+            <Japanese>村での待ち合わせ</Japanese>
+            <Chinese>村庄会合</Chinese>
+            <Russian>Встреча в деревне</Russian>
+            <German>Treffpunkt im Dorf</German>
+            <Italian>Ritrovo nel villaggio</Italian>
+            <Polish>Spotkanie w wiosce</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Desc">
+            <Original>Rejoignez le chef du village allié pour obtenir des renseignements.</Original>
+            <French>Rejoignez le chef du village allié pour obtenir des renseignements.</French>
+            <English>Meet the allied village chief to gather intel.</English>
+            <Turkish>Bilgi almak için müttefik köy lideriyle buluşun.</Turkish>
+            <Korean>정보를 얻기 위해 아군 촌장을 만나십시오.</Korean>
+            <Spanish>Reúnete con el jefe aliado de la aldea para obtener información.</Spanish>
+            <Japanese>情報を集めるために同盟国の村長に会ってください。</Japanese>
+            <Chinese>会见盟军村长以获取情报。</Chinese>
+            <Russian>Встретьтесь с союзным старейшиной деревни для получения сведений.</Russian>
+            <German>Treffen Sie den verbündeten Dorfältesten, um Informationen zu sammeln.</German>
+            <Italian>Incontra il capo del villaggio alleato per raccogliere informazioni.</Italian>
+            <Polish>Spotkają się z sojuszniczym sołtysem, aby zebrać informacje.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Marker">
+            <Original>Chef de la milice</Original>
+            <French>Chef de la milice</French>
+            <English>Militia Chief</English>
+            <Turkish>Milis Lideri</Turkish>
+            <Korean>민병대장</Korean>
+            <Spanish>Jefe de la milicia</Spanish>
+            <Japanese>民兵のリーダー</Japanese>
+            <Chinese>民兵首领</Chinese>
+            <Russian>Командир ополчения</Russian>
+            <German>Milizführer</German>
+            <Italian>Capo della milizia</Italian>
+            <Polish>Dowódca milicji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Title">
+            <Original>Soutenir la milice locale</Original>
+            <French>Soutenir la milice locale</French>
+            <English>Support Local Militia</English>
+            <Turkish>Yerel Milisi Destekle</Turkish>
+            <Korean>지역 민병대 지원</Korean>
+            <Spanish>Apoyar a la milicia local</Spanish>
+            <Japanese>地元民兵の支援</Japanese>
+            <Chinese>支持当地民兵</Chinese>
+            <Russian>Поддержать местное ополчение</Russian>
+            <German>Lokale Miliz unterstützen</German>
+            <Italian>Supporta la milizia locale</Italian>
+            <Polish>Wsparcie lokalnej milicji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Desc">
+            <Original>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</Original>
+            <French>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</French>
+            <English>Help the armed villagers destroy the hostile militia. Protect them to avoid a massacre.</English>
+            <Turkish>Silahlı köylülerin düşman milisi yok etmesine yardım edin. Katliamı önlemek için onları koruyun.</Turkish>
+            <Korean>무장한 주민들이 적대적인 민병대를 격퇴하도록 도우십시오. 학살을 방지하기 위해 그들을 보호하십시오.</Korean>
+            <Spanish>Ayuda a los aldeanos armados a destruir a la milicia hostil. Protégelos para evitar una masacre.</Spanish>
+            <Japanese>武装した村人が敵対的な民兵組織を撃破するのを支援してください。虐殺を避けるために彼らを保護してください。</Japanese>
+            <Chinese>帮助武装村民消灭敌对民兵。保护他们以避免遭遇屠杀。</Chinese>
+            <Russian>Помогите вооруженным жителям уничтожить враждебную группировку. Защитите их, чтобы избежать резни.</Russian>
+            <German>Helfen Sie den bewaffneten Dorfbewohnern, die feindliche Miliz zu vernichten. Schützen Sie sie, um ein Massaker zu verhindern.</German>
+            <Italian>Aiuta gli abitanti armati a distruggere la milizia ostile. Proteggili per evitare un massacro.</Italian>
+            <Polish>Pomóż uzbrojonym mieszkańcom zniszczyć wrogą milicję. Chroń ich, aby uniknąć masakry.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Marker">
+            <Original>Milice ennemie</Original>
+            <French>Milice ennemie</French>
+            <English>Hostile Militia</English>
+            <Turkish>Düşman Milisler</Turkish>
+            <Korean>적대 민병대</Korean>
+            <Spanish>Milicia enemiga</Spanish>
+            <Japanese>敵対民兵</Japanese>
+            <Chinese>敌对民兵</Chinese>
+            <Russian>Вражеское ополчение</Russian>
+            <German>Feindliche Miliz</German>
+            <Italian>Milizia nemica</Italian>
+            <Polish>Wroga milicja</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleRdv">
+            <Original>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</Original>
+            <French>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</French>
+            <English>God be praised! Help us push back the insurgents nearby!</English>
+            <Turkish>Allah'a şükürler olsun! Yakındaki isyancıları püskürtmemize yardım edin!</Turkish>
+            <Korean>신을 찬양하십시오! 인근의 반군을 격퇴하도록 도와주십시오!</Korean>
+            <Spanish>¡Alabado sea Dios! ¡Ayúdennos a repeler a los insurgentes cercanos!</Spanish>
+            <Japanese>神に感謝します！近くの反乱軍を撃退するのを助けてください！</Japanese>
+            <Chinese>谢天谢地！快帮我们击退附近的叛军！</Chinese>
+            <Russian>Слава Богу! Помогите нам отбить нападение повстанцев рядом!</Russian>
+            <German>Gott sei gepriesen! Helfen Sie uns, die Aufständischen in der Nähe zurückzuschlagen!</German>
+            <Italian>Sia lodato Dio! Aiutateci a respingere gli insorti qui vicino!</Italian>
+            <Polish>Chwała Bogu! Pomóżcie nam odeprzeć rebelianców w pobliżu!</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleThanks">
+            <Original>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</Original>
+            <French>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</French>
+            <English>God be praised, you saved us! Peace be upon you.</English>
+            <Turkish>Allah'a şükürler olsun, bizi kurtardınız! Barış üzerinize olsun.</Turkish>
+            <Korean>신을 찬양하십시오, 당신이 우리를 구했습니다! 평화가 함께하기를.</Korean>
+            <Spanish>¡Alabado sea Dios, nos han salvado! Que la paz sea con ustedes.</Spanish>
+            <Japanese>神に感謝します、私たちを救ってくれました！あなたに平和がありますように。</Japanese>
+            <Chinese>感谢真主，你们救了我们！愿和平与你们同在。</Chinese>
+            <Russian>Слава Богу, вы спасли нас! Мир вам.</Russian>
+            <German>Gott sei gepriesen, Sie haben uns gerettet! Friede sei mit Ihnen.</German>
+            <Italian>Sia lodato Dio, ci avete salvato! La pace sia con voi.</Italian>
+            <Polish>Chwała Bogu, ocaliliście nas! Pokój z wami.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleDefeat">
+            <Original>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</Original>
+            <French>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</French>
+            <English>It is God's will. Thank you for fighting alongside us.</English>
+            <Turkish>Allah'ın takdiri. Bizimle birlikte savaştığınız için teşekkürler.</Turkish>
+            <Korean>신의 뜻입니다. 우리와 함께 싸워주셔서 감사합니다.</Korean>
+            <Spanish>Es la voluntad de Dios. Gracias por luchar a nuestro lado.</Spanish>
+            <Japanese>神の御心です。一緒に戦ってくれてありがとうございました。</Japanese>
+            <Chinese>这是真主的意愿。感谢你们与我们并肩作战。</Chinese>
+            <Russian>На то воля Божья. Спасибо, что сражались вместе с нами.</Russian>
+            <German>Es ist Gottes Wille. Danke, dass Sie an unserer Seite gekämpft haben.</German>
+            <Italian>È la volontà di Dio. Grazie per aver combattuto al nostro fianco.</Italian>
+            <Polish>Taka jest wola Boga. Dziękujemy za wspólną walkę.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleFollow">
+            <Original>Suivez les villageois !</Original>
+            <French>Suivez les villageois !</French>
+            <English>Follow the villagers!</English>
+            <Turkish>Köylüleri takip edin!</Turkish>
+            <Korean>주민들을 따르십시오!</Korean>
+            <Spanish>¡Sigan a los aldeanos!</Spanish>
+            <Japanese>村人たちに付いて行ってください！</Japanese>
+            <Chinese>跟随村民！</Chinese>
+            <Russian>Следуйте за жителями!</Russian>
+            <German>Folgen Sie den Dorfbewohnern!</German>
+            <Italian>Seguite gli abitanti del villaggio!</Italian>
+            <Polish>Idźcie za mieszkańcami!</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task08_Title">
+            <Original>OPORD : Neutralisation de réseau antiaérien et de brouillage</Original>
+            <French>OPORD : Neutralisation de réseau antiaérien et de brouillage</French>
+            <English>OPORD: Neutralize Anti-Aircraft &amp; Jamming Network</English>
+            <Turkish>OPORD: Uçaksavar ve Karıştırma Ağını Etkisiz Hale Getir</Turkish>
+            <Korean>OPORD: 대공 및 교란 네트워크 무력화</Korean>
+            <Spanish>OPORD: Neutralizar red antiaérea y de interferencias</Spanish>
+            <Japanese>OPORD: 対空およびジャミングネットワークの無力化</Japanese>
+            <Chinese>OPORD: 消灭防空与干扰网络</Chinese>
+            <Russian>OPORD: Нейтрализация ПВО и сети помех</Russian>
+            <German>OPORD: Flugabwehr- und Störnetzwerk neutralisieren</German>
+            <Italian>OPORD: Neutralizzazione della rete antiaerea e di disturbo</Italian>
+            <Polish>OPORD: Neutralizacja sieci przeciwlotniczej i zakłócającej</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task08_Text">
+            <Original>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</Original>
+            <French>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</French>
+            <English>&lt;font color='#FF4444'&gt;HIGH RISK MISSION&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;The enemy has set up a highly protected jamming and anti-aircraft network. Air support is unavailable at the start of the operation.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIED LOGISTICS FLIGHT:&lt;/font&gt;&lt;br/&gt;- A RACS C-130J (ViV) cargo plane is scheduled to cross the airspace &lt;b&gt;between the 45th and 55th minute&lt;/b&gt; of the operation.&lt;br/&gt;- If the Tempest jammer is not destroyed before its arrival, the enemy AA will detect and shoot down the cargo plane, causing mission failure.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TACTICAL INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drone Jammer (Position A):&lt;/font&gt; A Tempest (Device) truck blocks drone support.&lt;br/&gt;- &lt;font color='#FF8800'&gt;AA &amp;amp; Artillery (Position B, &gt;600m):&lt;/font&gt; A ZSU-39 Tigris AA and a BM-21 Grad rocket launcher block helicopter support.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUTION:&lt;/font&gt;&lt;br/&gt;- Destroying the Tempest (Device) validates the main task, unlocks the drone, and blinds the enemy AA.&lt;br/&gt;- Destroying the Tigris AA unlocks helicopter support.&lt;br/&gt;&lt;br/&gt;Drone and helicopter support are vital. You can destroy the AA and artillery before destroying the jammer to get air support. Once the Tempest jammer is destroyed, all remaining air support becomes available.</English>
+            <Turkish>&lt;font color='#FF4444'&gt;YÜKSEK RİSKLİ GÖREV&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Düşman, yüksek korumalı bir karıştırma ve uçaksavar ağı kurdu. Operasyonun başında hava desteği mevcut değildir.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;MÜTTEFİK LOJİSTİK UÇUŞU :&lt;/font&gt;&lt;br/&gt;- Bir RACS C-130J (ViV) kargo uçağının operasyonun &lt;b&gt;45. ve 55. dakikaları arasında&lt;/b&gt; hava sahasından geçmesi planlanıyor.&lt;br/&gt;- Tempest karıştırıcı gelmeden önce yok edilmezse, düşman uçaksavarı kargo uçağını vuracak ve görevin başarısız olmasına neden olacaktır.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTİK BİLGİ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Dron Karıştırıcı (Konum A):&lt;/font&gt; Tempest (Cihaz) kamyonu dron desteğini engelliyor.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Uçaksavar ve Topçu (Konum B, &gt;600m):&lt;/font&gt; ZSU-39 Tigris uçaksavarı ve BM-21 Grad roketatarı helikopter desteğini engelliyor.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ÇÖZÜM:&lt;/font&gt;&lt;br/&gt;- Tempest (Cihaz) kamyonunu yok etmek ana görevi tamamlar, dronu açar ve düşman uçaksavarını kör eder.&lt;br/&gt;- Tigris uçaksavarını yok etmek helikopter desteğini açar.&lt;br/&gt;&lt;br/&gt;Dron ve helikopter desteği hayati önem taşır. Hava desteği almak için karıştırıcıyı yok etmeden önce uçaksavar ve topçuyu yok edebilirsiniz. Tempest karıştırıcı yok edildiğinde, kalan tüm hava desteği kullanılabilir hale gelecektir.</Turkish>
+            <Korean>&lt;font color='#FF4444'&gt;고위험 임무&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;적군이 강력하게 보호되는 교란 및 대공 네트워크를 구축했습니다. 작전 시작 시 공중 지원을 사용할 수 없습니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;아군 보급 비행 :&lt;/font&gt;&lt;br/&gt;- RACS C-130J (ViV) 수송기가 작전 시작 후 &lt;b&gt;45분에서 55분 사이&lt;/b&gt;에 공역을 통과할 예정입니다.&lt;br/&gt;- 수송기 도착 전에 템페스트 교란기가 파괴되지 않으면 적 대공포가 수송기를 격추하여 임무가 실패하게 됩니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;전술 정보:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;드론 교란기 (위치 A):&lt;/font&gt; 템페스트 (장치) 트럭이 드론 지원을 차断합니다.&lt;br/&gt;- &lt;font color='#FF8800'&gt;대공 및 포병 (위치 B, &gt;600m):&lt;/font&gt; ZSU-39 티그리스 대공포와 BM-21 그라드 다연장로켓이 헬기 지원을 차단합니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;해결 방법:&lt;/font&gt;&lt;br/&gt;- 템페스트 (장치)를 파괴하면 메인 임무가 완료되고 드론이 잠금 해제되며 적 대공포가 무력화됩니다.&lt;br/&gt;- 티그리스 대공포를 파괴하면 헬기 지원이 잠금 해제됩니다.&lt;br/&gt;&lt;br/&gt;드론과 헬기 지원은 필수적입니다. 공중 지원을 받기 위해 교란기를 파괴하기 전에 대공포와 포병을 먼저 파괴할 수 있습니다. 템페스트 교란기가 파괴되면 남아 있는 모든 공중 지원을 사용할 수 있게 됩니다.</Korean>
+            <Spanish>&lt;font color='#FF4444'&gt;MISIÓN DE ALTO RIESGO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;El enemigo ha desplegado una red de interferencias y defensa antiaérea altamente protegida. El apoyo aéreo no está disponible al inicio de la operación.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VUELO LOGÍSTICO ALIADO :&lt;/font&gt;&lt;br/&gt;- Un avión de carga RACS C-130J (ViV) cruzará el espacio aéreo &lt;b&gt;entre el minuto 45 y el 55&lt;/b&gt; de la operación.&lt;br/&gt;- Si el inhibidor Tempest no se destruye antes de su llegada, la DCA enemiga derribará el avión de carga, lo que provocará el fracaso de la misión.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMACIÓN TÁCTICA:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Inhibidor de Dron (Posición A):&lt;/font&gt; Un camión Tempest (Dispositivo) bloquea el dron.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA y Artillería (Posición B, &gt;600m):&lt;/font&gt; Un blindado ZSU-39 Tigris DCA y un lanzacohetes BM-21 Grad bloquean los helicópteros.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUCIÓN:&lt;/font&gt;&lt;br/&gt;- Destruir el Tempest (Dispositivo) valida la tarea principal, desbloquea el dron y ciega la DCA.&lt;br/&gt;- Destruir el Tigris DCA desbloquea el apoyo de helicóptero.&lt;br/&gt;&lt;br/&gt;El uso del dron y el apoyo de helicóptero son vitales. Puede destruir la DCA y la artillería antes de destruir el inhibidor para obtener apoyo aéreo. Once destruido el inhibidor Tempest, todos los apoyos aéreos restantes estarán disponibles.</Spanish>
+            <Japanese>&lt;font color='#FF4444'&gt;高リスクミッション&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敵は厳重に保護されたジャミングおよび対空ネットワークを構築しました。作戦開始時は航空支援を利用できません。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;味方輸送機の飛行：&lt;/font&gt;&lt;br/&gt;- 作戦開始後&lt;b&gt;45分から55分の間&lt;/b&gt;に、RACS C-130J (ViV) 輸送機が空域を通過する予定です。&lt;br/&gt;- 到着前にテンペストジャマーが破壊されていない場合、敵の対空砲が輸送機を撃墜し、ミッションは失敗に終わります。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;戦術情報：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;ドローンジャマー (位置 A)：&lt;/font&gt; テンペスト（デバイス）トラックがドローンを妨害しています。&lt;br/&gt;- &lt;font color='#FF8800'&gt;対空兵器および砲兵 (位置 B, &gt;600m)：&lt;/font&gt; ZSU-39チグリス対空戦車とBM-21グラードがヘリを妨害しています。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解決方法：&lt;/font&gt;&lt;br/&gt;- テンペスト（デバイス）の破壊でメインタスクが完了し、ドローンが解除され、敵の対空砲は無力化されます。&lt;br/&gt;- チグリス対空戦車の破壊でヘリ支援が解除されます。&lt;br/&gt;&lt;br/&gt;ドローンとヘリの支援は不可欠です。航空支援を得るために、ジャマーを破壊する前に対空兵器や砲兵を破壊することができます。テンペストジャマーが破壊されると、残りのすべての航空支援が利用可能になります。</Japanese>
+            <Chinese>&lt;font color='#FF4444'&gt;高风险任务&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敌军建立了一套严密防护的电子干扰与防空网络。行动开始时，空中支持将无法使用。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;盟军后勤飞行计划：&lt;/font&gt;&lt;br/&gt;- 一架 RACS C-130J (ViV) 运输机计划在行动开始后的&lt;b&gt;第45至55分钟之间&lt;/b&gt;飞越领空。&lt;br/&gt;- 如果在此之前未能摧毁神风干扰车，敌军防空力量将发现并击落该运输机，导致任务失败。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;战术情报：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;无人机干扰车（位置 A）：&lt;/font&gt; 一辆神风（设备）干扰车阻断了无人机支持。&lt;br/&gt;- &lt;font color='#FF8800'&gt;防空与火箭炮（位置 B，&gt;600米）：&lt;/font&gt; 一辆ZSU-39 Tigris防空车和一辆BM-21 Grad火箭炮阻断了直升机支持。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解除方式：&lt;/font&gt;&lt;br/&gt;- 摧毁神风（设备）干扰车将完成主任务并解锁无人机支持，并使敌军防空雷达失效。&lt;br/&gt;- 摧毁Tigris防空车将解锁直升机支持。&lt;br/&gt;&lt;br/&gt;无人机与直升机支持至关重要。您可以先摧毁防空车与火箭炮以获取直升机空中支持，然后再去摧毁干扰车。一旦摧毁神风干扰车，所有剩余的空中支持都将恢复可用。</Chinese>
+            <Russian>&lt;font color='#FF4444'&gt;МИССИЯ ВЫСОКОГО РИСКА&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Противник развернул высокозащищенную сеть помех и ПВО. Воздушная поддержка недоступна в начале операции.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;СОЮЗНЫЙ ЛОГИСТИЧЕСКИЙ РЕЙС :&lt;/font&gt;&lt;br/&gt;- Транспортный самолет RACS C-130J (ViV) пересечет воздушное пространство &lt;b&gt;между 45-й и 55-й минутами&lt;/b&gt; операции.&lt;br/&gt;- Если помехопостановщик Tempest не будет уничтожен до его прибытия, вражеская ПВО собьет транспортник, что приведет к провалу миссии.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ТАКТИЧЕСКИЕ ДАННЫЕ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Помехопостановщик дрона (Позиция A):&lt;/font&gt; Грузовик Tempest (Устройство) блокирует дрон.&lt;br/&gt;- &lt;font color='#FF8800'&gt;ПВО и артиллерия (Позиция B, &gt;600м):&lt;/font&gt; Бронемашина ZSU-39 Tigris и РСЗО BM-21 Grad блокируют вертолеты.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;УСЛОВИЯ:&lt;/font&gt;&lt;br/&gt;- Уничтожение Tempest (Устройство) завершает задачу, разблокирует дрон и ослепляет ПВО.&lt;br/&gt;- Уничтожение ПВО Tigris разблокирует поддержку вертолета.&lt;br/&gt;&lt;br/&gt;Использование дрона и вертолета критически важно. Вы можете уничтожить ПВО и артиллерию до нейтрализации помехопостановщика, чтобы получить поддержку с воздуха. Как только Tempest уничтожен, вся оставшаяся поддержка станет доступна.</Russian>
+            <German>&lt;font color='#FF4444'&gt;MISSION MIT HOHEM RISIKO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Der Feind hat ein stark geschütztes Stör- und Flugabwehrnetzwerk errichtet. Luftunterstützung ist zu Beginn der Operation nicht verfügbar.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIIERTER LOGISTIKFLUG :&lt;/font&gt;&lt;br/&gt;- Ein RACS C-130J (ViV) Frachtflugzeug wird den Luftraum &lt;b&gt;zwischen der 45. und 55. Minute&lt;/b&gt; der Operation überqueren.&lt;br/&gt;- Wenn der Tempest-Störsender vor seiner Ankunft nicht zerstört wird, schießt die feindliche Flak das Frachtflugzeug ab, was zum Scheitern der Mission führt.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTIK-INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drohnen-Störsender (Position A):&lt;/font&gt; Ein Tempest-LKW (Gerät) blockiert die Drohne.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Flak und Artillerie (Position B, &gt;600m):&lt;/font&gt; Eine ZSU-39 Tigris Flak und ein BM-21 Grad Raketenwerfer blockieren die Hubschrauber.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;LÖSUNG:&lt;/font&gt;&lt;br/&gt;- Die Zerstörung des Tempest (Gerät) schließt die Hauptaufgabe ab, schaltet die Drohne frei und blendet die Flak.&lt;br/&gt;- Die Zerstörung der Tigris Flak schaltet die Hubschrauberunterstützung frei.&lt;br/&gt;&lt;br/&gt;Drohnen- und Hubschrauberunterstützung sind lebenswichtig. Sie können die Flak und Artillerie vor dem Störsender zerstören, um Luftunterstützung zu erhalten. Sobald der Tempest-Störsender zerstört ist, steht die gesamte verbleibende Luftunterstützung zur Verfügung.</German>
+            <Italian>&lt;font color='#FF4444'&gt;MISSIONE AD ALTO RISCHIO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Il nemico ha allestito una rete di disturbo e difesa antiaerea altamente protetta. I supporti aerei non sono disponibili all'inizio dell'operazione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOLO LOGISTICO ALLEATO :&lt;/font&gt;&lt;br/&gt;- Un aereo cargo RACS C-130J (ViV) attraverserà lo spazio aereo &lt;b&gt;tra il 45° e il 55° minuto&lt;/b&gt; dell'operazione.&lt;br/&gt;- Se il disturbatore Tempest non viene distrutto prima del suo arrivo, la DCA nemica abbatterà l'aereo cargo, causando il fallimento della missione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TATTICHE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Disturbatore Drone (Posizione A):&lt;/font&gt; Un camion Tempest (Dispositivo) blocca il drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA e Artiglieria (Posizione B, &gt;600m):&lt;/font&gt; Un blindato ZSU-39 Tigris DCA e un lanciarazzi BM-21 Grad bloccano gli elicotteri.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RISOLUZIONE:&lt;/font&gt;&lt;br/&gt;- La distruzione del Tempest (Dispositivo) convalida la missione principale, sblocca il drone e acceca la DCA.&lt;br/&gt;- La distruzione della DCA Tigris sblocca il supporto elicottero.&lt;br/&gt;&lt;br/&gt;L'uso del drone e del supporto elicottero sono vitali. È possibile distruggere la DCA e l'artiglieria prima del disturbatore per ottenere supporto aereo. Una volta distrutto il disturbatore Tempest, tutti i restanti supporti aerei saranno disponibili.</Italian>
+            <Polish>&lt;font color='#FF4444'&gt;MISJA WYSOKIEGO RYZYKA&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Wróg rozmieścił silnie chronioną sieć zakłócania i obrony przeciwlotniczej. Wsparcie lotnicze jest niedostępne na początku operacji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;SOJUSZNICZY LOT LOGISTYCZNY :&lt;/font&gt;&lt;br/&gt;- Samolot transportowy RACS C-130J (ViV) przeleci nad obszarem działań &lt;b&gt;między 45. a 55. minutą&lt;/b&gt; operacji.&lt;br/&gt;- Jeśli zagłuszacz Tempest nadrzędny nie zostanie zniszczony przed jego przybyciem, wroga obrona przeciwlotnicza zestrzeli samolot transportowy, powodując niepowodzenie misji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TAKTYCZNE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Zagłuszacz Drona (Pozycja A):&lt;/font&gt; Ciężarówka Tempest (Urządzenie) blokuje drona.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA i Artyleria (Pozycja B, &gt;600m):&lt;/font&gt; Pojazd ZSU-39 Tigris DCA i wyrzutnia BM-21 Grad blokują helikoptery.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ROZWIĄZANIE:&lt;/font&gt;&lt;br/&gt;- Zniszczenie pojazdu Tempest (Urządzenie) zalicza zadanie główne, odblokowuje drona i oślepia obronę przeciwlotniczą.&lt;br/&gt;- Zniszczenie pojazdu Tigris DCA odblokowuje wsparcie helikoptera.&lt;br/&gt;&lt;br/&gt;Użycie drona i helikoptera jest kluczowe. Możesz zniszczyć obronę przeciwlotniczą i artylerię przed zagłuszaczem, aby uzyskać wsparcie lotnicze. Po zniszczeniu zagłuszacza Tempest całe pozostałe wsparcie będzie dostępne.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_08_Title">
+            <Original>Neutraliser le réseau de brouillage</Original>
+            <French>Neutraliser le réseau de brouillage</French>
+            <English>Neutralize Jamming Network</English>
+            <Spanish>Neutralizar la red de interferencias</Spanish>
+            <Italian>Neutralizzare la rete di disturbo</Italian>
+            <German>Störnetzwerk neutralisieren</German>
+            <Polish>Neutralizacja sieci zakłócającej</Polish>
+            <Russian>Нейтрализовать сеть помех</Russian>
+            <Turkish>Karıştırma Ağını Etkisiz Hale Getir</Turkish>
+            <Korean>교란 네트워크 무력화</Korean>
+            <Japanese>ジャミングネットワークの無力化</Japanese>
+            <Chinese>消灭干扰网络</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Desc">
+            <Original>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</Original>
+            <French>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</French>
+            <English>Destroy the Tempest (jammer), the Tigris AA, and the BM-21 Grad artillery. The drone can be called after the jammer is destroyed.</English>
+            <Spanish>Destruye el Tempest (inhibidor), el Tigris DCA y la artillería BM-21 Grad. El dron se puede llamar tras destruir el inhibidor.</Spanish>
+            <Italian>Distruggi il Tempest (disturbatore), la DCA Tigris e l'artiglieria BM-21 Grad. Il drone può essere chiamato dopo la distruzione del disturbatore.</Italian>
+            <German>Zerstören Sie den Tempest (Störsender), die Tigris Flak und die BM-21 Grad Artillerie. Die Drohne kann nach Zerstörung des Störsenders gerufen werden.</German>
+            <Polish>Zniszcz Tempest (zagłuszacz), Tigris DCA i artylerię BM-21 Grad. Dron może być wezwany po zniszczeniu zagłuszacza.</Polish>
+            <Russian>Уничтожьте Tempest (помехопостановщик), ПВО Tigris и артиллерию BM-21 Grad. Дрон можно вызвать после уничтожения помехопостановщика.</Russian>
+            <Turkish>Tempest (karıştırıcı), Tigris uçaksavarı ve BM-21 Grad topçusunu yok edin. Karıştırıcı yok edildikten sonra dron çağrılabilir.</Turkish>
+            <Korean>템페스트(교란기), 티그리스 대공포, BM-21 그라드 포병을 파괴하십시오. 교란기 파괴 후 드론을 호출할 수 있습니다.</Korean>
+            <Japanese>テンペスト（ジャマー）、チグリス対空砲、BM-21グラード砲兵を破壊する。ジャマー破壊後にドローンを要請できます。</Japanese>
+            <Chinese>摧毁神风干扰车、Tigris防空车与BM-21 Grad火箭炮。摧毁干扰车后可呼叫无人机支持。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Marker">
+            <Original>Tempest Brouilleur</Original>
+            <French>Tempest Brouilleur</French>
+            <English>Tempest Jammer</English>
+            <Spanish>Inhibidor Tempest</Spanish>
+            <Italian>Disturbatore Tempest</Italian>
+            <German>Tempest-Störsender</German>
+            <Polish>Zagłuszacz Tempest</Polish>
+            <Russian>Помехопостановщик Tempest</Russian>
+            <Turkish>Tempest Karıştırıcı</Turkish>
+            <Korean>템페스트 교란기</Korean>
+            <Japanese>テンペストジャマー</Japanese>
+            <Chinese>神风干扰车</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_MarkerVehicles">
+            <Original>DCA - Risque Élevé</Original>
+            <French>DCA - Risque Élevé</French>
+            <English>AA - High Risk</English>
+            <Spanish>DCA - Riesgo Alto</Spanish>
+            <Italian>DCA - Rischio Elevato</Italian>
+            <German>Flak - Hohes Risiko</German>
+            <Polish>DCA - Wysokie Ryzyko</Polish>
+            <Russian>ПВО - Высокий риск</Russian>
+            <Turkish>Uçaksavar - Yüksek Risk</Turkish>
+            <Korean>대공 - 높은 위험</Korean>
+            <Japanese>対空 - 高いリスク</Japanese>
+            <Chinese>防空 - 高风险</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Jammed">
+            <Original>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</Original>
+            <French>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</French>
+            <English>Anti-aircraft threat detected. Unable to contact the helicopter.</English>
+            <Spanish>Amenaza antiaérea detectada. Imposible contactar al helicóptero.</Spanish>
+            <Italian>Minaccia antiaerea rilevata. Impossibile contattare l'elicottero.</Italian>
+            <German>Flugabwehrbedrohung erkannt. Verbindung zum Hubschrauber nicht möglich.</German>
+            <Polish>Wykryto zagrożenie przeciwlotnicze. Brak kontaktu z helikopterem.</Polish>
+            <Russian>Обнаружена угроза ПВО. Связь с вертолетом невозможна.</Russian>
+            <Turkish>Uçaksavar tehdidi algılandı. Helikopterle iletişim kurulamıyor.</Turkish>
+            <Korean>대공 위협이 감지되었습니다. 헬리콥ter와 통신할 수 없습니다.</Korean>
+            <Japanese>対空脅威を検出。ヘリコプターと通信できません。</Japanese>
+            <Chinese>检测到防空威胁。无法联系直升机。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Unjammed">
+            <Original>Menace DCA éliminée. Le soutien hélicoptère est disponible.</Original>
+            <French>Menace DCA éliminée. Le soutien hélicoptère est disponible.</French>
+            <English>Anti-aircraft threat eliminated. Helicopter support is available.</English>
+            <Spanish>Amenaza antiaérea eliminada. Soporte de helicóptero disponible.</Spanish>
+            <Italian>Minaccia antiaerea eliminata. Supporto elicottero disponibile.</Italian>
+            <German>Flugabwehrbedrohung eliminiert. Hubschrauberunterstützung verfügbar.</German>
+            <Polish>Zagrożenie przeciwlotnicze wyeliminowane. Wsparcie helikoptera dostępne.</Polish>
+            <Russian>Угроза ПВО устранена. Доступна поддержка вертолета.</Russian>
+            <Turkish>Uçaksavar tehdidi ortadan kaldırıldı. Helikopter desteği mevcut.</Turkish>
+            <Korean>대공 위협이 제거되었습니다. 헬리콥터 지원을 사용할 수 있습니다.</Korean>
+            <Japanese>対空脅威を排除。ヘリコプターの支援が利用可能です。</Japanese>
+            <Chinese>防空威胁已消除。直升机支持已可用。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Drone_Action_Unjammed">
+            <Original>Brouilleur détruit. Le soutien drone est rétabli.</Original>
+            <French>Brouilleur détruit. Le soutien drone est rétabli.</French>
+            <English>Jammer destroyed. Drone support has been restored.</English>
+            <Spanish>Inhibidor destruido. Soporte de dron restablecido.</Spanish>
+            <Italian>Disturbatore distrutto. Supporto drone ripristinato.</Italian>
+            <German>Störsender zerstört. Drohnenunterstützung wiederhergestellt.</German>
+            <Polish>Zagłuszacz zniszczony. Wsparcie drona przywrócone.</Polish>
+            <Russian>Помехопостановщик уничтожен. Поддержка дрона восстановлена.</Russian>
+            <Turkish>Karıştırıcı yok edildi. Dron desteği yeniden sağlandı.</Turkish>
+            <Korean>교란기가 파괴되었습니다. 드론 지원이 복구되었습니다.</Korean>
+            <Japanese>ジャマー破壊。ドローン支援が復旧しました。</Japanese>
+            <Chinese>干扰车已摧毁。无人机支持已恢复。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_Incoming">
+            <Original>Cargo RACS en approche ! Sécurisez l'espace aérien !</Original>
+            <French>Cargo RACS en approche ! Sécurisez l'espace aérien !</French>
+            <English>RACS Cargo plane incoming! Secure the airspace!</English>
+            <Spanish>¡Carguero RACS en camino! ¡Aseguren el espacio aéreo!</Spanish>
+            <Italian>Cargo RACS in arrivo! Mettete in sicurezza lo spazio aereo!</Italian>
+            <German>RACS-Frachtflugzeug im Anflug! Sichern Sie den Luftraum!</German>
+            <Polish>Transportowiec RACS nadlatuje! Zabezpiecz przestrzeń powietrzną!</Polish>
+            <Russian>Транспортник RACS на подходе! Обезопасьте воздушное пространство!</Russian>
+            <Turkish>RACS Kargo uçağı yaklaşıyor! Hava sahasını güvenli hale getirin!</Turkish>
+            <Korean>RACS 수송기 접근 중! 공역을 확보하십시오!</Korean>
+            <Japanese>RACS輸送機が接近中！空域を確保せよ！</Japanese>
+            <Chinese>RACS运输机正在接近！请确保领空安全！</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_ShotDown">
+            <Original>Le cargo RACS a été abattu ! Mission échouée !</Original>
+            <French>Le cargo RACS a été abattu ! Mission échouée !</French>
+            <English>The RACS cargo plane has been shot down! Mission failed!</English>
+            <Spanish>¡El carguero RACS ha sido derribado! ¡Misión fallida!</Spanish>
+            <Italian>Il cargo RACS è stato abbattuto! Missione fallita!</Italian>
+            <German>Das RACS-Frachtflugzeug wurde abgeschossen! Mission fehlgeschlagen!</German>
+            <Polish>Transportowiec RACS został zestrzelony! Misja nieudana!</Polish>
+            <Russian>Транспортник RACS сбит! Миссия провалена!</Russian>
+            <Turkish>RACS kargo uçağı vuruldu! Görev başarısız!</Turkish>
+            <Korean>RACS 수송기가 격추되었습니다! 임무 실패!</Korean>
+            <Japanese>RACS輸送機が撃墜された！ミッション失敗！</Japanese>
+            <Chinese>RACS运输机已被击落！任务失败！</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_Safe">
+            <Original>Le cargo RACS a traversé la zone en sécurité.</Original>
+            <French>Le cargo RACS a traversé la zone en sécurité.</French>
+            <English>The RACS cargo plane has crossed the airspace safely.</English>
+            <Spanish>El carguero RACS ha cruzado la zona de forma segura.</Spanish>
+            <Italian>Il cargo RACS ha attraversato la zona in sicurezza.</Italian>
+            <German>Das RACS-Frachtflugzeug hat den Luftraum sicher durchquert.</German>
+            <Polish>Transportowiec RACS bezpiecznie przekroczył przestrzeń powietrzną.</Polish>
+            <Russian>Транспортник RACS благополучно пересек зону.</Russian>
+            <Turkish>RACS kargo uçağı hava sahasından güvenle geçti.</Turkish>
+            <Korean>RACS 수송기가 안전하게 공역을 통과했습니다.</Korean>
+            <Japanese>RACS輸送機は安全に空域を通過しました。</Japanese>
+            <Chinese>RACS运输机已安全飞越该空域。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Action_RequestTask">
+            <Original>Demander votre tâche</Original>
+            <French>Demander votre tâche</French>
+            <English>Request your task</English>
+            <Turkish>Görevinizi talep edin</Turkish>
+            <Korean>임무 요청</Korean>
+            <Spanish>Solicitar su tarea</Spanish>
+            <Japanese>任務を要請する</Japanese>
+            <Chinese>请求您的任务</Chinese>
+            <Russian>Запросить задание</Russian>
+            <German>Aufgabe anfordern</German>
+            <Italian>Richiedi il tuo incarico</Italian>
+            <Polish>Poproś o zadanie</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_Assigned">
+            <Original>Lisez votre briefing de tache</Original>
+            <French>Lisez votre briefing de tache</French>
+            <English>A new mission has been assigned to you</English>
+            <Turkish>Yeni bir görev atandı, görev brifingini okuyun</Turkish>
+            <Korean>새로운 임무가 할당되었습니다. 임무 브리핑을 읽어주세요</Korean>
+            <Spanish>Se le ha asignado una nueva misión. Lea las instrucciones de la tarea.</Spanish>
+            <Japanese>新しい任務が割り当てられました。任務のブリーフィングを読んでください</Japanese>
+            <Chinese>已分配新任务，请阅读任务简报</Chinese>
+            <Russian>Вам назначено новое задание. Прочтите инструктаж.</Russian>
+            <German>Ihnen wurde eine neue Mission zugewiesen. Lesen Sie das Aufgaben-Briefing.</German>
+            <Italian>Ti è stata assegnata una nuova missione. Leggi il briefing del compito.</Italian>
+            <Polish>Otrzymałeś nową misję. Przeczytaj odprawę zadania.</Polish>
+        </Key>
+    </Package>
+</Project>

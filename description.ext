@@ -1,0 +1,30 @@
+author = "KevinDC404";
+onLoadName = "The Unseen Element";
+onLoadMission = "Mission SP/COOP";
+
+class Header
+{
+	gameType =  Coop;
+	minPlayers =  1;
+	maxPlayers =  4;
+};
+
+enableDebugConsole = 1;
+
+respawn = 4; 
+respawnDialog = 0;
+
+class CfgFunctions
+{
+	#include "Functions\cfgFunctions.hpp"
+};
+
+class CfgMusic
+{
+	tracks[] = {};
+	class Music_Intro
+	{
+		name = "Music_Intro";
+		sound[] = {"Musics\intro.ogg", db+0, 1.0};
+	};
+};

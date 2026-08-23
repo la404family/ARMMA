@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Intro_Author">
+        <Original>Operation Royal Alliance</Original>
+        <French>Operation Royal Alliance</French>
+        <English>Operation Royal Alliance</English>
+        <Spanish>Operation Royal Alliance</Spanish>
+        <Italian>Operation Royal Alliance</Italian>
+        <German>Operation Royal Alliance</German>
+        <Polish>Operation Royal Alliance</Polish>
+        <Russian>Operation Royal Alliance</Russian>
+        <Turkish>Operation Royal Alliance</Turkish>
+        <Japanese>Operation Royal Alliance</Japanese>
+        <Korean>Operation Royal Alliance</Korean>
+        <Chinese>Operation Royal Alliance</Chinese>
+    </Key>
+    <Key ID="STR_LL_Intro_Presents">
+        <Original>Infiltration, high-tech equipment and tactical objectives</Original>
+        <French>Inflitration, technologie de pointe et objectifs dynamiques</French>
+        <English>Infiltration, high-tech equipment and tactical objectives</English>
+        <Spanish>Infiltración, tecnología avanzada y objetivos tácticos</Spanish>
+        <Italian>Infiltrazione, equipaggiamento high-tech e obiettivi tattici</Italian>
+        <German>Infiltration, hochmoderne Ausrüstung und taktische Ziele</German>
+        <Polish>Infiltracja, zaawansowany sprzęt i cele taktyczne</Polish>
+        <Russian>Инфильтрация, современное вооружение и тактические цели</Russian>
+        <Turkish>Infiltrasyon, ileri teknoloji ekipman ve taktik hedefler</Turkish>
+        <Japanese>潜入、最先端の装備と戦術的な目標</Japanese>
+        <Korean>잠입, 최첨단 장비 및 전술 목표</Korean>
+        <Chinese>潜入、尖端技术与战术目标</Chinese>
+    </Key>
+    <Key ID="STR_LL_Intro_Location">
+        <Original>June 29, 2030</Original>
+        <French>29 Juin 2030</French>
+        <English>June 29, 2030</English>
+        <Spanish>29 de Junio de 2030</Spanish>
+        <Italian>29 Giugno 2030</Italian>
+        <German>29. Juni 2030</German>
+        <Polish>29 Czerwca 2030</Polish>
+        <Russian>29 июня 2030 г.</Russian>
+        <Turkish>29 Haziran 2030</Turkish>
+        <Japanese>2030年6月29日</Japanese>
+        <Korean>2030년 6월 29일</Korean>
+        <Chinese>2030年6月29日</Chinese>
+    </Key>
+    <Key ID="STR_LL_Intro_MissionStartSubtitle">
+        <Original>Review the operational briefing if you value your life.</Original>
+        <French>Consultez le briefing opérationnel si vous tenez à votre peau.</French>
+        <English>Review the operational briefing if you value your life.</English>
+        <Spanish>Consulte el informe operativo si valora su vida.</Spanish>
+        <Italian>Consulta il briefing operativo se tieni alla pelle.</Italian>
+        <German>Missionsbriefing lesen, wenn Sie am Leben bleiben wollen.</German>
+        <Polish>Zapoznaj się z odprawą operacyjną, jeśli zależy ci na życiu.</Polish>
+        <Russian>Ознакомьтесь с оперативным брифингом, если хотите остаться в живых.</Russian>
+        <Turkish>Hayatta kalmak istiyorsanız operasyonel brifingi inceleyin.</Turkish>
+        <Japanese>命が惜しければ作戦説明を確認せよ。</Japanese>
+        <Korean>살고 싶다면 작전 브리핑을 정독하십시오.</Korean>
+        <Chinese>如果想活命，请仔细阅读作战简报。</Chinese>
+    </Key>
+</Keys>

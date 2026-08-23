@@ -1,0 +1,561 @@
+params [["_mode", "init", [""]], ["_args", [], [[]]]];
+
+if (!isServer) exitWith {};
+
+if (_mode == "init") exitWith {
+    private _allLogics = allMissionObjects "Logic";
+    if (count _allLogics < 2) exitWith {
+        diag_log "[LL] task07 ERROR: Pas assez de M_Dans_Bat_ sur la carte.";
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+    };
+
+    private _alivePlayers = allPlayers select { alive _x };
+    private _logicRdv = objNull;
+    private _logicMilitia = objNull;
+    private _minDistPlayers = 750;
+    while { isNull _logicRdv && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { isNull _logicRdv && _maxDist <= 15000 } do {
+            private _eligibleLogics = _allLogics select {
+                private _pos = getPosASL _x;
+                private _ok = true;
+                { private _d = _x distance2D _pos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+                _ok
+            };
+
+            if (count _eligibleLogics >= 2) then {
+                private _shuffledEligible = _eligibleLogics call BIS_fnc_arrayShuffle;
+                {
+                    private _rdvCandidate = _x;
+                    private _validCandidates = (_shuffledEligible - [_rdvCandidate]) select { (_x distance2D _rdvCandidate) >= 250 };
+                    if (count _validCandidates > 0) exitWith {
+                        _logicRdv = _rdvCandidate;
+                        _validCandidates = [_validCandidates, [], { _x distance2D _rdvCandidate }, "ASCEND"] call BIS_fnc_sortBy;
+                        _logicMilitia = _validCandidates select 0;
+                    };
+                } forEach _shuffledEligible;
+            };
+
+            if (isNull _logicRdv) then { _maxDist = _maxDist + 500; };
+        };
+        if (isNull _logicRdv) then {
+            _minDistPlayers = _minDistPlayers - 50;
+        };
+    };
+
+    if (isNull _logicRdv || isNull _logicMilitia) exitWith {
+        diag_log "[LL] task07 ERROR: Impossible de trouver 2 lieux valides. Relance dans 15s.";
+        [[], "LL_fnc_task07"] spawn { sleep 15; ["init"] spawn LL_fnc_task07; };
+    };
+
+    private _rdvPos = getPosASL _logicRdv;
+    _rdvPos set [2, (_rdvPos select 2) + 0.2];
+
+    private _militiaPos = getPosASL _logicMilitia;
+    _militiaPos set [2, (_militiaPos select 2) + 0.2];
+
+    private _villagerGrp = createGroup [west, true];
+    _villagerGrp setBehaviour "SAFE";
+    _villagerGrp setCombatMode "GREEN";
+
+    private _numVillagers = 5 + floor (random 4); 
+    private _villagers = [];
+    private _chief = objNull;
+
+    for "_g" from 1 to _numVillagers do {
+        sleep 4; 
+
+        private _class = "C_man_1";
+        private _unit = _villagerGrp createUnit [_class, _rdvPos, [], 0, "NONE"];
+        _unit setPosASL _rdvPos;
+        _unit allowDamage false;
+        [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
+
+        removeAllWeapons _unit;
+        removeAllItems _unit;
+        removeAllAssignedItems _unit;
+        removeUniform _unit;
+        removeVest _unit;
+        removeBackpack _unit;
+        removeHeadgear _unit;
+        removeGoggles _unit;
+
+        _unit forceAddUniform (selectRandom ["U_C_Poloshirt_blue", "U_C_Poloshirt_burgundy", "U_C_Poloshirt_stripped", "U_C_Poloshirt_tricolour", "U_C_Poloshirt_salmon", "U_C_Poloshirt_redwhite", "U_C_HunterBody_grn", "U_C_Journalist", "U_OrestesBody"]);
+        if (random 1 > 0.5) then { _unit addHeadgear (selectRandom ["H_Cap_red", "H_Cap_blu", "H_Cap_grn", "H_Hat_blue", "H_Hat_brown", "H_Hat_grey"]); };
+
+        if (random 1 > 0.3) then {
+            _unit addWeapon "hgun_Pistol_heavy_02_F";
+            for "_i" from 1 to 2 do { _unit addMagazine "6Rnd_45ACP_Cylinder"; };
+        };
+
+        if (!isNil "LL_fnc_setupUVO") then { [_unit] call LL_fnc_setupUVO; };
+
+        _villagers pushBack _unit;
+
+        [_unit] spawn {
+            params ["_unit"];
+            _unit setBehaviour "SAFE";
+            _unit setSpeedMode "LIMITED";
+            private _pos = getPosATL _unit;
+            while { alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false]) } do {
+                sleep (5 + random 10);
+                if (alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false])) then {
+                    private _dest = _pos getPos [10 + random 15, random 360];
+                    _unit doMove _dest;
+                };
+            };
+        };
+    };
+
+    sleep 4;
+
+    private _chiefClass = "C_man_1";
+    _chief = _villagerGrp createUnit [_chiefClass, _rdvPos, [], 0, "NONE"];
+    _chief setPosASL _rdvPos;
+    _chief allowDamage false;
+    [_chief] spawn { sleep 3; (_this select 0) allowDamage true; };
+
+    removeAllWeapons _chief;
+    removeAllItems _chief;
+    removeAllAssignedItems _chief;
+    removeUniform _chief;
+    removeVest _chief;
+    removeBackpack _chief;
+    removeHeadgear _chief;
+    removeGoggles _chief;
+
+    _chief forceAddUniform "U_BG_leader";
+    _chief addHeadgear "H_MilCap_gry";
+    _chief addGoggles "G_Aviator";
+
+    _chief addWeapon "hgun_Pistol_heavy_02_F";
+    for "_i" from 1 to 3 do { _chief addMagazine "6Rnd_45ACP_Cylinder"; };
+
+    if (!isNil "LL_fnc_setupUVO") then { [_chief] call LL_fnc_setupUVO; };
+
+    _villagerGrp selectLeader _chief;
+
+    _chief disableAI "MOVE";
+    _chief setUnitPos "UP";
+    _chief switchMove "Acts_CivilTalking_1";
+
+    _chief addEventHandler ["AnimDone", {
+        params ["_unit"];
+        if (alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT") then {
+            _unit switchMove "Acts_CivilTalking_1";
+        };
+    }];
+
+    [_chief] spawn {
+        params ["_unit"];
+        while { alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT" } do {
+            private _nearPlayers = _unit nearEntities ["CAManBase", 100] select { isPlayer _x && alive _x };
+            if (count _nearPlayers > 0) then {
+                private _nearest = _nearPlayers # 0;
+                _unit setDir (_unit getDir _nearest);
+                _unit setFormDir (_unit getDir _nearest);
+            };
+            sleep 2;
+        };
+    };
+
+    _villagers pushBack _chief;
+
+    _chief setVariable ["LL_Task_Status", "WAIT", true];
+    missionNamespace setVariable ["LL_Task07_Chief", _chief, true];
+    missionNamespace setVariable ["LL_Task07_Villagers", _villagers, true];
+    missionNamespace setVariable ["LL_Task07_VillagerGroup", _villagerGrp, true];
+    missionNamespace setVariable ["LL_Task07_MilitiaPos", _militiaPos, true];
+
+    private _mkrRdv = "mkr_task07_rdv";
+    createMarker [_mkrRdv, _rdvPos];
+    _mkrRdv setMarkerType "mil_objective";
+    _mkrRdv setMarkerColor "ColorGreen";
+    _mkrRdv setMarkerText (localize "STR_LL_Task_07_RDV_Marker");
+
+    [
+        independent,
+        ["task_07_rdv"],
+        [
+            localize "STR_LL_Task_07_RDV_Desc",
+            localize "STR_LL_Task_07_RDV_Title",
+            localize "STR_LL_Task_07_RDV_Marker"
+        ],
+        objNull,
+        "AUTOASSIGNED",
+        5,
+        true,
+        "meet",
+        false
+    ] call BIS_fnc_taskCreate;
+
+    private _varName = format ["LL_Task07_Chief_%1", round(random 100000)];
+    _chief setVehicleVarName _varName;
+    missionNamespace setVariable [_varName, _chief, true];
+    [_chief, netId _chief, _varName, "talk"] remoteExec ["LL_fnc_task07_addAction", 0, _chief];
+};
+
+if (_mode == "talk") exitWith {
+    _args params ["_chief", "_caller"];
+
+    if ((_chief getVariable ["LL_Task_Status", "WAIT"]) != "WAIT") exitWith {};
+    _chief setVariable ["LL_Task_Status", "ACTION", true];
+
+    ["STR_LL_Task_07_SubtitleRdv", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
+
+    private _pnjGrp = group _chief;
+    private _dummy = _pnjGrp createUnit ["O_R_Soldier_F", getPos _chief, [], 0, "NONE"];
+    _dummy hideObjectGlobal true;
+    _dummy allowDamage false;
+    _dummy disableAI "ALL";
+    _pnjGrp selectLeader _chief;
+    _dummy commandMove (getPos _chief getPos [500, random 360]);
+
+    [_dummy] spawn { sleep 10; deleteVehicle (_this select 0); };
+
+    sleep 10;
+
+    _chief enableAI "MOVE";
+    [_chief, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+
+    ["task_07_rdv", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+    deleteMarker "mkr_task07_rdv";
+
+    private _villagerGrp = missionNamespace getVariable ["LL_Task07_VillagerGroup", grpNull];
+    private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
+    private _militiaPos = missionNamespace getVariable ["LL_Task07_MilitiaPos", [0,0,0]];
+
+    private _numEnemies = 10 + floor (random 11);
+    private _enemies = [];
+    private _enemyGroups = [];
+    private _tempCount = 0;
+
+    while { _tempCount < _numEnemies } do {
+        private _grpSize = (2 + floor (random 2)) min (_numEnemies - _tempCount);
+        private _grp = createGroup [east, true];
+        _grp setBehaviour "SAFE";
+        _grp setCombatMode "RED";
+
+        for "_g" from 1 to _grpSize do {
+            sleep 1.5; 
+            private _class = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
+            private _unit = _grp createUnit [_class, _militiaPos, [], 0, "NONE"];
+            _unit setPosASL _militiaPos;
+            _unit allowDamage false;
+            [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
+
+            _unit setSkill ["courage", 1];
+            _unit allowFleeing 0;
+            _enemies pushBack _unit;
+        };
+
+        private _radius = 50;
+        [_grp, _militiaPos, _radius] call BIS_fnc_taskPatrol;
+        _enemyGroups pushBack _grp;
+        _tempCount = _tempCount + _grpSize;
+    };
+
+    missionNamespace setVariable ["LL_Task07_Enemies", _enemies, true];
+    missionNamespace setVariable ["LL_Task07_EnemyGroups", _enemyGroups, true];
+
+    private _mkrMilice = "mkr_task07_milice";
+    createMarker [_mkrMilice, _militiaPos];
+    _mkrMilice setMarkerType "mil_objective";
+    _mkrMilice setMarkerColor "ColorRed";
+    _mkrMilice setMarkerText (localize "STR_LL_Task_07_Marker");
+
+    [
+        independent,
+        ["task_07_milice", "task_07_rdv"],
+        [
+            localize "STR_LL_Task_07_Desc",
+            localize "STR_LL_Task_07_Title",
+            localize "STR_LL_Task_07_Marker"
+        ],
+        objNull,
+        "ASSIGNED",
+        5,
+        true,
+        "attack",
+        false
+    ] call BIS_fnc_taskCreate;
+
+    [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task07_Title", localize "STR_LL_Diary_Task07_Text"]]; }] remoteExec ["spawn", 0, true];
+
+    ["STR_LL_Task_07_SubtitleFollow", [], 6, false] remoteExec ["LL_fnc_radioMessage", 0];
+
+    {
+        _x setVariable ["LL_Task07_RunningToBattle", true, true];
+        _x setBehaviour "AWARE";
+        _x setSpeedMode "FULL";
+        _x enableAI "MOVE";
+        _x doMove _militiaPos;
+    } forEach _villagers;
+
+    _villagerGrp setBehaviour "AWARE";
+    _villagerGrp setCombatMode "RED";
+    _villagerGrp setSpeedMode "FULL";
+
+    while { count waypoints _villagerGrp > 0 } do { deleteWaypoint [_villagerGrp, 0]; };
+    private _wp = _villagerGrp addWaypoint [_militiaPos, 15];
+    _wp setWaypointType "SAD";
+    _wp setWaypointSpeed "FULL";
+    _wp setWaypointBehaviour "AWARE";
+    _villagerGrp setCurrentWaypoint _wp;
+
+    [_villagers, _enemies, _mkrMilice, _militiaPos, _chief] spawn {
+        params ["_villagers", "_enemies", "_mkrMilice", "_militiaPos", "_chief"];
+
+        private _initialVillagerCount = count _villagers;
+        private _defeatTriggered = false;
+        private _startTime = time;
+
+        while { true } do {
+            sleep 2;
+
+            private _aliveVillagers = _villagers select { alive _x };
+            private _aliveEnemies = _enemies select { alive _x };
+
+            if (count _aliveVillagers < (_initialVillagerCount / 2)) then {
+                _defeatTriggered = true;
+            };
+
+            if (count _aliveEnemies == 0) exitWith {};
+
+            private _fightStarted = (time - _startTime) > 35;
+
+            {
+                private _villager = _x;
+                _villager setSkill ["courage", 1];
+                _villager allowFleeing 0;
+
+                private _nearestEnemy = objNull;
+                private _minDist = 999999;
+                {
+                    private _d = _x distance2D _villager;
+                    if (_d < _minDist) then {
+                        _minDist = _d;
+                        _nearestEnemy = _x;
+                    };
+                } forEach _aliveEnemies;
+
+                if (!isNull _nearestEnemy) then {
+                    _villager reveal [_nearestEnemy, 4];
+                    if (_fightStarted) then {
+                        private _lastPush = _villager getVariable ["LL_Task07_LastPush", 0];
+                        if (time - _lastPush > 8 && _minDist > 30) then {
+                            _villager setVariable ["LL_Task07_LastPush", time];
+                            _villager doMove (getPos _nearestEnemy);
+                        };
+                    };
+                };
+            } forEach _aliveVillagers;
+
+            {
+                private _enemy = _x;
+                _enemy setSkill ["courage", 1];
+                _enemy allowFleeing 0;
+
+                private _targets = _aliveVillagers + (allPlayers select { alive _x });
+                private _nearestTarget = objNull;
+                private _minDist = 999999;
+                {
+                    private _d = _x distance2D _enemy;
+                    if (_d < _minDist) then {
+                        _minDist = _d;
+                        _nearestTarget = _x;
+                    };
+                } forEach _targets;
+
+                if (!isNull _nearestTarget) then {
+                    _enemy reveal [_nearestTarget, 4];
+                    if (_fightStarted) then {
+                        private _lastPush = _enemy getVariable ["LL_Task07_LastPush", 0];
+                        if (time - _lastPush > 8 && _minDist > 30) then {
+                            _enemy setVariable ["LL_Task07_LastPush", time];
+                            _enemy doMove (getPos _nearestTarget);
+                        };
+                    };
+                };
+            } forEach _aliveEnemies;
+        };
+
+        deleteMarker _mkrMilice;
+
+        private _aliveVillagers = _villagers select { alive _x };
+        private _rep = objNull;
+        if (alive _chief) then {
+            _rep = _chief;
+        } else {
+            if (count _aliveVillagers > 0) then { _rep = _aliveVillagers select 0; };
+        };
+
+        if (_defeatTriggered) then {
+
+            ["task_07_milice", "FAILED", true] call BIS_fnc_taskSetState;
+
+            if (isNull _rep) then {
+                missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+            } else {
+                _rep setVariable ["LL_Task_Status", "READY_DEFEAT", true];
+
+                private _safeGrp = createGroup [west, true];
+                [_rep] joinSilent _safeGrp;
+
+                _rep disableAI "MOVE";
+                _rep disableAI "AUTOTARGET";
+                _rep disableAI "TARGET";
+                _rep disableAI "WEAPONAIM";
+                _rep setUnitPos "UP";
+                _rep setBehaviour "SAFE";
+                _rep setCombatMode "BLUE";
+                _rep action ["WeaponOnBack", _rep];
+                [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+
+                private _mkrThanks = "mkr_task07_thanks";
+                createMarker [_mkrThanks, getPos _rep];
+                _mkrThanks setMarkerType "mil_objective";
+                _mkrThanks setMarkerColor "ColorGreen";
+                _mkrThanks setMarkerText (localize "STR_LL_Task_07_ActionThanks");
+
+                [
+                    independent,
+                    ["task_07_thanks", "task_07_milice"],
+                    [
+                        localize "STR_LL_Task_07_RDV_Desc",
+                        localize "STR_LL_Task_07_RDV_Title",
+                        ""
+                    ],
+                    objNull,
+                    "ASSIGNED",
+                    5,
+                    true,
+                    "meet",
+                    false
+                ] call BIS_fnc_taskCreate;
+
+                private _varName = format ["LL_Task07_Rep_%1", round(random 100000)];
+                _rep setVehicleVarName _varName;
+                missionNamespace setVariable [_varName, _rep, true];
+                [_rep, netId _rep, _varName, "defeat"] remoteExec ["LL_fnc_task07_addAction", 0, _rep];
+            };
+        } else {
+
+            if (isNull _rep) then {
+                ["task_07_milice", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+                missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+            } else {
+                _rep setVariable ["LL_Task_Status", "READY_THANKS", true];
+
+                private _safeGrp = createGroup [west, true];
+                [_rep] joinSilent _safeGrp;
+
+                _rep disableAI "MOVE";
+                _rep disableAI "AUTOTARGET";
+                _rep disableAI "TARGET";
+                _rep disableAI "WEAPONAIM";
+                _rep setUnitPos "UP";
+                _rep setBehaviour "SAFE";
+                _rep setCombatMode "BLUE";
+                _rep action ["WeaponOnBack", _rep];
+                [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+
+                private _mkrThanks = "mkr_task07_thanks";
+                createMarker [_mkrThanks, getPos _rep];
+                _mkrThanks setMarkerType "mil_objective";
+                _mkrThanks setMarkerColor "ColorGreen";
+                _mkrThanks setMarkerText (localize "STR_LL_Task_07_ActionThanks");
+
+                [
+                    independent,
+                    ["task_07_thanks", "task_07_milice"],
+                    [
+                        localize "STR_LL_Task_07_RDV_Desc",
+                        localize "STR_LL_Task_07_RDV_Title",
+                        ""
+                    ],
+                    objNull,
+                    "ASSIGNED",
+                    5,
+                    true,
+                    "meet",
+                    false
+                ] call BIS_fnc_taskCreate;
+
+                private _varName = format ["LL_Task07_Rep_%1", round(random 100000)];
+                _rep setVehicleVarName _varName;
+                missionNamespace setVariable [_varName, _rep, true];
+                [_rep, netId _rep, _varName, "thanks"] remoteExec ["LL_fnc_task07_addAction", 0, _rep];
+            };
+        };
+    };
+};
+
+if (_mode == "complete") exitWith {
+    _args params ["_rep", "_caller"];
+
+    if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_THANKS") exitWith {};
+    _rep setVariable ["LL_Task_Status", "DONE", true];
+
+    _rep setDir (_rep getDir _caller);
+    _rep setFormDir (_rep getDir _caller);
+
+    _rep action ["WeaponOnBack", _rep];
+    [_rep, "Acts_CivilTalking_1"] remoteExec ["switchMove", 0];
+
+    ["STR_LL_Task_07_SubtitleThanks", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
+
+    [_rep] spawn {
+        params ["_rep"];
+
+        sleep 10;
+
+        [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+        sleep 0.5;
+
+        ["task_07_thanks", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+        ["task_07_milice", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+        deleteMarker "mkr_task07_thanks";
+
+        private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
+        private _aliveVillagers = _villagers select { alive _x };
+        [_aliveVillagers] spawn LL_fnc_taskCleanup;
+
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+    };
+};
+
+if (_mode == "complete_defeat") exitWith {
+    _args params ["_rep", "_caller"];
+
+    if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_DEFEAT") exitWith {};
+    _rep setVariable ["LL_Task_Status", "DONE", true];
+
+    _rep setDir (_rep getDir _caller);
+    _rep setFormDir (_rep getDir _caller);
+
+    _rep action ["WeaponOnBack", _rep];
+    [_rep, "Acts_CivilTalking_2"] remoteExec ["switchMove", 0];
+
+    ["STR_LL_Task_07_SubtitleDefeat", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
+
+    [_rep] spawn {
+        params ["_rep"];
+
+        sleep 10;
+
+        [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+        sleep 0.5;
+
+        ["task_07_thanks", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+        deleteMarker "mkr_task07_thanks";
+
+        private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
+        private _aliveVillagers = _villagers select { alive _x };
+        [_aliveVillagers] spawn LL_fnc_taskCleanup;
+
+        { if (!isNull _x && count units _x == 0) then { deleteGroup _x; }; } forEach (missionNamespace getVariable ["LL_Task07_EnemyGroups", []]);
+
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+    };
+};
