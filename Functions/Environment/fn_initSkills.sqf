@@ -20,11 +20,11 @@
 if (!isServer) exitWith {}; 
 
 [] spawn {
-    while { true } do {
+    while {true} do {
         {
             private _unit = _x;
 
-            if (!isPlayer _unit && {alive _unit} && {!(_unit getVariable ["TUE_skillsApplied", false])}) then {
+            if (!isPlayer _unit && {alive _unit}) then {
 
                 private _side = side _unit;
 
@@ -39,6 +39,7 @@ if (!isServer) exitWith {};
                     _unit setSkill ["courage",        1.00]; 
                     _unit setSkill ["general",        1.00];
                     _unit allowFleeing 0; 
+                    _unit setSpeedMode "FULL";
                 } else {
 
                     _unit setSkill ["aimingAccuracy", 0.10 + random 0.15]; 
@@ -50,12 +51,11 @@ if (!isServer) exitWith {};
                     _unit setSkill ["courage",        0.40 + random 0.20]; 
                     _unit setSkill ["general",        0.40];
                     _unit allowFleeing 0.3; 
+                    _unit setSpeedMode "FULL";
                 };
-
-                _unit setVariable ["TUE_skillsApplied", true, true];
             };
         } forEach allUnits;
 
-        sleep 15;
+        sleep 25;
     };
 };

@@ -3,49 +3,40 @@ params [["_mode", "init", [""]], ["_args", [], [[]]]];
 if (!isServer) exitWith {};
 
 if (_mode == "init") exitWith {
-    private _allHeliports = allMissionObjects "HeliH";
-    { _allHeliports pushBackUnique _x; } forEach (allMissionObjects "Land_HelipadEmpty_F");
-    { _allHeliports pushBackUnique _x; } forEach (allMissionObjects "HeliHSquare_F");
-
-    if (count _allHeliports < 1) exitWith {
-        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task03 ERROR: Pas de Heliport (HeliH) trouvé."; };
+    private _allLogics = allMissionObjects "Logic";
+    if (count _allLogics < 2) exitWith {
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
     private _targetNumRadios = 2 + floor (random 3); 
     private _selectedRadios = [];
-    private _logicsPool = _allHeliports call BIS_fnc_arrayShuffle;
+    private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _minDistPlayers = 750;
-    while { count _selectedRadios < 1 && _minDistPlayers >= 100 } do {
-        _maxDist = 2000;
-        while { count _selectedRadios < 1 && _maxDist <= 15000 } do {
-            _selectedRadios = [];
-            {
-                private _candidate = _x;
-                private _candidatePos = getPosASL _candidate;
-                private _valid = true;
+    private _minDistPlayers = 550;
+    private _maxDist = 1500;
 
-                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+    while { count _selectedRadios < 2 && _maxDist <= 15000 } do {
+        _selectedRadios = [];
+        {
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
 
-                if (_valid) then {
-                    { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedRadios;
-                };
+            { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-                if (_valid) then { _selectedRadios pushBack _candidate; };
-                if (count _selectedRadios >= _targetNumRadios) exitWith {};
-            } forEach _logicsPool;
+            if (_valid) then {
+                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedRadios;
+            };
 
-            if (count _selectedRadios < 1) then { _maxDist = _maxDist + 500; };
-        };
-        if (count _selectedRadios < 1) then {
-            _minDistPlayers = _minDistPlayers - 50;
-        };
+            if (_valid) then { _selectedRadios pushBack _candidate; };
+            if (count _selectedRadios >= _targetNumRadios) exitWith {};
+        } forEach _logicsPool;
+
+        if (count _selectedRadios < 2) then { _maxDist = _maxDist + 500; };
     };
 
     private _numRadios = count _selectedRadios;
-    if (_numRadios < 1) exitWith {
-        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task03 ERROR: Impossible de trouver des emplacements valides. Relance dans 15s."; };
+    if (_numRadios < 2) exitWith {
         [[], "LL_fnc_task03"] spawn { sleep 15; ["init"] spawn LL_fnc_task03; };
     };
 
@@ -58,37 +49,32 @@ if (_mode == "init") exitWith {
 
     for "_i" from 0 to (_numRadios - 1) do {
         private _logic = _selectedRadios select _i;
-        private _spawnPos = getPosATL _logic;
+        private _spawnPos = getPosASL _logic;
+        _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        private _grpInner = createGroup [east, true];
-        _grpInner setBehaviour "SAFE";
-        _grpInner setCombatMode "RED";
-        private _numInner = 2 + floor (random 2); 
-        for "_g" from 1 to _numInner do {
-            sleep 4;
-            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
-            _guard setPosASL _spawnPos;
-            _guard allowDamage false;
-            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-            _allUnits pushBack _guard;
-        };
-        [_grpInner, _spawnPos, 20] call BIS_fnc_taskPatrol;
+        private _numPatrols = 3 + floor (random 3);
+        private _patrolRadii = [15, 35, 55, 100, 150];
 
-        private _grpOuter = createGroup [east, true];
-        _grpOuter setBehaviour "SAFE";
-        _grpOuter setCombatMode "RED";
-        private _numOuter = 2 + floor (random 2); 
-        for "_g" from 1 to _numOuter do {
-            sleep 4;
-            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
-            _guard setPosASL _spawnPos;
-            _guard allowDamage false;
-            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-            _allUnits pushBack _guard;
+        for "_p" from 0 to (_numPatrols - 1) do {
+            private _radius = _patrolRadii select _p;
+            private _grp = createGroup [east, true];
+            _grp setBehaviour "SAFE";
+            _grp setCombatMode "RED";
+
+            private _numGuards = 2 + floor (random 3);
+            for "_g" from 1 to _numGuards do {
+                sleep 1.5;
+                private _guardClass = "O_Soldier_F";
+                private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+                _guard setPosASL _spawnPos;
+                _guard allowDamage false;
+                [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+                [_guard] call TUE_fnc_applyEnemyEquipment;
+                _allUnits pushBack _guard;
+            };
+
+            [_grp, _spawnPos, _radius] call BIS_fnc_taskPatrol;
         };
-        [_grpOuter, _spawnPos, 60] call BIS_fnc_taskPatrol;
 
         private _mkrName = format ["mkr_task03_zone_%1", _i];
         createMarker [_mkrName, _spawnPos];
@@ -96,11 +82,11 @@ if (_mode == "init") exitWith {
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_03_Marker", _i + 1];
 
-        sleep 4;
+        sleep 1.5;
 
         private _radioClass = "RuggedTerminal_01_communications_F";
         private _radio = createVehicle [_radioClass, [0,0,0], [], 0, "CAN_COLLIDE"];
-        _radio setPosATL _spawnPos;
+        _radio setPosASL _spawnPos;
         _radio setDir (random 360);
         _radio setVehiclePosition [_spawnPos, [], 0, "CAN_COLLIDE"];
         _radio setVectorUp (surfaceNormal _spawnPos);
@@ -110,7 +96,13 @@ if (_mode == "init") exitWith {
         _radio allowDamage false;
         [_radio] spawn { sleep 3; (_this select 0) allowDamage true; };
 
-        _radios pushBack (netId _radio);
+        _radios pushBack _radio;
+
+        private _varName = format ["LL_Task03_Radio_%1_%2", _i, round(random 100000)];
+        _radio setVehicleVarName _varName;
+        missionNamespace setVariable [_varName, _radio, true];
+
+        [_radio, netId _radio, _varName] remoteExec ["LL_fnc_task03_addAction", 0, true];
     };
 
     missionNamespace setVariable ["LL_Task03_AllUnits", _allUnits, true];
@@ -133,8 +125,6 @@ if (_mode == "init") exitWith {
     ] call BIS_fnc_taskCreate;
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task03_Title", localize "STR_LL_Diary_Task03_Text"]]; }] remoteExec ["spawn", 0, true];
-
-    ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
 };
 
 if (_mode == "plant") exitWith {
@@ -145,11 +135,10 @@ if (_mode == "plant") exitWith {
 
     _caller playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 
-    ["STR_LL_Task_03_Warning", [], 6, false] remoteExec ["LL_fnc_radioMessage", 0];
-
     private _pos = getPosATL _radio;
     private _charge = createVehicle ["DemoCharge_F", _pos, [], 0, "CAN_COLLIDE"];
-    _charge setPosATL _pos;
+    _charge attachTo [_radio, [0, 0, 0.2]];
+    _charge setVectorUp [0, 0, 1];
 
     [_radio, _charge] spawn {
         params ["_radio", "_charge"];

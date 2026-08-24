@@ -182,11 +182,9 @@ Toujours rechercher les Game Logics placées dans l'éditeur comme positions de 
 Ces logiques sont en majorité positionnées **à l'intérieur d'un bâtiment**, en X, Y, Z précis (+ 0.2 en Z).
 
 ### Filtres de distance
-- Ne jamais sélectionner une position à **moins de 550 mètres** d'un joueur.
-
-### Fallback progressif
-Si aucune logique n'est disponible, rechercher un bâtiment aléatoire en élargissant le rayon par paliers (250 → 400 → 550 → 700 → 850 → 1000 m).  
-Prévoir toujours une position statique de dernier recours.
+- **Minimum 550 mètres STRICT** de tout joueur vivant (ne jamais descendre sous 550m).
+- La recherche s'effectue en priorité au plus près de 550m (ex: fenêtre 550m - 1500m), puis élargit le rayon maximal par paliers vers l'extérieur (+500m : 2000m, 2500m... jusqu'à 15000m) si aucun lieu n'est disponible.
+- Espacement minimal d'au moins **250 mètres** entre chaque position s'il y a plusieurs cibles pour la même tâche.
 
 
 ---

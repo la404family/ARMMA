@@ -192,6 +192,10 @@ if (_mode == "free") exitWith {
 
     [_hostage] spawn {
         params ["_hostage"];
+        private _lastPos = getPosATL _hostage;
+        private _stuckCheckTime = time;
+        private _unstuckUntil = 0;
+
         while { alive _hostage && (_hostage getVariable ["LL_Task_Status", ""]) == "FREE" && (vehicle _hostage == _hostage) } do {
             private _alivePlayers = allPlayers select { alive _x };
             if (count _alivePlayers > 0) then {
@@ -205,8 +209,28 @@ if (_mode == "free") exitWith {
                     };
                 } forEach _alivePlayers;
 
-                if (!isNull _closestPlayer && _minDist > 5) then {
-                    _hostage doMove (getPosATL _closestPlayer);
+                if (!isNull _closestPlayer) then {
+                    if (time >= _unstuckUntil) then {
+                        if (_minDist > 5) then {
+                            _hostage doMove (getPosATL _closestPlayer);
+
+                            if ((getPosATL _hostage) distance2D _lastPos < 1.0) then {
+                                if (time - _stuckCheckTime >= 6) then {
+                                    _unstuckUntil = time + 10;
+                                    private _escapePos = (getPosATL _hostage) getPos [15 + random 10, random 360];
+                                    _hostage doMove _escapePos;
+                                    _lastPos = getPosATL _hostage;
+                                    _stuckCheckTime = time + 10;
+                                };
+                            } else {
+                                _lastPos = getPosATL _hostage;
+                                _stuckCheckTime = time;
+                            };
+                        } else {
+                            _lastPos = getPosATL _hostage;
+                            _stuckCheckTime = time;
+                        };
+                    };
                 };
             };
             sleep 2;

@@ -113,9 +113,25 @@ _heli animateDoor ["doorRB", 1];
 _heli limitSpeed 120;
 _heli land "GET IN";
 
-waitUntil { isTouchingGround _heli || (getPosATL _heli select 2) < 5 };
+waitUntil { isTouchingGround _heli || (getPosATL _heli select 2) < 2.5 };
+
 _heli setFuel 0;
-_heli flyInHeight 0;
+_heli setVelocity [0, 0, 0];
+driver _heli disableAI "MOVE";
+driver _heli disableAI "PATH";
+
+{
+    if (_x != driver _heli) then {
+        _x setBehaviour "COMBAT";
+        _x setCombatMode "RED";
+        _x enableAI "AUTOTARGET";
+        _x enableAI "TARGET";
+        _x enableAI "WEAPONAIM";
+        _x setSkill ["aimingAccuracy", 0.70];
+        _x setSkill ["spotDistance", 1.0];
+        _x setSkill ["spotTime", 1.0];
+    };
+} forEach (crew _heli);
 
 private _allBoarded = false;
 while { !_allBoarded } do {
@@ -132,6 +148,19 @@ while { !_allBoarded } do {
     
     private _uniqueTeam = _teamUnits arrayIntersect _teamUnits;
     _uniqueTeam = _uniqueTeam select { alive _x };
+
+    {
+        if (alive _x && vehicle _x != _heli) then {
+            _x assignAsCargo _heli;
+            [_x] orderGetIn true;
+        };
+    } forEach _uniqueTeam;
+
+    private _nearEnemies = allUnits select { side group _x == east && alive _x && (_x distance2D _heli < 700) };
+    {
+        private _e = _x;
+        { _x reveal [_e, 4]; } forEach (crew _heli);
+    } forEach _nearEnemies;
     
     private _boardedCount = 0;
     {
@@ -141,7 +170,6 @@ while { !_allBoarded } do {
             if (_x == _hostage && {group _x != group driver _heli}) then {
                 [_x] joinSilent (group driver _heli);
                 _x allowDamage false;
-                // Empêcher l'otage de pouvoir sortir (bloque toute décision IA de débarquement)
                 _x disableAI "MOVE";
                 _x disableAI "PATH";
                 _x disableAI "FSM";
@@ -150,15 +178,15 @@ while { !_allBoarded } do {
                 _x disableAI "AUTOCOMBAT";
                 _x setBehaviour "CARELESS";
                 _x setCombatMode "BLUE";
-                // On s'assure que les artilleurs (s'il y en a) sont bien agressifs
                 {
                     if (_x != driver _heli && _x != _hostage) then {
-                        _x setBehaviour "AWARE";
+                        _x setBehaviour "COMBAT";
                         _x setCombatMode "RED";
                         _x enableAI "AUTOTARGET";
                         _x enableAI "TARGET";
+                        _x enableAI "WEAPONAIM";
                     };
-                } forEach crew _heli;
+                } forEach (crew _heli);
             };
         };
     } forEach _uniqueTeam;
@@ -168,7 +196,7 @@ while { !_allBoarded } do {
     };
 };
 
-sleep 3;
+sleep 2;
 
 [_heli, ["doorLB", 0]] remoteExec ["animateDoor", 0, _heli];
 [_heli, ["doorRB", 0]] remoteExec ["animateDoor", 0, _heli];
@@ -176,8 +204,20 @@ _heli animateDoor ["doorLB", 0];
 _heli animateDoor ["doorRB", 0];
 
 _heli setFuel 1;
+_heli engineOn true;
 
-["task_extraction", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+driver _heli enableAI "MOVE";
+driver _heli enableAI "PATH";
+driver _heli enableAI "FSM";
+driver _heli disableAI "AUTOCOMBAT";
+driver _heli disableAI "SUPPRESSION";
+driver _heli disableAI "TARGET";
+driver _heli disableAI "AUTOTARGET";
+driver _heli setBehaviour "CARELESS";
+
+_heli land "NONE";
+_heli flyInHeight 150;
+_heli limitSpeed 300;
 
 private _endDir = random 360;
 private _endPos = [
@@ -186,11 +226,30 @@ private _endPos = [
     200
 ];
 
-_heli land "NONE";
+private _grpPilot = group driver _heli;
+while { count waypoints _grpPilot > 0 } do { deleteWaypoint [_grpPilot, 0]; };
+private _wp = _grpPilot addWaypoint [_endPos, 0];
+_wp setWaypointType "MOVE";
+_wp setWaypointSpeed "FULL";
+_wp setWaypointBehaviour "CARELESS";
+_wp setWaypointCombatMode "BLUE";
 _heli doMove _endPos;
-_heli flyInHeight 150;
-_heli limitSpeed 250;
 
-sleep 45;
+[_heli] spawn {
+    params ["_heli"];
+    sleep 3;
+    if (alive _heli && isTouchingGround _heli) then {
+        _heli engineOn true;
+        _heli setVelocity [0, 0, 3];
+    };
+};
+
+["task_extraction", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+
+private _tTimeout = time + 60;
+waitUntil {
+    sleep 1;
+    (_heli distance2D _lzPos) > 1200 || time > _tTimeout
+};
 
 ["End1", true, 5] remoteExec ["BIS_fnc_endMission", 0];

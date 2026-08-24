@@ -2,57 +2,50 @@ params [["_mode", "init", [""]], ["_args", [], [[]]]];
 
 if (!isServer) exitWith {};
 
-if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
-    diag_log format ["[LL] task01: appel avec mode = %1", _mode];
-};
-
 if (_mode == "init") exitWith {
 
     private _allLogics = allMissionObjects "Logic";
     if (count _allLogics == 0) exitWith {
-        diag_log "[LL] task01 ERROR: Aucun M_Dans_Bat_ trouvé sur la carte.";
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
     private _targetNumSpawns = 2 + floor (random 3);
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _minDistPlayers = 750;
-    while { count _selectedLogics < 2 && _minDistPlayers >= 100 } do {
-        _maxDist = 2000;
-        while { count _selectedLogics < 2 && _maxDist <= 15000 } do {
-            _selectedLogics = [];
-            {
-                private _candidate = _x;
-                private _candidatePos = getPosASL _candidate;
-                private _valid = true;
+    private _minDistPlayers = 550;
+    private _maxDist = 1500;
 
-                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+    while { count _selectedLogics < 2 && _maxDist <= 15000 } do {
+        _selectedLogics = [];
+        {
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
 
-                if (_valid) then {
-                    { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
-                };
+            { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-                if (_valid) then { _selectedLogics pushBack _candidate; };
-                if (count _selectedLogics >= _targetNumSpawns) exitWith {};
-            } forEach _logicsPool;
+            if (_valid) then {
+                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+            };
 
-            if (count _selectedLogics < 2) then { _maxDist = _maxDist + 500; };
-        };
-        if (count _selectedLogics < 2) then {
-            _minDistPlayers = _minDistPlayers - 50;
-        };
+            if (_valid) then { _selectedLogics pushBack _candidate; };
+            if (count _selectedLogics >= _targetNumSpawns) exitWith {};
+        } forEach _logicsPool;
+
+        if (count _selectedLogics < 2) then { _maxDist = _maxDist + 500; };
     };
 
     private _numSpawns = count _selectedLogics;
 
     if (_numSpawns < 2) exitWith {
-        diag_log "[LL] task01 ERROR: Impossible de trouver assez de lieux valides. Relance dans 15s.";
         [[], "LL_fnc_task01"] spawn {
             sleep 15;
             ["init"] spawn LL_fnc_task01;
         };
     };
+
+    missionNamespace setVariable ["LL_Task01_NumZones", _numSpawns, true];
 
     private _targetIndex = floor random _numSpawns;
 
@@ -63,48 +56,42 @@ if (_mode == "init") exitWith {
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        private _grpInner = createGroup [east, true];
-        _grpInner setBehaviour "SAFE";
-        _grpInner setCombatMode "RED";
+        private _numPatrols = 3 + floor (random 3);
+        private _patrolRadii = [15, 35, 55, 100, 150];
+        private _zoneGuards = [];
 
-        private _guardsInner = [];
-        private _numInner = 2 + floor (random 2); 
-        for "_g" from 1 to _numInner do {
-            sleep 4;
-            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
-            _guard setPosASL _spawnPos;
-            _guard allowDamage false;
-            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-            _guardsInner pushBack _guard;
+        for "_p" from 0 to (_numPatrols - 1) do {
+            private _radius = _patrolRadii select _p;
+            private _grp = createGroup [east, true];
+            _grp setBehaviour "SAFE";
+            _grp setCombatMode "RED";
+
+            private _numGuards = 2 + floor (random 3);
+            for "_g" from 1 to _numGuards do {
+                sleep 1.5;
+                private _guardClass = "O_Soldier_F";
+                private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+                _guard setPosASL _spawnPos;
+                _guard allowDamage false;
+                [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+                [_guard] call TUE_fnc_applyEnemyEquipment;
+                _zoneGuards pushBack _guard;
+            };
+
+            [_grp, _spawnPos, _radius] call BIS_fnc_taskPatrol;
         };
 
-        sleep 4;
-        private _officer = _grpInner createUnit ["CUP_O_TK_Officer", _spawnPos, [], 0, "NONE"];
+        sleep 1.5;
+        private _grpOfficer = createGroup [east, true];
+        _grpOfficer setBehaviour "SAFE";
+        _grpOfficer setCombatMode "RED";
+        private _officer = _grpOfficer createUnit ["O_Officer_F", _spawnPos, [], 0, "NONE"];
         _officer setPosASL _spawnPos;
         _officer allowDamage false;
         [_officer] spawn { sleep 3; (_this select 0) allowDamage true; };
+        [_officer] call TUE_fnc_applyEnemyEquipment;
         _officer setRank "COLONEL";
-
-        [_grpInner, _spawnPos, 20] call BIS_fnc_taskPatrol;
-
-        private _grpOuter = createGroup [east, true];
-        _grpOuter setBehaviour "SAFE";
-        _grpOuter setCombatMode "RED";
-
-        private _guardsOuter = [];
-        private _numOuter = 2 + floor (random 2); 
-        for "_g" from 1 to _numOuter do {
-            sleep 4;
-            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
-            _guard setPosASL _spawnPos;
-            _guard allowDamage false;
-            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-            _guardsOuter pushBack _guard;
-        };
-
-        [_grpOuter, _spawnPos, 60] call BIS_fnc_taskPatrol;
+        [_grpOfficer, _spawnPos, 50] call BIS_fnc_taskPatrol;
 
         private _mkrName = format ["mkr_task01_target_%1", _i];
         createMarker [_mkrName, _spawnPos];
@@ -113,8 +100,7 @@ if (_mode == "init") exitWith {
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_01_Marker", _i + 1];
 
         private _allUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
-        _allUnits append _guardsInner;
-        _allUnits append _guardsOuter;
+        _allUnits append _zoneGuards;
         _allUnits pushBack _officer;
         missionNamespace setVariable ["LL_Task01_AllUnits", _allUnits, true];
 
@@ -144,11 +130,11 @@ if (_mode == "init") exitWith {
                 _mkrDoc setMarkerColor "ColorYellow";
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
-                private _varCorpse = format ["LL_Task01_Corpse_%1_%2", _i, round(random 100000)];
+                private _varCorpse = format ["LL_Task01_Corpse_%1", round(random 100000)];
                 _unit setVehicleVarName _varCorpse;
                 missionNamespace setVariable [_varCorpse, _unit, true];
 
-                [_unit, netId _unit, _varCorpse] remoteExec ["LL_fnc_task01_addAction", 0, _unit];
+                [_unit, netId _unit, _varCorpse] remoteExec ["LL_fnc_task01_addAction", 0, true];
 
                 private _alivePlayers = allPlayers select { alive _x };
                 private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
@@ -198,7 +184,7 @@ if (_mode == "init") exitWith {
         false
     ] call BIS_fnc_taskCreate;
 
-    ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
+    [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task01_Title", localize "STR_LL_Diary_Task01_Text"]]; }] remoteExec ["spawn", 0, true];
 };
 
 if (_mode == "collect") exitWith {
@@ -213,7 +199,8 @@ if (_mode == "collect") exitWith {
     missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     deleteMarker "mkr_task01_doc";
 
-    for "_i" from 0 to 3 do {
+    private _nz = missionNamespace getVariable ["LL_Task01_NumZones", 4];
+    for "_i" from 0 to (_nz - 1) do {
         deleteMarker format ["mkr_task01_target_%1", _i];
     };
 
