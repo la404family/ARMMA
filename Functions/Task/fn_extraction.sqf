@@ -167,7 +167,8 @@ while { !_allBoarded } do {
         if (vehicle _x == _heli) then {
             _boardedCount = _boardedCount + 1;
             private _hostage = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
-            if (_x == _hostage && {group _x != group driver _heli}) then {
+            private _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull];
+            if ((_x == _hostage || _x == _hvt) && {group _x != group driver _heli}) then {
                 [_x] joinSilent (group driver _heli);
                 _x allowDamage false;
                 _x disableAI "MOVE";
@@ -179,7 +180,7 @@ while { !_allBoarded } do {
                 _x setBehaviour "CARELESS";
                 _x setCombatMode "BLUE";
                 {
-                    if (_x != driver _heli && _x != _hostage) then {
+                    if (_x != driver _heli && _x != _hostage && _x != _hvt) then {
                         _x setBehaviour "COMBAT";
                         _x setCombatMode "RED";
                         _x enableAI "AUTOTARGET";

@@ -5,44 +5,38 @@ if (!isServer) exitWith {};
 if (_mode == "init") exitWith {
     private _allLogics = allMissionObjects "Logic";
     if (count _allLogics < 1) exitWith {
-        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task05 ERROR: Pas de M_Dans_Bat_ trouvé."; };
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
-    private _targetNumChiefs = 2 + floor (random 3); 
+    private _targetNumChiefs = 2 + floor (random 3);
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _minDistPlayers = 750;
-    while { count _selectedLogics < 1 && _minDistPlayers >= 100 } do {
-        _maxDist = 2000;
-        while { count _selectedLogics < 1 && _maxDist <= 15000 } do {
-            _selectedLogics = [];
-            {
-                private _candidate = _x;
-                private _candidatePos = getPosASL _candidate;
-                private _valid = true;
+    private _minDistPlayers = 550;
+    private _maxDist = 1500;
 
-                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+    while { count _selectedLogics < _targetNumChiefs && _maxDist <= 15000 } do {
+        _selectedLogics = [];
+        {
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
 
-                if (_valid) then {
-                    { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
-                };
+            { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-                if (_valid) then { _selectedLogics pushBack _candidate; };
-                if (count _selectedLogics >= _targetNumChiefs) exitWith {};
-            } forEach _logicsPool;
+            if (_valid) then {
+                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+            };
 
-            if (count _selectedLogics < 1) then { _maxDist = _maxDist + 500; };
-        };
-        if (count _selectedLogics < 1) then {
-            _minDistPlayers = _minDistPlayers - 50;
-        };
+            if (_valid) then { _selectedLogics pushBack _candidate; };
+            if (count _selectedLogics >= _targetNumChiefs) exitWith {};
+        } forEach _logicsPool;
+
+        if (count _selectedLogics < _targetNumChiefs) then { _maxDist = _maxDist + 500; };
     };
 
     private _numChiefs = count _selectedLogics;
     if (_numChiefs < 1) exitWith {
-        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task05 ERROR: Impossible de trouver des emplacements valides. Relance dans 15s."; };
         [[], "LL_fnc_task05"] spawn { sleep 15; ["init"] spawn LL_fnc_task05; };
     };
 
@@ -59,37 +53,47 @@ if (_mode == "init") exitWith {
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        private _grp = createGroup [east, true];
-        _grp setBehaviour "SAFE";
+        private _grpGuards = createGroup [east, true];
+        _grpGuards setBehaviour "SAFE";
+        _grpGuards setCombatMode "RED";
 
-        private _numGuards = 3 + floor (random 3); 
+        private _numGuards = 2 + floor (random 3);
         for "_g" from 1 to _numGuards do {
-            sleep 4;
-            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            sleep 1.5;
+            private _guardClass = "O_Soldier_F";
+            private _guard = _grpGuards createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
             _guard allowDamage false;
             [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            [_guard] call TUE_fnc_applyEnemyEquipment;
             _allUnits pushBack _guard;
         };
 
-        sleep 4;
-        private _chiefClass = selectRandom ["CUP_O_TK_Commander", "CUP_O_TK_Officer"];
-        private _chief = _grp createUnit [_chiefClass, _spawnPos, [], 0, "NONE"];
+        [_grpGuards, _spawnPos, 35] call BIS_fnc_taskPatrol;
+
+        sleep 1.5;
+        private _grpChief = createGroup [east, true];
+        _grpChief setBehaviour "SAFE";
+        _grpChief setCombatMode "RED";
+
+        private _chiefClass = "O_Officer_F";
+        private _chief = _grpChief createUnit [_chiefClass, _spawnPos, [], 0, "NONE"];
         _chief setPosASL _spawnPos;
         _chief allowDamage false;
         [_chief] spawn { sleep 3; (_this select 0) allowDamage true; };
+        [_chief] call TUE_fnc_applyEnemyEquipment;
+        _chief setRank "COLONEL";
         _allUnits pushBack _chief;
 
-        _grp selectLeader _chief;
+        [_grpChief, _spawnPos, 20] call BIS_fnc_taskPatrol;
 
         private _mkrName = format ["mkr_task05_chief_%1", _i];
         createMarker [_mkrName, _spawnPos];
         _mkrName setMarkerType "mil_objective";
         _mkrName setMarkerColor "ColorOrange";
-        _mkrName setMarkerText format ["%1", localize "STR_LL_Task_05_Marker"];
+        _mkrName setMarkerText (localize "STR_LL_Task_05_Marker");
 
-        _chiefsData pushBack [_chief, _grp, _mkrName];
+        _chiefsData pushBack [_chief, _grpChief, _mkrName];
 
         _chief addEventHandler ["Killed", {
             params ["_unit", "_killer"];
@@ -150,30 +154,18 @@ if (_mode == "init") exitWith {
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task05_Title", localize "STR_LL_Diary_Task05_Text"]]; }] remoteExec ["spawn", 0, true];
 
-    ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
-
     [_chiefsData, _allLogics] spawn {
         params ["_chiefsData", "_logicsPool"];
-
-        private _alertSent = false;
 
         while { missionNamespace getVariable ["LL_g_taskInProgress", false] } do {
             private _isAlerted = missionNamespace getVariable ["LL_Task05_AlertTriggered", false];
 
-            if (_isAlerted && !_alertSent) then {
-                _alertSent = true;
-
-                ["STR_LL_Task_05_Alert"] remoteExec ["LL_fnc_radioMessage", 0];
-            };
-
             {
                 _x params ["_chief", "_grp", "_mkr"];
                 if (alive _chief) then {
-
                     _mkr setMarkerPos (getPos _chief);
 
                     if (_isAlerted) then {
-
                         _mkr setMarkerColor "ColorRed";
                         _grp setBehaviour "COMBAT";
                         _grp setSpeedMode "FULL";
@@ -194,10 +186,12 @@ if (_mode == "init") exitWith {
                                 while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
                                 private _wp = _grp addWaypoint [getPos _nearest, 0];
                                 _wp setWaypointType "SAD";
+                                _wp setWaypointSpeed "FULL";
+                                _wp setWaypointBehaviour "COMBAT";
+                                _wp setWaypointCombatMode "RED";
                             };
                         };
                     } else {
-
                         if (unitReady _chief || count waypoints _grp == 0) then {
                             private _nextLogic = selectRandom _logicsPool;
                             while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };

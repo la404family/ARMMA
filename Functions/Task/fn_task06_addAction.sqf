@@ -14,11 +14,7 @@ _this spawn {
         };
     };
 
-    if (isNull _hvt) exitWith {
-        diag_log "[CLIENT] ERREUR : Le HVT reçu par addAction est null (problème de réplication).";
-    };
-
-    private _status = _hvt getVariable ["LL_Task_Status", ""];
+    if (isNull _hvt) exitWith {};
 
     private _titleEscort = localize "STR_LL_Task_06_EscortAction";
     if (_titleEscort == "" || _titleEscort == "STR_LL_Task_06_EscortAction") then { _titleEscort = "Escort HVT"; };
@@ -45,5 +41,4 @@ _this spawn {
         nil, 6.0, true, true, "",
         "alive _target && (_target getVariable ['LL_Task_Status', '']) == 'ESCORTED' && (_target getVariable ['LL_Task06_EscortParent', objNull]) == _this"
     ];
-
 };
