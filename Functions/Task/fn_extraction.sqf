@@ -76,7 +76,7 @@ _heli allowDamage false;
     _mkrHeli setMarkerType "b_air";
     _mkrHeli setMarkerColor "ColorBlue";
     _mkrHeli setMarkerText "HELI";
-    
+
     while { alive _heli && missionNamespace getVariable ["LL_g_extractionActive", false] } do {
         _mkrHeli setMarkerPos (getPos _heli);
         sleep 0.5;
@@ -123,51 +123,57 @@ if (!alive _heli) exitWith {};
 
 while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 
-_heli flyInHeight 28;
-private _wpCombat = _grp addWaypoint [_lzPos, 0];
-_wpCombat setWaypointType "LOITER";
-_wpCombat setWaypointLoiterRadius 80;
-_wpCombat setWaypointSpeed "NORMAL";
+private _nearLzEnemies = allUnits select { side group _x == east && alive _x && (_x distance2D _lzPos < 500) };
 
-{
-    if (_x != driver _heli) then {
-        _x setBehaviour "COMBAT";
-        _x setCombatMode "RED";
-        _x enableAI "TARGET";
-        _x enableAI "AUTOTARGET";
-        _x enableAI "AUTOCOMBAT";
-        _x enableAI "FSM";
-        _x enableAI "WEAPONAIM";
-        _x setSkill ["aimingAccuracy", 0.90];
-        _x setSkill ["aimingSpeed", 1.0];
-        _x setSkill ["spotDistance", 1.0];
-        _x setSkill ["spotTime", 1.0];
-        _x setSkill ["courage", 1.0];
-        _x setSkill ["commanding", 1.0];
-    };
-} forEach _crew;
+if (count _nearLzEnemies > 0) then {
+    _heli flyInHeight 28;
+    private _wpCombat = _grp addWaypoint [_lzPos, 0];
+    _wpCombat setWaypointType "LOITER";
+    _wpCombat setWaypointLoiterRadius 150;
+    _wpCombat setWaypointSpeed "NORMAL";
 
-private _combatTimer = 0;
-while { _combatTimer < 45 && alive _heli } do {
-    private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _heli < 450) };
     {
-        private _targetEnemy = _x;
-        _heli reveal [_targetEnemy, 4];
-        {
-            if (_x != driver _heli) then {
-                _x reveal [_targetEnemy, 4];
-                _x doTarget _targetEnemy;
-                _x doSuppressiveFire _targetEnemy;
-                _x doFire _targetEnemy;
-            };
-        } forEach _crew;
-    } forEach _enemies;
+        if (_x != driver _heli) then {
+            _x setBehaviour "COMBAT";
+            _x setCombatMode "RED";
+            _x enableAI "TARGET";
+            _x enableAI "AUTOTARGET";
+            _x enableAI "AUTOCOMBAT";
+            _x enableAI "FSM";
+            _x enableAI "WEAPONAIM";
+            _x setSkill ["aimingAccuracy", 0.90];
+            _x setSkill ["aimingSpeed", 1.0];
+            _x setSkill ["spotDistance", 1.0];
+            _x setSkill ["spotTime", 1.0];
+            _x setSkill ["courage", 1.0];
+            _x setSkill ["commanding", 1.0];
+        };
+    } forEach _crew;
 
-    sleep 1.5;
-    _combatTimer = _combatTimer + 1.5;
+    private _combatTimer = 0;
+    while { _combatTimer < 65 && alive _heli } do {
+        private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _lzPos < 500 || _x distance2D _heli < 500) };
+        if (count _enemies == 0) exitWith {};
+        {
+            private _targetEnemy = _x;
+            _heli reveal [_targetEnemy, 4];
+            {
+                if (_x != driver _heli) then {
+                    _x reveal [_targetEnemy, 4];
+                    _x doTarget _targetEnemy;
+                    _x doSuppressiveFire _targetEnemy;
+                    _x doFire _targetEnemy;
+                };
+            } forEach _crew;
+        } forEach _enemies;
+
+        sleep 1.5;
+        _combatTimer = _combatTimer + 1.5;
+    };
+
+    while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 };
 
-while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 _grp setBehaviour "CARELESS";
 _grp setCombatMode "BLUE";
 
@@ -207,14 +213,14 @@ while { !_allBoarded } do {
     sleep 2;
     private _alivePlayers = allPlayers select { alive _x };
     if (count _alivePlayers == 0 && !isNull player) then { _alivePlayers = [player]; };
-    
+
     private _teamUnits = [];
     {
         if (alive _x) then {
             _teamUnits append (units group _x);
         };
     } forEach _alivePlayers;
-    
+
     private _uniqueTeam = _teamUnits arrayIntersect _teamUnits;
     _uniqueTeam = _uniqueTeam select { alive _x };
 
@@ -230,7 +236,7 @@ while { !_allBoarded } do {
         private _e = _x;
         { _x reveal [_e, 4]; } forEach (crew _heli);
     } forEach _nearEnemies;
-    
+
     private _boardedCount = 0;
     {
         if (vehicle _x == _heli) then {

@@ -36,29 +36,29 @@ if (_mode == "init") exitWith {
     private _spawnPos = getPosASL _selectedLogic;
     _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-    private _grpInner = createGroup [east, true];
-    _grpInner setBehaviour "SAFE";
-    _grpInner setCombatMode "RED";
+    private _numPatrols = 5 + floor (random 3);
+    private _step = (475 - 15) / (_numPatrols - 1 max 1);
 
-    private _grpOuter = createGroup [east, true];
-    _grpOuter setBehaviour "SAFE";
-    _grpOuter setCombatMode "RED";
+    for "_p" from 0 to (_numPatrols - 1) do {
+        private _radius = round (15 + (_p * _step) + (random 20 - 10)) max 15 min 475;
+        private _grp = createGroup [east, true];
+        _grp setBehaviour "SAFE";
+        _grp setCombatMode "RED";
 
-    private _numGuards = 8 + floor(random 5);
-    for "_g" from 1 to _numGuards do {
-        sleep 1.5;
-        private _guardClass = "O_Soldier_F";
-        private _currentGrp = if (_g % 2 == 0) then { _grpInner } else { _grpOuter };
-        private _guard = _currentGrp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
-        _guard setPosASL _spawnPos;
-        _guard allowDamage false;
-        [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-        [_guard] call TUE_fnc_applyEnemyEquipment;
-        _allUnits pushBack _guard;
+        private _numGuards = 2 + floor (random 3);
+        for "_g" from 1 to _numGuards do {
+            sleep 1.5;
+            private _guardClass = "O_Soldier_F";
+            private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            _guard setPosASL _spawnPos;
+            _guard allowDamage false;
+            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            [_guard] call TUE_fnc_applyEnemyEquipment;
+            _allUnits pushBack _guard;
+        };
+
+        [_grp, _spawnPos, _radius] call BIS_fnc_taskPatrol;
     };
-
-    [_grpInner, _spawnPos, 30] call BIS_fnc_taskPatrol;
-    [_grpOuter, _spawnPos, 80] call BIS_fnc_taskPatrol;
 
     sleep 1.5;
     private _grpHvt = createGroup [east, true];

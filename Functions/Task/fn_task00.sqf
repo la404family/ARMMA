@@ -83,15 +83,15 @@ if (_mode == "init") exitWith {
     _mkrName setMarkerColor "ColorOrange";
     _mkrName setMarkerText (localize "STR_LL_Task_00_MarkerMain");
 
-    private _numGroups = 4 + floor (random 5); 
-    private _currentRadius = 10;
+    private _numGroups = 5 + floor (random 4);
+    private _step = (400 - 10) / (_numGroups - 1 max 1);
 
-    for "_i" from 1 to _numGroups do {
+    for "_i" from 0 to (_numGroups - 1) do {
         private _grpEnemy = createGroup [east, true];
         _grpEnemy setBehaviour "SAFE";
         _grpEnemy setCombatMode "RED";
 
-        private _numGuards = 2 + floor (random 3); 
+        private _numGuards = 2 + floor (random 3);
         for "_g" from 1 to _numGuards do {
             sleep 1;
             private _guardClass = "O_Soldier_F";
@@ -103,8 +103,8 @@ if (_mode == "init") exitWith {
             _allUnits pushBack _guard;
         };
 
+        private _currentRadius = round (10 + (_i * _step) + (random 20 - 10)) max 10 min 400;
         [_grpEnemy, _spawnPos, _currentRadius] call BIS_fnc_taskPatrol;
-        _currentRadius = _currentRadius + 10 + floor(random 16);
     };
 
     missionNamespace setVariable ["LL_Task00_AllUnits", _allUnits, true];

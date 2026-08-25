@@ -11,7 +11,6 @@ if (!isServer) exitWith {};
 
     sleep 1;
 
-    // Placer la caisse d'arsenal à 12m du point d'atterrissage
     private _pos = [(_lzPos select 0) + 12, (_lzPos select 1) + 12, 0];
 
     private _crate = createVehicle ["Box_NATO_Equip_F", _pos, [], 0, "CAN_COLLIDE"];
@@ -23,7 +22,6 @@ if (!isServer) exitWith {};
     clearItemCargoGlobal _crate;
     clearBackpackCargoGlobal _crate;
 
-    // Arsenal complet optimisé
     ["AmmoboxInit", [_crate, true]] call BIS_fnc_arsenal;
 
     private _mkrName = "mkr_start_arsenal";
@@ -43,7 +41,6 @@ if (!isServer) exitWith {};
         drone_BLUFOR doMove [(_pos select 0) + 1.5, (_pos select 1) + 1.5, 1.8];
     };
 
-    // Fumigène décalé sur le côté
     private _introSmoke = "SmokeShellRed" createVehicle _pos;
     _introSmoke attachTo [_crate, [1.2, 0, 0]];
 

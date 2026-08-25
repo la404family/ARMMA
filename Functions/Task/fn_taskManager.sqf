@@ -10,7 +10,6 @@ if (_mode == "init") exitWith {
 if (_mode == "REQUEST") exitWith {
     if (missionNamespace getVariable ["LL_g_taskInProgress", false]) exitWith {
         if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
-            diag_log "[LL] taskManager: Une tâche est déjà en cours.";
         };
     };
 
@@ -23,7 +22,6 @@ if (_mode == "REQUEST") exitWith {
     _availableTasks pushBack "task04";
     _availableTasks pushBack "task05";
     _availableTasks pushBack "task06";
-
 
     private _lastTask = missionNamespace getVariable ["LL_g_lastTask", ""];
 
@@ -42,34 +40,28 @@ if (_mode == "REQUEST") exitWith {
 
         if (_fnc isNotEqualTo {}) then {
             if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
-                diag_log format ["[LL] taskManager: Lancement de la tâche '%1'.", _selectedTask];
             };
-            
+
             [_selectedTask, _fnc] spawn {
                 params ["_selectedTask", "_fnc"];
-                
-                // Lancer la tâche
+
                 ["init"] spawn _fnc;
-                
-                // Attendre qu'elle soit marquée comme terminée (succès ou échec)
+
                 waitUntil { 
                     sleep 2; 
                     !(missionNamespace getVariable ["LL_g_taskInProgress", false]) 
                 };
-                
-                // La tâche est terminée, lancer l'extraction pour finir la mission
+
                 [] spawn LL_fnc_extraction;
             };
-            
+
         } else {
             if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
-                diag_log format ["[LL] taskManager: ERREUR - Fonction LL_fnc_%1 introuvable.", _selectedTask];
             };
             missionNamespace setVariable ["LL_g_taskInProgress", false, true];
         };
     } else {
         if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
-            diag_log "[LL] taskManager: Aucune tâche disponible (toutes sont commentées ou non définies).";
         };
     };
 };

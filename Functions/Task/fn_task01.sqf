@@ -56,12 +56,12 @@ if (_mode == "init") exitWith {
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        private _numPatrols = 3 + floor (random 3);
-        private _patrolRadii = [15, 35, 55, 100, 150];
+        private _numPatrols = 4 + floor (random 3);
+        private _step = (550 - 10) / (_numPatrols - 1 max 1);
         private _zoneGuards = [];
 
         for "_p" from 0 to (_numPatrols - 1) do {
-            private _radius = _patrolRadii select _p;
+            private _radius = round (10 + (_p * _step) + (random 20 - 10)) max 10 min 550;
             private _grp = createGroup [east, true];
             _grp setBehaviour "SAFE";
             _grp setCombatMode "RED";

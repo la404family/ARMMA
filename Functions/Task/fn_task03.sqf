@@ -51,11 +51,11 @@ if (_mode == "init") exitWith {
         private _logic = _selectedRadios select _i;
         private _spawnPos = getPosASL _logic;
 
-        private _numPatrols = 3 + floor (random 3);
-        private _patrolRadii = [15, 35, 55, 100, 150];
+        private _numPatrols = 4 + floor (random 3);
+        private _step = (475 - 15) / (_numPatrols - 1 max 1);
 
         for "_p" from 0 to (_numPatrols - 1) do {
-            private _radius = _patrolRadii select _p;
+            private _radius = round (15 + (_p * _step) + (random 20 - 10)) max 15 min 475;
             private _grp = createGroup [east, true];
             _grp setBehaviour "SAFE";
             _grp setCombatMode "RED";

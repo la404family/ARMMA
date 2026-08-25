@@ -137,6 +137,34 @@ if (hasInterface) then {
 
         private _skipped = { missionNamespace getVariable ["MISSION_intro_skip", false] };
 
+        private _fnShowRadio = {
+            params [["_sender", ""], ["_text", ""], ["_duration", 6.5], ["_fadeIn", 0.4]];
+            if (call _skipped) exitWith {};
+
+            private _content = if (_sender != "") then {
+                format [
+                    "<t font='PuristaMedium' shadow='2' align='left'>" +
+                    "<t bgcolor='#0a0e16e6' color='#E5B729' font='PuristaBold' size='0.80'> ▌ %1 </t><br/>" +
+                    "<t bgcolor='#0a0e16cc' color='#e2e8f0' size='0.75'> %2 </t>" +
+                    "</t>",
+                    _sender,
+                    _text
+                ]
+            } else {
+                format [
+                    "<t font='PuristaMedium' shadow='2' align='left'>" +
+                    "<t bgcolor='#0a0e16cc' color='#e2e8f0' size='0.75'> %1 </t>" +
+                    "</t>",
+                    _text
+                ]
+            };
+
+            private _xPos = safeZoneX + (safeZoneW * 0.05);
+            private _yPos = safeZoneY + (safeZoneH * 0.76);
+
+            [_content, _xPos, _yPos, _duration, _fadeIn, 0, 794] spawn BIS_fnc_dynamicText;
+        };
+
         if (!isNull _heli) then {
             private _dirToHeli = _lzPos getDir (getPos _heli);
 
@@ -166,10 +194,10 @@ if (hasInterface) then {
             if !(call _skipped) then {
                 titleText [
                     format [
-                        "<t size='3.0' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
-                        "<t size='1.4' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t>",
-                        "GHOSTS",
-                        localize "STR_LL_Intro_Presents"
+                        "<t size='2.5' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
+                        "<t size='1.1' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t>",
+                        localize "STR_TUE_Intro_Title_1",
+                        localize "STR_TUE_Intro_Title_2"
                     ],
                     "PLAIN", 1, true, true
                 ];
@@ -177,30 +205,36 @@ if (hasInterface) then {
 
             sleep 6;
             titleText ["", "PLAIN", 0.5];
-            sleep 1;
+            sleep 0.5;
 
             [] spawn {
+                private _year = date select 0;
+                private _month = date select 1;
+                private _day = date select 2;
                 private _hour = date select 3;
                 private _minute = date select 4;
+                private _dayStr = if (_day < 10) then { "0" + str _day } else { str _day };
+                private _monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+                private _monthStr = _monthNames select ((_month - 1) max 0 min 11);
                 private _timeStr = format ["%1:%2", if (_hour < 10) then { "0" + str _hour } else { str _hour }, if (_minute < 10) then { "0" + str _minute } else { str _minute }];
-                private _fullText = format ["%1 - %2", localize "STR_LL_Intro_Location", _timeStr];
+                private _fullText = format ["%1 %2 %3 — %4", _dayStr, _monthStr, _year, _timeStr];
                 private _p2chars = toArray _fullText;
                 private _p2built = "";
                 {
                     if (missionNamespace getVariable ["MISSION_intro_skip", false]) exitWith {};
                     _p2built = _p2built + toString [_x];
                     [
-                        format ["<t size='1.3' color='#ffffff' font='PuristaLight' align='center' shadow='2'>%1</t>", _p2built],
-                        -1, 0.35, 5, 0, 0, 793
+                        format ["<t size='0.95' color='#cbd5e1' font='PuristaLight' align='center' shadow='2'>%1</t>", _p2built],
+                        -1, safeZoneY + (safeZoneH * 0.60), 4, 0, 0, 793
                     ] spawn BIS_fnc_dynamicText;
                     if (_x != 32) then { playSound "readoutClick"; };
                     sleep 0.08;
                 } forEach _p2chars;
-                sleep 2.5;
-                ["", -1, 0.35, 1, 0.5, 0, 793] spawn BIS_fnc_dynamicText;
+                sleep 2;
+                ["", -1, safeZoneY + (safeZoneH * 0.60), 0.5, 0.3, 0, 793] spawn BIS_fnc_dynamicText;
             };
 
-            sleep 5;
+            sleep 5.5;
 
             if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.4];
@@ -232,7 +266,9 @@ if (hasInterface) then {
                 _cam camSetTarget _heli;
                 _cam camCommit 10;
 
-                [10, true] call _fnWaitPhase;
+                [localize "STR_TUE_Intro_Sender", localize "STR_TUE_Intro_Plan2_Radio", 7.5, 0.4] call _fnShowRadio;
+
+                [8, true] call _fnWaitPhase;
             };
 
             if (vehicle player != player && !(call _skipped)) then {
@@ -260,7 +296,9 @@ if (hasInterface) then {
                 _cam camSetTarget _heli;
                 _cam camCommit 8;
 
-                [8, true] call _fnWaitPhase;
+                ["", localize "STR_TUE_Intro_Plan4_Radio", 6.5, 0.4] call _fnShowRadio;
+
+                [7, true] call _fnWaitPhase;
             };
 
             if (vehicle player != player && !(call _skipped)) then {
@@ -285,10 +323,14 @@ if (hasInterface) then {
                 };
 
                 cutText ["", "BLACK IN", 0.6];
+                sleep 0.4;
 
+                ["", localize "STR_TUE_Intro_Plan5_Radio", 6.5, 0.4] call _fnShowRadio;
+
+                private _plan4EndTime = time + 6.0;
                 waitUntil {
                     sleep 0.05;
-                    (missionNamespace getVariable ["MISSION_players_disembarked", false])
+                    ((missionNamespace getVariable ["MISSION_players_disembarked", false]) && (time > _plan4EndTime))
                     || (vehicle player == player)
                     || (call _skipped)
                 };
@@ -340,14 +382,6 @@ if (hasInterface) then {
         if (call _skipped) then {
             cutText ["", "BLACK IN", 1.5];
         };
-
-        [
-            format [
-                "<t size='1.0' color='#bbbbbb' font='PuristaLight' align='center'>%1</t>",
-                localize "STR_LL_Intro_MissionStartSubtitle"
-            ],
-            -1, -1, 5, 1, 0, 793
-        ] spawn BIS_fnc_dynamicText;
 
         missionNamespace setVariable ["MISSION_intro_finished", true, true];
     };
@@ -467,7 +501,7 @@ if (isServer) then {
         _heli flyInHeight 150;
         _heli limitSpeed 200;
 
-        sleep 15;
+        sleep 16;
 
         [_heli, ["doorLB", 1]] remoteExec ["animateDoor", 0, _heli];
         [_heli, ["doorRB", 1]] remoteExec ["animateDoor", 0, _heli];
@@ -477,12 +511,12 @@ if (isServer) then {
         _heli limitSpeed 110;
 
         private _landTimeout = time + 120;
-        waitUntil { (_heli distance2D _destPos) < 300 || time > _landTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
+        waitUntil { (_heli distance2D _destPos) < 250 || time > _landTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
         _heli land "GET OUT";
 
         private _touchTimeout = time + 60;
         waitUntil { (getPosATL _heli select 2) < 2 || isTouchingGround _heli || time > _touchTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
-        sleep 1;
+        sleep 1.5;
 
         _heli lockCargo false;
 

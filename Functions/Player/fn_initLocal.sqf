@@ -1,6 +1,8 @@
 if (!hasInterface) exitWith {};
 
-player createDiaryRecord ["diary", [localize "STR_TUE_Briefing_Title", localize "STR_TUE_Briefing_Text"]];
+player createDiaryRecord ["diary", [localize "STR_TUE_Diary_Tech_Title", localize "STR_TUE_Diary_Tech_Text"]];
+player createDiaryRecord ["diary", [localize "STR_TUE_Diary_Unit_Title", localize "STR_TUE_Diary_Unit_Text"]];
+player createDiaryRecord ["diary", [localize "STR_TUE_Diary_Context_Title", localize "STR_TUE_Diary_Context_Text"]];
 
 if ({ _x == "FirstAidKit" } count (items player) < 2) then {
     player addItem "FirstAidKit";

@@ -10,13 +10,13 @@ for "_i" from 0 to (count _cfgWeapons - 1) do {
     if (isClass _class) then {
         private _className = configName _class;
         private _classNameLower = toLower _className;
-        
+
         if (_className select [0, 4] == "VSM_") then {
             if (!(_classNameLower find "black" >= 0) && {!(_classNameLower find "white" >= 0)} && {!(_classNameLower find "alpine" >= 0)} && {!(_classNameLower find "wtf" >= 0)}) then {
                 private _itemInfo = _class >> "ItemInfo";
                 if (isClass _itemInfo) then {
                     private _type = getNumber (_itemInfo >> "type");
-                    
+
                     if (_type == 801) then {
                         TUE_vsm_uniforms pushBack _className;
                     } else {

@@ -27,7 +27,7 @@ if (!isServer) exitWith {};
 
             private _currentLeader = leader _mainGrp;
             private _humanPlayers = _squad select { isPlayer _x };
-            
+
             private _desiredLeader = if (_humanPlayers isNotEqualTo []) then { _humanPlayers select 0 } else { _squad select 0 };
 
             if (_currentLeader != _desiredLeader) then {
@@ -36,4 +36,3 @@ if (!isServer) exitWith {};
         };
     };
 };
-

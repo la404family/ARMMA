@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
-    <Key ID="STR_LL_Intro_Author">
+    <Key ID="STR_TUE_Intro_Sender">
+        <Original>QG</Original>
+        <French>QG</French>
+        <English>HQ</English>
+        <Spanish>CG</Spanish>
+        <Italian>QG</Italian>
+        <German>HQ</German>
+        <Polish>HQ</Polish>
+        <Russian>ШТАБ</Russian>
+        <Turkish>KK</Turkish>
+        <Japanese>司令部</Japanese>
+        <Korean>지휘부</Korean>
+        <Chinese>指挥部</Chinese>
+        <Portuguese>QG</Portuguese>
+        <Czech>HQ</Czech>
+    </Key>
+    <Key ID="STR_TUE_Intro_Title_1">
         <Original>GHOSTS</Original>
         <French>GHOSTS</French>
         <English>GHOSTS</English>
@@ -16,52 +32,68 @@
         <Portuguese>GHOSTS</Portuguese>
         <Czech>GHOSTS</Czech>
     </Key>
-    <Key ID="STR_LL_Intro_Presents">
-        <Original>Unité de snipers d'élite</Original>
-        <French>Unité de snipers d'élite</French>
-        <English>Elite Sniper Unit</English>
-        <Spanish>Unidad de francotiradores de élite</Spanish>
-        <Italian>Unità di cecchini scelti</Italian>
-        <German>Elite-Scharfschützeneinheit</German>
-        <Polish>Elitarna jednostka snajperska</Polish>
-        <Russian>Элитное снайперское подразделение</Russian>
-        <Turkish>Seçkin Keskin Nişancı Birliği</Turkish>
-        <Japanese>精鋭スナイパー部隊</Japanese>
-        <Korean>엘리트 저격 부대</Korean>
-        <Chinese>精锐狙击部队</Chinese>
-        <Portuguese>Unidade de atiradores de elite</Portuguese>
-        <Czech>Elitní odstřelovačská jednotka</Czech>
+    <Key ID="STR_TUE_Intro_Title_2">
+        <Original>UNITÉ D'ÉLITE VOLONTAIRE</Original>
+        <French>UNITÉ D'ÉLITE VOLONTAIRE</French>
+        <English>VOLUNTEER ELITE UNIT</English>
+        <Spanish>UNIDAD DE ÉLITE VOLUNTARIA</Spanish>
+        <Italian>UNITÀ D'ÉLITE VOLONTARIA</Italian>
+        <German>FREIWILLIGE ELITEEINHEIT</German>
+        <Polish>OCHOTNICZA JEDNOSTKA ELITARNA</Polish>
+        <Russian>ДОБРОВОЛЬЧЕСКОЕ ЭЛИТНОЕ ПОДРАЗДЕЛЕНИЕ</Russian>
+        <Turkish>GÖNÜLLÜ SEÇKİN BİRLİK</Turkish>
+        <Japanese>志願制精鋭特殊部隊</Japanese>
+        <Korean>자원 엘리트 특수부대</Korean>
+        <Chinese>志愿精锐特战分队</Chinese>
+        <Portuguese>UNIDADE DE ELITE VOLUNTÁRIA</Portuguese>
+        <Czech>DOBROVOLNICKÁ ELITNÍ JEDNOTKA</Czech>
     </Key>
-    <Key ID="STR_LL_Intro_Location">
-        <Original>June 29, 2035</Original>
-        <French>29 Juin 2035</French>
-        <English>June 29, 2035</English>
-        <Spanish>29 de Junio de 2035</Spanish>
-        <Italian>29 Giugno 2035</Italian>
-        <German>29. Juni 2035</German>
-        <Polish>29 Czerwca 2035</Polish>
-        <Russian>29 июня 2035 г.</Russian>
-        <Turkish>29 Haziran 2035</Turkish>
-        <Japanese>2035年6月29日</Japanese>
-        <Korean>2035년 6월 29일</Korean>
-        <Chinese>2035年6月29日</Chinese>
-        <Portuguese>29 de Junho de 2035</Portuguese>
-        <Czech>29. června 2035</Czech>
+    <Key ID="STR_TUE_Intro_Plan2_Radio">
+        <Original>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</Original>
+        <French>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</French>
+        <English>"Listen carefully, I repeat this one last time: A drone is already in place to locate targets. Understood?"</English>
+        <Spanish>"Escuchen bien, se lo repito por última vez: Un dron ya está en posición para localizar los objetivos. ¿Entendido?"</Spanish>
+        <Italian>"Ascoltate bene, ve lo ripeto per l'ultima volta: Un drone è già sul posto per localizzare i bersagli. Ricevuto?"</Italian>
+        <German>"Hören Sie gut zu, ich wiederhole es ein letztes Mal: Eine Drohne ist bereits vor Ort, um die Ziele zu lokalisieren. Verstanden?"</German>
+        <Polish>"Słuchajcie uważnie, powtarzam po raz ostatni: Dron jest już na miejscu, by zlokalizować cele. Zrozumiano?"</Polish>
+        <Russian>"Слушайте внимательно, повторяю последний раз: Беспилотник уже на месте для обнаружения целей. Понятно?"</Russian>
+        <Turkish>"İyi dinleyin, son kez tekrar ediyorum: Hedefleri tespit etmek için bir İHA zaten bölgede. Anlaşıldı mı?"</Turkish>
+        <Japanese>"よく聞け、最後にもう一度言う：目標を特定するためドローンがすでに配置されている。了解したか？"</Japanese>
+        <Korean>"잘 들어라, 마지막으로 반복한다: 목표를 탐색하기 위해 드론이 이미 배치되어 있다. 알겠나?"</Korean>
+        <Chinese>"仔细听好，我最后重复一次：无人机已就位以锁定目标。明白了吗？"</Chinese>
+        <Portuguese>"Ouçam com atenção, repito pela última vez: Um drone já está na área para localizar os alvos. Entendido?"</Portuguese>
+        <Czech>"Poslouchejte pozorně, opakuji to naposledy: Dron je již na místě k lokalizaci cílů. Rozumíte?"</Czech>
     </Key>
-    <Key ID="STR_LL_Intro_MissionStartSubtitle">
-        <Original>Review the operational briefing if you value your life.</Original>
-        <French>Consultez le briefing opérationnel si vous tenez à votre peau.</French>
-        <English>Review the operational briefing if you value your life.</English>
-        <Spanish>Consulte el informe operativo si valora su vida.</Spanish>
-        <Italian>Consulta il briefing operativo se tieni alla pelle.</Italian>
-        <German>Missionsbriefing lesen, wenn Sie am Leben bleiben wollen.</German>
-        <Polish>Zapoznaj się z odprawą operacyjną, jeśli zależy ci na życiu.</Polish>
-        <Russian>Ознакомьтесь с оперативным брифингом, если хотите остаться в живых.</Russian>
-        <Turkish>Hayatta kalmak istiyorsanız operasyonel brifingi inceleyin.</Turkish>
-        <Japanese>命が惜しければ作戦説明を確認せよ。</Japanese>
-        <Korean>살고 싶다면 작전 브리핑을 정독하십시오.</Korean>
-        <Chinese>如果想活命，请仔细阅读作战简报。</Chinese>
-        <Portuguese>Reveja o briefing operacional se você dá valor à sua vida.</Portuguese>
-        <Czech>Přečtěte si operační brífink, pokud vám záleží na životě.</Czech>
+    <Key ID="STR_TUE_Intro_Plan4_Radio">
+        <Original>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</Original>
+        <French>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</French>
+        <English>"Supply crate available: You can select your equipment and choose your weapons before heading out."</English>
+        <Spanish>"Caja de suministros disponible: Pueden seleccionar su equipo y elegir sus armas antes de lanzarse a la misión."</Spanish>
+        <Italian>"Cassa rifornimenti disponibile: Potete selezionare il vostro equipaggiamento e scegliere le vostre armi prima di iniziare."</Italian>
+        <German>"Ausrüstungskiste verfügbar: Sie können Ihre Ausrüstung wählen und Ihre Waffen aussuchen, bevor Sie loslegen."</German>
+        <Polish>"Skrzynia z zaopatrzeniem dostępna: Możecie wybrać swój ekwipunek i dobrać broń przed wyruszeniem do akcji."</Polish>
+        <Russian>"Ящик со снаряжением доступен: Вы можете выбрать экипировку и оружие перед выходом на задание."</Russian>
+        <Turkish>"İkmal sandığı mevcut: Harekete geçmeden önce teçhizatınızı ve silahlarınızı seçebilirsiniz."</Turkish>
+        <Japanese>"補給コンテナが利用可能です。作戦開始前に装備を選択し、武器を整えてください。"</Japanese>
+        <Korean>"보급 상자 사용 가능: 작전 개시 전에 장비를 선택하고 무기를 고를 수 있습니다."</Korean>
+        <Chinese>"补给箱可用：出发前你们可以选择装备并挑选武器。"</Chinese>
+        <Portuguese>"Caixa de suprimentos disponível: Podem selecionar o vosso equipamento e escolher as vossas armas antes de avançar."</Portuguese>
+        <Czech>"Zásobovací bedna je k dispozici: Před zahájením akce si můžete vybrat výstroj a zbraně."</Czech>
+    </Key>
+    <Key ID="STR_TUE_Intro_Plan5_Radio">
+        <Original>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</Original>
+        <French>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</French>
+        <English>"Everything is clear! From now on... You no longer exist... Good luck. Out."</English>
+        <Spanish>"¡Todo está claro! A partir de ahora... Ya no existen... Buena suerte. Corto."</Spanish>
+        <Italian>"Tutto chiaro! Da questo momento in poi... Non esistete più... Buona fortuna. Chiudo."</Italian>
+        <German>"Alles klar! Von nun an... Existieren Sie nicht mehr... Viel Glück. Ende."</German>
+        <Polish>"Wszystko jasne! Od tej chwili... Nie istniejecie... Powodzenia. Bez odbioru."</Polish>
+        <Russian>"Все предельно ясно! С этой минуты... Вас больше не существует... Удачи. Конец связи."</Russian>
+        <Turkish>"Her şey net! Şu andan itibaren... Artık yoksunuz... İyi şanslar. Tamam."</Turkish>
+        <Japanese>"すべて明確だな！ これ以降… 貴様らは存在しない。健闘を祈る。通信終了。"</Japanese>
+        <Korean>"모든 것이 확실하다! 지금부터... 너희는 존재하지 않는다... 행운을 빈다. 이상."</Korean>
+        <Chinese>"一切明确！从现在起……你们已不复存在……祝你们好运。通话结束。"</Chinese>
+        <Portuguese>"Tudo claro! A partir de agora... Vocês já não existem... Boa sorte. Terminado."</Portuguese>
+        <Czech>"Vše je jasné! Od této chvíle... Už neexistujete... Hodně štěstí. Konec."</Czech>
     </Key>
 </Keys>

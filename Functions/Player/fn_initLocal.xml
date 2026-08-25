@@ -1,116 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
-    <Key ID="STR_TUE_Diary_Lore_Title">
-        <Original>Lore</Original>
-        <English>Lore</English>
-        <French>Lore</French>
-        <Spanish>Lore</Spanish>
-        <Italian>Lore</Italian>
-        <German>Hintergrundgeschichte</German>
-        <Polish>Fabuła</Polish>
-        <Russian>Лор</Russian>
-        <Turkish>Hikaye</Turkish>
-        <Japanese>伝承</Japanese>
-        <Korean>배경 이야기</Korean>
-        <Chinese>背景故事</Chinese>
-    </Key>
-    <Key ID="STR_TUE_Diary_Lore_Text">
-        <Original>Story details.</Original>
-        <English>Story details.</English>
-        <French>Détails de l'histoire.</French>
-        <Spanish>Detalles de la historia.</Spanish>
-        <Italian>Dettagli della storia.</Italian>
-        <German>Geschichtsdetails.</German>
-        <Polish>Szczegóły historii.</Polish>
-        <Russian>Подробности сюжета.</Russian>
-        <Turkish>Hikaye detayları.</Turkish>
-        <Japanese>ストーリーの詳細。</Japanese>
-        <Korean>이야기 세부 정보.</Korean>
-        <Chinese>故事细节。</Chinese>
-    </Key>
-    <Key ID="STR_TUE_Diary_Factions_Title">
-        <Original>Factions</Original>
-        <English>Factions</English>
-        <French>Factions</French>
-        <Spanish>Facciones</Spanish>
-        <Italian>Fazioni</Italian>
-        <German>Fraktionen</German>
-        <Polish>Frakcje</Polish>
-        <Russian>Фракции</Russian>
-        <Turkish>Gruplar</Turkish>
-        <Japanese>派閥</Japanese>
-        <Korean>세력</Korean>
-        <Chinese>派系</Chinese>
-    </Key>
-    <Key ID="STR_TUE_Diary_Factions_Text">
-        <Original>Factions details.</Original>
-        <English>Factions details.</English>
-        <French>Détails des factions.</French>
-        <Spanish>Detalles de las facciones.</Spanish>
-        <Italian>Dettagli delle fazioni.</Italian>
-        <German>Fraktionsdetails.</German>
-        <Polish>Szczegóły frakcji.</Polish>
-        <Russian>Подробности о фракциях.</Russian>
-        <Turkish>Grup detayları.</Turkish>
-        <Japanese>派閥の詳細。</Japanese>
-        <Korean>세력 세부 정보.</Korean>
-        <Chinese>派系细节。</Chinese>
-    </Key>
     <Key ID="STR_TUE_Diary_Context_Title">
-        <Original>Context</Original>
-        <English>Context</English>
-        <French>Contexte</French>
-        <Spanish>Contexto</Spanish>
-        <Italian>Contesto</Italian>
-        <German>Kontext</German>
-        <Polish>Kontekst</Polish>
-        <Russian>Контекст</Russian>
-        <Turkish>Bağlam</Turkish>
-        <Japanese>コンテキスト</Japanese>
-        <Korean>배경</Korean>
-        <Chinese>背景</Chinese>
+        <Original>Contexte 2035 &amp; Zones Grises</Original>
+        <French>Contexte 2035 &amp; Zones Grises</French>
+        <English>2035 Geopolitical Context &amp; Gray Zones</English>
+        <Spanish>Contexto 2035 y Zonas Grises</Spanish>
+        <Italian>Contesto 2035 &amp; Zone Grigie</Italian>
+        <German>2035 Kontext &amp; Grauzonen</German>
+        <Portuguese>Contexto 2035 e Zonas Cinzentas</Portuguese>
+        <Polish>Kontekst 2035 i Szare Strefy</Polish>
+        <Russian>Контекст 2035 года и "Серые зоны"</Russian>
+        <Czech>Kontext 2035 a Šedé zóny</Czech>
+        <Turkish>2035 Jeopolitik Bağlam &amp; Gri Bölgeler</Turkish>
+        <Korean>2035년 지정학적 배경 및 회색 지대</Korean>
+        <Japanese>2035年 地政学的背景とグレーゾーン</Japanese>
+        <Chinese>2035年地缘政治背景与灰色地带</Chinese>
     </Key>
     <Key ID="STR_TUE_Diary_Context_Text">
-        <Original>Mission context.</Original>
-        <English>Mission context.</English>
-        <French>Contexte de la mission.</French>
-        <Spanish>Contexto de la misión.</Spanish>
-        <Italian>Contesto della missione.</Italian>
-        <German>Missionskontext.</German>
-        <Polish>Kontekst misji.</Polish>
-        <Russian>Контекст миссии.</Russian>
-        <Turkish>Görev bağlamı.</Turkish>
-        <Japanese>ミッションの背景。</Japanese>
-        <Korean>임무 배경.</Korean>
-        <Chinese>任务背景。</Chinese>
+        <Original>&lt;font size='16' color='#ff8800'&gt;L'Ère des Guerres Hybrides (2035) :&lt;/font&gt;&lt;br/&gt;
+L'ordre mondial s'est fracturé. Face au risque d'escalade nucléaire globale, les affrontements directs entre armées régulières ont laissé place aux &lt;font color='#00d0ff'&gt;Zones Grises&lt;/font&gt; : de vastes sanctuaires hors de contrôle de l'État de droit.&lt;br/&gt;&lt;br/&gt;
+Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures critiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
+Aucune force conventionnelle ne peut intervenir officiellement.</Original>
+        <French>&lt;font size='16' color='#ff8800'&gt;L'Ère des Guerres Hybrides (2035) :&lt;/font&gt;&lt;br/&gt;
+L'ordre mondial s'est fracturé. Face au risque d'escalade nucléaire globale, les affrontements directs entre armées régulières ont laissé place aux &lt;font color='#00d0ff'&gt;Zones Grises&lt;/font&gt; : de vastes sanctuaires hors de contrôle de l'État de droit.&lt;br/&gt;&lt;br/&gt;
+Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures critiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
+Aucune force conventionnelle ne peut intervenir officiellement.</French>
+        <English>&lt;font size='16' color='#ff8800'&gt;The Era of Hybrid Warfare (2035):&lt;/font&gt;&lt;br/&gt;
+The global order has fractured. To prevent global nuclear escalation, conventional clashes have given way to &lt;font color='#00d0ff'&gt;Gray Zones&lt;/font&gt;: vast lawless sanctuaries beyond state control.&lt;br/&gt;&lt;br/&gt;
+In these ungoverned territories, rogue militias, private paramilitary groups, and unmarked armed cartels seize critical infrastructure: heavy weapons depots, jamming arrays, chemical sites, and communication relays.&lt;br/&gt;&lt;br/&gt;
+No conventional military can officially intervene.</English>
+        <Spanish>&lt;font size='16' color='#ff8800'&gt;La Era de la Guerra Híbrida (2035):&lt;/font&gt;&lt;br/&gt;
+El orden mundial se ha fracturado. Los enfrentamientos convencionales han dado paso a las &lt;font color='#00d0ff'&gt;Zonas Grises&lt;/font&gt;: vastos santuarios fuera del control estatal.&lt;br/&gt;&lt;br/&gt;
+Milicias insurgentes y grupos paramilitares sin insignias controlan infraestructuras críticas: depósitos de armas, repetidores e instalaciones químicas.&lt;br/&gt;&lt;br/&gt;
+Ninguna fuerza regular puede intervenir oficialmente.</Spanish>
+        <Italian>&lt;font size='16' color='#ff8800'&gt;L'Era della Guerra Ibrida (2035):&lt;/font&gt;&lt;br/&gt;
+L'ordine mondiale si è fratturato. Gli scontri convenzionali hanno lasciato spazio alle &lt;font color='#00d0ff'&gt;Zone Grigie&lt;/font&gt;: territori fuori da ogni controllo legale.&lt;br/&gt;&lt;br/&gt;
+Milizie ribelli e cartelli armati occupano infrastrutture critiche: depositi di armi, stazioni di disturbo e siti chimici.&lt;br/&gt;&lt;br/&gt;
+Nessun esercito regolare può intervenire apertamente.</Italian>
+        <German>&lt;font size='16' color='#ff8800'&gt;Die Ära hybrider Kriege (2035):&lt;/font&gt;&lt;br/&gt;
+Die Weltordnung ist zerbrochen. Konventionelle Kriege wichen &lt;font color='#00d0ff'&gt;Grauzonen&lt;/font&gt;: weiten, gesetzlosen Rückzugsgebieten.&lt;br/&gt;&lt;br/&gt;
+Aufständische Milizen und private Paramilitärs ohne Hoheitsabzeichen kontrollieren kritische Infrastruktur: Waffenlager, Störsender und Chemieanlagen.&lt;br/&gt;&lt;br/&gt;
+Keine reguläre Armee kann offiziell eingreifen.</German>
+        <Portuguese>&lt;font size='16' color='#ff8800'&gt;A Era da Guerra Híbrida (2035):&lt;/font&gt;&lt;br/&gt;
+A ordem global fraturou-se. Os confrontos convencionais deram lugar às &lt;font color='#00d0ff'&gt;Zonas Cinzentas&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+Milícias armadas e forças paramilitares sem insígnias controlam infraestruturas críticas.&lt;br/&gt;&lt;br/&gt;
+Nenhuma força militar pode intervir oficialmente.</Portuguese>
+        <Polish>&lt;font size='16' color='#ff8800'&gt;Era Wojny Hybrydowej (2035):&lt;/font&gt;&lt;br/&gt;
+Porządek światowy uległ załamaniu. Starcia konwencjonalne ustąpiły &lt;font color='#00d0ff'&gt;Szarym Strefom&lt;/font&gt;: bezprawnym terytoriom poza kontrolą państw.&lt;br/&gt;&lt;br/&gt;
+Bojówki i nieoznakowani najemnicy zajmują infrastrukturę krytyczną: składy broni, stacje zagłuszania i obiekty chemiczne.&lt;br/&gt;&lt;br/&gt;
+Żadna armia regularna nie może oficjalnie interweniować.</Polish>
+        <Russian>&lt;font size='16' color='#ff8800'&gt;Эпоха гибридных войн (2035):&lt;/font&gt;&lt;br/&gt;
+Мировой порядок рухнул. Конвенциональные столкновения уступили место &lt;font color='#00d0ff'&gt;Серым зонам&lt;/font&gt; — территориям вне контроля государств.&lt;br/&gt;&lt;br/&gt;
+Незаконные вооруженные формирования без опознавательных знаков захватывают склады оружия, ретрансляторы и химические объекты.&lt;br/&gt;&lt;br/&gt;
+Регулярные войска не могут открыто вмешаться.</Russian>
+        <Czech>&lt;font size='16' color='#ff8800'&gt;Éra hybridních válek (2035):&lt;/font&gt;&lt;br/&gt;
+Globální pořádek se rozpadl. Konvenční války ustoupily &lt;font color='#00d0ff'&gt;Šedým zónám&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+Povstalecké milice bez označení ovládají kritickou infrastrukturu: sklady zbraní, rušičky a chemická zařízení.&lt;br/&gt;&lt;br/&gt;
+Žádná pravidelná armáda nemůže oficiálně zasáhnout.</Czech>
+        <Turkish>&lt;font size='16' color='#ff8800'&gt;Hibrit Savaş Çağı (2035):&lt;/font&gt;&lt;br/&gt;
+Dünya düzeni kırıldı. Konvansiyonel çatışmalar yerini &lt;font color='#00d0ff'&gt;Gri Bölgelere&lt;/font&gt; bıraktı.&lt;br/&gt;&lt;br/&gt;
+İşaretsiz paramiliter gruplar kritik altyapıyı ele geçiriyor: silah depoları, sinyal bozucular ve kimyasal tesisler.&lt;br/&gt;&lt;br/&gt;
+Hiçbir düzenli ordu resmi olarak müdahale edemez.</Turkish>
+        <Korean>&lt;font size='16' color='#ff8800'&gt;하이브리드 전쟁의 시대 (2035):&lt;/font&gt;&lt;br/&gt;
+세계 질서가 붕괴되었습니다. 전면전 대신 국가 통제를 벗어난 &lt;font color='#00d0ff'&gt;회색 지대&lt;/font&gt;가 확산되었습니다.&lt;br/&gt;&lt;br/&gt;
+표식 없는 무장 민병대가 중무기 저장소, 전파 방해소, 화학 시설 등 주요 기반 시설을 점거하고 있습니다.&lt;br/&gt;&lt;br/&gt;
+정규군은 공식적으로 개입할 수 없습니다.</Korean>
+        <Japanese>&lt;font size='16' color='#ff8800'&gt;ハイブリッド戦争の時代（2035年）:&lt;/font&gt;&lt;br/&gt;
+世界秩序は崩壊した。正規軍同士の直接交戦は国家統治の及ばない&lt;font color='#00d0ff'&gt;グレーゾーン&lt;/font&gt;へと移行した。&lt;br/&gt;&lt;br/&gt;
+所属不明の武装組織が兵器庫、電波妨害施設、化学物質貯蔵所などの重要インフラを占拠している。&lt;br/&gt;&lt;br/&gt;
+いかなる正規軍も公式に介入することはできない。</Japanese>
+        <Chinese>&lt;font size='16' color='#ff8800'&gt;混合战争时代（2035年）：&lt;/font&gt;&lt;br/&gt;
+全球秩序破裂。正规军直接对抗已转入不受法律管辖的&lt;font color='#00d0ff'&gt;灰色地带&lt;/font&gt;。&lt;br/&gt;&lt;br/&gt;
+无标识的武装民兵组织控制着关键基础设施：重型武器库、干扰站、化学设施及中继站。&lt;br/&gt;&lt;br/&gt;
+任何常规军队都无法公开介入。</Chinese>
     </Key>
-    <Key ID="STR_TUE_Briefing_Title">
-        <Original>Briefing</Original>
-        <English>Briefing</English>
-        <French>Briefing</French>
-        <Spanish>Sesión informativa</Spanish>
-        <Italian>Briefing</Italian>
-        <German>Briefing</German>
-        <Polish>Odprawa</Polish>
-        <Russian>Инструктаж</Russian>
-        <Turkish>Bilgilendirme</Turkish>
-        <Japanese>ブリーフィング</Japanese>
-        <Korean>브리핑</Korean>
-        <Chinese>简报</Chinese>
+    <Key ID="STR_TUE_Diary_Unit_Title">
+        <Original>L'Unité GHOSTS &amp; Doctrine</Original>
+        <French>L'Unité GHOSTS &amp; Doctrine</French>
+        <English>The GHOSTS Unit &amp; Doctrine</English>
+        <Spanish>La Unidad GHOSTS y Doctrina</Spanish>
+        <Italian>L'Unità GHOSTS &amp; Dottrina</Italian>
+        <German>Die GHOSTS-Einheit &amp; Doktrin</German>
+        <Portuguese>A Unidade GHOSTS e Doutrina</Portuguese>
+        <Polish>Jednostka GHOSTS i Doktryna</Polish>
+        <Russian>Отряд GHOSTS и доктрина</Russian>
+        <Czech>Jednotka GHOSTS a Doktrína</Czech>
+        <Turkish>GHOSTS Birimi &amp; Doktrini</Turkish>
+        <Korean>GHOSTS 부대 및 교리</Korean>
+        <Japanese>GHOSTS部隊と作戦教程</Japanese>
+        <Chinese>幽灵部队（GHOSTS）与作战条令</Chinese>
     </Key>
-    <Key ID="STR_TUE_Briefing_Text">
-        <Original>Welcome to the ORA Mod!&lt;br/&gt;&lt;br/&gt;Here is how the gameplay loop works:&lt;br/&gt;&lt;br/&gt;1. **Request a Task**: The squad leader can request a new mission at any time using the action scroll menu.&lt;br/&gt;2. **Chain Infinitely**: You can complete as many tasks as you want, without any limits.&lt;br/&gt;3. **End the Game (Extraction)**: When you are ready to finish the session, simply request an extraction via the scroll menu. The helicopter will extract your squad, and returning to base will complete the mission.</Original>
-        <English>Welcome to the ORA Mod!&lt;br/&gt;&lt;br/&gt;Here is how the gameplay loop works:&lt;br/&gt;&lt;br/&gt;1. **Request a Task**: The squad leader can request a new mission at any time using the action scroll menu.&lt;br/&gt;2. **Chain Infinitely**: You can complete as many tasks as you want, without any limits.&lt;br/&gt;3. **End the Game (Extraction)**: When you are ready to finish the session, simply request an extraction via the scroll menu. The helicopter will extract your squad, and returning to base will complete the mission.</English>
-        <French>Bienvenue dans le mod ORA !&lt;br/&gt;&lt;br/&gt;Voici comment fonctionne la boucle de gameplay :&lt;br/&gt;&lt;br/&gt;1. **Demander une mission** : Le chef de groupe peut demander une nouvelle tâche à tout moment via le menu d'action de la molette.&lt;br/&gt;2. **Enchaîner à l'infini** : Vous pouvez accomplir autant de tâches que vous le souhaitez, de manière illimitée.&lt;br/&gt;3. **Finir la partie (Extraction)** : Quand vous en avez assez et souhaitez terminer la mission, demandez simplement une extraction via le menu d'action. L'hélicoptère viendra vous récupérer et le retour à la base mettra fin à la partie.</French>
-        <Spanish>¡Bienvenido al mod ORA!&lt;br/&gt;&lt;br/&gt;Así es como funciona el bucle de juego:&lt;br/&gt;&lt;br/&gt;1. **Solicitar una misión**: El líder del grupo puede solicitar una nueva tarea en cualquier momento a través del menú de acción de la rueda.&lt;br/&gt;2. **Encadenar al infinito**: Puedes completar tantas tareas como quieras, de forma ilimitada.&lt;br/&gt;3. **Terminar la partida (Extracción)**: Cuando quieras terminar la misión, simplemente solicita una extracción a través del menú de acción. El helicóptero vendrá a recogerte y volver a la base pondrá fin a la partida.</Spanish>
-        <Italian>Benvenuto nella mod ORA!&lt;br/&gt;&lt;br/&gt;Ecco come funziona il ciclo di gioco:&lt;br/&gt;&lt;br/&gt;1. **Richiedere una missione**: Il caposquadra può richiedere una nuova attività in qualsiasi momento tramite il menu delle azioni della rotellina.&lt;br/&gt;2. **Continuare all'infinito**: Puoi completare quante attività desideri, senza limiti.&lt;br/&gt;3. **Terminare la partita (Estrazione)**: Quando vuoi finire la missione, richiedi semplicemente un'estrazione tramite il menu delle azioni. L'elicottero verrà a prenderti e il rientro alla base porrà fine alla partita.</Italian>
-        <German>Willkommen zur ORA-Mod!&lt;br/&gt;&lt;br/&gt;So funktioniert die Gameplay-Schleife:&lt;br/&gt;&lt;br/&gt;1. **Mission anfordern**: Der Gruppenführer kann jederzeit eine neue Aufgabe über das Aktionsmenü (Mausrad) anfordern.&lt;br/&gt;2. **Unendlich verketten**: Sie können unbegrenzt viele Aufgaben nacheinander erledigen.&lt;br/&gt;3. **Spiel beenden (Evakuierung)**: Wenn Sie die Mission beenden möchten, fordern Sie einfach eine Evakuierung über das Aktionsmenü an. Der Hubschrauber holt Sie ab, und die Rückkehr zur Basis beendet das Spiel.</German>
-        <Polish>Witaj w modzie ORA!&lt;br/&gt;&lt;br/&gt;Oto jak działa pętla rozgrywki:&lt;br/&gt;&lt;br/&gt;1. **Zażądaj misji**: Dowódca drużyny może w dowolnym momencie poprosić o nowe zadanie za pomocą menu akcji (rolki myszy).&lt;br/&gt;2. **Graj w nieskończoność**: Możesz wykonywać dowolną liczbę zadań, bez żadnych ograniczeń.&lt;br/&gt;3. **Koniec gry (Ewakuacja)**: Gdy zechcesz zakończyć misję, po prostu poproś o ewakuację z menu akcji. Helikopter przyleci po was, a powrót do bazy zakończy rozgrywkę.</Polish>
-        <Russian>Добро пожаловать в мод ORA!&lt;br/&gt;&lt;br/&gt;Вот как работает игровой цикл:&lt;br/&gt;&lt;br/&gt;1. **Запросить миссию**: Командир отделения может в любой момент запросить новое задание через меню действий (колесико мыши).&lt;br/&gt;2. **Играть бесконечно**: Вы можете выполнять сколько угодно заданий подряд без ограничений.&lt;br/&gt;3. **Завершить игру (Эвакуация)**: Когда будете готовы закончить миссию, просто запросите эвакуацию через меню действий. Вертолет заберет вас, и возвращение на базу завершит игру.</Russian>
-        <Turkish>ORA moduna hoş geldiniz!&lt;br/&gt;&lt;br/&gt;Oynanış döngüsü şu şekilde çalışır:&lt;br/&gt;&lt;br/&gt;1. **Görev İste**: Grup lideri, fare tekerleği eylem menüsünden istediği zaman yeni bir görev talep edebilir.&lt;br/&gt;2. **Sonsuza Kadar Oyna**: Herhangi bir sınır olmadan dilediğiniz kadar görev tamamlayabilirsiniz.&lt;br/&gt;3. **Oyunu Bitir (Tahliye)**: Görevi bitirmek istediğinizde, eylem menüsünden tahliye talep etmeniz yeterlidir. Helikopter sizi alacak ve üsse geri döndüğünüzde oyun sona erecektir.</Turkish>
-        <Japanese>ORA Modへようこそ！&lt;br/&gt;&lt;br/&gt;ゲームプレイループの流れ：&lt;br/&gt;&lt;br/&gt;1. **ミッション要求**：分隊長はいつでもアクションメニューから新しいタスクを要求できます。&lt;br/&gt;2. **無限ループ**：制限なしで好きなだけタスクを連続してクリアできます。&lt;br/&gt;3. **ゲーム終了（回収）**：ミッションを終了したい時は、アクションメニューから回収を要求してください。ヘリコプターが部隊を回収し、基地に戻ることでゲームクリアとなります。</Japanese>
-        <Korean>ORA 모드에 오신 것을 환영합니다!&lt;br/&gt;&lt;br/&gt;게임플레이 루프 작동 방식:&lt;br/&gt;&lt;br/&gt;1. **임무 요청**: 분대장은 언제든지 마우스 휠 액션 메뉴를 통해 새로운 임무를 요청할 수 있습니다.&lt;br/&gt;2. **무한 플레이**: 제한 없이 원하는 만큼 임무를 계속 수행할 수 있습니다.&lt;br/&gt;3. **게임 종료 (탈출)**: 임무를 끝내고 싶을 때는 액션 메뉴에서 탈출을 요청하십시오. 헬리콥터가 아군을 구출하고, 기지로 복귀하면 임무가 완료됩니다.</Korean>
-        <Chinese>欢迎使用 ORA 模组！&lt;br/&gt;&lt;br/&gt;游戏核心玩法流程：&lt;br/&gt;&lt;br/&gt;1. **请求任务**：小队长可以随时通过滚轮动作菜单请求新任务。&lt;br/&gt;2. **无限游玩**：你可以无限制地连续完成任意数量的任务。&lt;br/&gt;3. **结束游戏（撤离）**：当你想结束游戏时，只需通过动作菜单请求撤离。直升机将接送你们，返回基地即可结束任务并通关。</Chinese>
+    <Key ID="STR_TUE_Diary_Unit_Text">
+        <Original>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin de Volontaires :&lt;/font&gt;&lt;br/&gt;
+Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement Conjoint des Opérations Spéciales a fondé l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Recrutement &amp; Volontariat :&lt;/font&gt; Snipers d'élite et vétérans des forces spéciales hautement qualifiés, déployés sur la base du volontariat.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Micro-Cellules (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique et acoustique quasi nulle.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, aucune transmission en clair. En cas de capture ou de mort, votre existence sera officiellement niée.</Original>
+        <French>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin de Volontaires :&lt;/font&gt;&lt;br/&gt;
+Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement Conjoint des Opérations Spéciales a fondé l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Recrutement &amp; Volontariat :&lt;/font&gt; Snipers d'élite et vétérans des forces spéciales hautement qualifiés, déployés sur la base du volontariat.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Micro-Cellules (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique et acoustique quasi nulle.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, aucune transmission en clair. En cas de capture ou de mort, votre existence sera officiellement niée.</French>
+        <English>&lt;font size='16' color='#ff8800'&gt;Clandestine Volunteer Detachment:&lt;/font&gt;&lt;br/&gt;
+To strike inside these exclusion zones without leaving a state fingerprint, the Special Operations Command formed the &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; unit.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Elite Volunteers:&lt;/font&gt; Master marksmen and special forces veterans deployed strictly on a volunteer basis.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Micro-Cells (1 to 4 Operators):&lt;/font&gt; Deep infiltration in tiny squads ensuring near-zero radar and thermal signature.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Plausible Deniability:&lt;/font&gt; No national insignias, no unencrypted broadcasts. If captured, your existence will be denied.</English>
+        <Spanish>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino de Voluntarios:&lt;/font&gt;&lt;br/&gt;
+La unidad &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera en micro-células de 1 a 4 tiradores de élite bajo denegación plausible absoluta.&lt;br/&gt;&lt;br/&gt;
+Sin insignias, sin registros oficiales. En caso de captura, nadie reconocerá su existencia.</Spanish>
+        <Italian>&lt;font size='16' color='#ff8800'&gt;Distaccamento Clandestino di Volontari:&lt;/font&gt;&lt;br/&gt;
+L'unità &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera in micro-squadre da 1 a 4 tiratori scelti sotto totale diniego plausibile.&lt;br/&gt;&lt;br/&gt;
+Nessuna insegna nazionale, comunicazioni cifrate. In caso di cattura, la vostra esistenza sarà negata.</Italian>
+        <German>&lt;font size='16' color='#ff8800'&gt;Geheimes Freiwilligen-Kommando:&lt;/font&gt;&lt;br/&gt;
+Die Einheit &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operiert in Micro-Trupps von 1 bis 4 Elite-Scharfschützen unter voller plausibler Abstreitbarkeit.&lt;br/&gt;&lt;br/&gt;
+Keine Hoheitsabzeichen. Bei Gefangennahme wird Ihre Existenz geleugnet.</German>
+        <Portuguese>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino de Voluntários:&lt;/font&gt;&lt;br/&gt;
+A unidade &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera em micro-células de 1 a 4 atiradores de elite sob negação plausível absoluta.</Portuguese>
+        <Polish>&lt;font size='16' color='#ff8800'&gt;Tajny Oddział Ochotników:&lt;/font&gt;&lt;br/&gt;
+Jednostka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje w mikro-grupach od 1 do 4 snajperów elity z zachowaniem pełnej wiarygodnej zaprzeczalności.</Polish>
+        <Russian>&lt;font size='16' color='#ff8800'&gt;Тайный отряд добровольцев:&lt;/font&gt;&lt;br/&gt;
+Отряд &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; действует микро-группами от 1 до 4 снайперов в условиях полного правдоподобного отрицания.</Russian>
+        <Czech>&lt;font size='16' color='#ff8800'&gt;Tajný oddíl dobrovolníků:&lt;/font&gt;&lt;br/&gt;
+Jednotka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje v mikro-týmech 1 až 4 elitních odstřelovačů pod absolutním popřením existence.</Czech>
+        <Turkish>&lt;font size='16' color='#ff8800'&gt;Gizli Gönüllü Müfrezesi:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; birimi, 1 ila 4 kişilik keskin nişancı timleriyle tam inkar edilebilirlik altında hareket eder.</Turkish>
+        <Korean>&lt;font size='16' color='#ff8800'&gt;비밀 자원 파견대:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; 부대는 1~4인의 정예 저격수 마이크로 분대로 침투하며, 완전한 은폐와 부인 하에 작전합니다.</Korean>
+        <Japanese>&lt;font size='16' color='#ff8800'&gt;秘密志願分遣隊:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;部隊は1〜4名の精鋭狙撃手による極小編成で潜入し、完全な否認権のもとで活動する。</Japanese>
+        <Chinese>&lt;font size='16' color='#ff8800'&gt;秘密志愿特遣队：&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;幽灵（GHOSTS）&lt;/font&gt;部队由1至4名精锐狙击手组成微型分队，在绝对的完全否认原则下执行任务。</Chinese>
+    </Key>
+    <Key ID="STR_TUE_Diary_Tech_Title">
+        <Original>Arsenal &amp; Drone ISR Darter</Original>
+        <French>Arsenal &amp; Drone ISR Darter</French>
+        <English>Arsenal &amp; Darter ISR Drone</English>
+        <Spanish>Arsenal y Dron ISR Darter</Spanish>
+        <Italian>Arsenale &amp; Drone ISR Darter</Italian>
+        <German>Arsenal &amp; Darter ISR-Drohne</German>
+        <Portuguese>Arsenal e Drone ISR Darter</Portuguese>
+        <Polish>Arsenał i Dron ISR Darter</Polish>
+        <Russian>Арсенал и БПЛА разведки Darter</Russian>
+        <Czech>Arzenál a Průzkumný Dron Darter</Czech>
+        <Turkish>Cephanelik &amp; Darter ISR Dronu</Turkish>
+        <Korean>무기고 및 Darter ISR 드론</Korean>
+        <Japanese>兵装とDarter ISRドローン</Japanese>
+        <Chinese>军械与Darter侦察无人机</Chinese>
+    </Key>
+    <Key ID="STR_TUE_Diary_Tech_Text">
+        <Original>&lt;font size='16' color='#ff8800'&gt;Synergie Technologique &amp; Équipement :&lt;/font&gt;&lt;br/&gt;
+Les opérateurs GHOSTS s'appuient sur un équipement de pointe de 2035 :&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Fournit une surveillance radar aérienne continue du secteur, détecte les patrouilles ennemies et désigne les cibles.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Optiques JVN &amp; Thermiques 4e Génération :&lt;/font&gt; Conçues pour l'infiltration tout-temps (nuit noire, brouillard épais, tempêtes).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Règles d'Engagement Silencieuses (ROE) :&lt;/font&gt; Ajustez l'attitude de combat de l'escouade (&lt;i&gt;Furtif / Normal / Assaut&lt;/i&gt;) via vos ordres d'action.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Réanimation Tactique :&lt;/font&gt; Secours d'urgence immédiat entre coéquipiers sans condition de matériel médical lourd.</Original>
+        <French>&lt;font size='16' color='#ff8800'&gt;Synergie Technologique &amp; Équipement :&lt;/font&gt;&lt;br/&gt;
+Les opérateurs GHOSTS s'appuient sur un équipement de pointe de 2035 :&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Fournit une surveillance radar aérienne continue du secteur, détecte les patrouilles ennemies et désigne les cibles.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Optiques JVN &amp; Thermiques 4e Génération :&lt;/font&gt; Conçues pour l'infiltration tout-temps (nuit noire, brouillard épais, tempêtes).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Règles d'Engagement Silencieuses (ROE) :&lt;/font&gt; Ajustez l'attitude de combat de l'escouade (&lt;i&gt;Furtif / Normal / Assaut&lt;/i&gt;) via vos ordres d'action.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Réanimation Tactique :&lt;/font&gt; Secours d'urgence immédiat entre coéquipiers sans condition de matériel médical lourd.</French>
+        <English>&lt;font size='16' color='#ff8800'&gt;Technological Synergy &amp; Equipment:&lt;/font&gt;&lt;br/&gt;
+GHOSTS operators rely on state-of-the-art 2035 military technology:&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Autonomous Darter ISR Drone:&lt;/font&gt; Provides continuous aerial radar coverage, tracks hostile patrols, and designates targets.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 4th Gen NVG &amp; Thermal Optronics:&lt;/font&gt; Engineered for all-weather infiltration (zero-light, dense fog, storms).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Silent Rules of Engagement (ROE):&lt;/font&gt; Toggle squad combat stance (&lt;i&gt;Stealth / Normal / Assault&lt;/i&gt;) silently.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Tactical Revive:&lt;/font&gt; Immediate field resuscitation between teammates with zero inventory restrictions.</English>
+        <Spanish>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnológica:&lt;/font&gt;&lt;br/&gt;
+Dron autónomo Darter para cobertura de radar constante, visión nocturna/térmica de 4ª generación y reanimación táctica inmediata.</Spanish>
+        <Italian>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnologica:&lt;/font&gt;&lt;br/&gt;
+Drone autonomo Darter per copertura radar continua, ottiche notturne/termiche di 4ª generazione e rianimazione tattica immediata.</Italian>
+        <German>&lt;font size='16' color='#ff8800'&gt;Technologische Synergie:&lt;/font&gt;&lt;br/&gt;
+Autonome Darter-Drohne für permanente Radarüberwachung, Nachtsicht/Thermalsicht der 4. Generation und sofortige Kameraden-Wiederbelebung.</German>
+        <Portuguese>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnológica:&lt;/font&gt;&lt;br/&gt;
+Drone autônomo Darter para cobertura contínua de radar, visão noturna/térmica de 4ª geração e reanimação tática imediata.</Portuguese>
+        <Polish>&lt;font size='16' color='#ff8800'&gt;Synergia Technologiczna:&lt;/font&gt;&lt;br/&gt;
+Autonomiczny dron Darter z radarem, noktowizja i termowizja 4. generacji oraz natychmiastowa reanimacja sojuszników.</Polish>
+        <Russian>&lt;font size='16' color='#ff8800'&gt;Технологическое превосходство:&lt;/font&gt;&lt;br/&gt;
+БПЛА Darter для постоянного радарного сканирования, оптроника 4-го поколения и полевая реанимация раненых.</Russian>
+        <Czech>&lt;font size='16' color='#ff8800'&gt;Technologická Synergie:&lt;/font&gt;&lt;br/&gt;
+Autonomní dron Darter pro stálé radarové pokrytí, termovize 4. generace a okamžité oživování spolubojovníků.</Czech>
+        <Turkish>&lt;font size='16' color='#ff8800'&gt;Teknolojik Sinerji:&lt;/font&gt;&lt;br/&gt;
+Sürekli radar kapsaması sağlayan otonom Darter dronu, 4. nesil termal/gece görüşü ve anında takım arkadaşı canlandırma.</Turkish>
+        <Korean>&lt;font size='16' color='#ff8800'&gt;첨단 기술 시너지:&lt;/font&gt;&lt;br/&gt;
+지속적인 레이더 감시를 제공하는 자율 Darter 드론, 4세대 열화상/야간 투시경, 즉각적인 전술 소생 시스템.</Korean>
+        <Japanese>&lt;font size='16' color='#ff8800'&gt;先端技術シナジー:&lt;/font&gt;&lt;br/&gt;
+継続的なレーダー監視を行う自律型Darterドローン、第4世代暗視・熱画像光学機器、迅速な戦術蘇生システム。</Japanese>
+        <Chinese>&lt;font size='16' color='#ff8800'&gt;前沿技术协同：&lt;/font&gt;&lt;br/&gt;
+提供不间断雷达覆盖的自主Darter无人机、第四代热成像/夜视光电系统以及即时战术复活救治。</Chinese>
     </Key>
 </Keys>
-

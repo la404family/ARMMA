@@ -41,7 +41,6 @@ if (isNil "TUE_fnc_applyRoE") then {
             };
         } forEach (units _grp);
 
-        // Changement appliqué de façon silencieuse
     };
 };
 
@@ -84,4 +83,3 @@ private _fnc_addRoeActions = {
         [_lastPlayer] call _fnc_addRoeActions;
     };
 };
-

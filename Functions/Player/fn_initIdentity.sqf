@@ -29,7 +29,7 @@ private _codenames = [
     ["GHOST - 5248X", "GHOST", "5248X"], ["WRAITH - 1092Z", "WRAITH", "1092Z"], ["SPECTER - 7734K", "SPECTER", "7734K"],
     ["REAPER - 4019V", "REAPER", "4019V"], ["SHADOW - 8861A", "SHADOW", "8861A"], ["PHANTOM - 2305Y", "PHANTOM", "2305Y"],
     ["ECHO - 6190Q", "ECHO", "6190Q"], ["VOID - 0477J", "VOID", "0477J"],
-    
+
     ["RAVEN - 3528R", "RAVEN", "3528R"], ["DAGGER - 9144M", "DAGGER", "9144M"], ["BLADE - 6083H", "BLADE", "6083H"],
     ["HAMMER - 7710L", "HAMMER", "7710L"], ["STORM - 2056W", "STORM", "2056W"], ["THUNDER - 8392P", "THUNDER", "8392P"],
     ["FROST - 1129T", "FROST", "1129T"], ["WOLF - 9960C", "WOLF", "9960C"], ["VIPER - 5581N", "VIPER", "5581N"],
@@ -142,4 +142,3 @@ while { time < _endTime } do {
         };
     } forEach _roles;
 };
-

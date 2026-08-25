@@ -15,4 +15,3 @@ if (_goggles != "") then {
     _unit addGoggles _goggles;
 };
 true
-

@@ -47,7 +47,7 @@ private _fnc_addFlashlight = {
                 _light = _x;
             };
         } forEach _compatible;
-        
+
         if (_light != "") then {
             if (_isPrimary) then { _unit addPrimaryWeaponItem _light; } else { _unit addHandgunItem _light; };
         };
@@ -57,10 +57,10 @@ private _fnc_addFlashlight = {
 if (_hasPrimary) then {
     private _primary = selectRandom TUE_enemy_primaryWeapons;
     private _primaryMag = (getArray (configFile >> "CfgWeapons" >> _primary >> "magazines")) select 0;
-    
+
     for "_i" from 1 to 6 do {_unit addItemToVest _primaryMag;};
     for "_i" from 1 to 2 do {_unit addItemToVest _secondaryMag;};
-    
+
     _unit addWeapon _primary;
     [_unit, _primary, true] call _fnc_addFlashlight;
 } else {

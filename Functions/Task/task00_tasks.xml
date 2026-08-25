@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Task_00_Action">
-        <Original>Libérer l'otage</Original>
-        <French>Libérer l'otage</French>
-        <English>Free hostage</English>
-        <Turkish>Rehineyi serbest bırak</Turkish>
-        <Korean>인질 구출</Korean>
-        <Spanish>Liberar rehén</Spanish>
-        <Japanese>人質を解放する</Japanese>
-        <Chinese>释放人质</Chinese>
-        <Russian>Освободить заложника</Russian>
-        <German>Geisel befreien</German>
-        <Italian>Libera l'ostaggio</Italian>
-        <Polish>Uwolnij zakładnika</Polish>
+        <Original>Libérer l'agent captif</Original>
+        <French>Libérer l'agent captif</French>
+        <English>Free captured agent</English>
+        <Turkish>Esir ajanı serbest bırak</Turkish>
+        <Korean>포로 요원 구출</Korean>
+        <Spanish>Liberar agente cautivo</Spanish>
+        <Japanese>拘束された情報員を解放</Japanese>
+        <Chinese>解救被俘情报员</Chinese>
+        <Russian>Освободить агента</Russian>
+        <German>Gefangenen Agenten befreien</German>
+        <Italian>Libera l'agente prigioniero</Italian>
+        <Polish>Uwolnij pojmanego agenta</Polish>
     </Key>
     <Key ID="STR_LL_Task_00_ExtractAction">
-        <Original>Embarquer l'otage</Original>
-        <French>Embarquer l'otage</French>
-        <English>Extract Hostage</English>
-        <Turkish>Rehineyi tahliye et</Turkish>
-        <Korean>인질 구출</Korean>
-        <Spanish>Extraer rehén</Spanish>
-        <Japanese>人質を回収する</Japanese>
-        <Chinese>撤离人质</Chinese>
-        <Russian>Эвакуировать заложника</Russian>
-        <German>Geisel extrahieren</German>
-        <Italian>Estrai l'ostaggio</Italian>
-        <Polish>Ewakuuj zakładnika</Polish>
+        <Original>Embarquer l'agent captif</Original>
+        <French>Embarquer l'agent captif</French>
+        <English>Extract captured agent</English>
+        <Turkish>Esir ajanı tahliye et</Turkish>
+        <Korean>포로 요원 탑승</Korean>
+        <Spanish>Embarcar agente cautivo</Spanish>
+        <Japanese>情報員を搭乗させる</Japanese>
+        <Chinese>登机撤离情报员</Chinese>
+        <Russian>Погрузить агента на борт</Russian>
+        <German>Gefangenen Agenten einsteigen lassen</German>
+        <Italian>Imbarca l'agente</Italian>
+        <Polish>Zabierz agenta na pokład</Polish>
     </Key>
     <Key ID="STR_LL_Task_00_Title">
-        <Original>Exfiltration d'otage</Original>
-        <French>Exfiltration d'otage</French>
-        <English>Hostage Exfiltration</English>
-        <Turkish>Rehine Tahliyesi</Turkish>
-        <Korean>인질 구출</Korean>
-        <Spanish>Extracción de rehén</Spanish>
-        <Japanese>人質救出</Japanese>
-        <Chinese>人质撤离</Chinese>
-        <Russian>Эвакуация заложника</Russian>
-        <German>Geiselexfiltration</German>
-        <Italian>Esfiltrazione ostaggio</Italian>
-        <Polish>Ewakuacja zakładnika</Polish>
+        <Original>Opération Broken Cage</Original>
+        <French>Opération Broken Cage</French>
+        <English>Operation Broken Cage</English>
+        <Turkish>Broken Cage Harekâtı</Turkish>
+        <Korean>브로큰 케이지 작전</Korean>
+        <Spanish>Operación Broken Cage</Spanish>
+        <Japanese>ブロークン・ケージ作戦</Japanese>
+        <Chinese>破笼行动</Chinese>
+        <Russian>Операция "Сломанная клетка"</Russian>
+        <German>Operation Broken Cage</German>
+        <Italian>Operazione Broken Cage</Italian>
+        <Polish>Operacja Broken Cage</Polish>
     </Key>
     <Key ID="STR_LL_Task_00_Desc">
-        <Original>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</Original>
-        <French>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</French>
-        <English>Locate and extract the hostage held in one of the search zones indicated on your map. Then call for extraction helicopter.</English>
-        <Turkish>Haritanızda belirtilen arama bölgelerinden birinde tutulan rehineyi bulun ve kurtarın. Ardından tahliye helikopteri çağırın.</Turkish>
-        <Korean>지도에 표시된 수색 구역 중 한 곳에 억류된 인질을 찾아 구출하십시오. 그런 다음 구출 헬기를 호출하십시오.</Korean>
-        <Spanish>Localiza y extrae al rehén retenido en una de las zonas de búsqueda indicadas en tu mapa. Luego llama al helicóptero de extracción.</Spanish>
-        <Japanese>マップに示された捜索ゾーンのいずれかに捕らわれている人質を見つけて救出してください。その後、救出ヘリコプターを呼んでください。</Japanese>
-        <Chinese>找到并营救被关押在地图上指示的搜索区域之一的人质。然后呼叫撤离直升机。</Chinese>
-        <Russian>Найдите и эвакуируйте заложника, удерживаемого в одной из зон поиска, указанных на вашей карте. Затем вызовите эвакуационный вертолет.</Russian>
-        <German>Lokalisieren und extrahieren Sie die Geisel, die in einer der auf Ihrer Karte markierten Suchzonen festgehalten wird. Rufen Sie dann den Evakuierungshubschrauber.</German>
-        <Italian>Individua ed estrai l'ostaggio tenuto in una delle zone di ricerca indicate sulla mappa. Quindi chiama l'elicottero di estrazione.</Italian>
-        <Polish>Zlokalizuj i ewakuuj zakładnika przetrzymywanego w jednej ze stref poszukiwań wskazanych na mapie. Następnie wezwij śmigłowiec ewakuacyjny.</Polish>
+        <Original>Infiltrez le complexe ennemi, neutralisez les gardes et libérez l'agent de renseignement captif dans la zone de recherche. Escortez-le ensuite jusqu'à l'hélicoptère d'extraction.</Original>
+        <French>Infiltrez le complexe ennemi, neutralisez les gardes et libérez l'agent de renseignement captif dans la zone de recherche. Escortez-le ensuite jusqu'à l'hélicoptère d'extraction.</French>
+        <English>Infiltrate the enemy compound, neutralize the guards and free the captured intelligence agent in the search area. Then escort him to the extraction helicopter.</English>
+        <Turkish>Düşman tesisine sızın, nöbetçileri etkisiz hale getirin ve arama bölgesindeki esir istihbarat ajanını kurtarın. Ardından tahliye helikopterine kadar eşlik edin.</Turkish>
+        <Korean>적 시설에 침투하여 경비병을 무력화하고 수색 구역의 포로 정보 요원을 구출하십시오. 그 후 탈출 헬기까지 호위하십시오.</Korean>
+        <Spanish>Infiltrarse en el complejo enemigo, neutralizar a los guardias y liberar al agente de inteligencia cautivo en el área de búsqueda. Luego escoltarlo al helicóptero de extracción.</Spanish>
+        <Japanese>敵施設に潜入し、警備兵を無力化して捜索エリア内の捕虜情報員を解放せよ。その後、回収ヘリまで護衛せよ。</Japanese>
+        <Chinese>潜入敌方营地，消灭守卫并在搜索区域内救出被俘的情报人员。随后护送他至撤离直升机。</Chinese>
+        <Russian>Проникните в комплекс противника, нейтрализуйте охрану и освободите захваченного агента разведки в зоне поиска. Затем сопроводите его к эвакуационному вертолету.</Russian>
+        <German>Infiltrieren Sie den feindlichen Komplex, schalten Sie die Wachen aus und befreien Sie den gefangenen Agenten im Suchbereich. Eskortieren Sie ihn anschließend zum Evakuierungshubschrauber.</German>
+        <Italian>Infiltrati nel complesso nemico, neutralizza le guardie e libera l'agente prigioniero nell'area di ricerca. Scortalo quindi all'elicottero di estrazione.</Italian>
+        <Polish>Przeniknij do kompleksu wroga, zneutralizuj strażników i uwolnij pojmanego agenta w strefie poszukiwań. Następnie eskortuj go do śmigłowca ewakuacyjnego.</Polish>
     </Key>
     <Key ID="STR_LL_Task_00_Marker">
         <Original>Zone de Recherche</Original>
