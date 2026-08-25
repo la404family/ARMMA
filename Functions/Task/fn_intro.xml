@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Intro_Author">
-        <Original>GHOSTS 2035</Original>
-        <French>GHOSTS 2035</French>
-        <English>GHOSTS 2035</English>
-        <Spanish>GHOSTS 2035</Spanish>
-        <Italian>GHOSTS 2035</Italian>
-        <German>GHOSTS 2035</German>
-        <Polish>GHOSTS 2035</Polish>
-        <Russian>GHOSTS 2035</Russian>
-        <Turkish>GHOSTS 2035</Turkish>
-        <Japanese>GHOSTS 2035</Japanese>
-        <Korean>GHOSTS 2035</Korean>
-        <Chinese>GHOSTS 2035</Chinese>
-        <Portuguese>GHOSTS 2035</Portuguese>
-        <Czech>GHOSTS 2035</Czech>
+        <Original>GHOSTS</Original>
+        <French>GHOSTS</French>
+        <English>GHOSTS</English>
+        <Spanish>GHOSTS</Spanish>
+        <Italian>GHOSTS</Italian>
+        <German>GHOSTS</German>
+        <Polish>GHOSTS</Polish>
+        <Russian>GHOSTS</Russian>
+        <Turkish>GHOSTS</Turkish>
+        <Japanese>GHOSTS</Japanese>
+        <Korean>GHOSTS</Korean>
+        <Chinese>GHOSTS</Chinese>
+        <Portuguese>GHOSTS</Portuguese>
+        <Czech>GHOSTS</Czech>
     </Key>
     <Key ID="STR_LL_Intro_Presents">
         <Original>Unité de snipers d'élite</Original>

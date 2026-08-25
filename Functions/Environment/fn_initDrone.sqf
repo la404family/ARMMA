@@ -13,24 +13,44 @@ private _grp = group _drone;
 _grp setBehaviour "CARELESS";
 _grp setCombatMode "BLUE";
 
-_drone engineOn true;
+{
+    _x disableAI "FSM";
+    _x disableAI "TARGET";
+    _x disableAI "AUTOTARGET";
+    _x disableAI "AUTOCOMBAT";
+} forEach (crew _drone);
+
 while {(count (waypoints _grp)) > 0} do {
     deleteWaypoint ((waypoints _grp) select 0);
 };
-
-_drone flyInHeight 2;
-private _wpInit = _grp addWaypoint [getPos _drone, 0];
-_wpInit setWaypointType "HOLD";
 
 [_drone, _grp] spawn {
     params ["_drone", "_grp"];
 
     waitUntil {
-        sleep 0.5;
-        missionNamespace getVariable ["MISSION_intro_finished", false]
+        sleep 0.3;
+        !isNil "MISSION_start_crate" || { (missionNamespace getVariable ["MISSION_intro_lz", [0,0,0]]) isNotEqualTo [0,0,0] }
     };
 
-    sleep 1.5;
+    private _crate = missionNamespace getVariable ["MISSION_start_crate", objNull];
+    private _cratePos = if (!isNull _crate) then { getPosATL _crate } else { (missionNamespace getVariable ["MISSION_intro_lz", [0,0,0]]) vectorAdd [12, 12, 0] };
+
+    _drone setPosATL [(_cratePos select 0) + 1.5, (_cratePos select 1) + 1.5, 1.8];
+    _drone setDir 45;
+    _drone engineOn true;
+    _drone flyInHeight 1.8;
+
+    while {(count (waypoints _grp)) > 0} do { deleteWaypoint ((waypoints _grp) select 0); };
+    private _wpInit = _grp addWaypoint [[(_cratePos select 0) + 1.5, (_cratePos select 1) + 1.5, 1.8], 0];
+    _wpInit setWaypointType "HOLD";
+    _drone doMove [(_cratePos select 0) + 1.5, (_cratePos select 1) + 1.5, 1.8];
+
+    waitUntil {
+        sleep 0.3;
+        missionNamespace getVariable ["MISSION_players_disembarked", false]
+    };
+
+    sleep 1.0;
 
     private _squad = [];
     for "_i" from 0 to 3 do {
@@ -39,31 +59,35 @@ _wpInit setWaypointType "HOLD";
     };
 
     if (_squad isEqualTo []) then {
-        _squad = allPlayers select { alive _x };
+        _squad = (allPlayers select { alive _x }) select { isNull objectParent _x };
     };
 
-    _drone flyInHeight 3;
+    private _targetCenter = if (_squad isNotEqualTo []) then { getPos (_squad select 0) } else { getPos _drone };
 
-    {
-        private _u = _x;
-        if (alive _u && alive _drone) then {
-            while {(count (waypoints _grp)) > 0} do { deleteWaypoint ((waypoints _grp) select 0); };
-            private _wpMove = _grp addWaypoint [getPos _u, 0];
-            _wpMove setWaypointType "MOVE";
-            _wpMove setWaypointSpeed "NORMAL";
+    _drone flyInHeight 1;
 
-            for "_angle" from 0 to 360 step 90 do {
-                if (!alive _u || !alive _drone) exitWith {};
-                private _orbitPos = _u getPos [3.5, _angle];
-                _drone doMove _orbitPos;
-                sleep 1.5;
+    while {(count (waypoints _grp)) > 0} do { deleteWaypoint ((waypoints _grp) select 0); };
+    private _wpMove = _grp addWaypoint [_targetCenter, 0];
+    _wpMove setWaypointType "MOVE";
+    _wpMove setWaypointSpeed "NORMAL";
+
+    for "_tour" from 1 to 3 do {
+        for "_angle" from 0 to 315 step 45 do {
+            if (!alive _drone) exitWith {};
+            if (_squad isNotEqualTo [] && {alive (_squad select 0)}) then {
+                _targetCenter = getPos (_squad select 0);
             };
+            private _orbitPos = _targetCenter getPos [2.5, _angle];
+            _drone doMove _orbitPos;
+            sleep 1.0;
         };
-    } forEach _squad;
+    };
+
+    _drone flyInHeight 5;
+    [_drone] remoteExec ["TUE_fnc_droneRadar", 0, "DroneRadar_JIP"];
+    sleep 4;
 
     _drone flyInHeight 12;
-
-    [_drone] remoteExec ["TUE_fnc_droneRadar", 0, "DroneRadar_JIP"];
 
     private _leaderStoppedTime = 0;
     private _currentState = "NONE";

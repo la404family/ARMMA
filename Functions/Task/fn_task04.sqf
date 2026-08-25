@@ -315,17 +315,21 @@ if (_mode == "extract") exitWith {
         };
 
         private _grp = createGroup [independent, true];
-        private _heli = createVehicle ["B_Heli_Transport_03_unarmed_F", _spawnPosHeli, [], 0, "FLY"];
+        private _heli = createVehicle ["B_Heli_Transport_03_F", _spawnPosHeli, [], 0, "FLY"];
         _heli setPosATL _spawnPosHeli;
 
         private _pilot = _grp createUnit ["B_Helipilot_F", _spawnPosHeli, [], 0, "NONE"];
         _pilot moveInDriver _heli;
         private _copilot = _grp createUnit ["B_Helipilot_F", _spawnPosHeli, [], 0, "NONE"];
         _copilot moveInTurret [_heli, [0]];
+        private _gunner1 = _grp createUnit ["B_Helipilot_F", _spawnPosHeli, [], 0, "NONE"];
+        _gunner1 moveInTurret [_heli, [1]];
+        private _gunner2 = _grp createUnit ["B_Helipilot_F", _spawnPosHeli, [], 0, "NONE"];
+        _gunner2 moveInTurret [_heli, [2]];
 
+        private _crew = [_pilot, _copilot, _gunner1, _gunner2];
+        { _x allowDamage false; } forEach _crew;
         _heli allowDamage false;
-        _pilot allowDamage false;
-        _copilot allowDamage false;
 
         _grp setBehaviour "CARELESS";
         _grp setCombatMode "BLUE";
@@ -337,7 +341,7 @@ if (_mode == "extract") exitWith {
             _x disableAI "AUTOCOMBAT";
             _x disableAI "CHECKVISIBLE";
             _x disableAI "COVER";
-        } forEach [_pilot, _copilot];
+        } forEach _crew;
 
         _heli disableCollisionWith _cargo;
         _cargo disableCollisionWith _heli;
@@ -345,10 +349,7 @@ if (_mode == "extract") exitWith {
         while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 
         private _targetPos = getPos _cargo;
-        private _hoverHeight = 15;
-        _heli flyInHeight _hoverHeight;
-        private _cargoASL = (getPosASL _cargo) select 2;
-        _heli flyInHeightASL [_cargoASL + _hoverHeight, _cargoASL + _hoverHeight, _cargoASL + _hoverHeight];
+        _heli flyInHeight 40;
 
         private _wp = _grp addWaypoint [_targetPos, 0];
         _wp setWaypointType "MOVE";
@@ -360,7 +361,86 @@ if (_mode == "extract") exitWith {
         waitUntil {
             sleep 0.5;
             _apTimer = _apTimer + 0.5;
-            (_heli distance2D _targetPos < 15) || _apTimer > 120 || !alive _heli || !alive _cargo
+            (_heli distance2D _targetPos < 120) || _apTimer > 120 || !alive _heli || !alive _cargo
+        };
+
+        if (!alive _heli || !alive _cargo) exitWith {};
+
+        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+
+        _heli flyInHeight 28;
+        private _wpCombat = _grp addWaypoint [_targetPos, 0];
+        _wpCombat setWaypointType "LOITER";
+        _wpCombat setWaypointLoiterRadius 80;
+        _wpCombat setWaypointSpeed "NORMAL";
+
+        {
+            if (_x != _pilot) then {
+                _x setBehaviour "COMBAT";
+                _x setCombatMode "RED";
+                _x enableAI "TARGET";
+                _x enableAI "AUTOTARGET";
+                _x enableAI "AUTOCOMBAT";
+                _x enableAI "FSM";
+                _x enableAI "WEAPONAIM";
+                _x setSkill ["aimingAccuracy", 0.90];
+                _x setSkill ["aimingSpeed", 1.0];
+                _x setSkill ["spotDistance", 1.0];
+                _x setSkill ["spotTime", 1.0];
+                _x setSkill ["courage", 1.0];
+                _x setSkill ["commanding", 1.0];
+            };
+        } forEach _crew;
+
+        private _combatTimer = 0;
+        while { _combatTimer < 35 && alive _heli && alive _cargo } do {
+            private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _heli < 450) };
+            {
+                private _targetEnemy = _x;
+                _heli reveal [_targetEnemy, 4];
+                {
+                    if (_x != _pilot) then {
+                        _x reveal [_targetEnemy, 4];
+                        _x doTarget _targetEnemy;
+                        _x doSuppressiveFire _targetEnemy;
+                        _x doFire _targetEnemy;
+                    };
+                } forEach _crew;
+            } forEach _enemies;
+
+            sleep 1.5;
+            _combatTimer = _combatTimer + 1.5;
+        };
+
+        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+        _grp setBehaviour "CARELESS";
+        _grp setCombatMode "BLUE";
+
+        {
+            _x disableAI "FSM";
+            _x disableAI "TARGET";
+            _x disableAI "AUTOTARGET";
+            _x disableAI "AUTOCOMBAT";
+            _x disableAI "CHECKVISIBLE";
+            _x disableAI "COVER";
+        } forEach _crew;
+
+        private _hoverHeight = 15;
+        _heli flyInHeight _hoverHeight;
+        private _cargoASL = (getPosASL _cargo) select 2;
+        _heli flyInHeightASL [_cargoASL + _hoverHeight, _cargoASL + _hoverHeight, _cargoASL + _hoverHeight];
+
+        private _wpHov = _grp addWaypoint [_targetPos, 0];
+        _wpHov setWaypointType "MOVE";
+        _wpHov setWaypointBehaviour "CARELESS";
+        _wpHov setWaypointSpeed "FULL";
+        _heli doMove _targetPos;
+
+        private _hoverTimer = 0;
+        waitUntil {
+            sleep 0.5;
+            _hoverTimer = _hoverTimer + 0.5;
+            (_heli distance2D _targetPos < 15) || _hoverTimer > 40 || !alive _heli || !alive _cargo
         };
 
         while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
@@ -391,20 +471,31 @@ if (_mode == "extract") exitWith {
         _cargo allowDamage false;
         _cargo setMass 1;
 
-        sleep 0.5;
+        private _attachedWithRopes = false;
+        private _ropes = [];
+
         _heli setSlingLoad _cargo;
         sleep 2;
+
         if (isNull (getSlingLoad _heli)) then {
-            _heli setSlingLoad _cargo;
+            _attachedWithRopes = true;
+            _cargo attachTo [_heli, [0, 0, -9]];
+            _cargo setVectorUp [0, 0, 1];
+
+            private _r1 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, 2.5, 1.2], 9];
+            private _r2 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, 2.5, 1.2], 9];
+            private _r3 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, -2.5, 1.2], 9];
+            private _r4 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, -2.5, 1.2], 9];
+            _ropes = [_r1, _r2, _r3, _r4];
         };
 
         _cargo removeAllEventHandlers "Killed";
         _cargo removeAllEventHandlers "HandleDamage";
 
-        _heli flyInHeight 50;
-        private _escapeASL = _cargoASL + 50;
+        _heli flyInHeight 60;
+        private _escapeASL = _cargoASL + 60;
         _heli flyInHeightASL [_escapeASL, _escapeASL, _escapeASL];
-        _heli limitSpeed 90;
+        _heli limitSpeed 100;
 
         private _wp2 = _grp addWaypoint [_dropPos, 0];
         _wp2 setWaypointType "MOVE";
@@ -423,8 +514,15 @@ if (_mode == "extract") exitWith {
             missionNamespace setVariable ["LL_g_taskInProgress", false, true];
         };
 
-        waitUntil { sleep 1; (_heli distance2D _dropPos < 150) || !alive _heli };
-        _heli setSlingLoad objNull;
+        waitUntil { sleep 1; (_heli distance2D _dropPos < 200) || !alive _heli };
+
+        if (_attachedWithRopes) then {
+            detach _cargo;
+            { ropeDestroy _x; } forEach _ropes;
+        } else {
+            _heli setSlingLoad objNull;
+        };
+
         sleep 2;
 
         waitUntil {

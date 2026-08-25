@@ -25,6 +25,10 @@ if (_forcedLang != "") then {
 
 _unit setVariable ["UVO_Voice", _uvoLang, true];
 _unit setVariable ["UVO_Language", _uvoLang, true];
+_unit setVariable ["UVO_Type", _uvoLang, true];
+_unit setVariable ["uvo_voice", _uvoLang, true];
+_unit setVariable ["uvo_language", _uvoLang, true];
+_unit setVariable ["uvo_type", _uvoLang, true];
 
 {
     _unit setVariable [_x, true, true];

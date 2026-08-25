@@ -89,21 +89,93 @@ private _crew = crew _heli;
 { _x allowDamage false; } forEach _crew;
 
 private _grp = group driver _heli;
-_grp setBehaviour "AWARE";
-_grp setCombatMode "YELLOW";
+_grp setBehaviour "CARELESS";
+_grp setCombatMode "BLUE";
+
+{
+    _x disableAI "FSM";
+    _x disableAI "TARGET";
+    _x disableAI "AUTOTARGET";
+    _x disableAI "AUTOCOMBAT";
+    _x disableAI "CHECKVISIBLE";
+    _x disableAI "COVER";
+} forEach _crew;
+
+while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+
+_heli flyInHeight 50;
+_heli limitSpeed 250;
+
+private _wp = _grp addWaypoint [_lzPos, 0];
+_wp setWaypointType "MOVE";
+_wp setWaypointBehaviour "CARELESS";
+_wp setWaypointSpeed "FULL";
+_heli doMove _lzPos;
+
+private _apTimer = 0;
+waitUntil {
+    sleep 0.5;
+    _apTimer = _apTimer + 0.5;
+    (_heli distance2D _lzPos < 120) || _apTimer > 180 || !alive _heli
+};
+
+if (!alive _heli) exitWith {};
+
+while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+
+_heli flyInHeight 28;
+private _wpCombat = _grp addWaypoint [_lzPos, 0];
+_wpCombat setWaypointType "LOITER";
+_wpCombat setWaypointLoiterRadius 80;
+_wpCombat setWaypointSpeed "NORMAL";
+
+{
+    if (_x != driver _heli) then {
+        _x setBehaviour "COMBAT";
+        _x setCombatMode "RED";
+        _x enableAI "TARGET";
+        _x enableAI "AUTOTARGET";
+        _x enableAI "AUTOCOMBAT";
+        _x enableAI "FSM";
+        _x enableAI "WEAPONAIM";
+        _x setSkill ["aimingAccuracy", 0.90];
+        _x setSkill ["aimingSpeed", 1.0];
+        _x setSkill ["spotDistance", 1.0];
+        _x setSkill ["spotTime", 1.0];
+        _x setSkill ["courage", 1.0];
+        _x setSkill ["commanding", 1.0];
+    };
+} forEach _crew;
+
+private _combatTimer = 0;
+while { _combatTimer < 45 && alive _heli } do {
+    private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _heli < 450) };
+    {
+        private _targetEnemy = _x;
+        _heli reveal [_targetEnemy, 4];
+        {
+            if (_x != driver _heli) then {
+                _x reveal [_targetEnemy, 4];
+                _x doTarget _targetEnemy;
+                _x doSuppressiveFire _targetEnemy;
+                _x doFire _targetEnemy;
+            };
+        } forEach _crew;
+    } forEach _enemies;
+
+    sleep 1.5;
+    _combatTimer = _combatTimer + 1.5;
+};
+
+while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+_grp setBehaviour "CARELESS";
+_grp setCombatMode "BLUE";
+
 driver _heli disableAI "TARGET";
 driver _heli disableAI "AUTOTARGET";
 driver _heli disableAI "AUTOCOMBAT";
 driver _heli disableAI "FSM";
 driver _heli disableAI "SUPPRESSION";
-driver _heli setBehaviour "CARELESS";
-
-_heli doMove _lzPos;
-_heli flyInHeight 150;
-_heli limitSpeed 250;
-
-private _lzApproach = time + 300;
-waitUntil { (_heli distance2D _lzPos) < 400 || time > _lzApproach };
 
 [_heli, ["doorLB", 1]] remoteExec ["animateDoor", 0, _heli];
 [_heli, ["doorRB", 1]] remoteExec ["animateDoor", 0, _heli];
@@ -127,9 +199,6 @@ driver _heli disableAI "PATH";
         _x enableAI "AUTOTARGET";
         _x enableAI "TARGET";
         _x enableAI "WEAPONAIM";
-        _x setSkill ["aimingAccuracy", 0.70];
-        _x setSkill ["spotDistance", 1.0];
-        _x setSkill ["spotTime", 1.0];
     };
 } forEach (crew _heli);
 

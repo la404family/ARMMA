@@ -127,7 +127,7 @@ if (hasInterface) then {
                     format [
                         "<t size='3.0' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
                         "<t size='1.4' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t>",
-                        "GHOSTS 2035",
+                        "GHOSTS",
                         localize "STR_LL_Intro_Presents"
                     ],
                     "PLAIN", 1, true, true
@@ -439,11 +439,11 @@ if (isServer) then {
         _heli limitSpeed 110;
 
         private _landTimeout = time + 120;
-        waitUntil { (_heli distance2D _destPos) < 300 || time > _landTimeout };
+        waitUntil { (_heli distance2D _destPos) < 300 || time > _landTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
         _heli land "GET OUT";
 
         private _touchTimeout = time + 60;
-        waitUntil { (getPosATL _heli select 2) < 2 || time > _touchTimeout };
+        waitUntil { (getPosATL _heli select 2) < 2 || time > _touchTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
         sleep 1;
 
         private _unitsToDisembark   = [];
@@ -474,6 +474,8 @@ if (isServer) then {
             _x setDir _dir;
             _unitIndex = _unitIndex + 1;
         } forEach _unitsToDisembark;
+
+        missionNamespace setVariable ["MISSION_players_disembarked", true, true];
 
         _heli setVehicleLock "LOCKED";
         sleep 2;

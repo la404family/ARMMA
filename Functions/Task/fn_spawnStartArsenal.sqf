@@ -31,9 +31,16 @@ if (!isServer) exitWith {};
     _mkrName setMarkerType "mil_box";
     _mkrName setMarkerColor "ColorYellow";
 
+    missionNamespace setVariable ["MISSION_start_crate", _crate, true];
+
     if (!isNil "drone_BLUFOR" && { !isNull drone_BLUFOR }) then {
-        drone_BLUFOR setPosATL [(_pos select 0) + 1.5, (_pos select 1) + 1.5, 2];
+        drone_BLUFOR setPosATL [(_pos select 0) + 1.5, (_pos select 1) + 1.5, 1.8];
         drone_BLUFOR setDir (getDir _crate);
+        private _dGrp = group drone_BLUFOR;
+        while {(count (waypoints _dGrp)) > 0} do { deleteWaypoint ((waypoints _dGrp) select 0); };
+        private _wpHold = _dGrp addWaypoint [[(_pos select 0) + 1.5, (_pos select 1) + 1.5, 1.8], 0];
+        _wpHold setWaypointType "HOLD";
+        drone_BLUFOR doMove [(_pos select 0) + 1.5, (_pos select 1) + 1.5, 1.8];
     };
 
     // Fumigène décalé sur le côté
