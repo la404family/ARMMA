@@ -4,15 +4,25 @@ onLoadMission = "Unité de snipers d'élite [SP/COOP]";
 
 class Header
 {
-	gameType =  Coop;
-	minPlayers =  1;
-	maxPlayers =  4;
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 4;
 };
 
 enableDebugConsole = 1;
 
-respawn = 4; 
+respawn = 4;
 respawnDialog = 0;
+respawnTemplates[] = {"Revive"};
+
+ReviveMode = 1;
+ReviveDuration = 6;
+ReviveRequiredTrait = 0;
+ReviveRequiredItems = 0;
+ReviveRequiredItemsFakConsumed = 0;
+ReviveMedicSpeedMultiplier = 2;
+ReviveBleedOutDuration = 300;
+ReviveForceRespawnDuration = 10;
 
 class CfgFunctions
 {

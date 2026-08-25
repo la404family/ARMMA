@@ -4,19 +4,66 @@ if (hasInterface) then {
     if (missionNamespace getVariable ["MISSION_intro_cl", false]) exitWith {};
     missionNamespace setVariable ["MISSION_intro_cl", true];
 
-    if (_isJip) exitWith {};
+    if (_isJip && { missionNamespace getVariable ["MISSION_intro_finished", false] }) exitWith {
+        showHUD [true, true, true, true, true, true, true, true, true, true, true];
+        showCinemaBorder false;
+        player allowDamage true;
+    };
 
     [] spawn {
         disableSerialization;
 
-        private _DUR_APPROACH   = 14;
+        cutText ["", "BLACK FADED", 999];
+        0 fadeSound 0;
+        showHUD [false, false, false, false, false, false, false, false, false, false, false];
+        showCinemaBorder true;
+        player allowDamage false;
+
         private _SKIP_HOLD_TIME = 1.2;
 
-        private _playerTimeout = time + 30;
-        waitUntil { !isNull player || time > _playerTimeout };
+        private _playerTimeout = time + 35;
+        waitUntil { (!isNull player && alive player) || time > _playerTimeout };
         if (isNull player) exitWith {};
 
+        player setVariable ["TUE_player_ready", true, true];
+
         missionNamespace setVariable ["MISSION_intro_skip", false];
+
+        if (isMultiplayer) then {
+            [] spawn {
+                private _dotCycle = 1;
+                while { !(missionNamespace getVariable ["MISSION_intro_start", false]) && !(missionNamespace getVariable ["MISSION_intro_finished", false]) } do {
+                    private _dots = switch (_dotCycle) do {
+                        case 1: { "." };
+                        case 2: { ". ." };
+                        case 3: { ". . ." };
+                        default { "" };
+                    };
+                    [
+                        format ["<t size='2.2' color='#aaaaaa' font='PuristaMedium' align='center'>%1</t>", _dots],
+                        -1, -1, 0.4, 0, 0, 792
+                    ] spawn BIS_fnc_dynamicText;
+                    _dotCycle = if (_dotCycle >= 3) then { 1 } else { _dotCycle + 1 };
+                    sleep 0.45;
+                };
+                ["", -1, -1, 0.1, 0, 0, 792] spawn BIS_fnc_dynamicText;
+            };
+        };
+
+        private _startTimeout = time + 60;
+        waitUntil {
+            sleep 0.1;
+            (!isNil "MISSION_intro_start" && { MISSION_intro_start } && !isNil "MISSION_intro_lz" && !isNil "MISSION_intro_heli")
+            || time > _startTimeout
+            || (missionNamespace getVariable ["MISSION_intro_finished", false])
+        };
+
+        if (missionNamespace getVariable ["MISSION_intro_finished", false]) exitWith {
+            cutText ["", "BLACK IN", 2];
+            showHUD [true, true, true, true, true, true, true, true, true, true, true];
+            showCinemaBorder false;
+            player allowDamage true;
+        };
 
         private _skipDisplay  = findDisplay 46;
         private _skipHandleDn = -1;
@@ -26,6 +73,7 @@ if (hasInterface) then {
 
             _skipHandleDn = _skipDisplay displayAddEventHandler ["KeyDown", {
                 params ["", "_key"];
+                if (missionNamespace getVariable ["MISSION_intro_finished", false]) exitWith { false };
                 if (_key == 57 && { (missionNamespace getVariable ["MISSION_intro_skipKeyDownTime", -1]) < 0 }) then {
                     missionNamespace setVariable ["MISSION_intro_skipKeyDownTime", time];
                 };
@@ -52,11 +100,6 @@ if (hasInterface) then {
             };
         };
 
-        cutText ["", "BLACK FADED", 999];
-        0 fadeSound 0;
-        showCinemaBorder true;
-        player allowDamage false;
-
         private _ppColor = ppEffectCreate ["ColorCorrections", 1500];
         _ppColor ppEffectEnable true;
         _ppColor ppEffectAdjust [1, 0.95, 0.05, [0.15, 0.15, 0.2, 0.0], [0.85, 0.85, 0.9, 0.6], [0.1, 0.1, 0.15, 0]];
@@ -67,15 +110,13 @@ if (hasInterface) then {
         _ppGrain ppEffectAdjust [0.08, 0.9, 1, 0.08, 1, false];
         _ppGrain ppEffectCommit 0;
 
-        private _lzTimeout = time + 30;
-        waitUntil { (!isNil "MISSION_intro_lz" && !isNil "MISSION_intro_heli") || time > _lzTimeout };
         private _lzPos = if (!isNil "MISSION_intro_lz") then { MISSION_intro_lz } else { getPos player };
         private _heli  = if (!isNil "MISSION_intro_heli") then { MISSION_intro_heli } else { objNull };
 
         private _cam = "camera" camCreate (getPos player);
         _cam cameraEffect ["INTERNAL", "BACK"];
 
-        if (sunOrMoon < 0.3) then {
+        if (sunOrMoon < 0.4) then {
             camUseNVG true;
         };
 
@@ -223,67 +264,33 @@ if (hasInterface) then {
             };
 
             if (vehicle player != player && !(call _skipped)) then {
-                cutText ["", "BLACK FADED", 0.4];
-                sleep 0.4;
-                cutText ["", "BLACK IN", 0.8];
-
-                private _p4A = [
-                    (_lzPos select 0) + 500 * sin (_dirToHeli - 45),
-                    (_lzPos select 1) + 500 * cos (_dirToHeli - 45),
-                    30
-                ];
-                private _p4B = [
-                    (_lzPos select 0) + 250 * sin (_dirToHeli - 20),
-                    (_lzPos select 1) + 250 * cos (_dirToHeli - 20),
-                    18
-                ];
-
-                _cam camSetPos _p4A;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
-                _cam camSetFov 0.65;
-                _cam camCommit 0;
-
-                _cam camSetPos _p4B;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
-                _cam camCommit 12;
-
-                private _touchWait = time + 20;
-                waitUntil {
-                    sleep 0.1;
-                    (getPosATL _heli select 2) < 4
-                    || time > _touchWait
-                    || (call _skipped)
-                    || vehicle player == player
-                };
-            };
-
-            if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.3];
                 sleep 0.3;
+
+                if (!isNull _cam) then {
+                    _cam cameraEffect ["TERMINATE", "BACK"];
+                    camDestroy _cam;
+                };
+                camUseNVG false;
+                if (!isNil "_ppColor") then { ppEffectDestroy _ppColor; };
+                if (!isNil "_ppGrain") then { ppEffectDestroy _ppGrain; };
+
+                player switchCamera "INTERNAL";
+                showCinemaBorder false;
+                showHUD [false, false, false, false, false, false, false, false, false, false, false];
+
+                if (sunOrMoon < 0.4) then {
+                    if (hmd player == "") then { player linkItem "NVGoggles"; };
+                    if (currentVisionMode player == 0) then { player action ["NVGoggles", player]; };
+                };
+
                 cutText ["", "BLACK IN", 0.6];
 
-                private _p5A = [
-                    (_lzPos select 0) + 80 * sin (_dirToHeli + 120),
-                    (_lzPos select 1) + 80 * cos (_dirToHeli + 120),
-                    16
-                ];
-                private _p5B = [
-                    (_lzPos select 0) + 50 * sin (_dirToHeli + 140),
-                    (_lzPos select 1) + 50 * cos (_dirToHeli + 140),
-                    13
-                ];
-
-                _cam camSetPos _p5A;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
-                _cam camSetFov 0.70;
-                _cam camCommit 0;
-
-                _cam camSetPos _p5B;
-                _cam camCommit 12;
-
                 waitUntil {
-                    sleep 0.1;
-                    vehicle player == player || (call _skipped)
+                    sleep 0.05;
+                    (missionNamespace getVariable ["MISSION_players_disembarked", false])
+                    || (vehicle player == player)
+                    || (call _skipped)
                 };
             };
         } else {
@@ -301,22 +308,38 @@ if (hasInterface) then {
             [20, true] call _fnWaitPhase;
         };
 
-        cutText ["", "BLACK FADED", 0];
-        sleep 1;
+        if (call _skipped) then {
+            cutText ["", "BLACK FADED", 0];
+            sleep 0.5;
+        };
 
         if (!isNull _cam) then {
             _cam cameraEffect ["TERMINATE", "BACK"];
             camDestroy _cam;
         };
         camUseNVG false;
-        ppEffectDestroy _ppColor;
-        ppEffectDestroy _ppGrain;
+        if (!isNil "_ppColor") then { ppEffectDestroy _ppColor; };
+        if (!isNil "_ppGrain") then { ppEffectDestroy _ppGrain; };
 
         player switchCamera "INTERNAL";
         showCinemaBorder false;
+        showHUD [true, true, true, true, true, true, true, true, true, true, true];
         player allowDamage true;
 
-        cutText ["", "BLACK IN", 3];
+        if (sunOrMoon < 0.4) then {
+            if (hmd player == "") then { player linkItem "NVGoggles"; };
+            if (currentVisionMode player == 0) then { player action ["NVGoggles", player]; };
+        };
+
+        private _d46 = findDisplay 46;
+        if (!isNull _d46) then {
+            if (_skipHandleDn != -1) then { _d46 displayRemoveEventHandler ["KeyDown", _skipHandleDn]; };
+            if (_skipHandleUp != -1) then { _d46 displayRemoveEventHandler ["KeyUp", _skipHandleUp]; };
+        };
+
+        if (call _skipped) then {
+            cutText ["", "BLACK IN", 1.5];
+        };
 
         [
             format [
@@ -327,11 +350,6 @@ if (hasInterface) then {
         ] spawn BIS_fnc_dynamicText;
 
         missionNamespace setVariable ["MISSION_intro_finished", true, true];
-
-        if (!isNull _skipDisplay) then {
-            if (_skipHandleDn != -1) then { _skipDisplay displayRemoveEventHandler ["KeyDown", _skipHandleDn]; };
-            if (_skipHandleUp != -1) then { _skipDisplay displayRemoveEventHandler ["KeyUp", _skipHandleUp]; };
-        };
     };
 };
 
@@ -340,10 +358,21 @@ if (isServer) then {
     missionNamespace setVariable ["MISSION_intro_sv", true];
 
     [] spawn {
-        waitUntil { time > 0.1 };
+        private _initialWait = time + 30;
+        waitUntil { count allPlayers > 0 || time > _initialWait };
 
-        private _pTimeout = time + 15;
-        waitUntil { count allPlayers > 0 || time > _pTimeout };
+        if (isMultiplayer) then {
+            private _syncTimeout = time + 35;
+            waitUntil {
+                sleep 0.5;
+                private _players = allPlayers;
+                (count _players > 0 && { { !(_x getVariable ["TUE_player_ready", false]) } count _players == 0 })
+                || (time > _syncTimeout && count _players > 0)
+            };
+            sleep 10;
+        } else {
+            sleep 0.5;
+        };
 
         private _players = allPlayers;
         if (count _players == 0 && !isNull player) then { _players = [player]; };
@@ -418,12 +447,21 @@ if (isServer) then {
         } forEach _players;
 
         {
+            if (alive _x && !(_x in _allUnitsToBoard)) then { _allUnitsToBoard pushBack _x; };
+        } forEach playableUnits;
+
+        {
             _x moveInCargo _heli;
             if (vehicle _x == _x) then { _x moveInAny _heli; };
             _x assignAsCargo _heli;
         } forEach _allUnitsToBoard;
 
-        sleep 1;
+        _heli lockCargo true;
+
+        sleep 0.5;
+
+        MISSION_intro_start = true;
+        publicVariable "MISSION_intro_start";
 
         _heli doMove _destPos;
         _heli flyInHeight 150;
@@ -443,8 +481,10 @@ if (isServer) then {
         _heli land "GET OUT";
 
         private _touchTimeout = time + 60;
-        waitUntil { (getPosATL _heli select 2) < 2 || time > _touchTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
+        waitUntil { (getPosATL _heli select 2) < 2 || isTouchingGround _heli || time > _touchTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
         sleep 1;
+
+        _heli lockCargo false;
 
         private _unitsToDisembark   = [];
         private _processedGroupsDis = [];

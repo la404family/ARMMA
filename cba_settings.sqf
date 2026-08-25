@@ -1,7 +1,16 @@
-// CBA Settings - Unit Voice-overs (UVO)
+force uvo_main_enablePlayers = true;
+force uvo_main_enableCallouts = true;
+force uvo_main_killConfirmChanceAI = 1;
+force uvo_main_killConfirmChancePlayer = 1;
+force uvo_main_suppressionChanceAI = 1;
+force uvo_main_suppressionChancePlayer = 1;
+force uvo_main_hearingDistance = 45;
+force uvo_main_volume = 1;
 force uvo_enable_east = true;
 force uvo_enable_west = true;
 force uvo_enable_guer = true;
 force uvo_default_chatter_east = true;
 force uvo_default_chatter_west = true;
 force uvo_default_chatter_guer = true;
+force uvo_enablePlayers = true;
+force uvo_enableCallouts = true;

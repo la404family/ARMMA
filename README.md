@@ -13,10 +13,17 @@ Ce fichier documente l'architecture technique et les fonctionnalités de la miss
 ## Modules Techniques
 
 ### 1. Module Médical (Medical)
+- **Système de Réanimation Multijoueur (Revive)** : Pas de mort instantanée ni de respawn sur le corps. Lorsqu'un joueur subit des dégâts mortels, il tombe au sol en état d'incapacité / agonie (durée de 5 minutes de saignement / bleedout). Tout coéquipier allié peut s'approcher et le réanimer directement en 6 secondes (3 secondes pour un médecin) sans aucun prérequis d'objet ni de trousse médicale obligatoire.
 - **Auto-soin IA** : Les IA (alliées et ennemies) s'auto-soignent si elles sont gravement blessées (animation de secourisme de 6 secondes) et possèdent une trousse de soin.
 
 ### 2. Module Environnement (Environment)
-- **Météo Dynamique** : Le climat évolue de façon aléatoire et progressive toutes les 40 minutes, garantissant des conditions de combat toujours renouvelées et imprévisibles.
+- **Météo Dynamique & Cycles Réalistes** : Le climat évolue de façon réaliste via un système à chaînes de Markov et des créneaux horaires d'opérations crédibles :
+  - *Aube / Infiltration* (04h45 - 06h15)
+  - *Matinée Opérationnelle* (08h00 - 11h00)
+  - *Après-midi / Plein Soleil* (13h00 - 17h00)
+  - *Crépuscule / Fin de journée* (18h45 - 20h45)
+  - *Nuit Noire / Opération Nocturne* (22h30 - 03h00)
+  - Gestion du brouillard volumétrique 3D `[density, decay, baseAlt]`, des rafales (`setGusts`), des éclairs (`setLightnings`), des arcs-en-ciel et des régimes de vent.
 - **Gestion de la Fatigue** : La stamina et le tressaillement des joueurs humains sont optimisés via une boucle dédiée pour garantir une expérience de tir fluide.
 - **Compétences IA (Skills)** : 
   - IA BLUFOR (Alliés) : Précision Élite et tactiques maximales.
@@ -41,7 +48,11 @@ Gestion dynamique et asymétrique de l'escouade jouable (`Player_0` à `Player_3
 - **Règles d'Engagement (ROE)** : Les joueurs disposent d'un menu d'action (molette) pour changer la posture tactique de leur escouade IA (Stealth, Normal, Assault) de façon instantanée et totalement silencieuse.
 
 ### 5. Module Tâches, Cinématique & Extraction (Task)
-- **Introduction Dynamique** : Une cinématique d'introduction gérant intelligemment le point d'atterrissage des joueurs via un hélicoptère IA de transport. Les positions de caméra respectent strictement une altitude minimale de $12\text{ m}$ du sol et un espacement de $\ge 500\text{ m}$ pour une perspective et profondeur optimales.
+- **Introduction Cinématique 4 Plans & Atterrissage** :
+  - **Plans 1 à 3** : Prises de vue aériennes cinématiques en travelling extérieur suivant l'hélicoptère en vol d'approche vers la LZ.
+  - **Plan 4 (Immersion Cabine)** : Transition fluide dans la tête du joueur en vue première personne dans la cabine de transport avec liberté totale de mouvement de tête (freelook) et interface épurée (`showHUD [false...]`).
+  - **Vision Nocturne Automatique** : Lors des missions de nuit, activation automatique et continue de la vision nocturne dès la caméra cinématique, en vue interne hélico et lors de l'arrivée au sol.
+  - **Débarquement Sécurisé** : Dès le poser des roues sur l'héliport de destination, l'escouade est débarquée en éventail tactique de sécurisation, le HUD complet est restauré et l'arsenal est initialisé. Possibilité d'interrompre l'introduction en maintenant la touche Espace pendant 1.2 s.
 - **Arsenal de Départ** : Génération d'une caisse d'arsenal optimisée et contextuelle au point d'atterrissage, équipée du drone allié et balisée temporairement, pour permettre aux joueurs de se préparer.
 - **Scénario 100% Automatisé** :
   - **Lancement** : 15 secondes après l'arrivée à l'arsenal, le serveur sélectionne et lance automatiquement une tâche aléatoire parmi les missions disponibles.

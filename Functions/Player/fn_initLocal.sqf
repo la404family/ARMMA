@@ -2,6 +2,11 @@ if (!hasInterface) exitWith {};
 
 player createDiaryRecord ["diary", [localize "STR_TUE_Briefing_Title", localize "STR_TUE_Briefing_Text"]];
 
+if ({ _x == "FirstAidKit" } count (items player) < 2) then {
+    player addItem "FirstAidKit";
+    player addItem "FirstAidKit";
+};
+
 [] spawn {
     private _timeout = 0;
     waitUntil {
@@ -22,4 +27,3 @@ player createDiaryRecord ["diary", [localize "STR_TUE_Briefing_Title", localize 
         };
     };
 };
-
