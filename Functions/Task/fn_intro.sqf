@@ -1,33 +1,3 @@
-/*
-    intro.sqf — Cinématique d'introduction (hélicoptère)
-    ------------------------------------------------------
-    v3 — Corrections et optimisations :
-
-    1. BUG CRITIQUE corrigé : ppEffectCreate renvoie un Number (handle),
-       pas un Object. "isNull _ppColor" est invalide sur un Number et
-       plantait le script (ligne 130). Suppression des isNull sur les
-       handles de post-process ; ils sont toujours créés donc toujours
-       détruits sans condition.
-    2. SACCADES corrigées : le pilotage caméra (orbites, transitions)
-       tournait dans une boucle "sleep 0.1 / camCommit 0.1" exécutée par
-       le scheduler SQF, non synchronisé à l'affichage — d'où les à-coups
-       si le scheduler était chargé. Remplacé par un handler
-       "EachFrame" (addMissionEventHandler) : la caméra est repositionnée
-       à CHAQUE frame rendue, indépendamment du scheduler. C'est la
-       méthode standard pour des travellings fluides en Arma 3.
-    3. Le thread principal ne fait plus que déclencher les phases
-       (via une variable d'état MISSION_intro_camPhase) et gérer le
-       minutage/les conditions de sortie — il ne touche plus la caméra
-       directement pendant les orbites.
-    4. Scope corrigé : constantes déplacées à l'intérieur des blocs
-       spawn concernés (spawn n'hérite pas des "private" du scope
-       appelant).
-    5. Skip intro (maintenir ESPACE ~1.2s), timeout anti-boucle infinie
-       sur la phase finale, fallback caméra propre si pas d'hélico,
-       nettoyage réseau (un seul remoteExec par porte), fondu musical
-       de sortie — repris de la v2.
-*/
-
 params [["_isJip", false, [true]]];
 
 if (hasInterface) then {
@@ -39,20 +9,15 @@ if (hasInterface) then {
     [] spawn {
         disableSerialization;
 
-        // ---------------------------------------------------------------
-        // Constantes de tuning (durées en secondes)
-        // ---------------------------------------------------------------
         private _DUR_APPROACH   = 14;
         private _SKIP_HOLD_TIME = 1.2;
 
-        // -- Attente du joueur, bornée --
         private _playerTimeout = time + 30;
         waitUntil { !isNull player || time > _playerTimeout };
         if (isNull player) exitWith {};
 
         missionNamespace setVariable ["MISSION_intro_skip", false];
 
-        // -- Skip : maintien ESPACE (DIK_SPACE = 57) --
         private _skipDisplay  = findDisplay 46;
         private _skipHandleDn = -1;
         private _skipHandleUp = -1;
@@ -118,12 +83,6 @@ if (hasInterface) then {
         playMusic "Music_Intro";
         3 fadeSound 1;
 
-        // ---------------------------------------------------------------
-        // Cinématique 100% fluide : caméras ancrées au sol / relief
-        // Interpolation native du moteur Arma 3 (camCommit)
-        // ---------------------------------------------------------------
-
-        // Fonction utilitaire d'attente sécurisée
         private _fnWaitPhase = {
             params ["_dur", ["_watchVehicle", false]];
             private _t0 = time;
@@ -140,18 +99,15 @@ if (hasInterface) then {
         if (!isNull _heli) then {
             private _dirToHeli = _lzPos getDir (getPos _heli);
 
-            // ===============================================================
-            // PLAN 1 : Reconnaissance en altitude & Titres (0 à 14s)
-            // ===============================================================
             private _p1Start = [
-                (_lzPos select 0) + 40 * sin _dirToHeli,
-                (_lzPos select 1) + 40 * cos _dirToHeli,
-                15
+                (_lzPos select 0) + 1200 * sin (_dirToHeli + 20),
+                (_lzPos select 1) + 1200 * cos (_dirToHeli + 20),
+                55
             ];
             private _p1End = [
-                (_lzPos select 0) + 160 * sin _dirToHeli,
-                (_lzPos select 1) + 160 * cos _dirToHeli,
-                45
+                (_lzPos select 0) + 700 * sin (_dirToHeli + 10),
+                (_lzPos select 1) + 700 * cos (_dirToHeli + 10),
+                40
             ];
 
             _cam camSetPos _p1Start;
@@ -165,14 +121,13 @@ if (hasInterface) then {
             _cam camSetTarget _heli;
             _cam camCommit 14;
 
-            // Titre principal
             sleep 2;
             if !(call _skipped) then {
                 titleText [
                     format [
                         "<t size='3.0' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
                         "<t size='1.4' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t>",
-                        "THE UNSEEN ELEMENT",
+                        "GHOSTS 2035",
                         localize "STR_LL_Intro_Presents"
                     ],
                     "PLAIN", 1, true, true
@@ -183,9 +138,12 @@ if (hasInterface) then {
             titleText ["", "PLAIN", 0.5];
             sleep 1;
 
-            // Texte de localisation animé
             [] spawn {
-                private _p2chars = toArray (localize "STR_LL_Intro_Location");
+                private _hour = date select 3;
+                private _minute = date select 4;
+                private _timeStr = format ["%1:%2", if (_hour < 10) then { "0" + str _hour } else { str _hour }, if (_minute < 10) then { "0" + str _minute } else { str _minute }];
+                private _fullText = format ["%1 - %2", localize "STR_LL_Intro_Location", _timeStr];
+                private _p2chars = toArray _fullText;
                 private _p2built = "";
                 {
                     if (missionNamespace getVariable ["MISSION_intro_skip", false]) exitWith {};
@@ -203,9 +161,6 @@ if (hasInterface) then {
 
             sleep 5;
 
-            // ===============================================================
-            // PLAN 2 : Survol panoramique depuis les hauteurs (14s à 24s)
-            // ===============================================================
             if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.4];
                 sleep 0.4;
@@ -217,14 +172,14 @@ if (hasInterface) then {
                 _ppGrain ppEffectCommit 1;
 
                 private _p2A = [
-                    (_lzPos select 0) + 520 * sin (_dirToHeli + 45),
-                    (_lzPos select 1) + 520 * cos (_dirToHeli + 45),
-                    4
+                    (_lzPos select 0) + 900 * sin (_dirToHeli - 35),
+                    (_lzPos select 1) + 900 * cos (_dirToHeli - 35),
+                    35
                 ];
                 private _p2B = [
-                    (_lzPos select 0) + 490 * sin (_dirToHeli + 45) + 20 * cos (_dirToHeli + 45),
-                    (_lzPos select 1) + 490 * cos (_dirToHeli + 45) - 20 * sin (_dirToHeli + 45),
-                    4
+                    (_lzPos select 0) + 600 * sin (_dirToHeli - 25),
+                    (_lzPos select 1) + 600 * cos (_dirToHeli - 25),
+                    25
                 ];
 
                 _cam camSetPos _p2A;
@@ -239,23 +194,20 @@ if (hasInterface) then {
                 [10, true] call _fnWaitPhase;
             };
 
-            // ===============================================================
-            // PLAN 3 : Contre-plongée spectaculaire en lisière/forêt (24s à 32s)
-            // ===============================================================
             if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.4];
                 sleep 0.4;
                 cutText ["", "BLACK IN", 0.8];
 
                 private _p3A = [
-                    (_lzPos select 0) + 220 * sin (_dirToHeli - 20),
-                    (_lzPos select 1) + 220 * cos (_dirToHeli - 20),
-                    1.2
+                    (_lzPos select 0) + 550 * sin (_dirToHeli + 40),
+                    (_lzPos select 1) + 550 * cos (_dirToHeli + 40),
+                    22
                 ];
                 private _p3B = [
-                    (_lzPos select 0) + 190 * sin (_dirToHeli - 20),
-                    (_lzPos select 1) + 190 * cos (_dirToHeli - 20),
-                    1.4
+                    (_lzPos select 0) + 500 * sin (_dirToHeli + 20),
+                    (_lzPos select 1) + 500 * cos (_dirToHeli + 20),
+                    16
                 ];
 
                 _cam camSetPos _p3A;
@@ -270,32 +222,29 @@ if (hasInterface) then {
                 [8, true] call _fnWaitPhase;
             };
 
-            // ===============================================================
-            // PLAN 4 : Survol panoramique en plongée sur la LZ (32s au Poser)
-            // ===============================================================
             if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.4];
                 sleep 0.4;
                 cutText ["", "BLACK IN", 0.8];
 
                 private _p4A = [
-                    (_lzPos select 0) + 75 * sin (_dirToHeli - 50),
-                    (_lzPos select 1) + 75 * cos (_dirToHeli - 50),
-                    26
+                    (_lzPos select 0) + 500 * sin (_dirToHeli - 45),
+                    (_lzPos select 1) + 500 * cos (_dirToHeli - 45),
+                    30
                 ];
                 private _p4B = [
-                    (_lzPos select 0) + 45 * sin (_dirToHeli - 25),
-                    (_lzPos select 1) + 45 * cos (_dirToHeli - 25),
-                    14
+                    (_lzPos select 0) + 250 * sin (_dirToHeli - 20),
+                    (_lzPos select 1) + 250 * cos (_dirToHeli - 20),
+                    18
                 ];
 
                 _cam camSetPos _p4A;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 0.5];
+                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
                 _cam camSetFov 0.65;
                 _cam camCommit 0;
 
                 _cam camSetPos _p4B;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 0.5];
+                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
                 _cam camCommit 12;
 
                 private _touchWait = time + 20;
@@ -308,27 +257,24 @@ if (hasInterface) then {
                 };
             };
 
-            // ===============================================================
-            // PLAN 5 : Poser & Débarquement de l'escouade
-            // ===============================================================
             if (vehicle player != player && !(call _skipped)) then {
                 cutText ["", "BLACK FADED", 0.3];
                 sleep 0.3;
                 cutText ["", "BLACK IN", 0.6];
 
                 private _p5A = [
-                    (_lzPos select 0) + 20 * sin (_dirToHeli + 110),
-                    (_lzPos select 1) + 20 * cos (_dirToHeli + 110),
-                    1.5
+                    (_lzPos select 0) + 80 * sin (_dirToHeli + 120),
+                    (_lzPos select 1) + 80 * cos (_dirToHeli + 120),
+                    16
                 ];
                 private _p5B = [
-                    (_lzPos select 0) + 16 * sin (_dirToHeli + 130),
-                    (_lzPos select 1) + 16 * cos (_dirToHeli + 130),
-                    1.5
+                    (_lzPos select 0) + 50 * sin (_dirToHeli + 140),
+                    (_lzPos select 1) + 50 * cos (_dirToHeli + 140),
+                    13
                 ];
 
                 _cam camSetPos _p5A;
-                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.2];
+                _cam camSetTarget [(_lzPos select 0), (_lzPos select 1), 1.5];
                 _cam camSetFov 0.70;
                 _cam camCommit 0;
 
@@ -341,22 +287,20 @@ if (hasInterface) then {
                 };
             };
         } else {
-            // -- Fallback : pas d'hélico détecté --
-            _cam camSetPos [(_lzPos select 0) + 25, (_lzPos select 1) + 25, 8];
+            _cam camSetPos [(_lzPos select 0) + 60, (_lzPos select 1) + 60, 20];
             _cam camSetTarget _lzPos;
             _cam camSetFov 0.65;
             _cam camCommit 0;
 
             cutText ["", "BLACK IN", 3];
 
-            _cam camSetPos [(_lzPos select 0) + 15, (_lzPos select 1) + 15, 3];
+            _cam camSetPos [(_lzPos select 0) + 30, (_lzPos select 1) + 30, 14];
             _cam camCommit 14;
             [14, false] call _fnWaitPhase;
 
             [20, true] call _fnWaitPhase;
         };
 
-        // -- Nettoyage --
         cutText ["", "BLACK FADED", 0];
         sleep 1;
 
@@ -365,8 +309,6 @@ if (hasInterface) then {
             camDestroy _cam;
         };
         camUseNVG false;
-        // ppEffectCreate renvoie un Number, pas un Object : pas de isNull ici,
-        // les deux handles sont toujours créés plus haut donc toujours détruits.
         ppEffectDestroy _ppColor;
         ppEffectDestroy _ppGrain;
 

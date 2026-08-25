@@ -283,47 +283,101 @@
         </Key>
     </Package>
     <Package name="Task">
+        <Key ID="STR_LL_Task_Extraction_Title">
+            <Original>Extraction</Original>
+            <French>Extraction</French>
+            <English>Extraction</English>
+            <Spanish>Extracción</Spanish>
+            <Italian>Estrazione</Italian>
+            <German>Evakuierung</German>
+            <Polish>Ewakuacja</Polish>
+            <Russian>Эвакуация</Russian>
+            <Turkish>Tahliye</Turkish>
+            <Japanese>抽出・脱出</Japanese>
+            <Korean>탈출 / 철수</Korean>
+            <Chinese>撤离行动</Chinese>
+            <Portuguese>Extração</Portuguese>
+            <Czech>Extrakce</Czech>
+        </Key>
+        <Key ID="STR_LL_Task_Extraction_Desc">
+            <Original>Mission accomplie. Rejoignez le point d'extraction et montez à bord de l'hélicoptère de transport allié.</Original>
+            <French>Mission accomplie. Rejoignez le point d'extraction et montez à bord de l'hélicoptère de transport allié.</French>
+            <English>Mission accomplished. Reach the extraction point and board the allied transport helicopter.</English>
+            <Spanish>Misión cumplida. Dirígete al punto de extracción y sube a bordo del helicóptero de transporte aliado.</Spanish>
+            <Italian>Missione compiuta. Raggiungi il punto di estrazione e sali a bordo dell'elicottero da trasporto alleato.</Italian>
+            <German>Mission erfüllt. Begeben Sie sich zum Evakuierungspunkt und steigen Sie in den alliierten Transporthubschrauber ein.</German>
+            <Polish>Misja zakończona. Udaj się do punktu ewakuacji i wejdź na pokład sojuszniczego śmigłowca transportowego.</Polish>
+            <Russian>Задание выполнено. Прибудьте в точку эвакуации и поднимитесь на борт союзного транспортного вертолета.</Russian>
+            <Turkish>Görev tamamlandı. Tahliye noktasına ulaşın ve müttefik nakliye helikopterine binin.</Turkish>
+            <Japanese>作戦完了。脱出地点へ向かい、味方の輸送ヘリに搭乗せよ。</Japanese>
+            <Korean>작전 성공. 탈출 지점으로 이동하여 아군 수송 헬리콥터에 탑승하십시오.</Korean>
+            <Chinese>任务完成。前往撤离点并登上盟军运输直升机。</Chinese>
+            <Portuguese>Missão cumprida. Dirija-se ao ponto de extração e embarque no helicóptero de transporte aliado.</Portuguese>
+            <Czech>Mise splněna. Dosáhněte bodu extrakce a nastupte do spojeneckého transportního vrtulníku.</Czech>
+        </Key>
+        <Key ID="STR_LL_Task_Extraction_Marker">
+            <Original>Point d'Extraction</Original>
+            <French>Point d'Extraction</French>
+            <English>Extraction Point</English>
+            <Spanish>Punto de extracción</Spanish>
+            <Italian>Punto di estrazione</Italian>
+            <German>Evakuierungspunkt</German>
+            <Polish>Punkt ewakuacji</Polish>
+            <Russian>Точка эвакуации</Russian>
+            <Turkish>Tahliye Noktası</Turkish>
+            <Japanese>脱出地点</Japanese>
+            <Korean>탈출 지점</Korean>
+            <Chinese>撤离点</Chinese>
+            <Portuguese>Ponto de extração</Portuguese>
+            <Czech>Bod extrakce</Czech>
+        </Key>
         <Key ID="STR_LL_Intro_Author">
-            <Original>Operation Royal Alliance</Original>
-            <French>Operation Royal Alliance</French>
-            <English>Operation Royal Alliance</English>
-            <Spanish>Operation Royal Alliance</Spanish>
-            <Italian>Operation Royal Alliance</Italian>
-            <German>Operation Royal Alliance</German>
-            <Polish>Operation Royal Alliance</Polish>
-            <Russian>Operation Royal Alliance</Russian>
-            <Turkish>Operation Royal Alliance</Turkish>
-            <Japanese>Operation Royal Alliance</Japanese>
-            <Korean>Operation Royal Alliance</Korean>
-            <Chinese>Operation Royal Alliance</Chinese>
+            <Original>GHOSTS 2035</Original>
+            <French>GHOSTS 2035</French>
+            <English>GHOSTS 2035</English>
+            <Spanish>GHOSTS 2035</Spanish>
+            <Italian>GHOSTS 2035</Italian>
+            <German>GHOSTS 2035</German>
+            <Polish>GHOSTS 2035</Polish>
+            <Russian>GHOSTS 2035</Russian>
+            <Turkish>GHOSTS 2035</Turkish>
+            <Japanese>GHOSTS 2035</Japanese>
+            <Korean>GHOSTS 2035</Korean>
+            <Chinese>GHOSTS 2035</Chinese>
+            <Portuguese>GHOSTS 2035</Portuguese>
+            <Czech>GHOSTS 2035</Czech>
         </Key>
         <Key ID="STR_LL_Intro_Presents">
-            <Original>Infiltration, high-tech equipment and tactical objectives</Original>
-            <French>Inflitration, technologie de pointe et objectifs dynamiques</French>
-            <English>Infiltration, high-tech equipment and tactical objectives</English>
-            <Spanish>Infiltración, tecnología avanzada y objetivos tácticos</Spanish>
-            <Italian>Infiltrazione, equipaggiamento high-tech e obiettivi tattici</Italian>
-            <German>Infiltration, hochmoderne Ausrüstung und taktische Ziele</German>
-            <Polish>Infiltracja, zaawansowany sprzęt i cele taktyczne</Polish>
-            <Russian>Инфильтрация, современное вооружение и тактические цели</Russian>
-            <Turkish>Infiltrasyon, ileri teknoloji ekipman ve taktik hedefler</Turkish>
-            <Japanese>潜入、最先端の装備と戦術的な目標</Japanese>
-            <Korean>잠입, 최첨단 장비 및 전술 목표</Korean>
-            <Chinese>潜入、尖端技术与战术目标</Chinese>
+            <Original>Unité de snipers d'élite</Original>
+            <French>Unité de snipers d'élite</French>
+            <English>Elite Sniper Unit</English>
+            <Spanish>Unidad de francotiradores de élite</Spanish>
+            <Italian>Unità di cecchini scelti</Italian>
+            <German>Elite-Scharfschützeneinheit</German>
+            <Polish>Elitarna jednostka snajperska</Polish>
+            <Russian>Элитное снайперское подразделение</Russian>
+            <Turkish>Seçkin Keskin Nişancı Birliği</Turkish>
+            <Japanese>精鋭スナイパー部隊</Japanese>
+            <Korean>엘리트 저격 부대</Korean>
+            <Chinese>精锐狙击部队</Chinese>
+            <Portuguese>Unidade de atiradores de elite</Portuguese>
+            <Czech>Elitní odstřelovačská jednotka</Czech>
         </Key>
         <Key ID="STR_LL_Intro_Location">
-            <Original>June 29, 2030</Original>
-            <French>29 Juin 2030</French>
-            <English>June 29, 2030</English>
-            <Spanish>29 de Junio de 2030</Spanish>
-            <Italian>29 Giugno 2030</Italian>
-            <German>29. Juni 2030</German>
-            <Polish>29 Czerwca 2030</Polish>
-            <Russian>29 июня 2030 г.</Russian>
-            <Turkish>29 Haziran 2030</Turkish>
-            <Japanese>2030年6月29日</Japanese>
-            <Korean>2030년 6월 29일</Korean>
-            <Chinese>2030年6月29日</Chinese>
+            <Original>June 29, 2035</Original>
+            <French>29 Juin 2035</French>
+            <English>June 29, 2035</English>
+            <Spanish>29 de Junio de 2035</Spanish>
+            <Italian>29 Giugno 2035</Italian>
+            <German>29. Juni 2035</German>
+            <Polish>29 Czerwca 2035</Polish>
+            <Russian>29 июня 2035 г.</Russian>
+            <Turkish>29 Haziran 2035</Turkish>
+            <Japanese>2035年6月29日</Japanese>
+            <Korean>2035년 6월 29일</Korean>
+            <Chinese>2035年6月29日</Chinese>
+            <Portuguese>29 de Junho de 2035</Portuguese>
+            <Czech>29. června 2035</Czech>
         </Key>
         <Key ID="STR_LL_Intro_MissionStartSubtitle">
             <Original>Review the operational briefing if you value your life.</Original>
@@ -338,6 +392,8 @@
             <Japanese>命が惜しければ作戦説明を確認せよ。</Japanese>
             <Korean>살고 싶다면 작전 브리핑을 정독하십시오.</Korean>
             <Chinese>如果想活命，请仔细阅读作战简报。</Chinese>
+            <Portuguese>Reveja o briefing operacional se você dá valor à sua vida.</Portuguese>
+            <Czech>Přečtěte si operační brífink, pokud vám záleží na životě.</Czech>
         </Key>
         <Key ID="STR_LL_StartArsenal_Marker">
             <Original>PREPARATION (Arsenal)</Original>
@@ -1270,370 +1326,6 @@ OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowód
             <German>Feindlicher Kriegsherr (HVT)</German>
             <Italian>Signore della guerra nemico (HVT)</Italian>
             <Polish>Wrogi watażka (HVT)</Polish>
-        </Key>
-        <Key ID="STR_LL_Diary_Task07_Title">
-            <Original>OPORD : Soutenir des civils armés</Original>
-            <French>OPORD : Soutenir des civils armés</French>
-            <English>OPORD: Support Armed Civilians</English>
-            <Turkish>OPORD: Silahlı Sivillere Destek</Turkish>
-            <Korean>OPORD: 무장 민간인 지원</Korean>
-            <Spanish>OPORD: Apoyar a civiles armados</Spanish>
-            <Japanese>OPORD: 武装市民の支援</Japanese>
-            <Chinese>OPORD: 支持武装平民</Chinese>
-            <Russian>OPORD: Поддержка вооруженных гражданских</Russian>
-            <German>OPORD: Bewaffnete Zivilisten unterstützen</German>
-            <Italian>OPORD: Supporto ai civili armati</Italian>
-            <Polish>OPORD: Wsparcie uzbrojonych cywilów</Polish>
-        </Key>
-        <Key ID="STR_LL_Diary_Task07_Text">
-            <Original>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</Original>
-            <French>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</French>
-            <English>Villagers are under constant threat from hostile militias. A faction of armed villagers has grouped to defend their village but needs our tactical support. Meet the militia chief at the rendezvous point, then assist them in clearing the sector while ensuring the survival of the majority of the villagers. If more than half of the armed villagers die, the operation will fail.</English>
-            <Turkish>Köylüler, düşman milislerin sürekli tehdidi altındadır. Silahlı köylülerden oluşan bir grup köylerini savunmak için bir araya geldi ancak taktiksel desteğimize ihtiyaçları var. Buluşma noktasında milis lideriyle görüşün, ardından köylülerin çoğunluğunun hayatta kalmasını sağlayarak sektörü temizlemelerine yardımcı olun. Silahlı köylülerin yarısından fazlası ölürse operasyon başarısız olacaktır.</Turkish>
-            <Korean>민간인들이 적대적인 민병대의 지속적인 위협을 받고 있습니다. 무장한 주민들로 구성된 한 분파가 마을을 지키기 위해 결집했으나 우리의 전술적 지원이 필요합니다. 접선 장소에서 민병대장을 만나 주민 대다수의 생존을 보장하면서 구역을 소탕하도록 도우십시오. 무장 주민의 절반 이상이 사망하면 작전은 실패합니다.</Korean>
-            <Spanish>Los aldeanos están bajo la constante amenaza de milicias hostiles. Una facción de aldeanos armados se ha agrupado para defender su pueblo, pero necesita nuestro apoyo táctico. Reúnete con el jefe de la milicia en el punto de encuentro, luego ayúdalos a limpiar el sector asegurando la supervivencia de la mayoría de los aldeanos. Si más de la mitad de los aldeanos armados muere, la operación fracasará.</Spanish>
-            <Japanese>村人たちは敵対的な民兵組織からの絶え間ない脅威にさらされています。武装した村人の一派が村を守るために結集しましたが、私たちの戦術的支援を必要としています。待ち合わせ場所で民兵のリーダーに会い、村人の大部分の生存を確保しつつセクターの掃討を支援してください。武装した村人の半数以上が死亡した場合、作戦は失敗します。</Japanese>
-            <Chinese>村民们正受到敌对民兵的持续威胁。一群武装村民聚集起来保卫他们的村庄，但需要我们的战术支持。在会合点与民兵首领会面，然后协助他们清理该区域，同时确保大多数村民能够存活。如果超过一半的武装村民死亡，行动将宣告失败。</Chinese>
-            <Russian>Местные жители находятся под постоянной угрозой со стороны враждебных боевиков. Группа вооруженных местных жителей объединилась для защиты своей деревни, но им нужна наша тактическая поддержка. Встретьтесь с командиром ополчения в точке сбора, затем помогите им зачистить сектор, обеспечив выживание большинства жителей. Если погибнет более половины вооруженных ополченцев, операция будет провалена.</Russian>
-            <German>Die Dorfbewohner stehen unter ständiger Bedrohung durch feindliche Milizen. Eine Fraktion bewaffneter Dorfbewohner hat sich zusammengeschlossen, um ihr Dorf zu verteidigen, benötigt jedoch unsere taktische Unterstützung. Treffen Sie den Anführer der Miliz am Treffpunkt und helfen Sie ihnen dann bei der Säuberung des Sektors, während Sie das Überleben der Mehrheit der Dorfbewohner sichern. Wenn mehr als die Hälfte der bewaffneten Dorfbewohner stirbt, scheitert die Operation.</German>
-            <Italian>Gli abitanti sono sotto la costante minaccia di milizie ostili. Una fazione di abitanti armati si è riunita per difendere il proprio villaggio, ma ha bisogno del nostro supporto tattico. Incontra il capo della milizia al punto di ritrovo, quindi aiutali a ripulire il settore garantendo la sopravvivenza della maggior parte degli abitanti. Se più della metà degli abitanti armati muore, l'operazione fallirà.</Italian>
-            <Polish>Mieszkańcy są pod nieustannym naciskiem wrogich bojówek. Grupa uzbrojonych mieszkańców zjednoczyła się w celu obrony swojej wioski, lecz potrzebuje naszego wsparcia taktycznego. Spotkaj się z dowódcą milicji w punkcie zbiórki, a następnie pomóż im oczyścić sektor, dbając o przetrwanie większości mieszkańców. Jeśli zginie ponad połowa uzbrojonych cywilów, operacja zakończy się niepowodzeniem.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_Action">
-            <Original>Parler au chef du village</Original>
-            <French>Parler au chef du village</French>
-            <English>Speak to village chief</English>
-            <Turkish>Köy lideriyle konuş</Turkish>
-            <Korean>촌장과 대화하기</Korean>
-            <Spanish>Hablar con el jefe de la aldea</Spanish>
-            <Japanese>村長と話す</Japanese>
-            <Chinese>与村长交谈</Chinese>
-            <Russian>Поговорить со старейшиной</Russian>
-            <German>Mit dem Dorfältesten sprechen</German>
-            <Italian>Parla con il capo del villaggio</Italian>
-            <Polish>Porozmawiaj z sołtysem</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_ActionThanks">
-            <Original>Parler au représentant</Original>
-            <French>Parler au représentant</French>
-            <English>Speak to representative</English>
-            <Turkish>Temsilciyle konuş</Turkish>
-            <Korean>대표와 대화하기</Korean>
-            <Spanish>Hablar con el representante</Spanish>
-            <Japanese>代表者と話す</Japanese>
-            <Chinese>与代表交谈</Chinese>
-            <Russian>Поговорить с представителем</Russian>
-            <German>Mit dem Vertreter sprechen</German>
-            <Italian>Parla con il rappresentante</Italian>
-            <Polish>Porozmawiaj z przedstawicielem</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_RDV_Title">
-            <Original>Rendez-vous au village</Original>
-            <French>Rendez-vous au village</French>
-            <English>Village Rendezvous</English>
-            <Turkish>Köy Buluşması</Turkish>
-            <Korean>마을 접선</Korean>
-            <Spanish>Punto de encuentro en la aldea</Spanish>
-            <Japanese>村での待ち合わせ</Japanese>
-            <Chinese>村庄会合</Chinese>
-            <Russian>Встреча в деревне</Russian>
-            <German>Treffpunkt im Dorf</German>
-            <Italian>Ritrovo nel villaggio</Italian>
-            <Polish>Spotkanie w wiosce</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_RDV_Desc">
-            <Original>Rejoignez le chef du village allié pour obtenir des renseignements.</Original>
-            <French>Rejoignez le chef du village allié pour obtenir des renseignements.</French>
-            <English>Meet the allied village chief to gather intel.</English>
-            <Turkish>Bilgi almak için müttefik köy lideriyle buluşun.</Turkish>
-            <Korean>정보를 얻기 위해 아군 촌장을 만나십시오.</Korean>
-            <Spanish>Reúnete con el jefe aliado de la aldea para obtener información.</Spanish>
-            <Japanese>情報を集めるために同盟国の村長に会ってください。</Japanese>
-            <Chinese>会见盟军村长以获取情报。</Chinese>
-            <Russian>Встретьтесь с союзным старейшиной деревни для получения сведений.</Russian>
-            <German>Treffen Sie den verbündeten Dorfältesten, um Informationen zu sammeln.</German>
-            <Italian>Incontra il capo del villaggio alleato per raccogliere informazioni.</Italian>
-            <Polish>Spotkają się z sojuszniczym sołtysem, aby zebrać informacje.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_RDV_Marker">
-            <Original>Chef de la milice</Original>
-            <French>Chef de la milice</French>
-            <English>Militia Chief</English>
-            <Turkish>Milis Lideri</Turkish>
-            <Korean>민병대장</Korean>
-            <Spanish>Jefe de la milicia</Spanish>
-            <Japanese>民兵のリーダー</Japanese>
-            <Chinese>民兵首领</Chinese>
-            <Russian>Командир ополчения</Russian>
-            <German>Milizführer</German>
-            <Italian>Capo della milizia</Italian>
-            <Polish>Dowódca milicji</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_Title">
-            <Original>Soutenir la milice locale</Original>
-            <French>Soutenir la milice locale</French>
-            <English>Support Local Militia</English>
-            <Turkish>Yerel Milisi Destekle</Turkish>
-            <Korean>지역 민병대 지원</Korean>
-            <Spanish>Apoyar a la milicia local</Spanish>
-            <Japanese>地元民兵の支援</Japanese>
-            <Chinese>支持当地民兵</Chinese>
-            <Russian>Поддержать местное ополчение</Russian>
-            <German>Lokale Miliz unterstützen</German>
-            <Italian>Supporta la milizia locale</Italian>
-            <Polish>Wsparcie lokalnej milicji</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_Desc">
-            <Original>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</Original>
-            <French>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</French>
-            <English>Help the armed villagers destroy the hostile militia. Protect them to avoid a massacre.</English>
-            <Turkish>Silahlı köylülerin düşman milisi yok etmesine yardım edin. Katliamı önlemek için onları koruyun.</Turkish>
-            <Korean>무장한 주민들이 적대적인 민병대를 격퇴하도록 도우십시오. 학살을 방지하기 위해 그들을 보호하십시오.</Korean>
-            <Spanish>Ayuda a los aldeanos armados a destruir a la milicia hostil. Protégelos para evitar una masacre.</Spanish>
-            <Japanese>武装した村人が敵対的な民兵組織を撃破するのを支援してください。虐殺を避けるために彼らを保護してください。</Japanese>
-            <Chinese>帮助武装村民消灭敌对民兵。保护他们以避免遭遇屠杀。</Chinese>
-            <Russian>Помогите вооруженным жителям уничтожить враждебную группировку. Защитите их, чтобы избежать резни.</Russian>
-            <German>Helfen Sie den bewaffneten Dorfbewohnern, die feindliche Miliz zu vernichten. Schützen Sie sie, um ein Massaker zu verhindern.</German>
-            <Italian>Aiuta gli abitanti armati a distruggere la milizia ostile. Proteggili per evitare un massacro.</Italian>
-            <Polish>Pomóż uzbrojonym mieszkańcom zniszczyć wrogą milicję. Chroń ich, aby uniknąć masakry.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_Marker">
-            <Original>Milice ennemie</Original>
-            <French>Milice ennemie</French>
-            <English>Hostile Militia</English>
-            <Turkish>Düşman Milisler</Turkish>
-            <Korean>적대 민병대</Korean>
-            <Spanish>Milicia enemiga</Spanish>
-            <Japanese>敵対民兵</Japanese>
-            <Chinese>敌对民兵</Chinese>
-            <Russian>Вражеское ополчение</Russian>
-            <German>Feindliche Miliz</German>
-            <Italian>Milizia nemica</Italian>
-            <Polish>Wroga milicja</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_SubtitleRdv">
-            <Original>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</Original>
-            <French>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</French>
-            <English>God be praised! Help us push back the insurgents nearby!</English>
-            <Turkish>Allah'a şükürler olsun! Yakındaki isyancıları püskürtmemize yardım edin!</Turkish>
-            <Korean>신을 찬양하십시오! 인근의 반군을 격퇴하도록 도와주십시오!</Korean>
-            <Spanish>¡Alabado sea Dios! ¡Ayúdennos a repeler a los insurgentes cercanos!</Spanish>
-            <Japanese>神に感謝します！近くの反乱軍を撃退するのを助けてください！</Japanese>
-            <Chinese>谢天谢地！快帮我们击退附近的叛军！</Chinese>
-            <Russian>Слава Богу! Помогите нам отбить нападение повстанцев рядом!</Russian>
-            <German>Gott sei gepriesen! Helfen Sie uns, die Aufständischen in der Nähe zurückzuschlagen!</German>
-            <Italian>Sia lodato Dio! Aiutateci a respingere gli insorti qui vicino!</Italian>
-            <Polish>Chwała Bogu! Pomóżcie nam odeprzeć rebelianców w pobliżu!</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_SubtitleThanks">
-            <Original>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</Original>
-            <French>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</French>
-            <English>God be praised, you saved us! Peace be upon you.</English>
-            <Turkish>Allah'a şükürler olsun, bizi kurtardınız! Barış üzerinize olsun.</Turkish>
-            <Korean>신을 찬양하십시오, 당신이 우리를 구했습니다! 평화가 함께하기를.</Korean>
-            <Spanish>¡Alabado sea Dios, nos han salvado! Que la paz sea con ustedes.</Spanish>
-            <Japanese>神に感謝します、私たちを救ってくれました！あなたに平和がありますように。</Japanese>
-            <Chinese>感谢真主，你们救了我们！愿和平与你们同在。</Chinese>
-            <Russian>Слава Богу, вы спасли нас! Мир вам.</Russian>
-            <German>Gott sei gepriesen, Sie haben uns gerettet! Friede sei mit Ihnen.</German>
-            <Italian>Sia lodato Dio, ci avete salvato! La pace sia con voi.</Italian>
-            <Polish>Chwała Bogu, ocaliliście nas! Pokój z wami.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_SubtitleDefeat">
-            <Original>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</Original>
-            <French>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</French>
-            <English>It is God's will. Thank you for fighting alongside us.</English>
-            <Turkish>Allah'ın takdiri. Bizimle birlikte savaştığınız için teşekkürler.</Turkish>
-            <Korean>신의 뜻입니다. 우리와 함께 싸워주셔서 감사합니다.</Korean>
-            <Spanish>Es la voluntad de Dios. Gracias por luchar a nuestro lado.</Spanish>
-            <Japanese>神の御心です。一緒に戦ってくれてありがとうございました。</Japanese>
-            <Chinese>这是真主的意愿。感谢你们与我们并肩作战。</Chinese>
-            <Russian>На то воля Божья. Спасибо, что сражались вместе с нами.</Russian>
-            <German>Es ist Gottes Wille. Danke, dass Sie an unserer Seite gekämpft haben.</German>
-            <Italian>È la volontà di Dio. Grazie per aver combattuto al nostro fianco.</Italian>
-            <Polish>Taka jest wola Boga. Dziękujemy za wspólną walkę.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_07_SubtitleFollow">
-            <Original>Suivez les villageois !</Original>
-            <French>Suivez les villageois !</French>
-            <English>Follow the villagers!</English>
-            <Turkish>Köylüleri takip edin!</Turkish>
-            <Korean>주민들을 따르십시오!</Korean>
-            <Spanish>¡Sigan a los aldeanos!</Spanish>
-            <Japanese>村人たちに付いて行ってください！</Japanese>
-            <Chinese>跟随村民！</Chinese>
-            <Russian>Следуйте за жителями!</Russian>
-            <German>Folgen Sie den Dorfbewohnern!</German>
-            <Italian>Seguite gli abitanti del villaggio!</Italian>
-            <Polish>Idźcie za mieszkańcami!</Polish>
-        </Key>
-        <Key ID="STR_LL_Diary_Task08_Title">
-            <Original>OPORD : Neutralisation de réseau antiaérien et de brouillage</Original>
-            <French>OPORD : Neutralisation de réseau antiaérien et de brouillage</French>
-            <English>OPORD: Neutralize Anti-Aircraft &amp; Jamming Network</English>
-            <Turkish>OPORD: Uçaksavar ve Karıştırma Ağını Etkisiz Hale Getir</Turkish>
-            <Korean>OPORD: 대공 및 교란 네트워크 무력화</Korean>
-            <Spanish>OPORD: Neutralizar red antiaérea y de interferencias</Spanish>
-            <Japanese>OPORD: 対空およびジャミングネットワークの無力化</Japanese>
-            <Chinese>OPORD: 消灭防空与干扰网络</Chinese>
-            <Russian>OPORD: Нейтрализация ПВО и сети помех</Russian>
-            <German>OPORD: Flugabwehr- und Störnetzwerk neutralisieren</German>
-            <Italian>OPORD: Neutralizzazione della rete antiaerea e di disturbo</Italian>
-            <Polish>OPORD: Neutralizacja sieci przeciwlotniczej i zakłócającej</Polish>
-        </Key>
-        <Key ID="STR_LL_Diary_Task08_Text">
-            <Original>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</Original>
-            <French>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</French>
-            <English>&lt;font color='#FF4444'&gt;HIGH RISK MISSION&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;The enemy has set up a highly protected jamming and anti-aircraft network. Air support is unavailable at the start of the operation.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIED LOGISTICS FLIGHT:&lt;/font&gt;&lt;br/&gt;- A RACS C-130J (ViV) cargo plane is scheduled to cross the airspace &lt;b&gt;between the 45th and 55th minute&lt;/b&gt; of the operation.&lt;br/&gt;- If the Tempest jammer is not destroyed before its arrival, the enemy AA will detect and shoot down the cargo plane, causing mission failure.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TACTICAL INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drone Jammer (Position A):&lt;/font&gt; A Tempest (Device) truck blocks drone support.&lt;br/&gt;- &lt;font color='#FF8800'&gt;AA &amp;amp; Artillery (Position B, &gt;600m):&lt;/font&gt; A ZSU-39 Tigris AA and a BM-21 Grad rocket launcher block helicopter support.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUTION:&lt;/font&gt;&lt;br/&gt;- Destroying the Tempest (Device) validates the main task, unlocks the drone, and blinds the enemy AA.&lt;br/&gt;- Destroying the Tigris AA unlocks helicopter support.&lt;br/&gt;&lt;br/&gt;Drone and helicopter support are vital. You can destroy the AA and artillery before destroying the jammer to get air support. Once the Tempest jammer is destroyed, all remaining air support becomes available.</English>
-            <Turkish>&lt;font color='#FF4444'&gt;YÜKSEK RİSKLİ GÖREV&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Düşman, yüksek korumalı bir karıştırma ve uçaksavar ağı kurdu. Operasyonun başında hava desteği mevcut değildir.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;MÜTTEFİK LOJİSTİK UÇUŞU :&lt;/font&gt;&lt;br/&gt;- Bir RACS C-130J (ViV) kargo uçağının operasyonun &lt;b&gt;45. ve 55. dakikaları arasında&lt;/b&gt; hava sahasından geçmesi planlanıyor.&lt;br/&gt;- Tempest karıştırıcı gelmeden önce yok edilmezse, düşman uçaksavarı kargo uçağını vuracak ve görevin başarısız olmasına neden olacaktır.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTİK BİLGİ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Dron Karıştırıcı (Konum A):&lt;/font&gt; Tempest (Cihaz) kamyonu dron desteğini engelliyor.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Uçaksavar ve Topçu (Konum B, &gt;600m):&lt;/font&gt; ZSU-39 Tigris uçaksavarı ve BM-21 Grad roketatarı helikopter desteğini engelliyor.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ÇÖZÜM:&lt;/font&gt;&lt;br/&gt;- Tempest (Cihaz) kamyonunu yok etmek ana görevi tamamlar, dronu açar ve düşman uçaksavarını kör eder.&lt;br/&gt;- Tigris uçaksavarını yok etmek helikopter desteğini açar.&lt;br/&gt;&lt;br/&gt;Dron ve helikopter desteği hayati önem taşır. Hava desteği almak için karıştırıcıyı yok etmeden önce uçaksavar ve topçuyu yok edebilirsiniz. Tempest karıştırıcı yok edildiğinde, kalan tüm hava desteği kullanılabilir hale gelecektir.</Turkish>
-            <Korean>&lt;font color='#FF4444'&gt;고위험 임무&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;적군이 강력하게 보호되는 교란 및 대공 네트워크를 구축했습니다. 작전 시작 시 공중 지원을 사용할 수 없습니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;아군 보급 비행 :&lt;/font&gt;&lt;br/&gt;- RACS C-130J (ViV) 수송기가 작전 시작 후 &lt;b&gt;45분에서 55분 사이&lt;/b&gt;에 공역을 통과할 예정입니다.&lt;br/&gt;- 수송기 도착 전에 템페스트 교란기가 파괴되지 않으면 적 대공포가 수송기를 격추하여 임무가 실패하게 됩니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;전술 정보:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;드론 교란기 (위치 A):&lt;/font&gt; 템페스트 (장치) 트럭이 드론 지원을 차断합니다.&lt;br/&gt;- &lt;font color='#FF8800'&gt;대공 및 포병 (위치 B, &gt;600m):&lt;/font&gt; ZSU-39 티그리스 대공포와 BM-21 그라드 다연장로켓이 헬기 지원을 차단합니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;해결 방법:&lt;/font&gt;&lt;br/&gt;- 템페스트 (장치)를 파괴하면 메인 임무가 완료되고 드론이 잠금 해제되며 적 대공포가 무력화됩니다.&lt;br/&gt;- 티그리스 대공포를 파괴하면 헬기 지원이 잠금 해제됩니다.&lt;br/&gt;&lt;br/&gt;드론과 헬기 지원은 필수적입니다. 공중 지원을 받기 위해 교란기를 파괴하기 전에 대공포와 포병을 먼저 파괴할 수 있습니다. 템페스트 교란기가 파괴되면 남아 있는 모든 공중 지원을 사용할 수 있게 됩니다.</Korean>
-            <Spanish>&lt;font color='#FF4444'&gt;MISIÓN DE ALTO RIESGO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;El enemigo ha desplegado una red de interferencias y defensa antiaérea altamente protegida. El apoyo aéreo no está disponible al inicio de la operación.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VUELO LOGÍSTICO ALIADO :&lt;/font&gt;&lt;br/&gt;- Un avión de carga RACS C-130J (ViV) cruzará el espacio aéreo &lt;b&gt;entre el minuto 45 y el 55&lt;/b&gt; de la operación.&lt;br/&gt;- Si el inhibidor Tempest no se destruye antes de su llegada, la DCA enemiga derribará el avión de carga, lo que provocará el fracaso de la misión.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMACIÓN TÁCTICA:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Inhibidor de Dron (Posición A):&lt;/font&gt; Un camión Tempest (Dispositivo) bloquea el dron.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA y Artillería (Posición B, &gt;600m):&lt;/font&gt; Un blindado ZSU-39 Tigris DCA y un lanzacohetes BM-21 Grad bloquean los helicópteros.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUCIÓN:&lt;/font&gt;&lt;br/&gt;- Destruir el Tempest (Dispositivo) valida la tarea principal, desbloquea el dron y ciega la DCA.&lt;br/&gt;- Destruir el Tigris DCA desbloquea el apoyo de helicóptero.&lt;br/&gt;&lt;br/&gt;El uso del dron y el apoyo de helicóptero son vitales. Puede destruir la DCA y la artillería antes de destruir el inhibidor para obtener apoyo aéreo. Once destruido el inhibidor Tempest, todos los apoyos aéreos restantes estarán disponibles.</Spanish>
-            <Japanese>&lt;font color='#FF4444'&gt;高リスクミッション&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敵は厳重に保護されたジャミングおよび対空ネットワークを構築しました。作戦開始時は航空支援を利用できません。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;味方輸送機の飛行：&lt;/font&gt;&lt;br/&gt;- 作戦開始後&lt;b&gt;45分から55分の間&lt;/b&gt;に、RACS C-130J (ViV) 輸送機が空域を通過する予定です。&lt;br/&gt;- 到着前にテンペストジャマーが破壊されていない場合、敵の対空砲が輸送機を撃墜し、ミッションは失敗に終わります。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;戦術情報：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;ドローンジャマー (位置 A)：&lt;/font&gt; テンペスト（デバイス）トラックがドローンを妨害しています。&lt;br/&gt;- &lt;font color='#FF8800'&gt;対空兵器および砲兵 (位置 B, &gt;600m)：&lt;/font&gt; ZSU-39チグリス対空戦車とBM-21グラードがヘリを妨害しています。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解決方法：&lt;/font&gt;&lt;br/&gt;- テンペスト（デバイス）の破壊でメインタスクが完了し、ドローンが解除され、敵の対空砲は無力化されます。&lt;br/&gt;- チグリス対空戦車の破壊でヘリ支援が解除されます。&lt;br/&gt;&lt;br/&gt;ドローンとヘリの支援は不可欠です。航空支援を得るために、ジャマーを破壊する前に対空兵器や砲兵を破壊することができます。テンペストジャマーが破壊されると、残りのすべての航空支援が利用可能になります。</Japanese>
-            <Chinese>&lt;font color='#FF4444'&gt;高风险任务&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敌军建立了一套严密防护的电子干扰与防空网络。行动开始时，空中支持将无法使用。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;盟军后勤飞行计划：&lt;/font&gt;&lt;br/&gt;- 一架 RACS C-130J (ViV) 运输机计划在行动开始后的&lt;b&gt;第45至55分钟之间&lt;/b&gt;飞越领空。&lt;br/&gt;- 如果在此之前未能摧毁神风干扰车，敌军防空力量将发现并击落该运输机，导致任务失败。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;战术情报：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;无人机干扰车（位置 A）：&lt;/font&gt; 一辆神风（设备）干扰车阻断了无人机支持。&lt;br/&gt;- &lt;font color='#FF8800'&gt;防空与火箭炮（位置 B，&gt;600米）：&lt;/font&gt; 一辆ZSU-39 Tigris防空车和一辆BM-21 Grad火箭炮阻断了直升机支持。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解除方式：&lt;/font&gt;&lt;br/&gt;- 摧毁神风（设备）干扰车将完成主任务并解锁无人机支持，并使敌军防空雷达失效。&lt;br/&gt;- 摧毁Tigris防空车将解锁直升机支持。&lt;br/&gt;&lt;br/&gt;无人机与直升机支持至关重要。您可以先摧毁防空车与火箭炮以获取直升机空中支持，然后再去摧毁干扰车。一旦摧毁神风干扰车，所有剩余的空中支持都将恢复可用。</Chinese>
-            <Russian>&lt;font color='#FF4444'&gt;МИССИЯ ВЫСОКОГО РИСКА&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Противник развернул высокозащищенную сеть помех и ПВО. Воздушная поддержка недоступна в начале операции.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;СОЮЗНЫЙ ЛОГИСТИЧЕСКИЙ РЕЙС :&lt;/font&gt;&lt;br/&gt;- Транспортный самолет RACS C-130J (ViV) пересечет воздушное пространство &lt;b&gt;между 45-й и 55-й минутами&lt;/b&gt; операции.&lt;br/&gt;- Если помехопостановщик Tempest не будет уничтожен до его прибытия, вражеская ПВО собьет транспортник, что приведет к провалу миссии.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ТАКТИЧЕСКИЕ ДАННЫЕ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Помехопостановщик дрона (Позиция A):&lt;/font&gt; Грузовик Tempest (Устройство) блокирует дрон.&lt;br/&gt;- &lt;font color='#FF8800'&gt;ПВО и артиллерия (Позиция B, &gt;600м):&lt;/font&gt; Бронемашина ZSU-39 Tigris и РСЗО BM-21 Grad блокируют вертолеты.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;УСЛОВИЯ:&lt;/font&gt;&lt;br/&gt;- Уничтожение Tempest (Устройство) завершает задачу, разблокирует дрон и ослепляет ПВО.&lt;br/&gt;- Уничтожение ПВО Tigris разблокирует поддержку вертолета.&lt;br/&gt;&lt;br/&gt;Использование дрона и вертолета критически важно. Вы можете уничтожить ПВО и артиллерию до нейтрализации помехопостановщика, чтобы получить поддержку с воздуха. Как только Tempest уничтожен, вся оставшаяся поддержка станет доступна.</Russian>
-            <German>&lt;font color='#FF4444'&gt;MISSION MIT HOHEM RISIKO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Der Feind hat ein stark geschütztes Stör- und Flugabwehrnetzwerk errichtet. Luftunterstützung ist zu Beginn der Operation nicht verfügbar.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIIERTER LOGISTIKFLUG :&lt;/font&gt;&lt;br/&gt;- Ein RACS C-130J (ViV) Frachtflugzeug wird den Luftraum &lt;b&gt;zwischen der 45. und 55. Minute&lt;/b&gt; der Operation überqueren.&lt;br/&gt;- Wenn der Tempest-Störsender vor seiner Ankunft nicht zerstört wird, schießt die feindliche Flak das Frachtflugzeug ab, was zum Scheitern der Mission führt.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTIK-INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drohnen-Störsender (Position A):&lt;/font&gt; Ein Tempest-LKW (Gerät) blockiert die Drohne.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Flak und Artillerie (Position B, &gt;600m):&lt;/font&gt; Eine ZSU-39 Tigris Flak und ein BM-21 Grad Raketenwerfer blockieren die Hubschrauber.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;LÖSUNG:&lt;/font&gt;&lt;br/&gt;- Die Zerstörung des Tempest (Gerät) schließt die Hauptaufgabe ab, schaltet die Drohne frei und blendet die Flak.&lt;br/&gt;- Die Zerstörung der Tigris Flak schaltet die Hubschrauberunterstützung frei.&lt;br/&gt;&lt;br/&gt;Drohnen- und Hubschrauberunterstützung sind lebenswichtig. Sie können die Flak und Artillerie vor dem Störsender zerstören, um Luftunterstützung zu erhalten. Sobald der Tempest-Störsender zerstört ist, steht die gesamte verbleibende Luftunterstützung zur Verfügung.</German>
-            <Italian>&lt;font color='#FF4444'&gt;MISSIONE AD ALTO RISCHIO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Il nemico ha allestito una rete di disturbo e difesa antiaerea altamente protetta. I supporti aerei non sono disponibili all'inizio dell'operazione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOLO LOGISTICO ALLEATO :&lt;/font&gt;&lt;br/&gt;- Un aereo cargo RACS C-130J (ViV) attraverserà lo spazio aereo &lt;b&gt;tra il 45° e il 55° minuto&lt;/b&gt; dell'operazione.&lt;br/&gt;- Se il disturbatore Tempest non viene distrutto prima del suo arrivo, la DCA nemica abbatterà l'aereo cargo, causando il fallimento della missione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TATTICHE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Disturbatore Drone (Posizione A):&lt;/font&gt; Un camion Tempest (Dispositivo) blocca il drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA e Artiglieria (Posizione B, &gt;600m):&lt;/font&gt; Un blindato ZSU-39 Tigris DCA e un lanciarazzi BM-21 Grad bloccano gli elicotteri.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RISOLUZIONE:&lt;/font&gt;&lt;br/&gt;- La distruzione del Tempest (Dispositivo) convalida la missione principale, sblocca il drone e acceca la DCA.&lt;br/&gt;- La distruzione della DCA Tigris sblocca il supporto elicottero.&lt;br/&gt;&lt;br/&gt;L'uso del drone e del supporto elicottero sono vitali. È possibile distruggere la DCA e l'artiglieria prima del disturbatore per ottenere supporto aereo. Una volta distrutto il disturbatore Tempest, tutti i restanti supporti aerei saranno disponibili.</Italian>
-            <Polish>&lt;font color='#FF4444'&gt;MISJA WYSOKIEGO RYZYKA&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Wróg rozmieścił silnie chronioną sieć zakłócania i obrony przeciwlotniczej. Wsparcie lotnicze jest niedostępne na początku operacji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;SOJUSZNICZY LOT LOGISTYCZNY :&lt;/font&gt;&lt;br/&gt;- Samolot transportowy RACS C-130J (ViV) przeleci nad obszarem działań &lt;b&gt;między 45. a 55. minutą&lt;/b&gt; operacji.&lt;br/&gt;- Jeśli zagłuszacz Tempest nadrzędny nie zostanie zniszczony przed jego przybyciem, wroga obrona przeciwlotnicza zestrzeli samolot transportowy, powodując niepowodzenie misji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TAKTYCZNE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Zagłuszacz Drona (Pozycja A):&lt;/font&gt; Ciężarówka Tempest (Urządzenie) blokuje drona.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA i Artyleria (Pozycja B, &gt;600m):&lt;/font&gt; Pojazd ZSU-39 Tigris DCA i wyrzutnia BM-21 Grad blokują helikoptery.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ROZWIĄZANIE:&lt;/font&gt;&lt;br/&gt;- Zniszczenie pojazdu Tempest (Urządzenie) zalicza zadanie główne, odblokowuje drona i oślepia obronę przeciwlotniczą.&lt;br/&gt;- Zniszczenie pojazdu Tigris DCA odblokowuje wsparcie helikoptera.&lt;br/&gt;&lt;br/&gt;Użycie drona i helikoptera jest kluczowe. Możesz zniszczyć obronę przeciwlotniczą i artylerię przed zagłuszaczem, aby uzyskać wsparcie lotnicze. Po zniszczeniu zagłuszacza Tempest całe pozostałe wsparcie będzie dostępne.</Polish>
-        </Key>
-        <Key ID="STR_LL_Task_08_Title">
-            <Original>Neutraliser le réseau de brouillage</Original>
-            <French>Neutraliser le réseau de brouillage</French>
-            <English>Neutralize Jamming Network</English>
-            <Spanish>Neutralizar la red de interferencias</Spanish>
-            <Italian>Neutralizzare la rete di disturbo</Italian>
-            <German>Störnetzwerk neutralisieren</German>
-            <Polish>Neutralizacja sieci zakłócającej</Polish>
-            <Russian>Нейтрализовать сеть помех</Russian>
-            <Turkish>Karıştırma Ağını Etkisiz Hale Getir</Turkish>
-            <Korean>교란 네트워크 무력화</Korean>
-            <Japanese>ジャミングネットワークの無力化</Japanese>
-            <Chinese>消灭干扰网络</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_Desc">
-            <Original>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</Original>
-            <French>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</French>
-            <English>Destroy the Tempest (jammer), the Tigris AA, and the BM-21 Grad artillery. The drone can be called after the jammer is destroyed.</English>
-            <Spanish>Destruye el Tempest (inhibidor), el Tigris DCA y la artillería BM-21 Grad. El dron se puede llamar tras destruir el inhibidor.</Spanish>
-            <Italian>Distruggi il Tempest (disturbatore), la DCA Tigris e l'artiglieria BM-21 Grad. Il drone può essere chiamato dopo la distruzione del disturbatore.</Italian>
-            <German>Zerstören Sie den Tempest (Störsender), die Tigris Flak und die BM-21 Grad Artillerie. Die Drohne kann nach Zerstörung des Störsenders gerufen werden.</German>
-            <Polish>Zniszcz Tempest (zagłuszacz), Tigris DCA i artylerię BM-21 Grad. Dron może być wezwany po zniszczeniu zagłuszacza.</Polish>
-            <Russian>Уничтожьте Tempest (помехопостановщик), ПВО Tigris и артиллерию BM-21 Grad. Дрон можно вызвать после уничтожения помехопостановщика.</Russian>
-            <Turkish>Tempest (karıştırıcı), Tigris uçaksavarı ve BM-21 Grad topçusunu yok edin. Karıştırıcı yok edildikten sonra dron çağrılabilir.</Turkish>
-            <Korean>템페스트(교란기), 티그리스 대공포, BM-21 그라드 포병을 파괴하십시오. 교란기 파괴 후 드론을 호출할 수 있습니다.</Korean>
-            <Japanese>テンペスト（ジャマー）、チグリス対空砲、BM-21グラード砲兵を破壊する。ジャマー破壊後にドローンを要請できます。</Japanese>
-            <Chinese>摧毁神风干扰车、Tigris防空车与BM-21 Grad火箭炮。摧毁干扰车后可呼叫无人机支持。</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_Marker">
-            <Original>Tempest Brouilleur</Original>
-            <French>Tempest Brouilleur</French>
-            <English>Tempest Jammer</English>
-            <Spanish>Inhibidor Tempest</Spanish>
-            <Italian>Disturbatore Tempest</Italian>
-            <German>Tempest-Störsender</German>
-            <Polish>Zagłuszacz Tempest</Polish>
-            <Russian>Помехопостановщик Tempest</Russian>
-            <Turkish>Tempest Karıştırıcı</Turkish>
-            <Korean>템페스트 교란기</Korean>
-            <Japanese>テンペストジャマー</Japanese>
-            <Chinese>神风干扰车</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_MarkerVehicles">
-            <Original>DCA - Risque Élevé</Original>
-            <French>DCA - Risque Élevé</French>
-            <English>AA - High Risk</English>
-            <Spanish>DCA - Riesgo Alto</Spanish>
-            <Italian>DCA - Rischio Elevato</Italian>
-            <German>Flak - Hohes Risiko</German>
-            <Polish>DCA - Wysokie Ryzyko</Polish>
-            <Russian>ПВО - Высокий риск</Russian>
-            <Turkish>Uçaksavar - Yüksek Risk</Turkish>
-            <Korean>대공 - 높은 위험</Korean>
-            <Japanese>対空 - 高いリスク</Japanese>
-            <Chinese>防空 - 高风险</Chinese>
-        </Key>
-        <Key ID="STR_LL_Heli_Action_Jammed">
-            <Original>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</Original>
-            <French>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</French>
-            <English>Anti-aircraft threat detected. Unable to contact the helicopter.</English>
-            <Spanish>Amenaza antiaérea detectada. Imposible contactar al helicóptero.</Spanish>
-            <Italian>Minaccia antiaerea rilevata. Impossibile contattare l'elicottero.</Italian>
-            <German>Flugabwehrbedrohung erkannt. Verbindung zum Hubschrauber nicht möglich.</German>
-            <Polish>Wykryto zagrożenie przeciwlotnicze. Brak kontaktu z helikopterem.</Polish>
-            <Russian>Обнаружена угроза ПВО. Связь с вертолетом невозможна.</Russian>
-            <Turkish>Uçaksavar tehdidi algılandı. Helikopterle iletişim kurulamıyor.</Turkish>
-            <Korean>대공 위협이 감지되었습니다. 헬리콥ter와 통신할 수 없습니다.</Korean>
-            <Japanese>対空脅威を検出。ヘリコプターと通信できません。</Japanese>
-            <Chinese>检测到防空威胁。无法联系直升机。</Chinese>
-        </Key>
-        <Key ID="STR_LL_Heli_Action_Unjammed">
-            <Original>Menace DCA éliminée. Le soutien hélicoptère est disponible.</Original>
-            <French>Menace DCA éliminée. Le soutien hélicoptère est disponible.</French>
-            <English>Anti-aircraft threat eliminated. Helicopter support is available.</English>
-            <Spanish>Amenaza antiaérea eliminada. Soporte de helicóptero disponible.</Spanish>
-            <Italian>Minaccia antiaerea eliminata. Supporto elicottero disponibile.</Italian>
-            <German>Flugabwehrbedrohung eliminiert. Hubschrauberunterstützung verfügbar.</German>
-            <Polish>Zagrożenie przeciwlotnicze wyeliminowane. Wsparcie helikoptera dostępne.</Polish>
-            <Russian>Угроза ПВО устранена. Доступна поддержка вертолета.</Russian>
-            <Turkish>Uçaksavar tehdidi ortadan kaldırıldı. Helikopter desteği mevcut.</Turkish>
-            <Korean>대공 위협이 제거되었습니다. 헬리콥터 지원을 사용할 수 있습니다.</Korean>
-            <Japanese>対空脅威を排除。ヘリコプターの支援が利用可能です。</Japanese>
-            <Chinese>防空威胁已消除。直升机支持已可用。</Chinese>
-        </Key>
-        <Key ID="STR_LL_Drone_Action_Unjammed">
-            <Original>Brouilleur détruit. Le soutien drone est rétabli.</Original>
-            <French>Brouilleur détruit. Le soutien drone est rétabli.</French>
-            <English>Jammer destroyed. Drone support has been restored.</English>
-            <Spanish>Inhibidor destruido. Soporte de dron restablecido.</Spanish>
-            <Italian>Disturbatore distrutto. Supporto drone ripristinato.</Italian>
-            <German>Störsender zerstört. Drohnenunterstützung wiederhergestellt.</German>
-            <Polish>Zagłuszacz zniszczony. Wsparcie drona przywrócone.</Polish>
-            <Russian>Помехопостановщик уничтожен. Поддержка дрона восстановлена.</Russian>
-            <Turkish>Karıştırıcı yok edildi. Dron desteği yeniden sağlandı.</Turkish>
-            <Korean>교란기가 파괴되었습니다. 드론 지원이 복구되었습니다.</Korean>
-            <Japanese>ジャマー破壊。ドローン支援が復旧しました。</Japanese>
-            <Chinese>干扰车已摧毁。无人机支持已恢复。</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_Plane_Incoming">
-            <Original>Cargo RACS en approche ! Sécurisez l'espace aérien !</Original>
-            <French>Cargo RACS en approche ! Sécurisez l'espace aérien !</French>
-            <English>RACS Cargo plane incoming! Secure the airspace!</English>
-            <Spanish>¡Carguero RACS en camino! ¡Aseguren el espacio aéreo!</Spanish>
-            <Italian>Cargo RACS in arrivo! Mettete in sicurezza lo spazio aereo!</Italian>
-            <German>RACS-Frachtflugzeug im Anflug! Sichern Sie den Luftraum!</German>
-            <Polish>Transportowiec RACS nadlatuje! Zabezpiecz przestrzeń powietrzną!</Polish>
-            <Russian>Транспортник RACS на подходе! Обезопасьте воздушное пространство!</Russian>
-            <Turkish>RACS Kargo uçağı yaklaşıyor! Hava sahasını güvenli hale getirin!</Turkish>
-            <Korean>RACS 수송기 접근 중! 공역을 확보하십시오!</Korean>
-            <Japanese>RACS輸送機が接近中！空域を確保せよ！</Japanese>
-            <Chinese>RACS运输机正在接近！请确保领空安全！</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_Plane_ShotDown">
-            <Original>Le cargo RACS a été abattu ! Mission échouée !</Original>
-            <French>Le cargo RACS a été abattu ! Mission échouée !</French>
-            <English>The RACS cargo plane has been shot down! Mission failed!</English>
-            <Spanish>¡El carguero RACS ha sido derribado! ¡Misión fallida!</Spanish>
-            <Italian>Il cargo RACS è stato abbattuto! Missione fallita!</Italian>
-            <German>Das RACS-Frachtflugzeug wurde abgeschossen! Mission fehlgeschlagen!</German>
-            <Polish>Transportowiec RACS został zestrzelony! Misja nieudana!</Polish>
-            <Russian>Транспортник RACS сбит! Миссия провалена!</Russian>
-            <Turkish>RACS kargo uçağı vuruldu! Görev başarısız!</Turkish>
-            <Korean>RACS 수송기가 격추되었습니다! 임무 실패!</Korean>
-            <Japanese>RACS輸送機が撃墜された！ミッション失敗！</Japanese>
-            <Chinese>RACS运输机已被击落！任务失败！</Chinese>
-        </Key>
-        <Key ID="STR_LL_Task_08_Plane_Safe">
-            <Original>Le cargo RACS a traversé la zone en sécurité.</Original>
-            <French>Le cargo RACS a traversé la zone en sécurité.</French>
-            <English>The RACS cargo plane has crossed the airspace safely.</English>
-            <Spanish>El carguero RACS ha cruzado la zona de forma segura.</Spanish>
-            <Italian>Il cargo RACS ha attraversato la zona in sicurezza.</Italian>
-            <German>Das RACS-Frachtflugzeug hat den Luftraum sicher durchquert.</German>
-            <Polish>Transportowiec RACS bezpiecznie przekroczył przestrzeń powietrzną.</Polish>
-            <Russian>Транспортник RACS благополучно пересек зону.</Russian>
-            <Turkish>RACS kargo uçağı hava sahasından güvenle geçti.</Turkish>
-            <Korean>RACS 수송기가 안전하게 공역을 통과했습니다.</Korean>
-            <Japanese>RACS輸送機は安全に空域を通過しました。</Japanese>
-            <Chinese>RACS运输机已安全飞越该空域。</Chinese>
         </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>

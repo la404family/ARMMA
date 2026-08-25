@@ -3,36 +3,30 @@ params [["_mode", "init", [""]], ["_args", [], [[]]]];
 if (!isServer) exitWith {};
 
 if (_mode == "init") exitWith {
-
     private _allLogics = allMissionObjects "Logic";
     if (count _allLogics < 1) exitWith {
-        diag_log "[LL] task00 ERROR: Pas assez de M_Dans_Bat_ sur la carte.";
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
     private _selectedLogic = objNull;
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _minDistPlayers = 550;
-    while { isNull _selectedLogic && _minDistPlayers >= 100 } do {
-        private _maxDist = 2000;
-        while { isNull _selectedLogic && _maxDist <= 15000 } do {
-            {
-                private _candidate = _x;
-                private _candidatePos = getPosASL _candidate;
-                private _valid = true;
-                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
-                if (_valid) exitWith { _selectedLogic = _candidate; };
-            } forEach _logicsPool;
-            if (isNull _selectedLogic) then { _maxDist = _maxDist + 500; };
-        };
-        if (isNull _selectedLogic) then {
-            _minDistPlayers = _minDistPlayers - 50;
-        };
+    private _minDistPlayers = 400;
+    private _maxDist = 450;
+
+    while { isNull _selectedLogic && _maxDist <= 15000 } do {
+        {
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
+            { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            if (_valid) exitWith { _selectedLogic = _candidate; };
+        } forEach _logicsPool;
+
+        if (isNull _selectedLogic) then { _maxDist = _maxDist + 50; };
     };
 
     if (isNull _selectedLogic) exitWith {
-        diag_log "[LL] task00 ERROR: Impossible de trouver un lieu valide. Relance dans 15s.";
         [[], "LL_fnc_task00"] spawn { sleep 15; ["init"] spawn LL_fnc_task00; };
     };
 
@@ -168,7 +162,7 @@ if (_mode == "free") exitWith {
     _hostage setVariable ["LL_Task_Status", "FREE", true];
 
     private _hostageGrp = group _hostage;
-    private _dummy = _hostageGrp createUnit ["O_R_Soldier_F", getPosASL _hostage, [], 0, "NONE"];
+    private _dummy = _hostageGrp createUnit ["O_Soldier_F", getPosASL _hostage, [], 0, "NONE"];
     _dummy hideObjectGlobal true;
     _dummy allowDamage false;
     _dummy disableAI "ALL";

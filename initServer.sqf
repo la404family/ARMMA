@@ -1,5 +1,10 @@
 if (!isServer) exitWith {};
 
+setDate [2035, 6, 29, (date select 3), (date select 4)];
+
+TUE_hasUVO = isClass (configFile >> "CfgPatches" >> "UVO") || !isNil "UVO_fnc_init";
+TUE_hasUVO_Expanded = isClass (configFile >> "CfgPatches" >> "UVO_Expanded") || isClass (configFile >> "CfgPatches" >> "UVO_factions_plus") || isClass (configFile >> "CfgPatches" >> "UVO_RHS");
+
 ["init"] call LL_fnc_taskManager;
 
 [] spawn TUE_fnc_initSkills;

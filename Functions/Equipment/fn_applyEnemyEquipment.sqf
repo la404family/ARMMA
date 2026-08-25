@@ -74,7 +74,13 @@ _unit enableGunLights "forceOn";
 private _nameData = selectRandom TUE_enemy_names;
 _unit setName [_nameData select 0, _nameData select 1, _nameData select 2];
 
+_unit setSpeaker (selectRandom ["Male01RUS", "Male02RUS", "Male03RUS"]);
+
 if (count TUE_enemy_faces > 0) then {
     private _face = selectRandom TUE_enemy_faces;
     [_unit, _face] remoteExec ["setFace", 0, _unit];
+};
+
+if (!isNil "TUE_fnc_setupUVO") then {
+    [_unit] call TUE_fnc_setupUVO;
 };

@@ -31,9 +31,8 @@ if (!isServer) exitWith {};
     _mkrName setMarkerType "mil_box";
     _mkrName setMarkerColor "ColorYellow";
 
-    // Drone posé sur la caisse
     if (!isNil "drone_BLUFOR" && { !isNull drone_BLUFOR }) then {
-        drone_BLUFOR setPosATL [(_pos select 0), (_pos select 1), (_pos select 2) + 0.9];
+        drone_BLUFOR setPosATL [(_pos select 0) + 1.5, (_pos select 1) + 1.5, 2];
         drone_BLUFOR setDir (getDir _crate);
     };
 

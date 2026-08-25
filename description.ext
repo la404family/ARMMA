@@ -1,6 +1,6 @@
 author = "KevinDC404";
-onLoadName = "The Unseen Element";
-onLoadMission = "Mission SP/COOP";
+onLoadName = "GHOSTS 2035";
+onLoadMission = "Unité de snipers d'élite [SP/COOP]";
 
 class Header
 {

@@ -12,7 +12,7 @@
 
 - **Ennemis (OPFOR)** : Lors du spawn, utiliser des uniformes/vêtements du mod **VSM**.
   - **Condition stricte (Générale)** : Exclure tout vêtement ou équipement dont le nom de classe contient `black`, `white`, `alpine` ou `WTF`. Tous les autres motifs VSM sont autorisés.
-  - **Langue** : Les ennemis parlent obligatoirement **Russe** (modifier les configs UVO et utiliser `O_R_Soldier_F` pour les voix natives).
+  - **Langue** : Les ennemis parlent obligatoirement **Russe** (voix natives russes `Male01RUS`-`03RUS` via `setSpeaker` et profils russes dans UVO).
 - **Couvre-chefs Ennemis** : 90% des ennemis devront obligatoirement porter un chapeau de type : `BackwardsHat`, `Beanie`, `Boonie`, `Cap` ou `Shemagh` du mod VSM (en respectant la condition d'exclusion des couleurs ci-dessus).
 - **Armement Ennemi** : Les ennemis (OPFOR) seront équipés aléatoirement avec l'une des armes suivantes :
   - **Steyr AUGA3 (Bleu)** : `hlc_rifle_auga3_bl`

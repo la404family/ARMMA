@@ -12,8 +12,8 @@ if (_mode == "init") exitWith {
     private _selectedRadios = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _minDistPlayers = 550;
-    private _maxDist = 1500;
+    private _minDistPlayers = 400;
+    private _maxDist = 450;
 
     while { count _selectedRadios < 2 && _maxDist <= 15000 } do {
         _selectedRadios = [];
@@ -32,7 +32,7 @@ if (_mode == "init") exitWith {
             if (count _selectedRadios >= _targetNumRadios) exitWith {};
         } forEach _logicsPool;
 
-        if (count _selectedRadios < 2) then { _maxDist = _maxDist + 500; };
+        if (count _selectedRadios < 2) then { _maxDist = _maxDist + 50; };
     };
 
     private _numRadios = count _selectedRadios;

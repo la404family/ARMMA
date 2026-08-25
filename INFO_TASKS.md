@@ -56,9 +56,9 @@ _unit allowDamage false;
 [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
 ```
 
-### Distance minimale de sécurité (550m)
+### Distance minimale de sécurité (400m)
 Toute tâche générée aléatoirement doit respecter des règles strictes de distance pour éviter le spawn sous les yeux des joueurs :
-- **Minimum 550m** entre le lieu de la tâche et n'importe quel joueur vivant sur le serveur.
+- **Minimum 400m STRICT** entre le lieu de la tâche et n'importe quel joueur vivant sur le serveur (ne jamais descendre sous 400m).
 - S'il y a plusieurs lieux pour une même tâche, ils doivent être espacés d'au moins **250m** entre eux.
 
 ### Ordre de spawn : secondaires avant principal
@@ -182,8 +182,8 @@ Toujours rechercher les Game Logics placées dans l'éditeur comme positions de 
 Ces logiques sont en majorité positionnées **à l'intérieur d'un bâtiment**, en X, Y, Z précis (+ 0.2 en Z).
 
 ### Filtres de distance
-- **Minimum 550 mètres STRICT** de tout joueur vivant (ne jamais descendre sous 550m).
-- La recherche s'effectue en priorité au plus près de 550m (ex: fenêtre 550m - 1500m), puis élargit le rayon maximal par paliers vers l'extérieur (+500m : 2000m, 2500m... jusqu'à 15000m) si aucun lieu n'est disponible.
+- **Minimum 400 mètres STRICT** de tout joueur vivant (ne jamais descendre sous 400m).
+- La recherche s'effectue en priorité au plus près de 400m (fenêtre initiale 400m - 450m), puis élargit le rayon maximal par paliers progressifs vers l'extérieur (+50m : 500m, 550m, 600m... jusqu'à 15000m) si aucun lieu n'est disponible.
 - Espacement minimal d'au moins **250 mètres** entre chaque position s'il y a plusieurs cibles pour la même tâche.
 
 
@@ -220,7 +220,7 @@ Pour simuler qu'un PNJ civil, un otage ou un informateur parle dans sa langue na
 ```sqf
 // --- VOIX NATIVE IMMERSIVE ---
 private _pnjGrp = group _pnj;
-private _dummy = _pnjGrp createUnit ["O_R_Soldier_F", getPos _pnj, [], 0, "NONE"];
+private _dummy = _pnjGrp createUnit ["O_Soldier_F", getPos _pnj, [], 0, "NONE"];
 _dummy hideObjectGlobal true;
 _dummy allowDamage false;
 _dummy disableAI "ALL";

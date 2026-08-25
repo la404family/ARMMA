@@ -11,8 +11,8 @@ if (_mode == "init") exitWith {
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
     private _selectedLogic = objNull;
-    private _minDistPlayers = 550;
-    private _maxDist = 1500;
+    private _minDistPlayers = 400;
+    private _maxDist = 450;
 
     while { isNull _selectedLogic && _maxDist <= 15000 } do {
         {
@@ -23,7 +23,7 @@ if (_mode == "init") exitWith {
             if (_valid) exitWith { _selectedLogic = _candidate; };
         } forEach _logicsPool;
 
-        if (isNull _selectedLogic) then { _maxDist = _maxDist + 500; };
+        if (isNull _selectedLogic) then { _maxDist = _maxDist + 50; };
     };
 
     if (isNull _selectedLogic) exitWith {
@@ -215,7 +215,7 @@ if (_mode == "escort") exitWith {
         missionNamespace setVariable ["LL_Task06_Triggered", true, true];
 
         private _hvtGrp = group _hvt;
-        private _dummy = _hvtGrp createUnit ["O_R_Soldier_F", getPosASL _hvt, [], 0, "NONE"];
+        private _dummy = _hvtGrp createUnit ["O_Soldier_F", getPosASL _hvt, [], 0, "NONE"];
         _dummy hideObjectGlobal true;
         _dummy allowDamage false;
         _dummy disableAI "ALL";
