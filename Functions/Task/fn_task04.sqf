@@ -98,22 +98,31 @@ if (_mode == "init") exitWith {
             if (isNil "_partDmg") then { _partDmg = damage _unit; };
 
             private _delta = _damage - _partDmg;
-            private _newDmg = _partDmg;
+            if (_delta <= 0) exitWith { _partDmg };
 
-            if (_delta > 0) then {
-                if (_delta <= 0.05) then {
-                    _delta = 0.1; 
+            private _rawDmg = (_unit getVariable ["LL_Raw_Damage", 0]) + _delta;
+            _unit setVariable ["LL_Raw_Damage", _rawDmg];
+
+            private _newDmg = 0;
+            if (_rawDmg >= 0.36) then {
+                _newDmg = 0.50;
+            } else {
+                if (_rawDmg >= 0.16) then {
+                    _newDmg = 0.35;
                 } else {
-                    _delta = _delta * 2; 
+                    if (_rawDmg >= 0.01) then {
+                        _newDmg = 0.15;
+                    } else {
+                        _newDmg = _rawDmg;
+                    };
                 };
-                _newDmg = _partDmg + _delta;
             };
 
-            if (_newDmg >= 0.8) then {
-                _newDmg = 1; 
+            if (_newDmg >= 0.50) then {
+                _newDmg = 1;
             };
 
-            private _level = (floor (_newDmg * 10)) min 9;
+            private _level = if (_newDmg >= 0.35) then { 6 } else { if (_newDmg >= 0.15) then { 3 } else { 0 } };
             if (_level >= 1) then {
                 _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
                 private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
@@ -366,16 +375,31 @@ if (_mode == "extract") exitWith {
 
         if (!alive _heli || !alive _cargo) exitWith {};
 
-        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+        private _nearEnemies = allUnits select { side group _x == east && alive _x && (_x distance2D _targetPos < 500) };
 
-        _heli flyInHeight 28;
-        private _wpCombat = _grp addWaypoint [_targetPos, 0];
-        _wpCombat setWaypointType "LOITER";
-        _wpCombat setWaypointLoiterRadius 80;
-        _wpCombat setWaypointSpeed "NORMAL";
+        if (count _nearEnemies > 0) then {
+            _heli flyInHeight 30;
+            _heli limitSpeed 90;
+            _heli setVehicleAmmo 1;
 
-        {
-            if (_x != _pilot) then {
+            private _wpCombat = _grp addWaypoint [_targetPos, 0];
+            _wpCombat setWaypointType "LOITER";
+            _wpCombat setWaypointLoiterRadius 130;
+            _wpCombat setWaypointLoiterType "CIRCLE_L";
+            _wpCombat setWaypointSpeed "LIMITED";
+
+            _grp setBehaviour "AWARE";
+            _grp setCombatMode "RED";
+
+            _pilot setBehaviour "CARELESS";
+            _pilot disableAI "AUTOCOMBAT";
+            _pilot disableAI "TARGET";
+            _pilot disableAI "AUTOTARGET";
+            _pilot disableAI "FSM";
+
+            private _gunners = _crew select { _x != _pilot };
+
+            {
                 _x setBehaviour "COMBAT";
                 _x setCombatMode "RED";
                 _x enableAI "TARGET";
@@ -383,36 +407,73 @@ if (_mode == "extract") exitWith {
                 _x enableAI "AUTOCOMBAT";
                 _x enableAI "FSM";
                 _x enableAI "WEAPONAIM";
-                _x setSkill ["aimingAccuracy", 0.90];
+                _x enableAI "CHECKVISIBLE";
+                _x setSkill ["aimingAccuracy", 0.95];
                 _x setSkill ["aimingSpeed", 1.0];
+                _x setSkill ["aimingShake", 0.05];
                 _x setSkill ["spotDistance", 1.0];
                 _x setSkill ["spotTime", 1.0];
                 _x setSkill ["courage", 1.0];
                 _x setSkill ["commanding", 1.0];
-            };
-        } forEach _crew;
+                _x setSkill ["general", 1.0];
+            } forEach _gunners;
 
-        private _combatTimer = 0;
-        while { _combatTimer < 35 && alive _heli && alive _cargo } do {
-            private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _heli < 450) };
-            {
-                private _targetEnemy = _x;
-                _heli reveal [_targetEnemy, 4];
+            private _combatTimer = 0;
+            while { _combatTimer < 65 && alive _heli && alive _cargo } do {
+                private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _targetPos < 500 || _x distance2D _heli < 500) };
+                if (count _enemies == 0) exitWith {};
+
+                _heli setVehicleAmmo 1;
+
                 {
-                    if (_x != _pilot) then {
-                        _x reveal [_targetEnemy, 4];
-                        _x doTarget _targetEnemy;
-                        _x doSuppressiveFire _targetEnemy;
-                        _x doFire _targetEnemy;
-                    };
-                } forEach _crew;
-            } forEach _enemies;
+                    _heli reveal [_x, 4];
+                    private _e = _x;
+                    { _x reveal [_e, 4]; } forEach _gunners;
+                } forEach _enemies;
 
-            sleep 1.5;
-            _combatTimer = _combatTimer + 1.5;
+                {
+                    private _gunner = _x;
+                    private _turret = _heli unitTurret _gunner;
+                    private _bestTarget = objNull;
+                    private _minD = 99999;
+
+                    {
+                        private _relDir = _heli getRelDir _x;
+                        private _validArc = true;
+                        if (_turret isEqualTo [1]) then {
+                            _validArc = (_relDir >= 180 && _relDir <= 355);
+                        };
+                        if (_turret isEqualTo [2]) then {
+                            _validArc = (_relDir >= 5 && _relDir <= 180);
+                        };
+                        if (_validArc) then {
+                            private _d = _gunner distance2D _x;
+                            if (_d < _minD) then {
+                                _minD = _d;
+                                _bestTarget = _x;
+                            };
+                        };
+                    } forEach _enemies;
+
+                    if (isNull _bestTarget && count _enemies > 0) then {
+                        _bestTarget = _enemies select 0;
+                    };
+
+                    if (!isNull _bestTarget) then {
+                        _gunner doWatch (getPosATL _bestTarget);
+                        _gunner doTarget _bestTarget;
+                        _gunner doFire _bestTarget;
+                        _gunner doSuppressiveFire _bestTarget;
+                    };
+                } forEach _gunners;
+
+                sleep 2;
+                _combatTimer = _combatTimer + 2;
+            };
+
+            while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
         };
 
-        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
         _grp setBehaviour "CARELESS";
         _grp setCombatMode "BLUE";
 

@@ -31,6 +31,7 @@ if (_mode == "init") exitWith {
     };
 
     missionNamespace setVariable ["LL_Task06_AllUnits", [], true];
+    missionNamespace setVariable ["LL_Task06_Failed", false, true];
     private _allUnits = [];
 
     private _spawnPos = getPosASL _selectedLogic;
@@ -123,6 +124,7 @@ if (_mode == "init") exitWith {
         };
         detach _unit;
 
+        missionNamespace setVariable ["LL_Task06_Failed", true, true];
         ["task_06_hvt", "FAILED", true] call BIS_fnc_taskSetState;
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
 
@@ -163,30 +165,49 @@ if (_mode == "escort") exitWith {
     _hvt setVariable ["LL_Task_Status", "ESCORTED", true];
     _hvt setVariable ["LL_Task06_EscortParent", _caller, true];
 
-    _hvt enableAI "MOVE";
-    _hvt enableAI "ANIM";
-    _hvt enableAI "PATH";
-    _hvt disableAI "FSM";
-    _hvt disableAI "TARGET";
-    _hvt disableAI "AUTOTARGET";
+    { _hvt enableAI _x; } forEach ["MOVE", "ANIM", "PATH", "TEAMSWITCH"];
+    { _hvt disableAI _x; } forEach ["FSM", "TARGET", "AUTOTARGET", "AUTOCOMBAT", "SUPPRESSION", "COVER", "CHECKVISIBLE"];
     _hvt setBehaviour "CARELESS";
-    _hvt forceWalk false;
+    _hvt setCombatMode "BLUE";
     _hvt setSpeedMode "FULL";
     _hvt setUnitPos "UP";
+    _hvt allowFleeing 0;
+    _hvt forceSpeed -1;
+    _hvt setSkill ["courage", 1];
+    _hvt setSkill ["commanding", 1];
 
     [_hvt, _caller] remoteExec ["disableCollisionWith", 0];
     [_caller, _hvt] remoteExec ["disableCollisionWith", 0];
 
     [_hvt] joinSilent (group _caller);
 
-    [_hvt, "AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
+    [_hvt, ""] remoteExec ["switchMove", 0];
 
     [_hvt, _caller] spawn {
         params ["_hvt", "_caller"];
         if (isNull _hvt || isNull _caller) exitWith {};
 
+        private _lastPos = getPosATL _hvt;
+        private _lastCallerPos = [0,0,0];
+        private _stuckTime = 0;
+        private _stuckCheckInterval = 2;
+
         while { alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) == "ESCORTED" } do {
-            if (isNull _caller || !alive _caller) exitWith {
+            private _targetPlayer = _caller;
+            if (isNull _targetPlayer || !alive _targetPlayer) then {
+                private _players = allPlayers select { alive _x };
+                if (count _players > 0) then {
+                    _targetPlayer = _players select 0;
+                    private _minD = _hvt distance2D _targetPlayer;
+                    {
+                        private _d = _hvt distance2D _x;
+                        if (_d < _minD) then { _minD = _d; _targetPlayer = _x; };
+                    } forEach _players;
+                    _hvt setVariable ["LL_Task06_EscortParent", _targetPlayer, true];
+                };
+            };
+
+            if (isNull _targetPlayer || !alive _targetPlayer) exitWith {
                 _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
                 _hvt setVariable ["LL_Task06_EscortParent", objNull, true];
                 _hvt disableAI "PATH";
@@ -195,14 +216,77 @@ if (_mode == "escort") exitWith {
                 [_hvt] spawn { params ["_u"]; sleep 1.3; [_u, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0]; };
             };
 
-            if (vehicle _hvt == _hvt) then {
-                private _dist = _hvt distance2D _caller;
-                if (_dist > 4) then {
-                    _hvt doMove (getPosATL _caller);
+            if (vehicle _targetPlayer != _targetPlayer) then {
+                if (vehicle _hvt == _hvt) then {
+                    private _veh = vehicle _targetPlayer;
+                    if ((_veh emptyPositions "Cargo") > 0) then {
+                        _hvt assignAsCargo _veh;
+                        [_hvt] orderGetIn true;
+                    } else {
+                        if (_hvt distance2D _veh > 5) then {
+                            _hvt doMove (getPosATL _veh);
+                        };
+                    };
+                };
+            } else {
+                if (vehicle _hvt != _hvt) then {
+                    unassignVehicle _hvt;
+                    [_hvt] orderGetIn false;
+                    _hvt action ["Eject", vehicle _hvt];
+                };
+
+                private _dist = _hvt distance2D _targetPlayer;
+
+                if (_dist > 3.5) then {
+                    private _callerCurrentPos = getPosATL _targetPlayer;
+
+                    if ((_callerCurrentPos distance2D _lastCallerPos > 3) || unitReady _hvt) then {
+                        _hvt doMove _callerCurrentPos;
+                        _lastCallerPos = _callerCurrentPos;
+                    };
+
+                    private _currentHvtPos = getPosATL _hvt;
+                    private _movedDist = _currentHvtPos distance2D _lastPos;
+
+                    if (_movedDist < 0.4) then {
+                        _stuckTime = _stuckTime + _stuckCheckInterval;
+
+                        if (_stuckTime >= 3 && _stuckTime < 6) then {
+                            [_hvt, ""] remoteExec ["switchMove", 0];
+                            _hvt setUnitPos "UP";
+                            _hvt forceWalk false;
+                            _hvt setSpeedMode "FULL";
+                        };
+
+                        if (_stuckTime >= 6 && _stuckTime < 9) then {
+                            private _nearObs = nearestObjects [_hvt, ["Building", "House", "Fence", "Wall", "Static", "Thing"], 6];
+                            { _hvt disableCollisionWith _x; } forEach _nearObs;
+
+                            private _dir = _hvt getDir _targetPlayer;
+                            private _escapeDir = _dir + (selectRandom [60, -60, 90, -90]);
+                            private _escapePos = _currentHvtPos getPos [5, _escapeDir];
+                            _hvt doMove _escapePos;
+                        };
+
+                        if (_stuckTime >= 9) then {
+                            private _dirVec = (getPosASL _hvt) vectorFromTo (getPosASL _targetPlayer);
+                            _dirVec set [2, 0.08];
+                            _hvt setVelocity (_dirVec vectorMultiply 1.5);
+                            _hvt doMove _callerCurrentPos;
+                            _stuckTime = 0;
+                            _lastPos = getPosATL _hvt;
+                        };
+                    } else {
+                        _stuckTime = 0;
+                        _lastPos = _currentHvtPos;
+                    };
+                } else {
+                    _stuckTime = 0;
+                    _lastPos = getPosATL _hvt;
                 };
             };
 
-            sleep 1.5;
+            sleep _stuckCheckInterval;
         };
 
         if (!isNull _caller && alive _caller) then {
@@ -225,7 +309,6 @@ if (_mode == "escort") exitWith {
 
         deleteMarker "mkr_task06_zone";
 
-        ["task_06_hvt", "SUCCEEDED", true] call BIS_fnc_taskSetState;
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
 
         private _allUnits = missionNamespace getVariable ["LL_Task06_AllUnits", []];

@@ -126,49 +126,97 @@ while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 private _nearLzEnemies = allUnits select { side group _x == east && alive _x && (_x distance2D _lzPos < 500) };
 
 if (count _nearLzEnemies > 0) then {
-    _heli flyInHeight 28;
+    _heli flyInHeight 30;
+    _heli limitSpeed 90;
+    _heli setVehicleAmmo 1;
+
     private _wpCombat = _grp addWaypoint [_lzPos, 0];
     _wpCombat setWaypointType "LOITER";
-    _wpCombat setWaypointLoiterRadius 150;
-    _wpCombat setWaypointSpeed "NORMAL";
+    _wpCombat setWaypointLoiterRadius 130;
+    _wpCombat setWaypointLoiterType "CIRCLE_L";
+    _wpCombat setWaypointSpeed "LIMITED";
+
+    _grp setBehaviour "AWARE";
+    _grp setCombatMode "RED";
+
+    driver _heli setBehaviour "CARELESS";
+    driver _heli disableAI "AUTOCOMBAT";
+    driver _heli disableAI "TARGET";
+    driver _heli disableAI "AUTOTARGET";
+    driver _heli disableAI "FSM";
+
+    private _gunners = (crew _heli) select { _x != driver _heli };
 
     {
-        if (_x != driver _heli) then {
-            _x setBehaviour "COMBAT";
-            _x setCombatMode "RED";
-            _x enableAI "TARGET";
-            _x enableAI "AUTOTARGET";
-            _x enableAI "AUTOCOMBAT";
-            _x enableAI "FSM";
-            _x enableAI "WEAPONAIM";
-            _x setSkill ["aimingAccuracy", 0.90];
-            _x setSkill ["aimingSpeed", 1.0];
-            _x setSkill ["spotDistance", 1.0];
-            _x setSkill ["spotTime", 1.0];
-            _x setSkill ["courage", 1.0];
-            _x setSkill ["commanding", 1.0];
-        };
-    } forEach _crew;
+        _x setBehaviour "COMBAT";
+        _x setCombatMode "RED";
+        _x enableAI "TARGET";
+        _x enableAI "AUTOTARGET";
+        _x enableAI "AUTOCOMBAT";
+        _x enableAI "FSM";
+        _x enableAI "WEAPONAIM";
+        _x enableAI "CHECKVISIBLE";
+        _x setSkill ["aimingAccuracy", 0.95];
+        _x setSkill ["aimingSpeed", 1.0];
+        _x setSkill ["aimingShake", 0.05];
+        _x setSkill ["spotDistance", 1.0];
+        _x setSkill ["spotTime", 1.0];
+        _x setSkill ["courage", 1.0];
+        _x setSkill ["commanding", 1.0];
+        _x setSkill ["general", 1.0];
+    } forEach _gunners;
 
     private _combatTimer = 0;
     while { _combatTimer < 65 && alive _heli } do {
         private _enemies = allUnits select { side group _x == east && alive _x && (_x distance2D _lzPos < 500 || _x distance2D _heli < 500) };
         if (count _enemies == 0) exitWith {};
+
+        _heli setVehicleAmmo 1;
+
         {
-            private _targetEnemy = _x;
-            _heli reveal [_targetEnemy, 4];
-            {
-                if (_x != driver _heli) then {
-                    _x reveal [_targetEnemy, 4];
-                    _x doTarget _targetEnemy;
-                    _x doSuppressiveFire _targetEnemy;
-                    _x doFire _targetEnemy;
-                };
-            } forEach _crew;
+            _heli reveal [_x, 4];
+            private _e = _x;
+            { _x reveal [_e, 4]; } forEach _gunners;
         } forEach _enemies;
 
-        sleep 1.5;
-        _combatTimer = _combatTimer + 1.5;
+        {
+            private _gunner = _x;
+            private _turret = _heli unitTurret _gunner;
+            private _bestTarget = objNull;
+            private _minD = 99999;
+
+            {
+                private _relDir = _heli getRelDir _x;
+                private _validArc = true;
+                if (_turret isEqualTo [1]) then {
+                    _validArc = (_relDir >= 180 && _relDir <= 355);
+                };
+                if (_turret isEqualTo [2]) then {
+                    _validArc = (_relDir >= 5 && _relDir <= 180);
+                };
+                if (_validArc) then {
+                    private _d = _gunner distance2D _x;
+                    if (_d < _minD) then {
+                        _minD = _d;
+                        _bestTarget = _x;
+                    };
+                };
+            } forEach _enemies;
+
+            if (isNull _bestTarget && count _enemies > 0) then {
+                _bestTarget = _enemies select 0;
+            };
+
+            if (!isNull _bestTarget) then {
+                _gunner doWatch (getPosATL _bestTarget);
+                _gunner doTarget _bestTarget;
+                _gunner doFire _bestTarget;
+                _gunner doSuppressiveFire _bestTarget;
+            };
+        } forEach _gunners;
+
+        sleep 2;
+        _combatTimer = _combatTimer + 2;
     };
 
     while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
@@ -254,6 +302,15 @@ while { !_allBoarded } do {
                 _x disableAI "AUTOCOMBAT";
                 _x setBehaviour "CARELESS";
                 _x setCombatMode "BLUE";
+
+                if (_x == _hvt && alive _hvt && !(missionNamespace getVariable ["LL_Task06_Failed", false])) then {
+                    ["task_06_hvt", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+                };
+
+                if (_x == _hostage && alive _hostage && !(missionNamespace getVariable ["LL_Task00_Failed", false])) then {
+                    ["task_00_exfiltration", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+                };
+
                 {
                     if (_x != driver _heli && _x != _hostage && _x != _hvt) then {
                         _x setBehaviour "COMBAT";
@@ -328,4 +385,10 @@ waitUntil {
     (_heli distance2D _lzPos) > 1200 || time > _tTimeout
 };
 
-["End1", true, 5] remoteExec ["BIS_fnc_endMission", 0];
+private _endType = "End1";
+private _win = true;
+if (missionNamespace getVariable ["LL_Task06_Failed", false] || missionNamespace getVariable ["LL_Task00_Failed", false] || missionNamespace getVariable ["LL_Task04_Failed", false]) then {
+    _endType = "End2";
+    _win = false;
+};
+[_endType, _win, 5] remoteExec ["BIS_fnc_endMission", 0];
