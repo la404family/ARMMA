@@ -70,7 +70,7 @@ Voici la structure optimisée en **Anglais** (recommandé pour le Steam Workshop
 
 ```bbcode
 [h1]🦅 GHOSTS 2035 — ELITE SNIPER OPERATING CELL [SP / COOP 1-4][/h1]
-
+Available in all languages... full translation   
 [b]GHOSTS 2035[/b] is a next-generation tactical special operations scenario, designed for [b]Singleplayer[/b] and [b]Cooperative play (1 to 4 players)[/b]. Infiltrate deep behind enemy lines commanding a specialized elite sniper micro-cell.
 
 [hr][/hr]
