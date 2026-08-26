@@ -172,7 +172,7 @@
         <Key ID="STR_TUE_Diary_Context_Title">
             <Original>Contexte 2035 &amp; Zones Grises</Original>
             <French>Contexte 2035 &amp; Zones Grises</French>
-            <English>2035 Geopolitical Context &amp; Gray Zones</English>
+            <English>2035 Context &amp; Gray Zones</English>
             <Spanish>Contexto 2035 y Zonas Grises</Spanish>
             <Italian>Contesto 2035 &amp; Zone Grigie</Italian>
             <German>2035 Kontext &amp; Grauzonen</German>
@@ -180,24 +180,24 @@
             <Polish>Kontekst 2035 i Szare Strefy</Polish>
             <Russian>Контекст 2035 года и "Серые зоны"</Russian>
             <Czech>Kontext 2035 a Šedé zóny</Czech>
-            <Turkish>2035 Jeopolitik Bağlam &amp; Gri Bölgeler</Turkish>
-            <Korean>2035년 지정학적 배경 및 회색 지대</Korean>
-            <Japanese>2035年 地政学的背景とグレーゾーン</Japanese>
-            <Chinese>2035年地缘政治背景与灰色地带</Chinese>
+            <Turkish>2035 Bağlamı &amp; Gri Bölgeler</Turkish>
+            <Korean>2035년 배경 및 회색 지대</Korean>
+            <Japanese>2035年 背景とグレーゾーン</Japanese>
+            <Chinese>2035年背景与灰色地带</Chinese>
         </Key>
         <Key ID="STR_TUE_Diary_Context_Text">
             <Original>&lt;font size='16' color='#ff8800'&gt;L'Ère des Guerres Hybrides (2035) :&lt;/font&gt;&lt;br/&gt;
 L'ordre mondial s'est fracturé. Face au risque d'escalade nucléaire globale, les affrontements directs entre armées régulières ont laissé place aux &lt;font color='#00d0ff'&gt;Zones Grises&lt;/font&gt; : de vastes sanctuaires hors de contrôle de l'État de droit.&lt;br/&gt;&lt;br/&gt;
-Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures critiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
+Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures stratégiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
 Aucune force conventionnelle ne peut intervenir officiellement.</Original>
             <French>&lt;font size='16' color='#ff8800'&gt;L'Ère des Guerres Hybrides (2035) :&lt;/font&gt;&lt;br/&gt;
 L'ordre mondial s'est fracturé. Face au risque d'escalade nucléaire globale, les affrontements directs entre armées régulières ont laissé place aux &lt;font color='#00d0ff'&gt;Zones Grises&lt;/font&gt; : de vastes sanctuaires hors de contrôle de l'État de droit.&lt;br/&gt;&lt;br/&gt;
-Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures critiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
+Dans ces territoires délaissés, des milices insurgées, factions paramilitaires privées et syndicats armés sans insigne s'emparent des infrastructures stratégiques : dépôts d'armes lourdes, stations de brouillage, installations chimiques et relais de télécommunication.&lt;br/&gt;&lt;br/&gt;
 Aucune force conventionnelle ne peut intervenir officiellement.</French>
             <English>&lt;font size='16' color='#ff8800'&gt;The Era of Hybrid Warfare (2035):&lt;/font&gt;&lt;br/&gt;
-The global order has fractured. To prevent global nuclear escalation, conventional clashes have given way to &lt;font color='#00d0ff'&gt;Gray Zones&lt;/font&gt;: vast lawless sanctuaries beyond state control.&lt;br/&gt;&lt;br/&gt;
-In these ungoverned territories, rogue militias, private paramilitary groups, and unmarked armed cartels seize critical infrastructure: heavy weapons depots, jamming arrays, chemical sites, and communication relays.&lt;br/&gt;&lt;br/&gt;
-No conventional military can officially intervene.</English>
+The global order has fractured. To avoid catastrophic escalation between superpowers, direct conventional warfare has given way to &lt;font color='#00d0ff'&gt;Gray Zones&lt;/font&gt;: lawless operational sanctuaries beyond state jurisdiction.&lt;br/&gt;&lt;br/&gt;
+Across these ungoverned territories, insurgent militias, private paramilitary factions, and unmarked syndicates seize critical strategic infrastructure: heavy weapons depots, electronic warfare jamming arrays, chemical facilities, and telecommunication relays.&lt;br/&gt;&lt;br/&gt;
+No conventional armed forces can officially intervene.</English>
             <Spanish>&lt;font size='16' color='#ff8800'&gt;La Era de la Guerra Híbrida (2035):&lt;/font&gt;&lt;br/&gt;
 El orden mundial se ha fracturado. Los enfrentamientos convencionales han dado paso a las &lt;font color='#00d0ff'&gt;Zonas Grises&lt;/font&gt;: vastos santuarios fuera del control estatal.&lt;br/&gt;&lt;br/&gt;
 Milicias insurgentes y grupos paramilitares sin insignias controlan infraestructuras críticas: depósitos de armas, repetidores e instalaciones químicas.&lt;br/&gt;&lt;br/&gt;
@@ -244,120 +244,172 @@ Hiçbir düzenli ordu resmi olarak müdahale edemez.</Turkish>
 任何常规军队都无法公开介入。</Chinese>
         </Key>
         <Key ID="STR_TUE_Diary_Unit_Title">
-            <Original>L'Unité GHOSTS &amp; Doctrine</Original>
-            <French>L'Unité GHOSTS &amp; Doctrine</French>
-            <English>The GHOSTS Unit &amp; Doctrine</English>
-            <Spanish>La Unidad GHOSTS y Doctrina</Spanish>
-            <Italian>L'Unità GHOSTS &amp; Dottrina</Italian>
-            <German>Die GHOSTS-Einheit &amp; Doktrin</German>
-            <Portuguese>A Unidade GHOSTS e Doutrina</Portuguese>
-            <Polish>Jednostka GHOSTS i Doktryna</Polish>
-            <Russian>Отряд GHOSTS и доктрина</Russian>
-            <Czech>Jednotka GHOSTS a Doktrína</Czech>
-            <Turkish>GHOSTS Birimi &amp; Doktrini</Turkish>
-            <Korean>GHOSTS 부대 및 교리</Korean>
-            <Japanese>GHOSTS部隊と作戦教程</Japanese>
-            <Chinese>幽灵部队（GHOSTS）与作战条令</Chinese>
+            <Original>L'Unité GHOSTS</Original>
+            <French>L'Unité GHOSTS</French>
+            <English>The GHOSTS Unit</English>
+            <Spanish>La Unidad GHOSTS</Spanish>
+            <Italian>L'Unità GHOSTS</Italian>
+            <German>Die GHOSTS-Einheit</German>
+            <Portuguese>A Unidade GHOSTS</Portuguese>
+            <Polish>Jednostka GHOSTS</Polish>
+            <Russian>Отряд GHOSTS</Russian>
+            <Czech>Jednotka GHOSTS</Czech>
+            <Turkish>GHOSTS Birimi</Turkish>
+            <Korean>GHOSTS 부대</Korean>
+            <Japanese>GHOSTS部隊</Japanese>
+            <Chinese>幽灵部队（GHOSTS）</Chinese>
         </Key>
         <Key ID="STR_TUE_Diary_Unit_Text">
-            <Original>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin de Volontaires :&lt;/font&gt;&lt;br/&gt;
-Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement Conjoint des Opérations Spéciales a fondé l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Recrutement &amp; Volontariat :&lt;/font&gt; Snipers d'élite et vétérans des forces spéciales hautement qualifiés, déployés sur la base du volontariat.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Micro-Cellules (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique et acoustique quasi nulle.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, aucune transmission en clair. En cas de capture ou de mort, votre existence sera officiellement niée.</Original>
-            <French>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin de Volontaires :&lt;/font&gt;&lt;br/&gt;
-Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement Conjoint des Opérations Spéciales a fondé l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Recrutement &amp; Volontariat :&lt;/font&gt; Snipers d'élite et vétérans des forces spéciales hautement qualifiés, déployés sur la base du volontariat.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Micro-Cellules (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique et acoustique quasi nulle.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, aucune transmission en clair. En cas de capture ou de mort, votre existence sera officiellement niée.</French>
-            <English>&lt;font size='16' color='#ff8800'&gt;Clandestine Volunteer Detachment:&lt;/font&gt;&lt;br/&gt;
-To strike inside these exclusion zones without leaving a state fingerprint, the Special Operations Command formed the &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; unit.&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Elite Volunteers:&lt;/font&gt; Master marksmen and special forces veterans deployed strictly on a volunteer basis.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Micro-Cells (1 to 4 Operators):&lt;/font&gt; Deep infiltration in tiny squads ensuring near-zero radar and thermal signature.&lt;br/&gt;
-&lt;font color='#ffaa00'&gt;• Plausible Deniability:&lt;/font&gt; No national insignias, no unencrypted broadcasts. If captured, your existence will be denied.</English>
-            <Spanish>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino de Voluntarios:&lt;/font&gt;&lt;br/&gt;
-La unidad &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera en micro-células de 1 a 4 tiradores de élite bajo denegación plausible absoluta.&lt;br/&gt;&lt;br/&gt;
-Sin insignias, sin registros oficiales. En caso de captura, nadie reconocerá su existencia.</Spanish>
-            <Italian>&lt;font size='16' color='#ff8800'&gt;Distaccamento Clandestino di Volontari:&lt;/font&gt;&lt;br/&gt;
-L'unità &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera in micro-squadre da 1 a 4 tiratori scelti sotto totale diniego plausibile.&lt;br/&gt;&lt;br/&gt;
-Nessuna insegna nazionale, comunicazioni cifrate. In caso di cattura, la vostra esistenza sarà negata.</Italian>
-            <German>&lt;font size='16' color='#ff8800'&gt;Geheimes Freiwilligen-Kommando:&lt;/font&gt;&lt;br/&gt;
-Die Einheit &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operiert in Micro-Trupps von 1 bis 4 Elite-Scharfschützen unter voller plausibler Abstreitbarkeit.&lt;br/&gt;&lt;br/&gt;
-Keine Hoheitsabzeichen. Bei Gefangennahme wird Ihre Existenz geleugnet.</German>
-            <Portuguese>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino de Voluntários:&lt;/font&gt;&lt;br/&gt;
-A unidade &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera em micro-células de 1 a 4 atiradores de elite sob negação plausível absoluta.</Portuguese>
-            <Polish>&lt;font size='16' color='#ff8800'&gt;Tajny Oddział Ochotników:&lt;/font&gt;&lt;br/&gt;
-Jednostka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje w mikro-grupach od 1 do 4 snajperów elity z zachowaniem pełnej wiarygodnej zaprzeczalności.</Polish>
-            <Russian>&lt;font size='16' color='#ff8800'&gt;Тайный отряд добровольцев:&lt;/font&gt;&lt;br/&gt;
-Отряд &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; действует микро-группами от 1 до 4 снайперов в условиях полного правдоподобного отрицания.</Russian>
-            <Czech>&lt;font size='16' color='#ff8800'&gt;Tajný oddíl dobrovolníků:&lt;/font&gt;&lt;br/&gt;
-Jednotka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje v mikro-týmech 1 až 4 elitních odstřelovačů pod absolutním popřením existence.</Czech>
-            <Turkish>&lt;font size='16' color='#ff8800'&gt;Gizli Gönüllü Müfrezesi:&lt;/font&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; birimi, 1 ila 4 kişilik keskin nişancı timleriyle tam inkar edilebilirlik altında hareket eder.</Turkish>
-            <Korean>&lt;font size='16' color='#ff8800'&gt;비밀 자원 파견대:&lt;/font&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; 부대는 1~4인의 정예 저격수 마이크로 분대로 침투하며, 완전한 은폐와 부인 하에 작전합니다.</Korean>
-            <Japanese>&lt;font size='16' color='#ff8800'&gt;秘密志願分遣隊:&lt;/font&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;部隊は1〜4名の精鋭狙撃手による極小編成で潜入し、完全な否認権のもとで活動する。</Japanese>
-            <Chinese>&lt;font size='16' color='#ff8800'&gt;秘密志愿特遣队：&lt;/font&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;幽灵（GHOSTS）&lt;/font&gt;部队由1至4名精锐狙击手组成微型分队，在绝对的完全否认原则下执行任务。</Chinese>
+            <Original>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin :&lt;/font&gt;&lt;br/&gt;
+Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement des Opérations Spéciales déploie l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Micro-Cellules Tactiques (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique, radar et acoustique quasi nulle.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, transmissions hautement chiffrées. En cas de capture ou de mort au combat, votre existence sera officiellement niée.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Autonomie Totale :&lt;/font&gt; Aucune relève, aucun appui au sol. Vous êtes seuls maîtres de vos engagements.</Original>
+            <French>&lt;font size='16' color='#ff8800'&gt;Détachement Clandestin :&lt;/font&gt;&lt;br/&gt;
+Pour intervenir dans ces zones d'exclusion sans laisser d'empreinte étatique, le Commandement des Opérations Spéciales déploie l'unité &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Micro-Cellules Tactiques (1 à 4 Opérateurs) :&lt;/font&gt; Infiltration en escouades ultra-réduites pour une signature thermique, radar et acoustique quasi nulle.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Déni Plausible :&lt;/font&gt; Aucun insigne national, transmissions hautement chiffrées. En cas de capture ou de mort au combat, votre existence sera officiellement niée.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Autonomie Totale :&lt;/font&gt; Aucune relève, aucun appui au sol. Vous êtes seuls maîtres de vos engagements.</French>
+            <English>&lt;font size='16' color='#ff8800'&gt;Clandestine Detachment:&lt;/font&gt;&lt;br/&gt;
+To operate inside high-threat exclusion zones without leaving a state footprint, Special Operations Command deploys the &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; unit.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Tactical Micro-Cells (1 to 4 Operators):&lt;/font&gt; Deep infiltration in minimal squads ensuring near-zero thermal, radar, and acoustic signature.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Plausible Deniability:&lt;/font&gt; No national insignias, heavily encrypted comms. In the event of capture or death, your existence will be officially denied.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Full Operational Autonomy:&lt;/font&gt; No ground backup, no extraction support until mission complete. You dictate your own rules of engagement.</English>
+            <Spanish>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino:&lt;/font&gt;&lt;br/&gt;
+La unidad &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera en micro-células tácticas de 1 a 4 tiradores de élite bajo denegación plausible absoluta.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Sigilo Absoluto:&lt;/font&gt; Firma térmica y acústica mínima en territorio hostil.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Denegación Plausible:&lt;/font&gt; Sin insignias oficiales. En caso de captura, nadie reconocerá su existencia.</Spanish>
+            <Italian>&lt;font size='16' color='#ff8800'&gt;Distaccamento Clandestino:&lt;/font&gt;&lt;br/&gt;
+L'unità &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera in micro-squadre tattiche da 1 a 4 tiratori scelti sotto totale diniego plausibile.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Furtività Totale:&lt;/font&gt; Firma termica e acustica ridotta al minimo.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Diniego Plausibile:&lt;/font&gt; Nessuna insegna nazionale. In caso di cattura, la vostra esistenza sarà negata.</Italian>
+            <German>&lt;font size='16' color='#ff8800'&gt;Geheimes Einsatzkommando:&lt;/font&gt;&lt;br/&gt;
+Die Einheit &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operiert in Micro-Zellen von 1 bis 4 Elite-Scharfschützen unter voller plausibler Abstreitbarkeit.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Maximale Tarnung:&lt;/font&gt; Minimale thermische und akustische Signatur im Einsatzgebiet.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Plausible Abstreitbarkeit:&lt;/font&gt; Keine Hoheitszeichen. Bei Gefangennahme wird Ihre Existenz geleugnet.</German>
+            <Portuguese>&lt;font size='16' color='#ff8800'&gt;Destacamento Clandestino:&lt;/font&gt;&lt;br/&gt;
+A unidade &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; opera em micro-células táticas de 1 a 4 atiradores de elite sob negação plausível absoluta.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Furtividade Total:&lt;/font&gt; Assinatura térmica e acústica mínima.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Negação Plausível:&lt;/font&gt; Sem insígnias oficiais. A vossa existência será oficialmente negada em caso de captura.</Portuguese>
+            <Polish>&lt;font size='16' color='#ff8800'&gt;Tajny Oddział Specjalny:&lt;/font&gt;&lt;br/&gt;
+Jednostka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje w mikro-grupach taktycznych od 1 do 4 snajperów elity z zachowaniem pełnej wiarygodnej zaprzeczalności.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Maksymalne Maskowanie:&lt;/font&gt; Minimalny ślad termiczny i akustyczny.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Wiarygodne Zaprzeczenie:&lt;/font&gt; Brak oznaczeń. W razie schwytania wasze istnienie zostanie oficjalnie wyparte.</Polish>
+            <Russian>&lt;font size='16' color='#ff8800'&gt;Секретный отряд специального назначения:&lt;/font&gt;&lt;br/&gt;
+Отряд &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; действует микро-группами от 1 до 4 снайперов в условиях полного правдоподобного отрицания.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Максимальная скрытность:&lt;/font&gt; Минимальная тепловая и акустическая заметность.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Полное отрицание:&lt;/font&gt; Никаких шевронов. В случае захвата ваше существование будет официально опровергнуто.</Russian>
+            <Czech>&lt;font size='16' color='#ff8800'&gt;Tajný Zvláštní Oddíl:&lt;/font&gt;&lt;br/&gt;
+Jednotka &lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; operuje v mikro-týmech 1 až 4 elitních odstřelovačů pod absolutním popřením existence.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Absolutní Utajení:&lt;/font&gt; Minimální tepelná a akustická stopa.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Popření Existence:&lt;/font&gt; Žádné označení. V případě zajetí bude vaše existence oficiálně popřena.</Czech>
+            <Turkish>&lt;font size='16' color='#ff8800'&gt;Gizli Özel Harekât Müfrezesi:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; birimi, 1 ila 4 kişilik keskin nişancı timleriyle tam inkar edilebilirlik altında hareket eder.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• Tam Gizlilik:&lt;/font&gt; Minimum termal ve akustik iz.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• İnkar Edilebilirlik:&lt;/font&gt; Hiçbir resmi işaret yok. Yakalanma durumunda varlığınız inkar edilecektir.</Turkish>
+            <Korean>&lt;font size='16' color='#ff8800'&gt;비밀 특수작전 파견대:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt; 부대는 1~4인의 정예 저격수 마이크로 분대로 침투하며, 완전한 은폐와 부인 하에 작전합니다.&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 극대화된 은폐:&lt;/font&gt; 열 및 음향 신호 최소화.&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 완전한 부인권:&lt;/font&gt; 군번 및 국적 표기 없음. 생포 시 공식적으로 존재가 부인됩니다.</Korean>
+            <Japanese>&lt;font size='16' color='#ff8800'&gt;秘密特殊作戦分遣隊:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;GHOSTS&lt;/font&gt;部隊は1〜4名の精鋭狙撃手による極小編成で潜入し、完全な否認権のもとで活動する。&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 完全ステルス:&lt;/font&gt; 熱源および音響シグネチャを極限まで低減。&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 公式否認:&lt;/font&gt; 国籍識別章なし。捕虜となった場合、その存在は公式に否定される。</Japanese>
+            <Chinese>&lt;font size='16' color='#ff8800'&gt;秘密特战特遣队：&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;幽灵（GHOSTS）&lt;/font&gt;部队由1至4名精锐狙击手组成微型分队，在绝对的完全否认原则下执行任务。&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 极度隐蔽：&lt;/font&gt; 热源与声音信号降至最低极限。&lt;br/&gt;
+&lt;font color='#ffaa00'&gt;• 完全否认：&lt;/font&gt; 无任何官方标识。一旦被俘，指挥部将正式否认你们的存在。</Chinese>
         </Key>
         <Key ID="STR_TUE_Diary_Tech_Title">
-            <Original>Arsenal &amp; Drone ISR Darter</Original>
-            <French>Arsenal &amp; Drone ISR Darter</French>
-            <English>Arsenal &amp; Darter ISR Drone</English>
-            <Spanish>Arsenal y Dron ISR Darter</Spanish>
-            <Italian>Arsenale &amp; Drone ISR Darter</Italian>
-            <German>Arsenal &amp; Darter ISR-Drohne</German>
-            <Portuguese>Arsenal e Drone ISR Darter</Portuguese>
-            <Polish>Arsenał i Dron ISR Darter</Polish>
-            <Russian>Арсенал и БПЛА разведки Darter</Russian>
-            <Czech>Arzenál a Průzkumný Dron Darter</Czech>
-            <Turkish>Cephanelik &amp; Darter ISR Dronu</Turkish>
-            <Korean>무기고 및 Darter ISR 드론</Korean>
-            <Japanese>兵装とDarter ISRドローン</Japanese>
-            <Chinese>军械与Darter侦察无人机</Chinese>
+            <Original>Arsenal &amp; Drone ISR</Original>
+            <French>Arsenal &amp; Drone ISR</French>
+            <English>Arsenal &amp; ISR Drone</English>
+            <Spanish>Arsenal y Dron ISR</Spanish>
+            <Italian>Arsenale &amp; Drone ISR</Italian>
+            <German>Arsenal &amp; ISR-Drohne</German>
+            <Portuguese>Arsenal e Drone ISR</Portuguese>
+            <Polish>Arsenał i Dron ISR</Polish>
+            <Russian>Арсенал и БПЛА разведки</Russian>
+            <Czech>Arzenál a Průzkumný Dron</Czech>
+            <Turkish>Cephanelik &amp; ISR Dronu</Turkish>
+            <Korean>무기고 및 ISR 드론</Korean>
+            <Japanese>兵装とISRドローン</Japanese>
+            <Chinese>军械与ISR侦察无人机</Chinese>
         </Key>
         <Key ID="STR_TUE_Diary_Tech_Text">
-            <Original>&lt;font size='16' color='#ff8800'&gt;Synergie Technologique &amp; Équipement :&lt;/font&gt;&lt;br/&gt;
-Les opérateurs GHOSTS s'appuient sur un équipement de pointe de 2035 :&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Fournit une surveillance radar aérienne continue du secteur, détecte les patrouilles ennemies et désigne les cibles.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Optiques JVN &amp; Thermiques 4e Génération :&lt;/font&gt; Conçues pour l'infiltration tout-temps (nuit noire, brouillard épais, tempêtes).&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Règles d'Engagement Silencieuses (ROE) :&lt;/font&gt; Ajustez l'attitude de combat de l'escouade (&lt;i&gt;Furtif / Normal / Assaut&lt;/i&gt;) via vos ordres d'action.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Réanimation Tactique :&lt;/font&gt; Secours d'urgence immédiat entre coéquipiers sans condition de matériel médical lourd.</Original>
-            <French>&lt;font size='16' color='#ff8800'&gt;Synergie Technologique &amp; Équipement :&lt;/font&gt;&lt;br/&gt;
-Les opérateurs GHOSTS s'appuient sur un équipement de pointe de 2035 :&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Fournit une surveillance radar aérienne continue du secteur, détecte les patrouilles ennemies et désigne les cibles.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Optiques JVN &amp; Thermiques 4e Génération :&lt;/font&gt; Conçues pour l'infiltration tout-temps (nuit noire, brouillard épais, tempêtes).&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Règles d'Engagement Silencieuses (ROE) :&lt;/font&gt; Ajustez l'attitude de combat de l'escouade (&lt;i&gt;Furtif / Normal / Assaut&lt;/i&gt;) via vos ordres d'action.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Réanimation Tactique :&lt;/font&gt; Secours d'urgence immédiat entre coéquipiers sans condition de matériel médical lourd.</French>
-            <English>&lt;font size='16' color='#ff8800'&gt;Technological Synergy &amp; Equipment:&lt;/font&gt;&lt;br/&gt;
-GHOSTS operators rely on state-of-the-art 2035 military technology:&lt;br/&gt;&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Autonomous Darter ISR Drone:&lt;/font&gt; Provides continuous aerial radar coverage, tracks hostile patrols, and designates targets.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• 4th Gen NVG &amp; Thermal Optronics:&lt;/font&gt; Engineered for all-weather infiltration (zero-light, dense fog, storms).&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Silent Rules of Engagement (ROE):&lt;/font&gt; Toggle squad combat stance (&lt;i&gt;Stealth / Normal / Assault&lt;/i&gt;) silently.&lt;br/&gt;
-&lt;font color='#00d0ff'&gt;• Tactical Revive:&lt;/font&gt; Immediate field resuscitation between teammates with zero inventory restrictions.</English>
-            <Spanish>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnológica:&lt;/font&gt;&lt;br/&gt;
-Dron autónomo Darter para cobertura de radar constante, visión nocturna/térmica de 4ª generación y reanimación táctica inmediata.</Spanish>
-            <Italian>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnologica:&lt;/font&gt;&lt;br/&gt;
-Drone autonomo Darter per copertura radar continua, ottiche notturne/termiche di 4ª generazione e rianimazione tattica immediata.</Italian>
-            <German>&lt;font size='16' color='#ff8800'&gt;Technologische Synergie:&lt;/font&gt;&lt;br/&gt;
-Autonome Darter-Drohne für permanente Radarüberwachung, Nachtsicht/Thermalsicht der 4. Generation und sofortige Kameraden-Wiederbelebung.</German>
-            <Portuguese>&lt;font size='16' color='#ff8800'&gt;Sinergia Tecnológica:&lt;/font&gt;&lt;br/&gt;
-Drone autônomo Darter para cobertura contínua de radar, visão noturna/térmica de 4ª geração e reanimação tática imediata.</Portuguese>
-            <Polish>&lt;font size='16' color='#ff8800'&gt;Synergia Technologiczna:&lt;/font&gt;&lt;br/&gt;
-Autonomiczny dron Darter z radarem, noktowizja i termowizja 4. generacji oraz natychmiastowa reanimacja sojuszników.</Polish>
-            <Russian>&lt;font size='16' color='#ff8800'&gt;Технологическое превосходство:&lt;/font&gt;&lt;br/&gt;
-БПЛА Darter для постоянного радарного сканирования, оптроника 4-го поколения и полевая реанимация раненых.</Russian>
-            <Czech>&lt;font size='16' color='#ff8800'&gt;Technologická Synergie:&lt;/font&gt;&lt;br/&gt;
-Autonomní dron Darter pro stálé radarové pokrytí, termovize 4. generace a okamžité oživování spolubojovníků.</Czech>
-            <Turkish>&lt;font size='16' color='#ff8800'&gt;Teknolojik Sinerji:&lt;/font&gt;&lt;br/&gt;
-Sürekli radar kapsaması sağlayan otonom Darter dronu, 4. nesil termal/gece görüşü ve anında takım arkadaşı canlandırma.</Turkish>
-            <Korean>&lt;font size='16' color='#ff8800'&gt;첨단 기술 시너지:&lt;/font&gt;&lt;br/&gt;
-지속적인 레이더 감시를 제공하는 자율 Darter 드론, 4세대 열화상/야간 투시경, 즉각적인 전술 소생 시스템.</Korean>
-            <Japanese>&lt;font size='16' color='#ff8800'&gt;先端技術シナジー:&lt;/font&gt;&lt;br/&gt;
-継続的なレーダー監視を行う自律型Darterドローン、第4世代暗視・熱画像光学機器、迅速な戦術蘇生システム。</Japanese>
-            <Chinese>&lt;font size='16' color='#ff8800'&gt;前沿技术协同：&lt;/font&gt;&lt;br/&gt;
-提供不间断雷达覆盖的自主Darter无人机、第四代热成像/夜视光电系统以及即时战术复活救治。</Chinese>
+            <Original>&lt;font size='16' color='#ff8800'&gt;Équipement Tactique de Pointe :&lt;/font&gt;&lt;br/&gt;
+Les opérateurs GHOSTS disposent de technologies avancées pour opérer en milieu hostile :&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Assure une couverture radar aérienne continue du secteur opérationnel, détecte les patrouilles ennemies et relaie les cibles en temps réel.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Caisse de Dotation Tactique :&lt;/font&gt; Arsenal complet disponible sur la zone de poser pour sélectionner et configurer vos armes et accessoires avant le départ.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Optiques Tout-Temps :&lt;/font&gt; Systèmes de vision nocturne et thermique de 4e génération adaptés aux conditions extrêmes (nuit noire, brume dense, intempéries).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Réanimation d'Urgence :&lt;/font&gt; Système médical de secours rapide permettant à tout coéquipier de stabiliser et relever un opérateur blessé.</Original>
+            <French>&lt;font size='16' color='#ff8800'&gt;Équipement Tactique de Pointe :&lt;/font&gt;&lt;br/&gt;
+Les opérateurs GHOSTS disposent de technologies avancées pour opérer en milieu hostile :&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autonome Darter ISR :&lt;/font&gt; Assure une couverture radar aérienne continue du secteur opérationnel, détecte les patrouilles ennemies et relaie les cibles en temps réel.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Caisse de Dotation Tactique :&lt;/font&gt; Arsenal complet disponible sur la zone de poser pour sélectionner et configurer vos armes et accessoires avant le départ.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Optiques Tout-Temps :&lt;/font&gt; Systèmes de vision nocturne et thermique de 4e génération adaptés aux conditions extrêmes (nuit noire, brume dense, intempéries).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Réanimation d'Urgence :&lt;/font&gt; Système médical de secours rapide permettant à tout coéquipier de stabiliser et relever un opérateur blessé.</French>
+            <English>&lt;font size='16' color='#ff8800'&gt;Advanced Tactical Equipment:&lt;/font&gt;&lt;br/&gt;
+GHOSTS operators deploy with cutting-edge 2035 special operations technology:&lt;br/&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Autonomous Darter ISR Drone:&lt;/font&gt; Continuous aerial radar scanning across the area of operations, tracking hostile patrols and streaming real-time target designations.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Tactical Supply Crate:&lt;/font&gt; Complete field arsenal located on the LZ to customize and calibrate weapons, suppressors, and mission gear before departure.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• All-Weather Optronics:&lt;/font&gt; 4th Gen thermal and night-vision sights engineered for extreme combat conditions (total darkness, heavy fog, severe storms).&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Tactical Revive:&lt;/font&gt; Immediate field resuscitation allowing any operative to stabilize and revive fallen teammates.</English>
+            <Spanish>&lt;font size='16' color='#ff8800'&gt;Equipamiento Táctico Avanzado:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Dron Autónomo Darter ISR:&lt;/font&gt; Cobertura de radar continua y designación de objetivos en tiempo real.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Caja de Suministros:&lt;/font&gt; Arsenal completo disponible en la zona de aterrizaje.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Ópticas Térmicas/Nocturnas:&lt;/font&gt; Visión de 4ª generación para cualquier condición climática.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Reanimación Táctica:&lt;/font&gt; Estabilización y auxilio rápido entre compañeros.</Spanish>
+            <Italian>&lt;font size='16' color='#ff8800'&gt;Equipaggiamento Tattico Avanzato:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autonomo Darter ISR:&lt;/font&gt; Copertura radar continua e designazione bersagli in tempo reale.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Cassa di Rifornimento:&lt;/font&gt; Arsenale completo disponibile sulla zona di atterraggio.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Ottiche Termiche/Notturne:&lt;/font&gt; Visione di 4ª generazione per qualsiasi condizione meteo.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Rianimazione Tattica:&lt;/font&gt; Soccorso rapido tra operatori sul campo.</Italian>
+            <German>&lt;font size='16' color='#ff8800'&gt;Fortschrittliche Taktische Ausrüstung:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Autonome Darter ISR-Drohne:&lt;/font&gt; Permanente Radarüberwachung und Zielmarkierung in Echtzeit.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Ausrüstungskiste:&lt;/font&gt; Vollständiges Waffenarsenal an der Landezone verfügbar.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Allwetter-Optiken:&lt;/font&gt; Nachtsicht- und Wärmebildgeräte der 4. Generation.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Taktische Wiederbelebung:&lt;/font&gt; Schnelle Kameradenhilfe im Gefecht.</German>
+            <Portuguese>&lt;font size='16' color='#ff8800'&gt;Equipamento Tático Avançado:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Drone Autónomo Darter ISR:&lt;/font&gt; Cobertura contínua de radar e designação de alvos em tempo real.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Caixa de Suprimentos:&lt;/font&gt; Arsenal completo na zona de aterragem.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Ópticas Térmicas/Noturnas:&lt;/font&gt; Visão de 4ª geração para todas as condições meteorológicas.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Reanimação Tática:&lt;/font&gt; Socorro imediato entre operadores.</Portuguese>
+            <Polish>&lt;font size='16' color='#ff8800'&gt;Zaawansowany Sprzęt Taktyczny:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Autonomiczny Dron ISR Darter:&lt;/font&gt; Ciągłe skanowanie radarowe i oznaczanie celów w czasie rzeczywistym.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Skrzynia Zaopatrzenia:&lt;/font&gt; Pełny arsenał dostępny w strefie lądowania.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Optyka Termowizyjna/Nocna:&lt;/font&gt; Systemy 4. generacji na każde warunki pogodowe.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Reanimacja Taktyczna:&lt;/font&gt; Szybka pomoc medyczna między towarzyszami broni.</Polish>
+            <Russian>&lt;font size='16' color='#ff8800'&gt;Передовое тактическое оснащение:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Автономный БПЛА разведки Darter:&lt;/font&gt; Непрерывное радиолокационное сканирование и целеуказание в реальном времени.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Ящик снабжения:&lt;/font&gt; Полный арсенал на посадочной площадке для настройки снаряжения.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Всепогодная оптроника:&lt;/font&gt; Тепловизионные и ПНВ прицелы 4-го поколения.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Полевая реанимация:&lt;/font&gt; Быстрое оказание помощи и возвращение в строй раненых бойцов.</Russian>
+            <Czech>&lt;font size='16' color='#ff8800'&gt;Pokročilá Taktická Výstroj:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Autonomní Průzkumný Dron Darter:&lt;/font&gt; Neustálé radarové pokrytí a značení cílů v reálném čase.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Zásobovací Bedna:&lt;/font&gt; Kompletní polní arzenál na přistávací ploše.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Vševojsková Optika:&lt;/font&gt; Termovizní a noční přístroje 4. generace.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Taktické Oživování:&lt;/font&gt; Rychlá pomoc zraněným spolubojovníkům.</Czech>
+            <Turkish>&lt;font size='16' color='#ff8800'&gt;Gelişmiş Taktik Teçhizat:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Otonom Darter ISR Dronu:&lt;/font&gt; Sürekli radar taraması ve gerçek zamanlı hedef tespiti.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• İkmal Sandığı:&lt;/font&gt; İniş bölgesinde tam teçhizatlı cephanelik.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Her Hava Koşuluna Uygun Optikler:&lt;/font&gt; 4. nesil termal ve gece görüş sistemleri.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• Taktik Canlandırma:&lt;/font&gt; Takım arkadaşları arasında hızlı tıbbi müdahale.</Turkish>
+            <Korean>&lt;font size='16' color='#ff8800'&gt;첨단 전술 장비:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 자율 Darter ISR 드론:&lt;/font&gt; 작전 지역 상공에서 지속적인 레이더 감시 및 실시간 표적 지정 지원.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 전술 보급 상자:&lt;/font&gt; 강하 구역에 배치된 무기고에서 임무 맞춤형 무기 및 장비 구성 가능.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 전천후 광학 장비:&lt;/font&gt; 극한의 환경에서도 시야를 확보하는 4세대 열화상 및 야간 투시경.&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 전술 응급 소생:&lt;/font&gt; 부상당한 팀원을 즉시 안정화하고 복귀시키는 현장 소생 시스템.</Korean>
+            <Japanese>&lt;font size='16' color='#ff8800'&gt;最先端戦術装備:&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 自律型Darter ISRドローン:&lt;/font&gt; 作戦空域の継続的なレーダー走査とリアルタイムの目標指示。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 戦術補給コンテナ:&lt;/font&gt; 降下地点で武器や装備を自由にカスタマイズ可能。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 全天候型光学機器:&lt;/font&gt; 悪天候や夜間作戦に対応する第4世代熱画像・暗視システム。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 戦術蘇生システム:&lt;/font&gt; 負傷した味方を現場で即座に蘇生・戦線復帰させる応急処置システム。</Japanese>
+            <Chinese>&lt;font size='16' color='#ff8800'&gt;尖端战术装备：&lt;/font&gt;&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 自主Darter侦察无人机：&lt;/font&gt; 不间断空中雷达扫描，实时追踪敌方巡逻队并标定目标。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 战术补给箱：&lt;/font&gt; 空投区部署全套军械库，出发前自由配置武器与配件。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 全天候光电系统：&lt;/font&gt; 适应极端恶劣环境的第四代热成像与夜视瞄具。&lt;br/&gt;
+&lt;font color='#00d0ff'&gt;• 战术急救复活：&lt;/font&gt; 队员之间可快速稳定伤势并使伤员立即重返战斗。</Chinese>
         </Key>
     </Package>
     <Package name="Task">
@@ -410,20 +462,20 @@ Sürekli radar kapsaması sağlayan otonom Darter dronu, 4. nesil termal/gece g�
             <Czech>Bod extrakce</Czech>
         </Key>
         <Key ID="STR_TUE_Intro_Sender">
-            <Original>QG</Original>
-            <French>QG</French>
-            <English>HQ</English>
-            <Spanish>CG</Spanish>
-            <Italian>QG</Italian>
-            <German>HQ</German>
-            <Polish>HQ</Polish>
-            <Russian>ШТАБ</Russian>
-            <Turkish>KK</Turkish>
-            <Japanese>司令部</Japanese>
-            <Korean>지휘부</Korean>
-            <Chinese>指挥部</Chinese>
-            <Portuguese>QG</Portuguese>
-            <Czech>HQ</Czech>
+            <Original>OVERLORD</Original>
+            <French>OVERLORD</French>
+            <English>OVERLORD</English>
+            <Spanish>OVERLORD</Spanish>
+            <Italian>OVERLORD</Italian>
+            <German>OVERLORD</German>
+            <Polish>OVERLORD</Polish>
+            <Russian>OVERLORD</Russian>
+            <Turkish>OVERLORD</Turkish>
+            <Japanese>OVERLORD</Japanese>
+            <Korean>OVERLORD</Korean>
+            <Chinese>OVERLORD</Chinese>
+            <Portuguese>OVERLORD</Portuguese>
+            <Czech>OVERLORD</Czech>
         </Key>
         <Key ID="STR_TUE_Intro_Title_1">
             <Original>GHOSTS</Original>
@@ -458,52 +510,52 @@ Sürekli radar kapsaması sağlayan otonom Darter dronu, 4. nesil termal/gece g�
             <Czech>DOBROVOLNICKÁ ELITNÍ JEDNOTKA</Czech>
         </Key>
         <Key ID="STR_TUE_Intro_Plan2_Radio">
-            <Original>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</Original>
-            <French>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</French>
-            <English>"Listen carefully, I repeat this one last time: A drone is already in place to locate targets. Understood?"</English>
-            <Spanish>"Escuchen bien, se lo repito por última vez: Un dron ya está en posición para localizar los objetivos. ¿Entendido?"</Spanish>
-            <Italian>"Ascoltate bene, ve lo ripeto per l'ultima volta: Un drone è già sul posto per localizzare i bersagli. Ricevuto?"</Italian>
-            <German>"Hören Sie gut zu, ich wiederhole es ein letztes Mal: Eine Drohne ist bereits vor Ort, um die Ziele zu lokalisieren. Verstanden?"</German>
-            <Polish>"Słuchajcie uważnie, powtarzam po raz ostatni: Dron jest już na miejscu, by zlokalizować cele. Zrozumiano?"</Polish>
-            <Russian>"Слушайте внимательно, повторяю последний раз: Беспилотник уже на месте для обнаружения целей. Понятно?"</Russian>
-            <Turkish>"İyi dinleyin, son kez tekrar ediyorum: Hedefleri tespit etmek için bir İHA zaten bölgede. Anlaşıldı mı?"</Turkish>
-            <Japanese>"よく聞け、最後にもう一度言う：目標を特定するためドローンがすでに配置されている。了解したか？"</Japanese>
-            <Korean>"잘 들어라, 마지막으로 반복한다: 목표를 탐색하기 위해 드론이 이미 배치되어 있다. 알겠나?"</Korean>
-            <Chinese>"仔细听好，我最后重复一次：无人机已就位以锁定目标。明白了吗？"</Chinese>
-            <Portuguese>"Ouçam com atenção, repito pela última vez: Um drone já está na área para localizar os alvos. Entendido?"</Portuguese>
-            <Czech>"Poslouchejte pozorně, opakuji to naposledy: Dron je již na místě k lokalizaci cílů. Rozumíte?"</Czech>
+            <Original>"Ghosts, vecteur d'insertion confirmé. Le flux de données satellite et la télémétrie du drone Darter sont synchronisés sur vos terminaux tactiques."</Original>
+            <French>"Ghosts, vecteur d'insertion confirmé. Le flux de données satellite et la télémétrie du drone Darter sont synchronisés sur vos terminaux tactiques."</French>
+            <English>"Ghosts, insertion vector confirmed. Satellite datalink and Darter UAV telemetry are synchronized on your tactical HUD."</English>
+            <Spanish>"Ghosts, vector de inserción confirmado. El enlace de satélite y la telemetría del dron Darter están sincronizados en sus terminales tácticos."</Spanish>
+            <Italian>"Ghosts, vettore di inserimento confermato. Il flusso dati satellitare e la telemetria del drone Darter sono sincronizzati sui vostri terminali tattici."</Italian>
+            <German>"Ghosts, Insertionsvektor bestätigt. Satelliten-Datenverbindung und Darter-UAV-Telemetrie sind auf Ihren taktischen Terminals synchronisiert."</German>
+            <Polish>"Ghosts, wektor infiltracji potwierdzony. Łącze satelitarne i telemetria drona Darter są zsynchronizowane na waszych terminalach taktycznych."</Polish>
+            <Russian>"Ghosts, вектор высадки подтвержден. Спутниковый канал данных и телеметрия БПЛА Darter синхронизированы с вашими тактическими терминалами."</Russian>
+            <Turkish>"Ghosts, intikal vektörü onaylandı. Uydu veri bağlantısı ve Darter İHA telemetrisi taktik terminallerinizle senkronize edildi."</Turkish>
+            <Japanese>"Ghosts、潜入進路を確認。衛星データリンクとDarterドローンのテレメトリが戦術端末に同期された。"</Japanese>
+            <Korean>"Ghosts, 침투 경로 확인. 위성 데이터링크와 Darter UAV 텔레메트리가 전술 단말기에 동기화되었다."</Korean>
+            <Chinese>"Ghosts，渗透航向已确认。卫星数据链与Darter无人机遥测数据已同步至战术终端。"</Chinese>
+            <Portuguese>"Ghosts, vetor de inserção confirmado. O link de dados de satélite e a telemetria do drone Darter estão sincronizados nos vossos terminais táticos."</Portuguese>
+            <Czech>"Ghosts, vektor infiltrace potvrzen. Satelitní datové spojení a telemetrie dronu Darter jsou synchronizovány na vašich taktických terminálech."</Czech>
         </Key>
         <Key ID="STR_TUE_Intro_Plan4_Radio">
-            <Original>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</Original>
-            <French>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</French>
-            <English>"Supply crate available: You can select your equipment and choose your weapons before heading out."</English>
-            <Spanish>"Caja de suministros disponible: Pueden seleccionar su equipo y elegir sus armas antes de lanzarse a la misión."</Spanish>
-            <Italian>"Cassa rifornimenti disponibile: Potete selezionare il vostro equipaggiamento e scegliere le vostre armi prima di iniziare."</Italian>
-            <German>"Ausrüstungskiste verfügbar: Sie können Ihre Ausrüstung wählen und Ihre Waffen aussuchen, bevor Sie loslegen."</German>
-            <Polish>"Skrzynia z zaopatrzeniem dostępna: Możecie wybrać swój ekwipunek i dobrać broń przed wyruszeniem do akcji."</Polish>
-            <Russian>"Ящик со снаряжением доступен: Вы можете выбрать экипировку и оружие перед выходом на задание."</Russian>
-            <Turkish>"İkmal sandığı mevcut: Harekete geçmeden önce teçhizatınızı ve silahlarınızı seçebilirsiniz."</Turkish>
-            <Japanese>"補給コンテナが利用可能です。作戦開始前に装備を選択し、武器を整えてください。"</Japanese>
-            <Korean>"보급 상자 사용 가능: 작전 개시 전에 장비를 선택하고 무기를 고를 수 있습니다."</Korean>
-            <Chinese>"补给箱可用：出发前你们可以选择装备并挑选武器。"</Chinese>
-            <Portuguese>"Caixa de suprimentos disponível: Podem selecionar o vosso equipamento e escolher as vossas armas antes de avançar."</Portuguese>
-            <Czech>"Zásobovací bedna je k dispozici: Před zahájením akce si můžete vybrat výstroj a zbraně."</Czech>
+            <Original>"Point de ravitaillement sécurisé sur la dropzone. Équipez vos armes silencieuses et préparez vos désignateurs avant d'engager."</Original>
+            <French>"Point de ravitaillement sécurisé sur la dropzone. Équipez vos armes silencieuses et préparez vos désignateurs avant d'engager."</French>
+            <English>"Supply depot secured at the dropzone. Fit your suppressed weapons and designators prior to contact."</English>
+            <Spanish>"Punto de reabastecimiento asegurado en la dropzone. Equípen sus armas silenciadas y preparen sus designadores antes de contactar."</Spanish>
+            <Italian>"Punto di rifornimento messo in sicurezza sulla dropzone. Equipaggiate le vostre armi silenziate e preparate i designatori prima del contatto."</Italian>
+            <German>"Versorgungspunkt an der Dropzone gesichert. Rüsten Sie schallgedämpfte Waffen aus und bereiten Sie Zielmarkierer vor dem Gefecht vor."</German>
+            <Polish>"Punkt zaopatrzeniowy zabezpieczony w strefie zrzutu. Wyposażcie broń wytłumioną i przygotujcie wskaźniki laserowe przed kontaktem."</Polish>
+            <Russian>"Точка снабжения развернута в зоне высадки. Снарядите глушители и подготовьте целеуказатели до вступления в бой."</Russian>
+            <Turkish>"İndirme bölgesinde ikmal noktası güvene alındı. Temasa geçmeden önce susturuculu silahlarınızı takın ve işaretleyicilerinizi hazırlayın."</Turkish>
+            <Japanese>"降下地点の補給ポイントを確保。接触前に消音火器を装備し、照準指定装置を準備せよ。"</Japanese>
+            <Korean>"강하 구역에 보급 거점 확보 완료. 접적 전에 소음 무기를 장착하고 표적지시기를 준비하라."</Korean>
+            <Chinese>"空投区补给点已部署。在交火前配齐消音武器并校准激光指示器。"</Chinese>
+            <Portuguese>"Ponto de reabastecimento seguro na dropzone. Equipem as vossas armas silenciadas e preparem os designadores antes do contacto."</Portuguese>
+            <Czech>"Zásobovací bod v zóně výsadku je zajištěn. Před kontaktem nasaďte tlumiče a připravte označovače cílů."</Czech>
         </Key>
         <Key ID="STR_TUE_Intro_Plan5_Radio">
-            <Original>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</Original>
-            <French>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</French>
-            <English>"Everything is clear! From now on... You no longer exist... Good luck. Out."</English>
-            <Spanish>"¡Todo está claro! A partir de ahora... Ya no existen... Buena suerte. Corto."</Spanish>
-            <Italian>"Tutto chiaro! Da questo momento in poi... Non esistete più... Buona fortuna. Chiudo."</Italian>
-            <German>"Alles klar! Von nun an... Existieren Sie nicht mehr... Viel Glück. Ende."</German>
-            <Polish>"Wszystko jasne! Od tej chwili... Nie istniejecie... Powodzenia. Bez odbioru."</Polish>
-            <Russian>"Все предельно ясно! С этой минуты... Вас больше не существует... Удачи. Конец связи."</Russian>
-            <Turkish>"Her şey net! Şu andan itibaren... Artık yoksunuz... İyi şanslar. Tamam."</Turkish>
-            <Japanese>"すべて明確だな！ これ以降… 貴様らは存在しない。健闘を祈る。通信終了。"</Japanese>
-            <Korean>"모든 것이 확실하다! 지금부터... 너희는 존재하지 않는다... 행운을 빈다. 이상."</Korean>
-            <Chinese>"一切明确！从现在起……你们已不复存在……祝你们好运。通话结束。"</Chinese>
-            <Portuguese>"Tudo claro! A partir de agora... Vocês já não existem... Boa sorte. Terminado."</Portuguese>
-            <Czech>"Vše je jasné! Od této chvíle... Už neexistujete... Hodně štěstí. Konec."</Czech>
+            <Original>"Vous n'avez aucun soutien au sol et aucune existence officielle. Neutralisez les menaces et effacez vos traces. Overlord, terminé."</Original>
+            <French>"Vous n'avez aucun soutien au sol et aucune existence officielle. Neutralisez les menaces et effacez vos traces. Overlord, terminé."</French>
+            <English>"No ground support, zero official existence. Neutralize hostile assets and leave no trace. Overlord, out."</English>
+            <Spanish>"No tienen apoyo terrestre y ninguna existencia oficial. Neutralicen las amenazas y borren sus huellas. Overlord, corto."</Spanish>
+            <Italian>"Non avete alcun supporto a terra e nessuna esistenza ufficiale. Neutralizzate le minacce e cancellate ogni traccia. Overlord, chiudo."</Italian>
+            <German>"Keine Bodenunterstützung, keinerlei offizielle Existenz. Neutralisieren Sie Bedrohungen und verwischen Sie alle Spuren. Overlord, Ende."</German>
+            <Polish>"Brak wsparcia naziemnego, brak oficjalnego istnienia. Zneutralizujcie zagrożenia i zetrzyjcie za sobą ślady. Overlord, bez odbioru."</Polish>
+            <Russian>"Никакой наземной поддержки и никакого официального присутствия. Нейтрализуйте угрозы и сотрите все следы. Overlord, конец связи."</Russian>
+            <Turkish>"Kara desteği yok, resmi bir varlığınız yok. Tehditleri etkisiz hale getirin ve izinizi silin. Overlord, tamam."</Turkish>
+            <Japanese>"地上支援なし、公式な存在記録なし。脅威を無力化し、すべての痕跡を消去せよ。Overlord、通信終了。"</Japanese>
+            <Korean>"지상 지원 없음, 공식적 존재 없음. 위협을 무력화하고 모든 흔적을 지워라. Overlord, 이상."</Korean>
+            <Chinese>"无地面支援，无官方身份。肃清敌对威胁并抹除一切痕迹。Overlord，通话结束。"</Chinese>
+            <Portuguese>"Sem apoio terrestre e sem existência oficial. Neutralizem as ameaças e apaguem todos os rastos. Overlord, terminado."</Portuguese>
+            <Czech>"Žádná pozemní podpora, nulová oficiální existence. Neutralizujte hrozby a zameťte všechny stopy. Overlord, konec."</Czech>
         </Key>
         <Key ID="STR_LL_StartArsenal_Marker">
             <Original>PREPARATION (Arsenal)</Original>

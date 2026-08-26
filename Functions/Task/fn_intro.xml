@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_TUE_Intro_Sender">
-        <Original>QG</Original>
-        <French>QG</French>
-        <English>HQ</English>
-        <Spanish>CG</Spanish>
-        <Italian>QG</Italian>
-        <German>HQ</German>
-        <Polish>HQ</Polish>
-        <Russian>ШТАБ</Russian>
-        <Turkish>KK</Turkish>
-        <Japanese>司令部</Japanese>
-        <Korean>지휘부</Korean>
-        <Chinese>指挥部</Chinese>
-        <Portuguese>QG</Portuguese>
-        <Czech>HQ</Czech>
+        <Original>OVERLORD</Original>
+        <French>OVERLORD</French>
+        <English>OVERLORD</English>
+        <Spanish>OVERLORD</Spanish>
+        <Italian>OVERLORD</Italian>
+        <German>OVERLORD</German>
+        <Polish>OVERLORD</Polish>
+        <Russian>OVERLORD</Russian>
+        <Turkish>OVERLORD</Turkish>
+        <Japanese>OVERLORD</Japanese>
+        <Korean>OVERLORD</Korean>
+        <Chinese>OVERLORD</Chinese>
+        <Portuguese>OVERLORD</Portuguese>
+        <Czech>OVERLORD</Czech>
     </Key>
     <Key ID="STR_TUE_Intro_Title_1">
         <Original>GHOSTS</Original>
@@ -49,51 +49,51 @@
         <Czech>DOBROVOLNICKÁ ELITNÍ JEDNOTKA</Czech>
     </Key>
     <Key ID="STR_TUE_Intro_Plan2_Radio">
-        <Original>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</Original>
-        <French>"Écoutez bien, je vous le répète une dernière fois : Un drone est déjà en place pour localiser les cibles. Compris ?"</French>
-        <English>"Listen carefully, I repeat this one last time: A drone is already in place to locate targets. Understood?"</English>
-        <Spanish>"Escuchen bien, se lo repito por última vez: Un dron ya está en posición para localizar los objetivos. ¿Entendido?"</Spanish>
-        <Italian>"Ascoltate bene, ve lo ripeto per l'ultima volta: Un drone è già sul posto per localizzare i bersagli. Ricevuto?"</Italian>
-        <German>"Hören Sie gut zu, ich wiederhole es ein letztes Mal: Eine Drohne ist bereits vor Ort, um die Ziele zu lokalisieren. Verstanden?"</German>
-        <Polish>"Słuchajcie uważnie, powtarzam po raz ostatni: Dron jest już na miejscu, by zlokalizować cele. Zrozumiano?"</Polish>
-        <Russian>"Слушайте внимательно, повторяю последний раз: Беспилотник уже на месте для обнаружения целей. Понятно?"</Russian>
-        <Turkish>"İyi dinleyin, son kez tekrar ediyorum: Hedefleri tespit etmek için bir İHA zaten bölgede. Anlaşıldı mı?"</Turkish>
-        <Japanese>"よく聞け、最後にもう一度言う：目標を特定するためドローンがすでに配置されている。了解したか？"</Japanese>
-        <Korean>"잘 들어라, 마지막으로 반복한다: 목표를 탐색하기 위해 드론이 이미 배치되어 있다. 알겠나?"</Korean>
-        <Chinese>"仔细听好，我最后重复一次：无人机已就位以锁定目标。明白了吗？"</Chinese>
-        <Portuguese>"Ouçam com atenção, repito pela última vez: Um drone já está na área para localizar os alvos. Entendido?"</Portuguese>
-        <Czech>"Poslouchejte pozorně, opakuji to naposledy: Dron je již na místě k lokalizaci cílů. Rozumíte?"</Czech>
+        <Original>"Ghosts, vecteur d'insertion confirmé. Le flux de données satellite et la télémétrie du drone Darter sont synchronisés sur vos terminaux tactiques."</Original>
+        <French>"Ghosts, vecteur d'insertion confirmé. Le flux de données satellite et la télémétrie du drone Darter sont synchronisés sur vos terminaux tactiques."</French>
+        <English>"Ghosts, insertion vector confirmed. Satellite datalink and Darter UAV telemetry are synchronized on your tactical HUD."</English>
+        <Spanish>"Ghosts, vector de inserción confirmado. El enlace de satélite y la telemetría del dron Darter están sincronizados en sus terminales tácticos."</Spanish>
+        <Italian>"Ghosts, vettore di inserimento confermato. Il flusso dati satellitare e la telemetria del drone Darter sono sincronizzati sui vostri terminali tattici."</Italian>
+        <German>"Ghosts, Insertionsvektor bestätigt. Satelliten-Datenverbindung und Darter-UAV-Telemetrie sind auf Ihren taktischen Terminals synchronisiert."</German>
+        <Polish>"Ghosts, wektor infiltracji potwierdzony. Łącze satelitarne i telemetria drona Darter są zsynchronizowane na waszych terminalach taktycznych."</Polish>
+        <Russian>"Ghosts, вектор высадки подтвержден. Спутниковый канал данных и телеметрия БПЛА Darter синхронизированы с вашими тактическими терминалами."</Russian>
+        <Turkish>"Ghosts, intikal vektörü onaylandı. Uydu veri bağlantısı ve Darter İHA telemetrisi taktik terminallerinizle senkronize edildi."</Turkish>
+        <Japanese>"Ghosts、潜入進路を確認。衛星データリンクとDarterドローンのテレメトリが戦術端末に同期された。"</Japanese>
+        <Korean>"Ghosts, 침투 경로 확인. 위성 데이터링크와 Darter UAV 텔레메트리가 전술 단말기에 동기화되었다."</Korean>
+        <Chinese>"Ghosts，渗透航向已确认。卫星数据链与Darter无人机遥测数据已同步至战术终端。"</Chinese>
+        <Portuguese>"Ghosts, vetor de inserção confirmado. O link de dados de satélite e a telemetria do drone Darter estão sincronizados nos vossos terminais táticos."</Portuguese>
+        <Czech>"Ghosts, vektor infiltrace potvrzen. Satelitní datové spojení a telemetrie dronu Darter jsou synchronizovány na vašich taktických terminálech."</Czech>
     </Key>
     <Key ID="STR_TUE_Intro_Plan4_Radio">
-        <Original>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</Original>
-        <French>"Caisse de dotation disponible : Vous pouvez sélectionner votre équipement et choisir vos armes avant de vous lancer."</French>
-        <English>"Supply crate available: You can select your equipment and choose your weapons before heading out."</English>
-        <Spanish>"Caja de suministros disponible: Pueden seleccionar su equipo y elegir sus armas antes de lanzarse a la misión."</Spanish>
-        <Italian>"Cassa rifornimenti disponibile: Potete selezionare il vostro equipaggiamento e scegliere le vostre armi prima di iniziare."</Italian>
-        <German>"Ausrüstungskiste verfügbar: Sie können Ihre Ausrüstung wählen und Ihre Waffen aussuchen, bevor Sie loslegen."</German>
-        <Polish>"Skrzynia z zaopatrzeniem dostępna: Możecie wybrać swój ekwipunek i dobrać broń przed wyruszeniem do akcji."</Polish>
-        <Russian>"Ящик со снаряжением доступен: Вы можете выбрать экипировку и оружие перед выходом на задание."</Russian>
-        <Turkish>"İkmal sandığı mevcut: Harekete geçmeden önce teçhizatınızı ve silahlarınızı seçebilirsiniz."</Turkish>
-        <Japanese>"補給コンテナが利用可能です。作戦開始前に装備を選択し、武器を整えてください。"</Japanese>
-        <Korean>"보급 상자 사용 가능: 작전 개시 전에 장비를 선택하고 무기를 고를 수 있습니다."</Korean>
-        <Chinese>"补给箱可用：出发前你们可以选择装备并挑选武器。"</Chinese>
-        <Portuguese>"Caixa de suprimentos disponível: Podem selecionar o vosso equipamento e escolher as vossas armas antes de avançar."</Portuguese>
-        <Czech>"Zásobovací bedna je k dispozici: Před zahájením akce si můžete vybrat výstroj a zbraně."</Czech>
+        <Original>"Point de ravitaillement sécurisé sur la dropzone. Équipez vos armes silencieuses et préparez vos désignateurs avant d'engager."</Original>
+        <French>"Point de ravitaillement sécurisé sur la dropzone. Équipez vos armes silencieuses et préparez vos désignateurs avant d'engager."</French>
+        <English>"Supply depot secured at the dropzone. Fit your suppressed weapons and designators prior to contact."</English>
+        <Spanish>"Punto de reabastecimiento asegurado en la dropzone. Equípen sus armas silenciadas y preparen sus designadores antes de contactar."</Spanish>
+        <Italian>"Punto di rifornimento messo in sicurezza sulla dropzone. Equipaggiate le vostre armi silenziate e preparate i designatori prima del contatto."</Italian>
+        <German>"Versorgungspunkt an der Dropzone gesichert. Rüsten Sie schallgedämpfte Waffen aus und bereiten Sie Zielmarkierer vor dem Gefecht vor."</German>
+        <Polish>"Punkt zaopatrzeniowy zabezpieczony w strefie zrzutu. Wyposażcie broń wytłumioną i przygotujcie wskaźniki laserowe przed kontaktem."</Polish>
+        <Russian>"Точка снабжения развернута в зоне высадки. Снарядите глушители и подготовьте целеуказатели до вступления в бой."</Russian>
+        <Turkish>"İndirme bölgesinde ikmal noktası güvene alındı. Temasa geçmeden önce susturuculu silahlarınızı takın ve işaretleyicilerinizi hazırlayın."</Turkish>
+        <Japanese>"降下地点の補給ポイントを確保。接触前に消音火器を装備し、照準指定装置を準備せよ。"</Japanese>
+        <Korean>"강하 구역에 보급 거점 확보 완료. 접적 전에 소음 무기를 장착하고 표적지시기를 준비하라."</Korean>
+        <Chinese>"空投区补给点已部署。在交火前配齐消音武器并校准激光指示器。"</Chinese>
+        <Portuguese>"Ponto de reabastecimento seguro na dropzone. Equipem as vossas armas silenciadas e preparem os designadores antes do contacto."</Portuguese>
+        <Czech>"Zásobovací bod v zóně výsadku je zajištěn. Před kontaktem nasaďte tlumiče a připravte označovače cílů."</Czech>
     </Key>
     <Key ID="STR_TUE_Intro_Plan5_Radio">
-        <Original>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</Original>
-        <French>"Tout est clair ! À partir de maintenant... Vous n'existez plus... Bonne chance. Terminé."</French>
-        <English>"Everything is clear! From now on... You no longer exist... Good luck. Out."</English>
-        <Spanish>"¡Todo está claro! A partir de ahora... Ya no existen... Buena suerte. Corto."</Spanish>
-        <Italian>"Tutto chiaro! Da questo momento in poi... Non esistete più... Buona fortuna. Chiudo."</Italian>
-        <German>"Alles klar! Von nun an... Existieren Sie nicht mehr... Viel Glück. Ende."</German>
-        <Polish>"Wszystko jasne! Od tej chwili... Nie istniejecie... Powodzenia. Bez odbioru."</Polish>
-        <Russian>"Все предельно ясно! С этой минуты... Вас больше не существует... Удачи. Конец связи."</Russian>
-        <Turkish>"Her şey net! Şu andan itibaren... Artık yoksunuz... İyi şanslar. Tamam."</Turkish>
-        <Japanese>"すべて明確だな！ これ以降… 貴様らは存在しない。健闘を祈る。通信終了。"</Japanese>
-        <Korean>"모든 것이 확실하다! 지금부터... 너희는 존재하지 않는다... 행운을 빈다. 이상."</Korean>
-        <Chinese>"一切明确！从现在起……你们已不复存在……祝你们好运。通话结束。"</Chinese>
-        <Portuguese>"Tudo claro! A partir de agora... Vocês já não existem... Boa sorte. Terminado."</Portuguese>
-        <Czech>"Vše je jasné! Od této chvíle... Už neexistujete... Hodně štěstí. Konec."</Czech>
+        <Original>"Vous n'avez aucun soutien au sol et aucune existence officielle. Neutralisez les menaces et effacez vos traces. Overlord, terminé."</Original>
+        <French>"Vous n'avez aucun soutien au sol et aucune existence officielle. Neutralisez les menaces et effacez vos traces. Overlord, terminé."</French>
+        <English>"No ground support, zero official existence. Neutralize hostile assets and leave no trace. Overlord, out."</English>
+        <Spanish>"No tienen apoyo terrestre y ninguna existencia oficial. Neutralicen las amenazas y borren sus huellas. Overlord, corto."</Spanish>
+        <Italian>"Non avete alcun supporto a terra e nessuna esistenza ufficiale. Neutralizzate le minacce e cancellate ogni traccia. Overlord, chiudo."</Italian>
+        <German>"Keine Bodenunterstützung, keinerlei offizielle Existenz. Neutralisieren Sie Bedrohungen und verwischen Sie alle Spuren. Overlord, Ende."</German>
+        <Polish>"Brak wsparcia naziemnego, brak oficjalnego istnienia. Zneutralizujcie zagrożenia i zetrzyjcie za sobą ślady. Overlord, bez odbioru."</Polish>
+        <Russian>"Никакой наземной поддержки и никакого официального присутствия. Нейтрализуйте угрозы и сотрите все следы. Overlord, конец связи."</Russian>
+        <Turkish>"Kara desteği yok, resmi bir varlığınız yok. Tehditleri etkisiz hale getirin ve izinizi silin. Overlord, tamam."</Turkish>
+        <Japanese>"地上支援なし、公式な存在記録なし。脅威を無力化し、すべての痕跡を消去せよ。Overlord、通信終了。"</Japanese>
+        <Korean>"지상 지원 없음, 공식적 존재 없음. 위협을 무력화하고 모든 흔적을 지워라. Overlord, 이상."</Korean>
+        <Chinese>"无地面支援，无官方身份。肃清敌对威胁并抹除一切痕迹。Overlord，通话结束。"</Chinese>
+        <Portuguese>"Sem apoio terrestre e sem existência oficial. Neutralizem as ameaças e apaguem todos os rastos. Overlord, terminado."</Portuguese>
+        <Czech>"Žádná pozemní podpora, nulová oficiální existence. Neutralizujte hrozby a zameťte všechny stopy. Overlord, konec."</Czech>
     </Key>
 </Keys>

@@ -10,24 +10,23 @@ Ce document recense l'intégralité des éléments techniques, visuels, textuels
 | :--- | :---: | :--- |
 | **Logique Serveur & SP/COOP** | ✅ 100% | Rotation active des 7 missions opérationnelles (Task 00 à Task 06). |
 | **Modules CfgFunctions** | ✅ 100% | Nettoyé et aligné sur les fichiers existants (aucun résidu de tâche annulée). |
-| **Métadonnées & Menus (`description.ext`)** | ⚠️ 60% | Ajouter les balises d'aperçu (`overviewPicture`, `overviewText`, `loadScreen`). |
-| **Assets Graphiques (UI & Workshop)** | ❌ 20% | Créer la vignette Workshop, l'écran de chargement et les captures d'écran promotionnelles. |
-| **Localisation & Textes (`stringtable.xml`)** | ✅ 95% | Exécuter `compile_stringtable.py` pour valider la synchronisation multi-langues. |
-| **Page Steam Workshop (BBCode / Présentation)** | ⚠️ 50% | Rédiger la mise en page finale en BBCode Steam avec la modlist exacte et les crédits. |
-| **Validation & Packaging PBO** | ⏳ 0% | Tests QA finaux (Solo + Multi/JIP) et export via l'Éditeur 3DEN ou Arma 3 Tools. |
+| **Métadonnées & Menus (`description.ext`)** | ✅ 100% | Configuré (`overviewText`, `overviewPicture`, `disabledAI = 1`, `saving = 0`). |
+| **Asset Graphique Workshop (`preview.jpg`)** | ✅ 100% | Vignette emblématique carrée créée (512x512) et liée à `overviewPicture`. |
+| **Localisation & Textes (`stringtable.xml`)** | ✅ 100% | Compilé et synchronisé en multi-langues via `compile_stringtable.py`. |
+| **Page Steam Workshop (BBCode / Présentation)** | ✅ 100% | Modèle BBCode rédigé et prêt à l'emploi avec la modlist exacte et les crédits. |
+| **Validation & Packaging PBO** | ⏳ Prêt | Exportation du `.pbo` via l'Éditeur 3DEN ou Arma 3 Tools. |
 
 ---
 
-## 🛠️ 1. CONFIGURATION TECHNIQUE & MÉTADONNÉES (`description.ext`)
+## 🛠️ 1. CONFIGURATION TECHNIQUE & PORTABILITÉ MULTI-CARTES (`description.ext`)
 
-Pour qu'un scénario apparaisse proprement dans le menu des missions d'Arma 3 et sur le Workshop, `description.ext` doit être complété :
+Pour assurer une compatibilité immédiate avec toutes les cartes d'Arma 3 (Enoch/Livonia, Altis, Tanoa, Chernarus, etc.) sans créer de visuels hors-sujet :
 
-### Éléments à ajouter dans `description.ext` :
-- **`overviewPicture`** : Image au format `.paa` ou `.jpg` (1024x512 / ratio 2:1) affichée dans la liste des scénarios solo/multi.
-- **`overviewText`** : Description courte et percutante affichée avant de lancer la partie.
-- **`loadScreen`** : Image plein écran (1920x1080 / ratio 16:9) affichée pendant le chargement.
-- **`disabledAI = 1;`** : Empêche les slots multijoueur non occupés de spawner en IA statiques non contrôlées (la gestion d'escouade restant assurée par le script).
+### Paramètres recommandés dans `description.ext` :
+- **`overviewText`** : Description courte et universelle affichée dans la liste des scénarios.
+- **`disabledAI = 1;`** : Empêche les slots multijoueur non occupés de spawner en IA statiques (la gestion de l'escouade restant assurée par les scripts).
 - **`saving = 0;`** : Désactive la sauvegarde automatique SP pour éviter toute corruption des scripts asynchrones.
+- **Écrans de chargement & Aperçus** : Laissés par défaut au moteur du jeu, ce qui permet à Arma 3 d'afficher automatiquement les superbes arrière-plans officiels de la carte sélectionnée.
 
 ---
 
@@ -52,73 +51,69 @@ Avant tout packaging, exécuter impérativement dans l'ordre :
 
 ---
 
-## 🎨 3. ASSETS VISUELS & MARKETING WORKSHOP
+## 🎨 3. ASSET VISUEL WORKSHOP (UNIQUE & UNIVERSEL)
 
-Pour maximiser l'impact visuel et le taux de téléchargement sur le Steam Workshop :
+Pour assurer une publication rapide et une compatibilité multi-cartes totale :
 
-1. **Vignette Principale Workshop (Icon/Cover)** :
+1. **Vignette Principale Workshop (`preview.jpg`)** :
    - *Format* : Carré `512x512` px (JPG ou PNG < 2 Mo).
-   - *Visuel* : Logo "GHOSTS 2035", sniper camouflé avec optique thermique, ambiance sombre/nocturne d'Enoch/Livonia avec le drone Darter en surimpression.
-2. **Écran de Chargement In-Game (`loadScreen.paa` / `.jpg`)** :
-   - *Format* : `1920x1080` ou `2048x1024` px.
-3. **Galerie de Captures d'Écran Steam (5 à 8 images clés)** :
-   - *Capture 1* : Insertion cinématique en Ghost Hawk (vue travelling & cockpit NVG).
-   - *Capture 2* : Overwatch sniper avec spotter et désignation laser/drone Darter.
-   - *Capture 3* : Infiltration silencieuse dans les forêts denses d'Enoch sous la pluie.
-   - *Capture 4* : Intervention sur camion chimique (nuage de gaz toxique).
-   - *Capture 5* : Pose de charge C4 sur relais de communication.
-   - *Capture 6* : Évacuation d'urgence sous le feu d'un hélicoptère lourd.
+   - *Design Recommandé (Universel)* : Logo "GHOSTS 2035", fond tactique sombre (vision nocturne, carte topographique ou réticule balistique), silhouette d'un sniper et du drone Darter.
+   - *Avantage* : Ce visuel sert de signature officielle et s'adapte sans modification à n'importe quelle carte (Enoch, Altis, Tanoa, etc.).
+2. **Écrans In-Game (Chargement & Menus)** :
+   - Laissés aux visuels par défaut du moteur Arma 3 pour afficher automatiquement les arrière-plans officiels de la carte jouée sans aucun risque de hors-sujet.
 
 ---
 
-## 📝 4. FICHE STEAM WORKSHOP (MODÈLE BBCODE PRÊT À L'EMPLOI)
+## 📝 4. FICHE STEAM WORKSHOP (MODÈLE BBCODE PRÊT À L'EMPLOI - EN)
 
-Voici la structure optimisée à copier-coller dans la description Steam Workshop :
+Voici la structure optimisée en **Anglais** (recommandé pour le Steam Workshop international) à copier-coller dans la description Steam :
 
 ```bbcode
-[h1]🦅 GHOSTS 2035 — UNITE DE SNIPERS D'ELITE [SP / COOP 1-4][/h1]
+[h1]🦅 GHOSTS 2035 — ELITE SNIPER OPERATING CELL [SP / COOP 1-4][/h1]
 
-[b]GHOSTS 2035[/b] est une mission tactique d'opérations spéciales nouvelle génération, conçue pour être jouée en [b]Solo[/b] ou en [b]Coopératif (1 à 4 joueurs)[/b]. Infiltrez les forêts denses et hostiles d'Enoch aux commandes d'une micro-cellule de tireurs d'élite hautement qualifiés.
+[b]GHOSTS 2035[/b] is a next-generation tactical special operations scenario, designed for [b]Singleplayer[/b] and [b]Cooperative play (1 to 4 players)[/b]. Infiltrate deep behind enemy lines commanding a specialized elite sniper micro-cell.
 
 [hr][/hr]
 
-[h2]⚡ CARACTÉRISTIQUES PRINCIPALES[/h2]
+[h2]⚡ KEY FEATURES[/h2]
 
 [list]
-[*] [b]Génération Dynamique Universelle[/b] : Rotation automatisée de 7+ scénarios chirurgicaux à haute tension (Sauvetage d'otage, Traque d'état-major, Sabotage de relais radio, Neutralisation de charges explosives, Interception de convoi chimique avec risques toxiques, Capture d'HVT).
-[*] [b]Synergie Drone ISR & Sniper[/b] : Soutien aérien dynamique via le drone autonome Darter allié (couverture radar temps réel et désignation).
-[*] [b]Immersion Totale & Silencieuse[/b] : Zéro spam d'interface, zéro hint intrusif. Dialogues radio immersifs, cinématique d'insertion 4 plans avec passage fluide en vue 1ère personne et vision nocturne adaptative.
-[*] [b]Météo & Ambiance Vivante[/b] : Cycle météo dynamique réaliste à chaînes de Markov (aube brumeuse, après-midi orageux, opérations nocturnes sous JVN).
-[*] [b]Système Médical & Revive Natif[/b] : Réanimation d'urgence par n'importe quel coéquipier et continuité absolue du commandement d'escouade.
-[*] [b]Exfiltration & Contre-Attaque Agressive[/b] : Extraction lourde par hélicoptère d'assaut avec appui-feu de sabord sur zone d'atterrissage chaude.
+[*] [b]Universal Dynamic Generation[/b]: Automated rotation of 7 surgical high-stakes operations (Hostage Rescue, Staff HVT Hunt, Radio Relay Sabotage, Explosive Charge Disarming, Chemical Tanker Interception with progressive toxic hazards, High-Value Target Extraction & Surrender).
+[*] [b]ISR Drone & Sniper Synergy[/b]: Dynamic aerial support via an autonomous allied Darter drone (real-time tactical radar coverage and target designation).
+[*] [b]Total & Clean Immersion[/b]: Zero interface clutter, zero intrusive pop-up hints. Pure tactical military gameplay.
+[*] [b]Dynamic Weather & Living Atmosphere[/b]: Randomized starting time and weather with a realistic dynamic weather cycle (misty dawn, stormy afternoons, overcast fronts, pitch-black night ops).
+[*] [b]Native Medical & Squad Continuity[/b]: Emergency revive system usable by any teammate with seamless squad leadership failover.
+[*] [b]Heavy Close Air Support & Hot Extraction[/b]: Assault helicopter exfiltration featuring automated door-gunner suppression fire on hot landing zones.
+[*] [b]ACE3 Compatibility[/b]: Fully compatible with [b]ACE3[/b] advanced ballistics, environmental physics, and medical framework.
 [/list]
 
 [hr][/hr]
 
-[h2]📦 MODS REQUIS & DÉPENDANCES[/h2]
+[h2]📦 REQUIRED MODS & DEPENDENCIES[/h2]
 
-[b]Obligatoires :[/b]
+[b]Required :[/b]
 [list]
-[*] [b]Arma 3 Contact[/b] (DLC / Map Enoch)
+[*] [b]Arma 3 Contact[/b] (DLC / Map Enoch / Livonia)
 [*] [b]CBA_A3[/b] (Community Base Addons)
-[*] [b]VSM - All-In-One Collection[/b] (Équipements, tenues et vestes tactiques)
-[*] [b]NIArms / HLC Weapons[/b] (Pack d'armement moderne)
+[*] [b]VSM - All-In-One Collection[/b] (Tactical uniforms, vests, and gear)
+[*] [b]NIArms / HLC Weapons[/b] (Modern precision weapons & rifles)
 [/list]
 
-[b]Optionnels (Fortement recommandés pour une immersion audio maximale) :[/b]
+[b]Optional & Supported (Highly Recommended) :[/b]
 [list]
-[*] [b]UVO (Unit Voice-Overs)[/b] & [b]UVO Expanded[/b] (Voix dynamiques immersives US/UK/FR pour BLUFOR et 100% Russe pour OPFOR).
+[*] [b]ACE3[/b] (Advanced ballistics, wind deflection, advanced medical & interaction).
+[*] [b]UVO (Unit Voice-Overs)[/b] & [b]UVO Expanded[/b] (Dynamic combat chatter in US/UK/FR for BLUFOR and 100% Russian for OPFOR).
 [/list]
 
 [hr][/hr]
 
-[h2]🎮 GUIDE DE LANCEMENT[/h2]
+[h2]🎮 HOW TO PLAY[/h2]
 
-[b]En Solo :[/b]
-Menu Principal ➔ Scénarios ➔ Sélectionner "GHOSTS 2035".
+[b]Singleplayer :[/b]
+Main Menu ➔ Scenarios ➔ Select "GHOSTS 2035".
 
-[b]En Multijoueur / Serveur Dédié :[/b]
-Menu Multijoueur ➔ Héberger / Serveur ➔ Carte "Livonia / Enoch" ➔ Sélectionner "GHOSTS 2035".
+[b]Multiplayer / Dedicated Server :[/b]
+Multiplayer Menu ➔ Host Server / Dedicated Server ➔ Select Map ➔ Select "GHOSTS 2035".
 [/bbcode]
 ```
 
@@ -132,8 +127,8 @@ Avant de publier le fichier `.pbo`, tester les points suivants :
 - [ ] **Arsenal Initial** : Caisse d'arsenal bien accessible au sol, drone Darter correctement initialisé.
 - [ ] **Lancement de Tâche** : Vérifier que les objectifs spawnent à $\ge 400\text{ m}$ des joueurs, sans collision d'objets (`Z + 0.2`).
 - [ ] **Task 04 (Convoi Chimique)** : Vérifier que les dégâts sur la citerne déclenchent la fuite progressive et que l'hélicoptère effectue correctement l'élingage / repli.
-- [ ] **Extraction Finale** : Vérifier que l'hélicoptère atterrit sur la LZ la plus proche, embarque les joueurs (et otages/HVT) et valide la fin victorieuse `End1`.
-- [ ] **Multijoueur / JIP** : Tester la connexion d'un joueur en cours de partie (vérifier qu'il reçoit l'arsenal, les tâches et les marqueurs carte).
+- [ ] **Task 06 (Capture d'HVT)** : Vérifier que le HVT suit fluidement le joueur sans se bloquer et monte dans l'hélicoptère.
+- [ ] **Extraction Finale** : Vérifier que l'hélicoptère effectue l'appui aérien, atterrit, embarque l'escouade et valide la fin de mission.
 
 ---
 
@@ -144,27 +139,17 @@ Avant de publier le fichier `.pbo`, tester les points suivants :
 3. Pour la publication Workshop :
    - Menu **Scénario** ➔ **Publier sur Steam Workshop**.
    - Renseigner le titre : `GHOSTS 2035 [SP/COOP]`.
-   - Sélectionner la vignette `512x512` créée.
+   - Sélectionner votre vignette `preview.jpg` (`512x512` px).
    - Coller la description rédigée ci-dessus.
    - Taguer : `Scenario`, `Coop`, `Singleplayer`, `Modded`.
-   - Mettre la visibilité en **Non listé (Unlisted)** ou **Amis uniquement** pour un test initial sur Steam, puis passer en **Public**.
+   - Mettre la visibilité en **Non listé (Unlisted)** ou **Amis uniquement** pour un test initial, puis passer en **Public**.
 
 ---
 
-## 🖼️ 7. RÉPERTOIRE DÉTAILLÉ DES ASSETS IMAGES REQUIS
+## 🖼️ 7. FICHE UNIQUE DU VISUEL REQUIS
 
-Pour garantir une finition professionnelle en jeu et une attractivité maximale sur le Steam Workshop, voici la liste exhaustive des visuels à produire :
-
-| Fichier Recommandé | Emplacement | Format & Dimensions | Rôle & Affichage | Ce que l'image doit montrer précisément |
+| Fichier Requis | Emplacement | Format & Dimensions | Rôle & Usage | Ce que l'image doit montrer |
 | :--- | :--- | :--- | :--- | :--- |
-| **`preview.jpg`** | Racine du projet / 3DEN | **JPG / PNG**<br>`512x512` px<br>(Ratio 1:1, < 2 Mo) | **Vignette Steam Workshop** (Couverture principale de la page) | • Logo percutant **"GHOSTS 2035"** avec sous-titre **"[SP/COOP 1-4]"**.<br>• Gros plan sur un sniper d'élite équipé d'un casque moderne, lunettes balistiques ou NVG relevées.<br>• Ambiance sombre/tactique aux teintes vert olive et anthracite avec réticule balistique et silhouette du drone Darter. |
-| **`overview.paa`** *(ou `.jpg`)* | Racine du projet<br>`description.ext` | **PAA / JPG**<br>`1024x512` px<br>(Ratio 2:1, puissance de 2) | **Aperçu Menu du Jeu** (Menu Scénarios Solo & Liste des serveurs Multijoueur) | • Binôme tactique (Sniper en ghillie / tenue VSM + Spotter) en lisière de forêt observant la plaine.<br>• Hélicoptère Ghost Hawk allié survolant la zone à basse altitude.<br>• Typographie discrète et élégante *"GHOSTS 2035 - ENOCH"*. |
-| **`loadScreen.paa`** *(ou `.jpg`)* | Racine du projet<br>`description.ext` | **PAA / JPG**<br>`1920x1080` ou `2048x1024` px<br>(Ratio 16:9 ou 2:1) | **Écran de Chargement In-Game** (Affiché en plein écran avant d'entrer dans la mission) | • Vue panoramique cinématographique d'une nuit d'orage sur la région de Livonia/Enoch.<br>• Opérateur Ghost vu de dos observant une base ennemie à travers des jumelles télémétriques.<br>• Éclair lointain illuminant la silhouette du drone Darter en vol stationnaire. |
-| **`screenshot_01_insertion.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 1 : Infiltration) | • L'hélicoptère allié (MH-80 Ghost Hawk) en vol rasant au-dessus des cimes des pins sous une brume matinale dense. |
-| **`screenshot_02_cockpit_nvg.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 2 : Immersion) | • Vue première personne depuis la cabine intérieure de l'hélico en vol nocturne avec vision nocturne (NVG) active et coéquipiers assis. |
-| **`screenshot_03_sniper_drone.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 3 : Renseignement) | • Tireur d'élite en position d'overwatch dominant un complexe ennemi, avec le drone Darter en surimpression radar. |
-| **`screenshot_04_chemical_hazard.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 4 : Convoi Chimique) | • Intervention tactique autour du camion-citerne (Task 04) avec dégagement volumétrique du nuage de gaz toxique jaune-vert. |
-| **`screenshot_05_c4_sabotage.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 5 : Sabotage) | • Opérateur en posture accroupie posant une charge de démolition C4 sur un terminal de transmission ou désamorçant un IED. |
-| **`screenshot_06_hostage_rescue.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 6 : Action Directe) | • Assaut d'un bâtiment en milieu hostile, neutralisation des gardes et sécurisation de l'otage allié (Task 00). |
-| **`screenshot_07_hot_extraction.jpg`** | Galerie Steam Workshop | **JPG**<br>`1920x1080` px (16:9) | Galerie promotionnelle (Image 7 : Exfiltration) | • Zone d'atterrissage chaude : mitrailleurs de sabord ouvrant le feu pour couvrir la montée à bord des opérateurs sous la pression ennemie. |
+| **`preview.jpg`** | Racine du projet / Sélection 3DEN | **JPG / PNG**<br>`512x512` px<br>(Ratio 1:1, < 2 Mo) | **Vignette Steam Workshop** (Couverture principale de la vitrine) | • Logo **"GHOSTS 2035"** avec sous-titre **"[SP/COOP 1-4]"**.<br>• Gros plan ou silhouette sur un sniper d'élite (casque moderne, lunettes/NVG).<br>• Fond sombre universel (teintes vert olive / anthracite, réticule balistique et silhouette du drone Darter).<br>• *Sans décor spécifique pour pouvoir être réutilisé sur n'importe quelle carte.* |
+
 

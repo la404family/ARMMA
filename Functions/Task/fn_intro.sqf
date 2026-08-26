@@ -138,14 +138,14 @@ if (hasInterface) then {
         private _skipped = { missionNamespace getVariable ["MISSION_intro_skip", false] };
 
         private _fnShowRadio = {
-            params [["_sender", ""], ["_text", ""], ["_duration", 6.5], ["_fadeIn", 0.4]];
+            params [["_sender", ""], ["_text", ""], ["_duration", 6.5], ["_fadeIn", 0.3]];
             if (call _skipped) exitWith {};
 
             private _content = if (_sender != "") then {
                 format [
                     "<t font='PuristaMedium' shadow='2' align='left'>" +
-                    "<t bgcolor='#0a0e16e6' color='#E5B729' font='PuristaBold' size='0.80'> ▌ %1 </t><br/>" +
-                    "<t bgcolor='#0a0e16cc' color='#e2e8f0' size='0.75'> %2 </t>" +
+                    "<t bgcolor='#0a0e16e6' color='#E5B729' font='PuristaBold' size='0.85'> ▌ %1 </t><br/>" +
+                    "<t bgcolor='#0a0e16d9' color='#f1f5f9' size='0.78'> %2 </t>" +
                     "</t>",
                     _sender,
                     _text
@@ -153,14 +153,14 @@ if (hasInterface) then {
             } else {
                 format [
                     "<t font='PuristaMedium' shadow='2' align='left'>" +
-                    "<t bgcolor='#0a0e16cc' color='#e2e8f0' size='0.75'> %1 </t>" +
+                    "<t bgcolor='#0a0e16d9' color='#f1f5f9' size='0.78'> %1 </t>" +
                     "</t>",
                     _text
                 ]
             };
 
             private _xPos = safeZoneX + (safeZoneW * 0.05);
-            private _yPos = safeZoneY + (safeZoneH * 0.76);
+            private _yPos = safeZoneY + (safeZoneH * 0.68);
 
             [_content, _xPos, _yPos, _duration, _fadeIn, 0, 794] spawn BIS_fnc_dynamicText;
         };
@@ -236,10 +236,9 @@ if (hasInterface) then {
 
             sleep 5.5;
 
-            if (vehicle player != player && !(call _skipped)) then {
-                cutText ["", "BLACK FADED", 0.4];
-                sleep 0.4;
-                cutText ["", "BLACK IN", 0.8];
+            if !(call _skipped) then {
+                cutText ["", "BLACK FADED", 0.3];
+                sleep 0.3;
 
                 _ppColor ppEffectAdjust [1, 1.0, -0.05, [0.15, 0.15, 0.2, 0.0], [0.85, 0.85, 0.9, 0.65], [0.1, 0.1, 0.15, 0]];
                 _ppColor ppEffectCommit 1;
@@ -266,15 +265,17 @@ if (hasInterface) then {
                 _cam camSetTarget _heli;
                 _cam camCommit 10;
 
-                [localize "STR_TUE_Intro_Sender", localize "STR_TUE_Intro_Plan2_Radio", 7.5, 0.4] call _fnShowRadio;
+                cutText ["", "BLACK IN", 0.6];
+                sleep 0.6;
 
-                [8, true] call _fnWaitPhase;
+                [localize "STR_TUE_Intro_Sender", localize "STR_TUE_Intro_Plan2_Radio", 7.0, 0.3] call _fnShowRadio;
+
+                [8, false] call _fnWaitPhase;
             };
 
-            if (vehicle player != player && !(call _skipped)) then {
-                cutText ["", "BLACK FADED", 0.4];
-                sleep 0.4;
-                cutText ["", "BLACK IN", 0.8];
+            if !(call _skipped) then {
+                cutText ["", "BLACK FADED", 0.3];
+                sleep 0.3;
 
                 private _p3A = [
                     (_lzPos select 0) + 550 * sin (_dirToHeli + 40),
@@ -294,14 +295,17 @@ if (hasInterface) then {
 
                 _cam camSetPos _p3B;
                 _cam camSetTarget _heli;
-                _cam camCommit 8;
+                _cam camCommit 9;
 
-                ["", localize "STR_TUE_Intro_Plan4_Radio", 6.5, 0.4] call _fnShowRadio;
+                cutText ["", "BLACK IN", 0.6];
+                sleep 0.6;
 
-                [7, true] call _fnWaitPhase;
+                [localize "STR_TUE_Intro_Sender", localize "STR_TUE_Intro_Plan4_Radio", 6.5, 0.3] call _fnShowRadio;
+
+                [7.5, false] call _fnWaitPhase;
             };
 
-            if (vehicle player != player && !(call _skipped)) then {
+            if !(call _skipped) then {
                 cutText ["", "BLACK FADED", 0.3];
                 sleep 0.3;
 
@@ -323,15 +327,15 @@ if (hasInterface) then {
                 };
 
                 cutText ["", "BLACK IN", 0.6];
-                sleep 0.4;
+                sleep 0.6;
 
-                ["", localize "STR_TUE_Intro_Plan5_Radio", 6.5, 0.4] call _fnShowRadio;
+                [localize "STR_TUE_Intro_Sender", localize "STR_TUE_Intro_Plan5_Radio", 6.5, 0.3] call _fnShowRadio;
 
-                private _plan4EndTime = time + 6.0;
+                private _plan4EndTime = time + 6.5;
                 waitUntil {
                     sleep 0.05;
                     ((missionNamespace getVariable ["MISSION_players_disembarked", false]) && (time > _plan4EndTime))
-                    || (vehicle player == player)
+                    || (vehicle player == player && (time > _plan4EndTime))
                     || (call _skipped)
                 };
             };
@@ -499,16 +503,16 @@ if (isServer) then {
 
         _heli doMove _destPos;
         _heli flyInHeight 150;
-        _heli limitSpeed 200;
+        _heli limitSpeed 160;
 
-        sleep 16;
+        sleep 18;
 
         [_heli, ["doorLB", 1]] remoteExec ["animateDoor", 0, _heli];
         [_heli, ["doorRB", 1]] remoteExec ["animateDoor", 0, _heli];
 
-        sleep 10;
+        sleep 8;
 
-        _heli limitSpeed 110;
+        _heli limitSpeed 100;
 
         private _landTimeout = time + 120;
         waitUntil { (_heli distance2D _destPos) < 250 || time > _landTimeout || (missionNamespace getVariable ["MISSION_intro_skip", false]) };
