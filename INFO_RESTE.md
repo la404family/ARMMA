@@ -33,7 +33,7 @@ Pour assurer une compatibilité immédiate avec toutes les cartes d'Arma 3 (Enoc
 ## 🧩 2. HARMONISATION DU CODE & DES TÂCHES
 
 ### A. Périmètre Final des Tâches (Task 00 à Task 06)
-- [cfgFunctions.hpp](file:///c:/Users/kevin/Documents/Arma%203/missions/TheUnseenElement.Enoch/Functions/cfgFunctions.hpp) est 100% propre et ne contient aucune référence orpheline.
+- [cfgFunctions.hpp](file:///c:/Users/kevin/Documents/Arma%203/missions/GHOSTS2035.Enoch/Functions/cfgFunctions.hpp) est 100% propre et ne contient aucune référence orpheline.
 - La rotation active comprend **7 opérations complètes et testées** :
   - **Task 00** : *Opération Broken Cage* (Sauvetage d'Otage)
   - **Task 01** : *Opération Black Ledger* (Assassinat & Renseignement)
@@ -64,58 +64,41 @@ Pour assurer une publication rapide et une compatibilité multi-cartes totale :
 
 ---
 
-## 📝 4. FICHE STEAM WORKSHOP (MODÈLE BBCODE PRÊT À L'EMPLOI - EN)
+## 4. DESCRIPTION STEAM WORKSHOP (TEXTE BRUT)
 
-Voici la structure optimisée en **Anglais** (recommandé pour le Steam Workshop international) à copier-coller dans la description Steam :
+GHOSTS 2035 — ELITE SNIPER OPERATING CELL [SP / COOP 1-4]
 
-```bbcode
-[h1]🦅 GHOSTS 2035 — ELITE SNIPER OPERATING CELL [SP / COOP 1-4][/h1]
-Available in all languages... full translation   
-[b]GHOSTS 2035[/b] is a next-generation tactical special operations scenario, designed for [b]Singleplayer[/b] and [b]Cooperative play (1 to 4 players)[/b]. Infiltrate deep behind enemy lines commanding a specialized elite sniper micro-cell.
+Available in all languages (native multi-language support & dynamic UI).
 
-[hr][/hr]
+GHOSTS 2035 is a next-generation tactical special operations scenario built for Singleplayer and Cooperative play (1 to 4 players). Infiltrate deep behind enemy lines commanding an autonomous Tier-1 sniper micro-cell in hostile territory.
 
-[h2]⚡ KEY FEATURES[/h2]
+KEY FEATURES :
 
-[list]
-[*] [b]Universal Dynamic Generation[/b]: Automated rotation of 7 surgical high-stakes operations (Hostage Rescue, Staff HVT Hunt, Radio Relay Sabotage, Explosive Charge Disarming, Chemical Tanker Interception with progressive toxic hazards, High-Value Target Extraction & Surrender).
-[*] [b]ISR Drone & Sniper Synergy[/b]: Dynamic aerial support via an autonomous allied Darter drone (real-time tactical radar coverage and target designation).
-[*] [b]Total & Clean Immersion[/b]: Zero interface clutter, zero intrusive pop-up hints. Pure tactical military gameplay.
-[*] [b]Dynamic Weather & Living Atmosphere[/b]: Randomized starting time and weather with a realistic dynamic weather cycle (misty dawn, stormy afternoons, overcast fronts, pitch-black night ops).
-[*] [b]Native Medical & Squad Continuity[/b]: Emergency revive system usable by any teammate with seamless squad leadership failover.
-[*] [b]Heavy Close Air Support & Hot Extraction[/b]: Assault helicopter exfiltration featuring automated door-gunner suppression fire on hot landing zones.
-[*] [b]ACE3 Compatibility[/b]: Fully compatible with [b]ACE3[/b] advanced ballistics, environmental physics, and medical framework.
-[/list]
+• Universal Dynamic Generation : Automated rotation of 7 high-stakes surgical operations (Hostage Rescue, Staff HVT Hunt, Radio Relay Sabotage, Explosive Disarming, Toxic Chemical Tanker Interception with progressive hazards, High-Value Target Extraction & Surrender).
+• ISR Drone & Sniper Synergy : Autonomous allied Darter drone providing continuous 360° tactical radar sweep and target designation.
+• Pure & Silent Immersion : Zero interface clutter, zero intrusive pop-ups, zero debug spam. 100% tactical military immersion.
+• Dynamic Living Environment : Randomized operational timeframe and realistic dynamic weather engine (misty dawn, stormy afternoons, overcast fronts, pitch-black night ops with automatic NVG transition).
+• Native Medical & Squad Continuity : Instant revive system for all operators (no inventory restrictions required) with seamless squad command failover upon casualty.
+• Heavy Close Air Support & Hot Exfiltration : Tactical extraction helicopter featuring automated door-gunner suppression fire against nearby hostiles and anti-softlock squad boarding.
+• ACE3 Compatible : Out-of-the-box compatibility with ACE3 advanced ballistics, environmental wind deflection, and medical system.
 
-[hr][/hr]
+ACTIVE OPERATIONS ROTATION :
 
-[h2]📦 REQUIRED MODS & DEPENDENCIES[/h2]
+1. Op. Broken Cage — Deep infiltration of a fortified compound, perimeter sweep, and extraction of a captured operative.
+2. Op. Black Ledger — Long-range surgical elimination of a senior officer and intel recovery from target coordinates.
+3. Op. Defused Shadow — Locating and disarming multiple timed explosive devices under ticking clock pressure.
+4. Op. Blind Signal — Breaching hostile relay stations and demolishing key transmission terminals with C4.
+5. Op. Crimson Hazard — Intercepting an immobilized chemical transport, neutralizing escort squads, and heavy slingload evacuation.
+6. Op. Decapitation — Simultaneous tracking and coordinated takedown of warlord command elements across multiple camps.
+7. Op. Live Asset — CQB breach, non-lethal submission, capture, and live exfiltration of a high-value enemy commander.
 
-[b]Required :[/b]
-[list]
-[*] [b]Arma 3 Contact[/b] (DLC / Map Enoch / Livonia)
-[*] [b]CBA_A3[/b] (Community Base Addons)
-[*] [b]VSM - All-In-One Collection[/b] (Tactical uniforms, vests, and gear)
-[*] [b]NIArms / HLC Weapons[/b] (Modern precision weapons & rifles)
-[/list]
+HOW TO PLAY :
 
-[b]Optional & Supported (Highly Recommended) :[/b]
-[list]
-[*] [b]ACE3[/b] (Advanced ballistics, wind deflection, advanced medical & interaction).
-[*] [b]UVO (Unit Voice-Overs)[/b] & [b]UVO Expanded[/b] (Dynamic combat chatter in US/UK/FR for BLUFOR and 100% Russian for OPFOR).
-[/list]
+Singleplayer :
+Main Menu -> Scenarios -> Select GHOSTS 2035.
 
-[hr][/hr]
-
-[h2]🎮 HOW TO PLAY[/h2]
-
-[b]Singleplayer :[/b]
-Main Menu ➔ Scenarios ➔ Select "GHOSTS 2035".
-
-[b]Multiplayer / Dedicated Server :[/b]
-Multiplayer Menu ➔ Host Server / Dedicated Server ➔ Select Map ➔ Select "GHOSTS 2035".
-[/bbcode]
-```
+Multiplayer / Dedicated Server :
+Multiplayer Menu -> Host Server / Dedicated Server -> Select Map -> Select GHOSTS 2035.
 
 ---
 

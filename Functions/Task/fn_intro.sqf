@@ -116,12 +116,24 @@ if (hasInterface) then {
         private _cam = "camera" camCreate (getPos player);
         _cam cameraEffect ["INTERNAL", "BACK"];
 
-        if (sunOrMoon < 0.4) then {
+        private _fnc_isDark = {
+            (sunOrMoon < 0.65) || { daytime < 5.5 || { daytime > 19.5 } } || { sunOrMoon < 0.80 && overcast > 0.70 }
+        };
+
+        if (call _fnc_isDark) then {
             camUseNVG true;
         };
 
+        [_cam, _fnc_isDark] spawn {
+            params ["_camera", "_isDarkFunc"];
+            while { !isNull _camera && !(missionNamespace getVariable ["MISSION_intro_finished", false]) } do {
+                camUseNVG (call _isDarkFunc);
+                sleep 0.3;
+            };
+        };
+
         0 fadeMusic 1;
-        playMusic "Music_Intro";
+        playMusic "LeadTrack01_F";
         3 fadeSound 1;
 
         private _fnWaitPhase = {
@@ -321,7 +333,7 @@ if (hasInterface) then {
                 showCinemaBorder false;
                 showHUD [false, false, false, false, false, false, false, false, false, false, false];
 
-                if (sunOrMoon < 0.4) then {
+                if (call _fnc_isDark) then {
                     if (hmd player == "") then { player linkItem "NVGoggles"; };
                     if (currentVisionMode player == 0) then { player action ["NVGoggles", player]; };
                 };
@@ -372,7 +384,7 @@ if (hasInterface) then {
         showHUD [true, true, true, true, true, true, true, true, true, true, true];
         player allowDamage true;
 
-        if (sunOrMoon < 0.4) then {
+        if (call _fnc_isDark) then {
             if (hmd player == "") then { player linkItem "NVGoggles"; };
             if (currentVisionMode player == 0) then { player action ["NVGoggles", player]; };
         };
@@ -386,6 +398,8 @@ if (hasInterface) then {
         if (call _skipped) then {
             cutText ["", "BLACK IN", 1.5];
         };
+
+        10 fadeMusic 0;
 
         missionNamespace setVariable ["MISSION_intro_finished", true, true];
     };

@@ -49,6 +49,7 @@ class LL
         class task03 {};
         class task03_addAction {};
         class task04 {};
+        class task04_heli {};
         class task04_addAction {};
         class task05 {};
         class task06 {};
@@ -60,5 +61,6 @@ class LL
         class intro {};
         class spawnStartArsenal {};
         class extraction {};
+        class extraction_secure {};
     };
 };

@@ -50,6 +50,7 @@ if (_mode == "init") exitWith {
     private _targetIndex = floor random _numSpawns;
 
     missionNamespace setVariable ["LL_Task01_AllUnits", [], true];
+    private _officersData = [];
 
     for "_i" from 0 to (_numSpawns - 1) do {
         private _logic = _selectedLogics select _i;
@@ -105,6 +106,7 @@ if (_mode == "init") exitWith {
         missionNamespace setVariable ["LL_Task01_AllUnits", _allUnits, true];
 
         _officer setVariable ["LL_Task01_Marker", _mkrName];
+        _officersData pushBack [_officer, _mkrName];
 
         if (_i == _targetIndex) then {
             _officer setVariable ["LL_hasDocuments", true, true];
@@ -130,11 +132,25 @@ if (_mode == "init") exitWith {
                 _mkrDoc setMarkerColor "ColorYellow";
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
+                private _docPos = _unit getPos [0.65, (getDir _unit) + 90];
+                _docPos set [2, (_pos select 2) + 0.05];
+                private _doc = createVehicle ["Land_Document_01_F", _docPos, [], 0, "CAN_COLLIDE"];
+                _doc setPosATL _docPos;
+                _doc setDir (random 360);
+                _doc setVectorUp (surfaceNormal _docPos);
+
+                _unit setVariable ["LL_Task01_DocObject", _doc, true];
+                _doc setVariable ["LL_Task01_Corpse", _unit, true];
+
                 private _varCorpse = format ["LL_Task01_Corpse_%1", round(random 100000)];
                 _unit setVehicleVarName _varCorpse;
                 missionNamespace setVariable [_varCorpse, _unit, true];
 
-                [_unit, netId _unit, _varCorpse] remoteExec ["LL_fnc_task01_addAction", 0, true];
+                private _varDoc = format ["LL_Task01_Doc_%1", round(random 100000)];
+                _doc setVehicleVarName _varDoc;
+                missionNamespace setVariable [_varDoc, _doc, true];
+
+                [_unit, netId _unit, _varCorpse, _doc, netId _doc, _varDoc] remoteExec ["LL_fnc_task01_addAction", 0, true];
 
                 private _alivePlayers = allPlayers select { alive _x };
                 private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
@@ -185,6 +201,19 @@ if (_mode == "init") exitWith {
     ] call BIS_fnc_taskCreate;
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task01_Title", localize "STR_LL_Diary_Task01_Text"]]; }] remoteExec ["spawn", 0, true];
+
+    [_officersData] spawn {
+        params ["_officersData"];
+        while { missionNamespace getVariable ["LL_g_taskInProgress", false] } do {
+            {
+                _x params ["_officer", "_mkrName"];
+                if (alive _officer) then {
+                    _mkrName setMarkerPos (getPos _officer);
+                };
+            } forEach _officersData;
+            sleep 5;
+        };
+    };
 };
 
 if (_mode == "collect") exitWith {

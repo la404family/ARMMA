@@ -1,0 +1,45 @@
+================================================================================
+                        GHOSTS 2035 - CHANGELOG
+================================================================================
+
+--- NEW FEATURES & GAMEPLAY ENHANCEMENTS ---
+
+[1] INSERTION & TACTICAL ATMOSPHERE
+- Dynamic Light Detection: Night vision now automatically activates with high 
+  precision during night insertions, overcast skies, or stormy weather.
+- Seamless night vision transition without visual stutter upon taking control 
+  of your operator.
+
+[2] MISSION 01: INTEL RECOVERY
+- A 3D physical classified document prop now spawns on the ground upon the 
+  elimination of the target officer.
+- Added an interactive search action with pickup animation: the secret intel 
+  is directly placed into the player's inventory to complete the mission.
+
+[3] MISSION 04: CHEMICAL TANKER SLINGLOAD RECOVERY
+- Full overhaul of the heavy transport recovery helicopter flight logic:
+  * High-altitude tactical approach (65m) above the hot zone.
+  * Smooth and realistic vertical descent for safe slingloading.
+  * Vertical climb-out ensuring clean clearance from trees and rough terrain.
+  * Aerial Close Air Support (CAS): door gunners actively engage and eliminate 
+    hostiles on the ground during climb-out and egress.
+
+[4] FINAL EXTRACTION & BOARDING PHASE
+- Pre-landing CAS sweep: the extraction helicopter performs an aerial gun run 
+  if enemy forces are detected near the LZ.
+- Smooth touchdown and stable landing with open side doors.
+- Squad & Ally Autonomy: AI teammates, freed hostages, and captured HVTs 
+  physically and independently sprint to the helicopter to board.
+- Dynamic In-World 3D Marker: a HUD indicator displays the real-time distance 
+  and position of the extraction bird ("Board Helicopter").
+- Player-paced boarding: the helicopter waits patiently on the ground until all 
+  human players are safely inside (no premature or forced teleports).
+- Tactical climb & combat egress: the helicopter ascends while continuously 
+  moving toward the exfiltration vector, as door gunners lay down suppressing 
+  fire on ground pursuers before high-speed cruise acceleration.
+
+[5] LOCALIZATION & MULTILINGUAL SUPPORT
+- Full integration and synchronization of all new interactions, tasks, and 
+  3D markers across all 13 supported languages.
+
+================================================================================

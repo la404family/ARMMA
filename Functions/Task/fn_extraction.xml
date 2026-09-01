@@ -48,4 +48,20 @@
         <Portuguese>Ponto de extração</Portuguese>
         <Czech>Bod extrakce</Czech>
     </Key>
+    <Key ID="STR_LL_Task_Extraction_Board">
+        <Original>Embarquer dans l'hélicoptère</Original>
+        <French>Embarquer dans l'hélicoptère</French>
+        <English>Board Helicopter</English>
+        <Spanish>Embarcar en el helicóptero</Spanish>
+        <Italian>Sali a bordo dell'elicottero</Italian>
+        <German>In den Hubschrauber einsteigen</German>
+        <Polish>Wejdź do śmigłowca</Polish>
+        <Russian>Сесть в вертолет</Russian>
+        <Turkish>Helikoptere bin</Turkish>
+        <Japanese>ヘリに搭乗する</Japanese>
+        <Korean>헬리콥터 탑승</Korean>
+        <Chinese>登机</Chinese>
+        <Portuguese>Embarcar no helicóptero</Portuguese>
+        <Czech>Nastoupit do vrtulníku</Czech>
+    </Key>
 </Keys>
