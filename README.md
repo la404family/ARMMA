@@ -31,7 +31,7 @@ Ce fichier documente l'architecture technique et les fonctionnalités de la miss
 - **Drone Allié Radar** : Système de surveillance aérienne dynamique via le drone darter allié.
 
 ### 3. Module d'Équipement (Equipment)
-Générateur d'équipement dynamique OPFOR (détection automatique par scan du serveur en temps réel).
+Générateur d'équipement dynamique OPFOR (détection automatique par scan du serveur en temps réel) et synchronisation d'escouade.
 - **Camouflage Strict** : Habillage aléatoire intégralement issu du mod VSM, avec exclusion formelle des couleurs inadaptées (Black, White, Alpine, WTF).
 - **Inventaire Tactique** : Pas de sacs à dos. Vestes VSM obligatoires contenant 2 Trousses de secours et 2 Fumigènes blancs.
 - **Armement Varié & Asymétrique** : 
@@ -39,6 +39,7 @@ Générateur d'équipement dynamique OPFOR (détection automatique par scan du s
   - Les armes compatibles reçoivent dynamiquement une lampe torche dans 75% des cas, avec allumage forcé de nuit (`forceOn`).
   - Répartition intelligente des munitions : 6 chargeurs principaux, 2 secondaires (ou 8 secondaires si pas d'arme principale).
 - **Couvre-chefs** : 90% des troupes portent un couvre-chef tactique VSM (BackwardsHat, Beanie, Boonie, Cap, Shemagh).
+- **Synchronisation d'Arsenal d'Escouade (Solo)** : En partie solo uniquement, dès que le leader modifie son équipement dans l'arsenal ([fn_syncSquadLoadout.sqf](file:///c:/Users/kevin/Documents/Arma%203/missions/GHOSTS2035.Enoch/Functions/Equipment/fn_syncSquadLoadout.sqf)), l'intégralité de son paquetage (armes, silencieux, optiques, munitions, gilet, uniforme, casque, jumelles, objets) est automatiquement et instantanément dupliquée à l'identique sur toutes les IA alliées de l'escouade.
 
 ### 4. Module Joueur (Player)
 Gestion dynamique et asymétrique de l'escouade jouable (`Player_0` à `Player_3`).
@@ -53,7 +54,7 @@ Gestion dynamique et asymétrique de l'escouade jouable (`Player_0` à `Player_3
   - **Plan 4 (Immersion Cabine)** : Transition fluide dans la tête du joueur en vue première personne dans la cabine de transport avec liberté totale de mouvement de tête (freelook) et interface épurée (`showHUD [false...]`).
   - **Vision Nocturne Automatique** : Lors des missions de nuit, activation automatique et continue de la vision nocturne dès la caméra cinématique, en vue interne hélico et lors de l'arrivée au sol.
   - **Débarquement Sécurisé** : Dès le poser des roues sur l'héliport de destination, l'escouade est débarquée en éventail tactique de sécurisation, le HUD complet est restauré et l'arsenal est initialisé. La bande-son dynamique (native au jeu) accompagne l'approche et s'estompe en douceur (fade out) au débarquement. Possibilité d'interrompre l'introduction en maintenant la touche Espace pendant 1.2 s.
-- **Arsenal de Départ** : Génération d'une caisse d'arsenal optimisée et contextuelle au point d'atterrissage, équipée du drone allié et balisée temporairement, pour permettre aux joueurs de se préparer.
+- **Arsenal de Départ** : Génération d'une caisse d'arsenal optimisée et contextuelle au point d'atterrissage, équipée du drone allié et balisée temporairement, pour permettre aux joueurs de se préparer (avec synchronisation automatique intégrale de l'équipement du leader vers les IA en solo via [fn_syncSquadLoadout.sqf](file:///c:/Users/kevin/Documents/Arma%203/missions/GHOSTS2035.Enoch/Functions/Equipment/fn_syncSquadLoadout.sqf)).
 - **Scénario 100% Automatisé** :
   - **Lancement** : 15 secondes après l'arrivée à l'arsenal, le serveur sélectionne et lance automatiquement une tâche aléatoire parmi les missions disponibles.
   - **Génération Dynamique** : Analyse dynamique de la carte, filtrage des Game Logics à une distance de sécurité stricte ($\ge 400\text{ m}$) de tout joueur vivant par paliers progressifs ($+50\text{ m}$), puis génération des objectifs, des patrouilles ennemies échelonnées (via `BIS_fnc_taskPatrol`) et des marqueurs de carte. 

@@ -21,6 +21,7 @@ class TUE
         file = "Functions\Equipment";
         class initEquipment {};
         class applyEnemyEquipment {};
+        class syncSquadLoadout {};
     };
     class Player
     {

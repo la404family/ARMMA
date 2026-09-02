@@ -158,7 +158,7 @@ _grp setCombatMode "BLUE";
 private _cargoPosASL = getPosASL _cargo;
 private _cargoASL = _cargoPosASL select 2;
 private _transitAlt = 65;
-private _hoverHeight = 20;
+private _hoverHeight = 5;
 
 _heli flyInHeight _transitAlt;
 _heli flyInHeightASL [_cargoASL + _transitAlt, _cargoASL + _transitAlt, _cargoASL + _transitAlt];
@@ -279,7 +279,7 @@ _cargo enableRopeAttach true;
 _heli enableRopeAttach true;
 
 private _originalMass = getMass _cargo;
-_cargo setMass 50;
+_cargo setMass 10;
 
 private _attachedWithRopes = false;
 private _ropes = [];
@@ -304,18 +304,73 @@ if (isNull (getSlingLoad _heli)) then {
     _attachedWithRopes = true;
     _cargo setMass 1;
 
-    _cargo attachTo [_heli, [0, 0, -10]];
+    _cargo attachTo [_heli, [0, 0, -5]];
     _cargo setVectorUp [0, 0, 1];
 
-    private _r1 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, 2.5, 1.2], 10];
-    private _r2 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, 2.5, 1.2], 10];
-    private _r3 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, -2.5, 1.2], 10];
-    private _r4 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, -2.5, 1.2], 10];
+    private _r1 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, 2.5, 1.2], 5];
+    private _r2 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, 2.5, 1.2], 5];
+    private _r3 = ropeCreate [_heli, [-1.5, 0, -1], _cargo, [-1.2, -2.5, 1.2], 5];
+    private _r4 = ropeCreate [_heli, [1.5, 0, -1], _cargo, [1.2, -2.5, 1.2], 5];
     _ropes = [_r1, _r2, _r3, _r4];
 };
 
 _cargo removeAllEventHandlers "Killed";
 _cargo removeAllEventHandlers "HandleDamage";
+
+[_heli, _cargo, _dropPos, _grp] spawn {
+    params ["_heli", "_cargo", "_dropPos", "_grp"];
+
+    sleep 120;
+
+    if (!isNull _heli && { alive _heli }) then {
+        private _nearPlayers = { alive _x && _x distance2D _heli < 800 } count allPlayers;
+
+        if (_nearPlayers > 0 || !isNull (getSlingLoad _heli) || !isNull (attachedTo _cargo)) then {
+            {
+                _x disableAI "FSM";
+                _x disableAI "TARGET";
+                _x disableAI "AUTOTARGET";
+                _x disableAI "AUTOCOMBAT";
+                _x disableAI "COVER";
+                _x setBehaviour "CARELESS";
+                _x setCombatMode "BLUE";
+            } forEach (crew _heli);
+
+            _grp setBehaviour "CARELESS";
+            _grp setCombatMode "BLUE";
+
+            while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+            private _wpEscape = _grp addWaypoint [_dropPos, 0];
+            _wpEscape setWaypointType "MOVE";
+            _wpEscape setWaypointSpeed "FULL";
+            _wpEscape setWaypointBehaviour "CARELESS";
+            _heli doMove _dropPos;
+            _heli flyInHeight 120;
+            _heli limitSpeed 300;
+
+            private _timeout = time + 60;
+            waitUntil {
+                sleep 2;
+                isNull _heli || !alive _heli || { ({ alive _x && _x distance2D _heli < 1200 } count allPlayers) == 0 } || time > _timeout
+            };
+        };
+
+        if (!isNull _cargo) then {
+            detach _cargo;
+            if (!isNull (getSlingLoad _heli)) then { _heli setSlingLoad objNull; };
+            deleteVehicle _cargo;
+        };
+
+        if (!isNull _heli) then {
+            { deleteVehicle _x; } forEach (crew _heli);
+            deleteVehicle _heli;
+        };
+
+        if (!isNull _grp) then {
+            deleteGroup _grp;
+        };
+    };
+};
 
 private _climbTgtAlt = _cargoASL + _hoverHeight;
 private _climbMaxAlt = _cargoASL + _transitAlt;

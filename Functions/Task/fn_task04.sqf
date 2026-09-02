@@ -93,92 +93,87 @@ if (_mode == "init") exitWith {
         _truck addEventHandler ["HandleDamage", {
             params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint"];
             if (!alive _unit) exitWith { 0 };
+            if (_unit getVariable ["LL_Task04_IsExploding", false]) exitWith { _damage };
 
-            private _partDmg = if (_selection != "") then { _unit getHit _selection } else { damage _unit };
-            if (isNil "_partDmg") then { _partDmg = damage _unit; };
+            private _oldDmg = if (_selection != "") then { _unit getHit _selection } else { damage _unit };
+            if (isNil "_oldDmg") then { _oldDmg = 0; };
 
-            private _delta = _damage - _partDmg;
-            if (_delta <= 0) exitWith { _partDmg };
+            private _delta = (_damage - _oldDmg) max 0;
+            if (_delta > 0) then {
+                private _clampedDelta = _delta min 0.15;
+                private _cumul = (_unit getVariable ["LL_Truck_AccumDamage", 0]) + (_clampedDelta * 2.5);
+                _unit setVariable ["LL_Truck_AccumDamage", _cumul, true];
 
-            private _rawDmg = (_unit getVariable ["LL_Raw_Damage", 0]) + _delta;
-            _unit setVariable ["LL_Raw_Damage", _rawDmg];
+                if (_cumul >= 0.05 && { (_unit getVariable ["LL_Toxic_Level", 0]) < 1 }) then {
+                    _unit setVariable ["LL_Toxic_Level", 1, true];
 
-            private _newDmg = 0;
-            if (_rawDmg >= 0.36) then {
-                _newDmg = 0.50;
-            } else {
-                if (_rawDmg >= 0.16) then {
-                    _newDmg = 0.35;
-                } else {
-                    if (_rawDmg >= 0.01) then {
-                        _newDmg = 0.15;
-                    } else {
-                        _newDmg = _rawDmg;
-                    };
-                };
-            };
+                    [[_unit], {
+                        params ["_truck"];
+                        if (!hasInterface || isNull _truck) exitWith {};
 
-            if (_newDmg >= 0.50) then {
-                _newDmg = 1;
-            };
+                        private _emitter = "#particlesource" createVehicleLocal (getPos _truck);
+                        _emitter attachTo [_truck, [0, -1.5, 0.5]];
 
-            private _level = if (_newDmg >= 0.35) then { 6 } else { if (_newDmg >= 0.15) then { 3 } else { 0 } };
-            if (_level >= 1) then {
-                _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
-                private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
-                if (isNull _emitter) then {
-                    _emitter = "#particlesource" createVehicle (getPos _unit);
-                    _unit setVariable ["LL_Toxic_Smoke1", _emitter];
+                        _emitter setParticleCircle [0.2, [0.2, 0.2, 0.1]];
+                        _emitter setParticleRandom [0.5, [0.3, 0.3, 0.2], [0.3, 0.3, 0.2], 0, 0.2, [0, 0, 0, 0.05], 0, 0];
+                        _emitter setParticleParams [
+                            ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 6,
+                            [0, 0, 0], [0, 0, 0.8], 0, 1.28, 1, 0.05, [0.8, 2.5, 4.5],
+                            [[0.9, 0.85, 0.1, 0.5], [0.8, 0.75, 0.08, 0.25], [0.6, 0.55, 0.05, 0]], [0.125], 1, 0, "", "", _truck
+                        ];
+                        _emitter setDropInterval 0.03;
+
+                        while { alive _truck && !isNull _emitter } do {
+                            private _lvl = _truck getVariable ["LL_Toxic_Level", 1];
+                            if (_lvl >= 2) then {
+                                _emitter setDropInterval 0.015;
+                                _emitter setParticleParams [
+                                    ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 7,
+                                    [0, 0, 0], [0, 0, 1.2], 0, 1.28, 1, 0.05, [1.5, 4.0, 7.0],
+                                    [[0.92, 0.88, 0.1, 0.7], [0.82, 0.75, 0.08, 0.45], [0.6, 0.55, 0.05, 0]], [0.125], 1, 0, "", "", _truck
+                                ];
+                            };
+                            sleep 1;
+                        };
+
+                        deleteVehicle _emitter;
+                    }] remoteExec ["spawn", 0, _unit];
 
                     [_unit] spawn {
                         params ["_truck"];
-                        private _startTime = time;
-                        while { alive _truck && !isNull (_truck getVariable ["LL_Toxic_Smoke1", objNull]) } do {
-                            private _elapsed = time - _startTime;
-                            private _emitter = _truck getVariable ["LL_Toxic_Smoke1", objNull];
-
-                            if (_elapsed >= 600) exitWith {
-                                if (!isNull _emitter) then { deleteVehicle _emitter; };
-                                _truck setVariable ["LL_Toxic_Smoke1", objNull];
-                            };
-
-                            private _timeFactor = (1 - (_elapsed / 600)) max 0;
+                        while { alive _truck } do {
                             private _lvl = _truck getVariable ["LL_Toxic_Level", 0];
-
-                            if (_lvl >= 1 && !isNull _emitter) then {
-                                private _radius = (4 + (_lvl * 0.8)) * _timeFactor;
-                                private _dmg = (0.0015 * _lvl) * _timeFactor;
-
+                            if (_lvl >= 1) then {
+                                private _radius = if (_lvl >= 2) then { 14 } else { 8 };
+                                private _dmg = if (_lvl >= 2) then { 0.03 } else { 0.015 };
                                 {
                                     if (alive _x && _x distance2D _truck < _radius) then {
                                         _x setDamage ((damage _x) + _dmg);
+                                        if (isPlayer _x) then {
+                                            _x setFatigue 1;
+                                            [2, 1, 15] remoteExec ["addCamShake", _x];
+                                        };
                                     };
                                 } forEach allUnits;
-
-                                private _dropInterval = (0.35 / _lvl) / (_timeFactor max 0.05);
-                                _emitter setDropInterval _dropInterval;
-
-                                private _sizeMultiplier = (1 + (_lvl * 0.15)) * _timeFactor;
-                                _emitter setParticleParams [
-                                     ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 12,
-                                     [0, 0, 0.2], [0, 0, 0.3], 0, 1.28, 1, 0.05, [1.5 * _sizeMultiplier, 3 * _sizeMultiplier, 5 * _sizeMultiplier],
-                                     [[0.9, 0.85, 0.1, 0.25 * _timeFactor], [0.8, 0.75, 0.08, 0.15 * _timeFactor], [0.6, 0.55, 0.05, 0]], [0.125], 1, 0, "", "", _truck
-                                ];
-                                _emitter setParticleRandom [3, [2, 2, 0.2], [0.8, 0.8, 0.3], 1, 0.3, [0, 0, 0, 0.05], 0, 0];
                             };
                             sleep 1;
                         };
                     };
                 };
+
+                if (_cumul >= 0.25 && { (_unit getVariable ["LL_Toxic_Level", 0]) < 2 }) then {
+                    _unit setVariable ["LL_Toxic_Level", 2, true];
+                };
+
+                if (_cumul >= 0.65) then {
+                    _unit setVariable ["LL_Task04_IsExploding", true, true];
+                    _unit setDamage 1;
+                };
             };
 
-            if (_selection == "") then {
-                _unit setDamage _newDmg;
-            } else {
-                _unit setHitPointDamage [_hitPoint, _newDmg];
-            };
+            if (_damage >= 0.89) then { _damage = 0.89; };
 
-            _newDmg
+            _damage
         }];
 
         _truck setHitPointDamage ["HitEngine", 1];
@@ -190,6 +185,16 @@ if (_mode == "init") exitWith {
 
             ["task_04_convoy", "FAILED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+
+            [] spawn {
+                sleep 40;
+                ["<t color='#ff0000' size='2'>ECHEC CRITIQUE</t><br/>Contamination chimique majeure.", "BLACK OUT", 5, true, true] remoteExec ["titleText", 0];
+                sleep 5;
+                ["LOSER", false] remoteExec ["BIS_fnc_endMission", 0];
+            };
+
+            private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
+            if (!isNull _emitter) then { deleteVehicle _emitter; };
 
             private _remaining = missionNamespace getVariable ["LL_Task04_RemainingTrucks", []];
             {
@@ -207,8 +212,8 @@ if (_mode == "init") exitWith {
                             isNull _t || !alive _t || ({ _x distance2D _t <= 800 } count (allPlayers select { alive _x })) == 0
                         };
                         if (!isNull _t) then {
-                            private _emitter = _t getVariable ["LL_Toxic_Smoke1", objNull];
-                            if (!isNull _emitter) then { deleteVehicle _emitter; };
+                            private _em = _t getVariable ["LL_Toxic_Smoke1", objNull];
+                            if (!isNull _em) then { deleteVehicle _em; };
                             deleteVehicle _t;
                         };
                     };
@@ -218,11 +223,12 @@ if (_mode == "init") exitWith {
             private _posATL = getPosATL _unit;
             private _posASL = getPosASL _unit;
 
-            [_posATL, 80, 8, [0.9, 0.85, 0.1, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
+            "HelicopterExploBig" createVehicle _posATL;
+            [_posATL, 110, 8, [0.9, 0.85, 0.1, 0.85]] remoteExec ["LL_fnc_createSmokeRing", 0];
 
             [_posASL] spawn {
                 params ["_pos"];
-                private _maxRadius = 80;
+                private _maxRadius = 110;
                 private _duration = 8;
                 private _startTime = time;
                 private _damagedUnits = [];
@@ -236,17 +242,25 @@ if (_mode == "init") exitWith {
                             private _dist = _x distance _pos;
                             if (_dist <= _currentRadius) then {
                                 _damagedUnits pushBack _x;
-                                private _damageFactor = 1 - (_dist / _maxRadius);
-                                if (_damageFactor > 0) then {
-
-                                    private _dmg = 1.2 * _damageFactor;
-                                    _x setDamage (damage _x + _dmg);
-
-                                    if (_x isKindOf "Man") then {
-                                        private _dir = _pos vectorFromTo (getPosASL _x);
-                                        _dir set [2, 0.15]; 
-                                        private _vel = velocity _x;
-                                        _x setVelocity (_vel vectorAdd (_dir vectorMultiply (15 * _damageFactor)));
+                                
+                                if (_dist <= 30) then {
+                                    _x setDamage 1;
+                                } else {
+                                    if (_dist <= 80) then {
+                                        private _dmg = 0.5 + ((80 - _dist) / 50) * 0.4;
+                                        _x setDamage ((damage _x) + _dmg);
+                                        
+                                        if (_x isKindOf "Man") then {
+                                            private _dir = _pos vectorFromTo (getPosASL _x);
+                                            _dir set [2, 0.4];
+                                            private _vel = velocity _x;
+                                            _x setVelocity (_vel vectorAdd (_dir vectorMultiply 15));
+                                        };
+                                    } else {
+                                        if (_dist <= 110) then {
+                                            private _dmg = 0.1 + ((110 - _dist) / 30) * 0.2;
+                                            _x setDamage ((damage _x) + _dmg);
+                                        };
                                     };
                                 };
                             };
