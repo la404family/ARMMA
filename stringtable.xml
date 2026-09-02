@@ -603,6 +603,22 @@ GHOSTS operators deploy with cutting-edge 2035 special operations technology:&lt
             <Korean>준비 (아스날)</Korean>
             <Chinese>准备 (兵器库)</Chinese>
         </Key>
+        <Key ID="STR_LL_Task_07_Action_CAS">
+            <Original>Transmit CAS Coordinates (Danger Close)</Original>
+            <French>Transmettre coordonnées CAS (Danger Close)</French>
+            <English>Transmit CAS Coordinates (Danger Close)</English>
+            <Spanish>Transmitir coordenadas CAS (Peligro Cercano)</Spanish>
+            <Italian>Trasmettere coordinate CAS (Pericolo Vicino)</Italian>
+            <German>CAS-Koordinaten übertragen (Gefahr im Nahbereich)</German>
+            <Portuguese>Transmitir coordenadas CAS (Perigo Próximo)</Portuguese>
+            <Polish>Prześlij współrzędne CAS (Bliskie niebezpieczeństwo)</Polish>
+            <Russian>Передать координаты CAS (Опасность рядом)</Russian>
+            <Czech>Odeslat souřadnice CAS (Blízké nebezpečí)</Czech>
+            <Turkish>CAS Koordinatlarını İlet (Yakın Tehlike)</Turkish>
+            <Korean>CAS 좌표 전송 (위험 반경 내)</Korean>
+            <Japanese>CAS座標を送信（近接航空支援）</Japanese>
+            <Chinese>传输CAS坐标（危险接近）</Chinese>
+        </Key>
         <Key ID="STR_LL_Diary_Task00_Title">
             <Original>OPORD : Opération Broken Cage (Sauvetage de Captif)</Original>
             <French>OPORD : Opération Broken Cage (Sauvetage de Captif)</French>
@@ -1530,6 +1546,86 @@ OSTRZEŻENIE: Gdy tylko jeden oficer zostanie zabity, pozostali natychmiast skoo
             <German>Strategisches HVT</German>
             <Italian>HVT Strategico</Italian>
             <Polish>Strategiczny HVT</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task07_Title">
+            <Original>OPORD: Steel Rain</Original>
+            <French>OPORD : Pluie d'Acier</French>
+            <English>OPORD: Steel Rain</English>
+            <Spanish>OPORD: Lluvia de Acero</Spanish>
+            <Italian>OPORD: Pioggia d'Acciaio</Italian>
+            <German>OPORD: Stahlregen</German>
+            <Portuguese>OPORD: Chuva de Aço</Portuguese>
+            <Polish>OPORD: Stalowy Deszcz</Polish>
+            <Russian>OPORD: Стальной дождь</Russian>
+            <Czech>OPORD: Ocelový déšť</Czech>
+            <Turkish>OPORD: Çelik Yağmuru</Turkish>
+            <Korean>OPORD: 강철 비</Korean>
+            <Japanese>OPORD：鋼鉄の雨</Japanese>
+            <Chinese>OPORD：钢铁之雨</Chinese>
+        </Key>
+        <Key ID="STR_LL_Diary_Task07_Text">
+            <Original>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. Your objective is to approach the area, eliminate the officers, and then transmit the coordinates (danger close) to call in an F/A-181 Black Wasp airstrike to obliterate the armor. You must be within 200 meters to confirm the target visually for the CAS.</Original>
+            <French>Le QG a localisé un char de commandement CSAT en cours d'inspection par deux officiers de haut rang. Votre objectif est d'approcher la zone, d'éliminer les officiers, puis de transmettre les coordonnées (danger close) pour appeler une frappe de F/A-181 Black Wasp afin de pulvériser le blindé. Vous devez être à moins de 200 mètres pour confirmer visuellement la cible au CAS.</French>
+            <English>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. Your objective is to approach the area, eliminate the officers, and then transmit the coordinates (danger close) to call in an F/A-181 Black Wasp airstrike to obliterate the armor. You must be within 200 meters to confirm the target visually for the CAS.</English>
+            <Spanish>El CG ha localizado un tanque de mando CSAT inspeccionado por dos altos oficiales. Su objetivo es acercarse, eliminar a los oficiales y transmitir las coordenadas (peligro cercano) para solicitar un ataque aéreo de F/A-181 Black Wasp. Deben estar a menos de 200 metros para confirmar visualmente el objetivo para el CAS.</Spanish>
+            <Italian>Il QG ha localizzato un carro armato di comando CSAT ispezionato da due alti ufficiali. L'obiettivo è avvicinarsi, eliminare gli ufficiali e trasmettere le coordinate (pericolo vicino) per richiedere un attacco aereo F/A-181 Black Wasp. Dovete trovarvi a meno di 200 metri per confermare visivamente il bersaglio al CAS.</Italian>
+            <German>Das HQ hat einen CSAT-Befehlspanzer lokalisiert, der von zwei hochrangigen Offizieren inspiziert wird. Nähern Sie sich, eliminieren Sie die Offiziere und übermitteln Sie die Koordinaten (Gefahr im Nahbereich), um einen Luftschlag durch eine F/A-181 Black Wasp anzufordern. Sie müssen sich innerhalb von 200 Metern befinden, um das Ziel für den CAS visuell zu bestätigen.</German>
+            <Portuguese>O QG localizou um tanque de comando CSAT sendo inspecionado por dois oficiais de alta patente. Seu objetivo é se aproximar, eliminar os oficiais e transmitir as coordenadas (perigo próximo) para solicitar um ataque aéreo de F/A-181 Black Wasp. Vocês devem estar a menos de 200 metros para confirmar visualmente o alvo para o CAS.</Portuguese>
+            <Polish>Dowództwo zlokalizowało czołg dowodzenia CSAT wizytowany przez dwóch wysokich oficerów. Celem jest zbliżenie się, wyeliminowanie oficerów i przesłanie współrzędnych (bliskie niebezpieczeństwo), aby wezwać nalot F/A-181 Black Wasp. Musicie być w odległości mniejszej niż 200 metrów, aby wizualnie potwierdzić cel dla CAS.</Polish>
+            <Russian>Штаб обнаружил командирский танк CSAT, который осматривают два высокопоставленных офицера. Ваша цель - приблизиться, устранить офицеров и передать координаты (опасность рядом), чтобы вызвать авиаудар F/A-181 Black Wasp. Вы должны находиться в пределах 200 метров для визуального подтверждения цели для CAS.</Russian>
+            <Czech>Velitelství lokalizovalo velitelský tank CSAT kontrolovaný dvěma vysokými důstojníky. Vaším cílem je přiblížit se, zlikvidovat důstojníky a odeslat souřadnice (blízké nebezpečí), abyste přivolali letecký útok F/A-181 Black Wasp. Pro vizuální potvrzení cíle pro CAS musíte být ve vzdálenosti do 200 metrů.</Czech>
+            <Turkish>Karargah, iki yüksek rütbeli subay tarafından incelenmekte olan bir CSAT komuta tankı tespit etti. Göreviniz yaklaşmak, subayları ortadan kaldırmak ve F/A-181 Black Wasp hava saldırısı çağırmak için koordinatları iletmektir. CAS için hedefi görsel olarak doğrulamak üzere 200 metre içinde olmalısınız.</Turkish>
+            <Korean>본부에서 두 명의 고위 장교가 사열 중인 CSAT 지휘 전차를 발견했습니다. 목표는 접근하여 장교를 제거하고 F/A-181 Black Wasp 공습을 요청하기 위해 좌표를 전송하는 것입니다. CAS 목표물을 육안으로 확인하려면 200미터 이내에 있어야 합니다.</Korean>
+            <Japanese>司令部は2名の高官が視察中のCSAT指揮戦車を発見した。目標は接近して将校を排除し、F/A-181ブラックワスプの空爆を要請するための座標を送信することだ。CASに目標を視認させるため、200メートル以内に近づく必要がある。</Japanese>
+            <Chinese>指挥部发现了一辆正在接受两名高级军官视察的CSAT指挥坦克。您的目标是靠近该区域，消灭军官，然后发送坐标以呼叫F/A-181黑黄蜂空袭。您必须在200米以内才能为CAS提供目标目视确认。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_07_Title">
+            <Original>Eliminate High-Value Tank</Original>
+            <French>Éliminer le char de commandement</French>
+            <English>Eliminate High-Value Tank</English>
+            <Spanish>Eliminar tanque de alto valor</Spanish>
+            <Italian>Elimina carro armato di alto valore</Italian>
+            <German>Hochwertigen Panzer eliminieren</German>
+            <Portuguese>Eliminar tanque de alto valor</Portuguese>
+            <Polish>Wyeliminuj cenny czołg</Polish>
+            <Russian>Уничтожить ценный танк</Russian>
+            <Czech>Zničit cenný tank</Czech>
+            <Turkish>Yüksek Değerli Tankı Yok Et</Turkish>
+            <Korean>고가치 전차 파괴</Korean>
+            <Japanese>重要戦車の排除</Japanese>
+            <Chinese>摧毁高价值坦克</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_07_Desc">
+            <Original>Two enemy officers are inspecting a T-140K Angara command tank. Eliminate the officers and coordinate a CAS strike to destroy the tank.</Original>
+            <French>Deux officiers ennemis inspectent un char de commandement T-140K Angara. Éliminez les officiers et coordonnez une frappe CAS pour détruire le char.</French>
+            <English>Two enemy officers are inspecting a T-140K Angara command tank. Eliminate the officers and coordinate a CAS strike to destroy the tank.</English>
+            <Spanish>Dos oficiales enemigos inspeccionan un tanque de mando T-140K Angara. Elimina a los oficiales y coordina un ataque CAS para destruir el tanque.</Spanish>
+            <Italian>Due ufficiali nemici stanno ispezionando un carro armato di comando T-140K Angara. Elimina gli ufficiali e coordina un attacco CAS per distruggere il carro armato.</Italian>
+            <German>Zwei feindliche Offiziere inspizieren einen Befehlspanzer T-140K Angara. Eliminieren Sie die Offiziere und koordinieren Sie einen CAS-Schlag, um den Panzer zu zerstören.</German>
+            <Portuguese>Dois oficiais inimigos estão inspecionando um tanque de comando T-140K Angara. Elimine os oficiais e coordene um ataque CAS para destruir o tanque.</Portuguese>
+            <Polish>Dwóch wrogich oficerów inspekcjonuje czołg dowodzenia T-140K Angara. Wyeliminuj oficerów i skoordynuj atak CAS, aby zniszczyć czołg.</Polish>
+            <Russian>Два вражеских офицера осматривают командирский танк Т-140К «Ангара». Уничтожьте офицеров и скоординируйте удар CAS, чтобы уничтожить танк.</Russian>
+            <Czech>Dva nepřátelští důstojníci kontrolují velitelský tank T-140K Angara. Zlikvidujte důstojníky a koordinujte útok CAS ke zničení tanku.</Czech>
+            <Turkish>İki düşman subayı bir T-140K Angara komuta tankını inceliyor. Subayları ortadan kaldırın ve tankı yok etmek için bir CAS saldırısı koordine edin.</Turkish>
+            <Korean>적 장교 두 명이 T-140K 앙가라 지휘 전차를 점검하고 있습니다. 장교들을 제거하고 CAS 공격을 조율하여 전차를 파괴하십시오.</Korean>
+            <Japanese>2名の敵将校がT-140Kアンガラ指揮戦車を視察している。将校を排除し、CAS攻撃を要請して戦車を破壊せよ。</Japanese>
+            <Chinese>两名敌方军官正在视察一辆T-140K安加拉指挥坦克。消灭军官并协调CAS打击以摧毁坦克。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_07_Marker">
+            <Original>Target Tank</Original>
+            <French>Char cible</French>
+            <English>Target Tank</English>
+            <Spanish>Tanque objetivo</Spanish>
+            <Italian>Carro armato bersaglio</Italian>
+            <German>Zielpanzer</German>
+            <Portuguese>Tanque Alvo</Portuguese>
+            <Polish>Cel: Czołg</Polish>
+            <Russian>Цель: Танк</Russian>
+            <Czech>Cílový tank</Czech>
+            <Turkish>Hedef Tank</Turkish>
+            <Korean>목표 전차</Korean>
+            <Japanese>目標戦車</Japanese>
+            <Chinese>目标坦克</Chinese>
         </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>

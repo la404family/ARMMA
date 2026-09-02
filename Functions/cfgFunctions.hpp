@@ -55,6 +55,9 @@ class LL
         class task05 {};
         class task06 {};
         class task06_addAction {};
+        class task07 {};
+        class task07_addAction {};
+        class task07_plane {};
         class taskCleanup {};
         class taskManager {};
         class addTaskAction {};
