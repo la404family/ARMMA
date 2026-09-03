@@ -1,0 +1,6 @@
+# Changelog - Recent Updates
+
+- **A.I. (Artificial Intelligence):** Improved AI behavior and responsiveness (updates to unit assignment and logic).
+- **Night Vision & Equipment:** Adjusted loadout settings, including new load coefficient handling and squad loadout synchronization.
+- **New Mission (Task 07):** Added a brand new playable mission (Task 07) including custom briefing, tasks, plane sequences, and custom actions.
+- **Extraction Logic:** Major overhaul and optimization of the extraction system, introducing new secure extraction mechanics and continuous improvements.
