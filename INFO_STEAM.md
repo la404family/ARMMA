@@ -31,7 +31,8 @@ Pour répondre à cette menace invisible, le Commandement Conjoint des Opératio
 ### 2. Arsenal Technologique & Synergie Homme-Machine
 Chaque escouade de GHOSTS est déployée avec les technologies militaires les plus pointues de 2035 :
 - **Vecteur Aérien Autonome ISR (Drone Darter)** : Les opérateurs travaillent en symbiose avec un drone autonome assurant une couverture radar permanente du champ de bataille, le repérage précoce des patrouilles et la désignation d'objectifs.
-- **Optiques Nocturnes & Thermiques de 4e Génération** : Conçues pour l'infiltration tout-temps et tous-terrains (nuit noire, brouillard volumétrique épais, orages violents).
+- **Optiques Nocturnes Intelligentes** : Conçues pour l'infiltration tout-temps. Le système d'insertion hélicoptère analyse l'intensité lumineuse environnementale réelle (`sunOrMoon`) pour activer automatiquement les JVN au crépuscule ou sous de violents orages.
+- **Synergie de Déplacement Tactique (Tracking IA)** : En solo, les opérateurs IA sont conditionnés pour coller à la trace du joueur sans jamais s'épuiser (endurance infinie, vitesse de sprint forcée et accélération d'animation de 15%). Fini les IA distancées !
 - **Règles d'Engagement Silencieuses (ROE)** : Capacité de dicter le tempo tactique de l'escouade (*Furtif / Normal / Assaut*) d'un simple geste sans communication radio détectable.
 - **Gestion Médicale & Continuité de Commandement** : Chaîne de commandement résiliente assurant la reprise immédiate du leadership et réanimation native sans restriction d'inventaire.
 
@@ -69,6 +70,10 @@ Les déploiements de l'Unité GHOSTS s'adaptent à n'importe quel théâtre d'op
    - *Renseignement* : Un haut responsable hostile possède des clés de déchiffrement capitales.
    - *Mission* : Élimination de sa protection rapprochée, assaut au contact, soumission sous la contrainte et extraction vivant.
 
+8. **Opération Steel Rain (Task 07 - Désignation de Cible & Frappe Aérienne)** :
+   - *Renseignement* : Un char de commandement lourd (MBT) coordonne les forces ennemies, protégé par un état-major et une garde rapprochée.
+   - *Mission* : Infiltration au cœur du dispositif pour marquer le blindé (action directe) afin de déclencher un appui aérien rapproché (CAS) dévastateur, et élimination des officiers.
+
 ---
 
 ## ⚡ CYCLE OPÉRATIONNEL D'UNE MISSION
@@ -89,7 +94,7 @@ Les déploiements de l'Unité GHOSTS s'adaptent à n'importe quel théâtre d'op
 
 ## 💡 NOUVELLES OPÉRATIONS SÉLECTIONNÉES (DÉTAILLÉES)
 
-Ces 3 opérations sont spécialement conçues pour s'intégrer au générateur dynamique universel (spawns sur positions Logic aléatoires, campements de fortune, forêts, ruines ou collines) :
+Ces 4 opérations sont spécialement conçues pour s'intégrer au générateur dynamique universel (spawns sur positions Logic aléatoires, campements de fortune, forêts, ruines ou collines) :
 
 ---
 
@@ -123,6 +128,16 @@ Ces 3 opérations sont spécialement conçues pour s'intégrer au générateur d
 
 ---
 
+### 4. 🛩️ Opération Steel Rain (Désignation de Cible & Frappe Aérienne)
+- **Contexte & Renseignement** : L'ennemi a déployé un char de commandement lourd (MBT) pour verrouiller la zone. Ce blindé de pointe est accompagné d'officiers d'état-major et d'une garde rapprochée hautement entraînée, rendant toute approche conventionnelle suicidaire.
+- **Déroulement Tactique** :
+  1. *Approche Furtive* : Contournement des patrouilles périphériques pour atteindre le blindé sans déclencher l'alerte générale.
+  2. *Élimination des Cibles Humaines* : Tirs simultanés sur les officiers et l'équipage extérieur pour isoler le véhicule.
+  3. *Désignation Laser / Balisage* : Action directe au plus près du blindé pour placer un marqueur de cible, déclenchant instantanément le largage d'une frappe aérienne (CAS) dévastatrice.
+- **Règles d'Engagement (ROE)** : Ne jamais engager le blindé à l'arme légère. La priorité absolue est de s'approcher suffisamment pour valider le balisage avant de rompre le contact avant l'impact de la frappe.
+
+---
+
 ## 🔬 ANALYSE TECHNIQUE DES SPAWNS ENNEMIS (TIMING, COMPORTEMENT & DISTANCES)
 
 Voici la cartographie exacte du code source régissant les forces hostiles pour chaque opération :
@@ -136,6 +151,7 @@ Voici la cartographie exacte du code source régissant les forces hostiles pour 
 | **Task 04**<br>*(Crimson Hazard)* | `fn_task04.sqf`<br>`L.53-76` (Escorte)<br>`L.94-161` (Nuage toxique)<br>`L.371-416` (Appui Hélico) | `sleep 1.5` entre les patrouilles à l'init. | • **4 à 6 patrouilles** de 2 à 4 gardes.<br>• 1 à 3 camions-citernes. | • `SAFE` / `RED`.<br>• En cas de tir sur le camion : nuage toxique létal (rayon 4 à 12m).<br>• Phase d'extraction : Hélico d'appui en Loiter de combat (rayon 80m). | Échelonnement étendu : échelonné de manière progressive de **15m à 475m** autour de chaque véhicule. |
 | **Task 05**<br>*(Decapitation)* | `fn_task05.sqf`<br>`L.56-83` (Patrouilles)<br>`L.85-95` (Chefs)<br>`L.160-230` (Alerte & Traque) | `sleep 1.5` par patrouille et chef. | • **2 à 4 Chefs de milice** (Colonels).<br>• **4 à 6 patrouilles** de 2 à 4 gardes par camp. | • *Furtif* : Le chef reste fixe dans son campement (25m) protégé par son réseau de patrouilles.<br>• *À partir du 2e Chef abattu* : Alerte générale si d'autres chefs survivent, tous les camps restants passent en **`COMBAT` / `FULL`** et **traquent les joueurs par waypoints SAD**. | Échelonnement étendu : échelonné de manière progressive de **15m à 475m** autour de chaque camp. Chef : **25m**. |
 | **Task 06**<br>*(Live Asset)* | `fn_task06.sqf`<br>`L.39-64` (Patrouilles)<br>`L.66-76` (HVT)<br>`L.83-117` (Reddition) | Initialisation immédiate au lancement. | • **5 à 7 patrouilles** de 2 à 4 gardes (10 à 28 soldats).<br>• **1 HVT Stratégique** (Colonel). | • *Gardes* : Patrouillent sur l'ensemble du périmètre défensif.<br>• *HVT* : Immobile au centre. Dès qu'un joueur approche à **< 5 mètres**, reddition animée (mains sur la tête) et capture au contact. | Échelonnement étendu : échelonné de manière progressive de **15m à 475m** autour de l'HVT. |
+| **Task 07**<br>*(Steel Rain)* | `fn_task07.sqf`<br>`L.48-75` (Patrouilles)<br>`L.79-99` (Char)<br>`L.102-116` (Officiers) | Initialisation immédiate au lancement. | • **3 à 4 patrouilles** de 2 à 3 gardes.<br>• **1 Char de Commandement**.<br>• **2 Officiers**. | • *Gardes* : Patrouillent dans des rayons courts (15-100m).<br>• *Char* : Effectue un repositionnement sécurisé court après spawn.<br>• *Action* : Balisage manuel du char par les joueurs déclenchant une passe d'avion d'attaque (CAS). | Échelonnement de **15m à 100m** autour de la zone cible. |
 | **Extraction Finale** | `fn_extraction.sqf`<br>`L.60-72` (Vol 2500m)<br>`L.125-172` (Loiter 65s conditionnel)<br>`L.195-233` (Mitrailleurs) | Déclenché à la fin de la tâche. | • 1 Hélicoptère lourd armé de transport.<br>• 2 mitrailleurs de bord d'élite. | • L'hélicoptère arrive à 2500m.<br>• **SI ennemis présents à < 500m de la LZ** : **Loiter de 150m à 28m d'altitude pendant 65s** avec tirs de suppression des mitrailleurs.<br>• **SINON** : Atterrissage direct sans attente. | Rayon de balayage : **500m** à la ronde autour de la LZ. |
 
 ### ⚙️ Constantes Générales des Spawns

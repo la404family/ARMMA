@@ -604,20 +604,20 @@ GHOSTS operators deploy with cutting-edge 2035 special operations technology:&lt
             <Chinese>准备 (兵器库)</Chinese>
         </Key>
         <Key ID="STR_LL_Task_07_Action_CAS">
-            <Original>Transmit CAS Coordinates (Danger Close)</Original>
-            <French>Transmettre coordonnées CAS (Danger Close)</French>
-            <English>Transmit CAS Coordinates (Danger Close)</English>
-            <Spanish>Transmitir coordenadas CAS (Peligro Cercano)</Spanish>
-            <Italian>Trasmettere coordinate CAS (Pericolo Vicino)</Italian>
-            <German>CAS-Koordinaten übertragen (Gefahr im Nahbereich)</German>
-            <Portuguese>Transmitir coordenadas CAS (Perigo Próximo)</Portuguese>
-            <Polish>Prześlij współrzędne CAS (Bliskie niebezpieczeństwo)</Polish>
-            <Russian>Передать координаты CAS (Опасность рядом)</Russian>
-            <Czech>Odeslat souřadnice CAS (Blízké nebezpečí)</Czech>
-            <Turkish>CAS Koordinatlarını İlet (Yakın Tehlike)</Turkish>
-            <Korean>CAS 좌표 전송 (위험 반경 내)</Korean>
-            <Japanese>CAS座標を送信（近接航空支援）</Japanese>
-            <Chinese>传输CAS坐标（危险接近）</Chinese>
+            <Original>[CAS] Désigner Cible</Original>
+            <French>[CAS] Désigner Cible</French>
+            <English>[CAS] Designate Target</English>
+            <Spanish>[CAS] Designar Objetivo</Spanish>
+            <Italian>[CAS] Designare Bersaglio</Italian>
+            <German>[CAS] Ziel markieren</German>
+            <Portuguese>[CAS] Designar Alvo</Portuguese>
+            <Polish>[CAS] Wskaż Cel</Polish>
+            <Russian>[CAS] Обозначить цель</Russian>
+            <Czech>[CAS] Označit cíl</Czech>
+            <Turkish>[CAS] Hedef Belirle</Turkish>
+            <Korean>[CAS] 표적 지정</Korean>
+            <Japanese>[CAS] 目標を指定</Japanese>
+            <Chinese>[CAS] 指定目标</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Task00_Title">
             <Original>OPORD : Opération Broken Cage (Sauvetage de Captif)</Original>
@@ -1564,20 +1564,20 @@ OSTRZEŻENIE: Gdy tylko jeden oficer zostanie zabity, pozostali natychmiast skoo
             <Chinese>OPORD：钢铁之雨</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Task07_Text">
-            <Original>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. Your objective is to approach the area, eliminate the officers, and then transmit the coordinates (danger close) to call in an F/A-181 Black Wasp airstrike to obliterate the armor. You must be within 200 meters to confirm the target visually for the CAS.</Original>
-            <French>Le QG a localisé un char de commandement CSAT en cours d'inspection par deux officiers de haut rang. Votre objectif est d'approcher la zone, d'éliminer les officiers, puis de transmettre les coordonnées (danger close) pour appeler une frappe de F/A-181 Black Wasp afin de pulvériser le blindé. Vous devez être à moins de 200 mètres pour confirmer visuellement la cible au CAS.</French>
-            <English>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. Your objective is to approach the area, eliminate the officers, and then transmit the coordinates (danger close) to call in an F/A-181 Black Wasp airstrike to obliterate the armor. You must be within 200 meters to confirm the target visually for the CAS.</English>
-            <Spanish>El CG ha localizado un tanque de mando CSAT inspeccionado por dos altos oficiales. Su objetivo es acercarse, eliminar a los oficiales y transmitir las coordenadas (peligro cercano) para solicitar un ataque aéreo de F/A-181 Black Wasp. Deben estar a menos de 200 metros para confirmar visualmente el objetivo para el CAS.</Spanish>
-            <Italian>Il QG ha localizzato un carro armato di comando CSAT ispezionato da due alti ufficiali. L'obiettivo è avvicinarsi, eliminare gli ufficiali e trasmettere le coordinate (pericolo vicino) per richiedere un attacco aereo F/A-181 Black Wasp. Dovete trovarvi a meno di 200 metri per confermare visivamente il bersaglio al CAS.</Italian>
-            <German>Das HQ hat einen CSAT-Befehlspanzer lokalisiert, der von zwei hochrangigen Offizieren inspiziert wird. Nähern Sie sich, eliminieren Sie die Offiziere und übermitteln Sie die Koordinaten (Gefahr im Nahbereich), um einen Luftschlag durch eine F/A-181 Black Wasp anzufordern. Sie müssen sich innerhalb von 200 Metern befinden, um das Ziel für den CAS visuell zu bestätigen.</German>
-            <Portuguese>O QG localizou um tanque de comando CSAT sendo inspecionado por dois oficiais de alta patente. Seu objetivo é se aproximar, eliminar os oficiais e transmitir as coordenadas (perigo próximo) para solicitar um ataque aéreo de F/A-181 Black Wasp. Vocês devem estar a menos de 200 metros para confirmar visualmente o alvo para o CAS.</Portuguese>
-            <Polish>Dowództwo zlokalizowało czołg dowodzenia CSAT wizytowany przez dwóch wysokich oficerów. Celem jest zbliżenie się, wyeliminowanie oficerów i przesłanie współrzędnych (bliskie niebezpieczeństwo), aby wezwać nalot F/A-181 Black Wasp. Musicie być w odległości mniejszej niż 200 metrów, aby wizualnie potwierdzić cel dla CAS.</Polish>
-            <Russian>Штаб обнаружил командирский танк CSAT, который осматривают два высокопоставленных офицера. Ваша цель - приблизиться, устранить офицеров и передать координаты (опасность рядом), чтобы вызвать авиаудар F/A-181 Black Wasp. Вы должны находиться в пределах 200 метров для визуального подтверждения цели для CAS.</Russian>
-            <Czech>Velitelství lokalizovalo velitelský tank CSAT kontrolovaný dvěma vysokými důstojníky. Vaším cílem je přiblížit se, zlikvidovat důstojníky a odeslat souřadnice (blízké nebezpečí), abyste přivolali letecký útok F/A-181 Black Wasp. Pro vizuální potvrzení cíle pro CAS musíte být ve vzdálenosti do 200 metrů.</Czech>
-            <Turkish>Karargah, iki yüksek rütbeli subay tarafından incelenmekte olan bir CSAT komuta tankı tespit etti. Göreviniz yaklaşmak, subayları ortadan kaldırmak ve F/A-181 Black Wasp hava saldırısı çağırmak için koordinatları iletmektir. CAS için hedefi görsel olarak doğrulamak üzere 200 metre içinde olmalısınız.</Turkish>
-            <Korean>본부에서 두 명의 고위 장교가 사열 중인 CSAT 지휘 전차를 발견했습니다. 목표는 접근하여 장교를 제거하고 F/A-181 Black Wasp 공습을 요청하기 위해 좌표를 전송하는 것입니다. CAS 목표물을 육안으로 확인하려면 200미터 이내에 있어야 합니다.</Korean>
-            <Japanese>司令部は2名の高官が視察中のCSAT指揮戦車を発見した。目標は接近して将校を排除し、F/A-181ブラックワスプの空爆を要請するための座標を送信することだ。CASに目標を視認させるため、200メートル以内に近づく必要がある。</Japanese>
-            <Chinese>指挥部发现了一辆正在接受两名高级军官视察的CSAT指挥坦克。您的目标是靠近该区域，消灭军官，然后发送坐标以呼叫F/A-181黑黄蜂空袭。您必须在200米以内才能为CAS提供目标目视确认。</Chinese>
+            <Original>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. DIRECTIVE: Both officers and the MBT must be confirmed KIA/K-KILL for mission success. Calling in the F/A-181 Black Wasp CAS strike via close-range laser designation (under 200m) is highly recommended, but remains OPTIONAL if your squad carries sufficient AT assets.</Original>
+            <French>Le QG a localisé un char de commandement CSAT en cours d'inspection par deux officiers de haut rang. DIRECTIVE ABSOLUE : Les deux officiers et le blindé doivent être confirmés KIA/K-KILL pour valider la mission. L'appel de la frappe CAS (F/A-181 Black Wasp) via balisage rapproché à moins de 200m est recommandé, mais reste OPTIONNEL si l'escouade possède ses propres moyens antichars lourds.</French>
+            <English>HQ has located a CSAT command tank currently undergoing inspection by two high-ranking officers. DIRECTIVE: Both officers and the MBT must be confirmed KIA/K-KILL for mission success. Calling in the F/A-181 Black Wasp CAS strike via close-range laser designation (under 200m) is highly recommended, but remains OPTIONAL if your squad carries sufficient AT assets.</English>
+            <Spanish>El CG ha localizado un tanque de mando CSAT inspeccionado por dos altos oficiales. DIRECTIVA: Ambos oficiales y el MBT deben ser confirmados KIA/K-KILL para el éxito de la misión. Solicitar el ataque CAS (F/A-181) mediante designación láser cercana (menos de 200m) es muy recomendable, pero es OPCIONAL si el escuadrón dispone de medios AT.</Spanish>
+            <Italian>Il QG ha localizzato un carro armato di comando CSAT ispezionato da due alti ufficiali. DIRETTIVA: Entrambi gli ufficiali e il MBT devono essere confermati KIA/K-KILL per il successo. Richiedere l'attacco CAS tramite designazione ravvicinata (sotto i 200m) è consigliato, ma rimane OPZIONALE se la squadra dispone di proprie armi AT.</Italian>
+            <German>Das HQ hat einen CSAT-Befehlspanzer lokalisiert, der von Offizieren inspiziert wird. DIREKTIVE: Beide Offiziere und der MBT müssen für den Missionserfolg als KIA/K-KILL bestätigt werden. Die Anforderung des CAS-Schlags durch Laser-Zielzuweisung (unter 200m) wird dringend empfohlen, ist aber OPTIONAL, falls der Trupp eigene AT-Waffen besitzt.</German>
+            <Portuguese>O QG localizou um tanque de comando CSAT inspecionado por dois oficiais. DIRETRIZ: Ambos os oficiais e o MBT devem ser confirmados KIA/K-KILL para o sucesso. Solicitar o ataque CAS via designação a curta distância (menos de 200m) é recomendado, mas permanece OPCIONAL se o esquadrão possuir armamento AT próprio.</Portuguese>
+            <Polish>Dowództwo zlokalizowało czołg dowodzenia CSAT wizytowany przez dwóch oficerów. DYREKTYWA: Obydwaj oficerowie i MBT muszą zostać potwierdzeni jako KIA/K-KILL, aby misja zakończyła się sukcesem. Wezwanie uderzenia CAS z bliska (poniżej 200m) jest zalecane, ale pozostaje OPCJONALNE, jeśli drużyna dysponuje własną bronią ppanc.</Polish>
+            <Russian>Штаб обнаружил командирский танк CSAT. ДИРЕКТИВА: Оба офицера и танк должны быть подтверждены как KIA/K-KILL для успеха миссии. Вызов авиаудара CAS с дистанции менее 200 м настоятельно рекомендуется, но является НЕОБЯЗАТЕЛЬНЫМ, если у отряда есть собственное ПТ-оружие.</Russian>
+            <Czech>Velitelství lokalizovalo velitelský tank CSAT. SMĚRNICE: Oba důstojníci i tank musí být potvrzeni jako KIA/K-KILL pro úspěch mise. Přivolání útoku CAS z blízkosti (pod 200m) je doporučeno, ale je VOLITELNÉ, pokud má jednotka vlastní PT zbraně.</Czech>
+            <Turkish>Karargah, bir CSAT komuta tankı tespit etti. DİREKTİF: Görev başarısı için her iki subay ve MBT KIA/K-KILL olarak onaylanmalıdır. Yakın mesafe (200m altı) lazer işaretleme ile CAS saldırısı çağırmak önerilir, ancak manganızın AT silahları varsa İSTEĞE BAĞLIDIR.</Turkish>
+            <Korean>본부에서 CSAT 지휘 전차를 발견했습니다. 지시: 임무 성공을 위해 두 장교와 MBT는 KIA/K-KILL로 확인되어야 합니다. 근거리(200m 이내) 레이저 지정을 통한 CAS 공격 요청이 권장되지만 분대에 대전차 무기가 있다면 선택 사항입니다.</Korean>
+            <Japanese>司令部はCSAT指揮戦車を発見した。指令：任務成功には、両将校とMBTのKIA/K-KILL確認が必須である。200m以内からのレーザー指示によるCAS要請を強く推奨するが、分隊がAT兵器を所持している場合は任意（オプショナル）である。</Japanese>
+            <Chinese>指挥部发现了一辆CSAT指挥坦克。指令：必须确认两名军官和MBT为KIA/K-KILL才能成功完成任务。强烈建议在200米以内通过激光指示呼叫CAS打击，但如果小队有足够的反坦克武器，则该行动为可选（OPTIONAL）。</Chinese>
         </Key>
         <Key ID="STR_LL_Task_07_Title">
             <Original>Eliminate High-Value Tank</Original>
@@ -1626,6 +1626,22 @@ OSTRZEŻENIE: Gdy tylko jeden oficer zostanie zabity, pozostali natychmiast skoo
             <Korean>목표 전차</Korean>
             <Japanese>目標戦車</Japanese>
             <Chinese>目标坦克</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_07_Officer_Marker">
+            <Original>Officer</Original>
+            <French>Officier</French>
+            <English>Officer</English>
+            <Spanish>Oficial</Spanish>
+            <Italian>Ufficiale</Italian>
+            <German>Offizier</German>
+            <Portuguese>Oficial</Portuguese>
+            <Polish>Oficer</Polish>
+            <Russian>Офицер</Russian>
+            <Czech>Důstojník</Czech>
+            <Turkish>Subay</Turkish>
+            <Korean>장교</Korean>
+            <Japanese>将校</Japanese>
+            <Chinese>军官</Chinese>
         </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>

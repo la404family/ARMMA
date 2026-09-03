@@ -37,7 +37,7 @@ publicVariable "TUE_hasUVO_Expanded";
 [] spawn TUE_fnc_initEquipment;
 [] spawn TUE_fnc_initIdentity;
 [] spawn TUE_fnc_assignLeader;
-
+[] call TUE_fnc_setLoadCoef;
 if (!isNil "drone_BLUFOR") then {
     [drone_BLUFOR] spawn TUE_fnc_initDrone;
 };

@@ -22,6 +22,7 @@ class TUE
         class initEquipment {};
         class applyEnemyEquipment {};
         class syncSquadLoadout {};
+        class setLoadCoef {};
     };
     class Player
     {

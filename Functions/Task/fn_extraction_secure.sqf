@@ -36,27 +36,43 @@ if (!isNull _hvt && alive _hvt && !(_hvt in _allAllies)) then {
 private _aiUnits = _allAllies select { !(_x in _humanPlayers) && vehicle _x != _heli };
 
 if (count _aiUnits > 0) then {
-    private _aiGroup = createGroup [west, true];
-    [_aiUnits, _aiGroup] remoteExec ["joinSilent", 0, true];
-    _aiGroup setBehaviour "AWARE";
-    _aiGroup setCombatMode "YELLOW";
-    _aiGroup setSpeedMode "FULL";
-
+    private _heliPos = getPosATL _heli;
+    
+    // Exécuter le code directement sur la machine du joueur qui contrôle l'IA
+    // Cela contourne tous les blocages de sécurité Arma 3 (CfgRemoteExec) sur la commande joinSilent
     {
-        _x enableAI "FSM";
-        _x enableAI "MOVE";
-        _x enableAI "PATH";
-        _x enableAI "TARGET";
-        _x enableAI "AUTOTARGET";
-        _x enableAI "WEAPONAIM";
-        _x disableAI "AUTOCOMBAT";
-        _x disableAI "COVER";
-        _x disableAI "SUPPRESSION";
-        _x setBehaviour "AWARE";
-        _x setCombatMode "YELLOW";
-        _x setSpeedMode "FULL";
-        _x allowDamage false;
-        _x doMove (getPosATL _heli);
+        [
+            [_x, _heliPos], 
+            {
+                params ["_unit", "_pos"];
+                if (!local _unit) exitWith {}; // Sécurité
+
+                private _grp = createGroup [west, true];
+                [_unit] joinSilent _grp;
+                
+                _grp setBehaviour "AWARE";
+                _grp setCombatMode "RED";
+                _grp setSpeedMode "FULL";
+
+                _unit setSkill ["courage", 1.0];
+                _unit enableAI "FSM";
+                _unit enableAI "MOVE";
+                _unit enableAI "PATH";
+                _unit enableAI "TARGET";
+                _unit enableAI "AUTOTARGET";
+                _unit enableAI "WEAPONAIM";
+                _unit disableAI "AUTOCOMBAT";
+                _unit disableAI "COVER";
+                _unit disableAI "SUPPRESSION";
+                
+                _unit setBehaviour "AWARE";
+                _unit setCombatMode "RED";
+                _unit setSpeedMode "FULL";
+                _unit allowDamage false;
+                
+                _unit doMove _pos;
+            }
+        ] remoteExec ["spawn", _x];
     } forEach _aiUnits;
 };
 
@@ -136,12 +152,13 @@ while { !_allBoarded && alive _heli } do {
 
     {
         private _u = _x;
-        if (_u distance2D _heli > 20) then {
+        if (_u distance2D _heli > 10) then {
             _u doMove (getPosATL _heli);
         } else {
             _u assignAsCargo _heli;
             [_u] orderGetIn true;
-            _u action ["GetInCargo", _heli];
+            // La commande action est locale ! Elle doit s'exécuter sur la machine de l'IA
+            [_u, ["GetInCargo", _heli]] remoteExec ["action", _u];
         };
     } forEach _aiOutside;
 

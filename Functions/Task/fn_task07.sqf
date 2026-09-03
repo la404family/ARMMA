@@ -45,9 +45,12 @@ if (_mode == "init") exitWith {
 
     private _allUnits = [];
 
-    private _numPatrols = 2 + floor (random 2);
+    private _numPatrols = 3 + floor (random 2);
+    private _patrolRadii = [15, 30, 60, 100];
+    
     for "_p" from 0 to (_numPatrols - 1) do {
-        private _radius = round (15 + (random 10)) max 4 min 25;
+        private _radius = _patrolRadii select (_p % (count _patrolRadii));
+        
         private _grp = createGroup [east, true];
         _grp setBehaviour "AWARE";
         _grp setCombatMode "RED";
@@ -63,7 +66,12 @@ if (_mode == "init") exitWith {
             _allUnits pushBack _guard;
         };
 
-        [_grp, _spawnPos, _radius] call BIS_fnc_taskPatrol;
+        if (_radius == 15 && random 1 > 0.5) then {
+            private _wp = _grp addWaypoint [_spawnPos, 0];
+            _wp setWaypointType "GUARD";
+        } else {
+            [_grp, _spawnPos, _radius] call BIS_fnc_taskPatrol;
+        };
     };
 
     sleep 1.5;
@@ -106,6 +114,29 @@ if (_mode == "init") exitWith {
     };
     [_grpOfficers, _spawnPos, 15] call BIS_fnc_taskPatrol;
 
+    private _markerArea = createMarker ["LL_Task07_Area", _spawnPos];
+    _markerArea setMarkerShape "ELLIPSE";
+    _markerArea setMarkerSize [150, 150];
+    _markerArea setMarkerColor "ColorOrange";
+    _markerArea setMarkerAlpha 0.4;
+
+    {
+        private _markerName = format ["LL_Task07_Officer_%1", _forEachIndex];
+        private _marker = createMarker [_markerName, getPosASL _x];
+        _marker setMarkerType "o_inf";
+        _marker setMarkerColor "ColorRed";
+        _marker setMarkerText (localize "STR_LL_Task_07_Officer_Marker");
+        
+        [_x, _markerName] spawn {
+            params ["_unit", "_mName"];
+            while {alive _unit && missionNamespace getVariable ["LL_g_taskInProgress", false]} do {
+                _mName setMarkerPos (getPosASL _unit);
+                sleep 2;
+            };
+            deleteMarker _mName;
+        };
+    } forEach _officers;
+
     missionNamespace setVariable ["LL_Task07_PlaneTriggered", false, true];
     missionNamespace setVariable ["LL_Task07_TargetTank", _tank, true];
 
@@ -145,6 +176,7 @@ if (_mode == "init") exitWith {
             if (_officersDead && _tankDead) exitWith {
                 ["task_07_cas", "SUCCEEDED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+                deleteMarker "LL_Task07_Area";
                 [_allUnits] spawn LL_fnc_taskCleanup;
             };
         };

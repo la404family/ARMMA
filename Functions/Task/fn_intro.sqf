@@ -117,7 +117,7 @@ if (hasInterface) then {
         _cam cameraEffect ["INTERNAL", "BACK"];
 
         private _fnc_isDark = {
-            (sunOrMoon < 0.65) || { daytime < 5.5 || { daytime > 19.5 } } || { sunOrMoon < 0.80 && overcast > 0.70 }
+            (sunOrMoon < 0.65) || { sunOrMoon < 0.80 && overcast > 0.70 }
         };
 
         if (call _fnc_isDark) then {

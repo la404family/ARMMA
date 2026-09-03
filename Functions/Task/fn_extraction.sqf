@@ -278,9 +278,17 @@ if (!alive _heli) exitWith {};
 
 _heli setVelocity [0, 0, 0];
 doStop _heli;
+_heli setFuel 0; // Cut the engine for cinematic wait
+
+_grp setBehaviour "COMBAT";
+_grp setCombatMode "RED";
+
 _pilot disableAI "MOVE";
 _pilot disableAI "PATH";
 _pilot disableAI "FSM";
+_pilot disableAI "TARGET";
+_pilot disableAI "AUTOTARGET";
+_pilot setBehaviour "CARELESS";
 
 {
     _x setBehaviour "COMBAT";

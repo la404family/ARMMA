@@ -47,12 +47,13 @@ Gestion dynamique et asymétrique de l'escouade jouable (`Player_0` à `Player_3
 - **Continuité de Commandement** : Le poste de Leader de l'escouade est intelligemment maintenu. Si le chef humain meurt, le prochain joueur (ou à défaut, la prochaine IA alliée en vie) prend automatiquement le commandement.
 - **Respawn Tactique (Possession)** : En cas de mort, le joueur ne retourne pas au lobby mais "possède" instantanément le corps de l'IA alliée survivante de son groupe pour poursuivre la mission (Respawn type `GROUP` / `4`). La mission n'échoue que si l'escouade entière est anéantie.
 - **Règles d'Engagement (ROE)** : Les joueurs disposent d'un menu d'action (molette) pour changer la posture tactique de leur escouade IA (Stealth, Normal, Assault) de façon instantanée et totalement silencieuse.
+- **Suivi Tactique IA (Tracking)** : En solo, les IA alliées bénéficient d'une endurance illimitée, d'une charge allégée et d'une vitesse d'animation de course augmentée (+15%) via `fn_setLoadCoef.sqf`, garantissant qu'elles collent à la trace du joueur sans jamais être distancées lors des sprints.
 
 ### 5. Module Tâches, Cinématique & Extraction (Task)
 - **Introduction Cinématique 4 Plans & Atterrissage** :
   - **Plans 1 à 3** : Prises de vue aériennes cinématiques en travelling extérieur suivant l'hélicoptère en vol d'approche vers la LZ.
   - **Plan 4 (Immersion Cabine)** : Transition fluide dans la tête du joueur en vue première personne dans la cabine de transport avec liberté totale de mouvement de tête (freelook) et interface épurée (`showHUD [false...]`).
-  - **Vision Nocturne Automatique** : Lors des missions de nuit, activation automatique et continue de la vision nocturne dès la caméra cinématique, en vue interne hélico et lors de l'arrivée au sol.
+  - **Vision Nocturne Intelligente** : Lors des missions nocturnes ou par très faible visibilité (crépuscule, forte tempête), activation dynamique de la vision nocturne (basée sur l'intensité lumineuse réelle `sunOrMoon` du moteur) dès la caméra cinématique, en vue interne hélico et lors de l'arrivée au sol.
   - **Débarquement Sécurisé** : Dès le poser des roues sur l'héliport de destination, l'escouade est débarquée en éventail tactique de sécurisation, le HUD complet est restauré et l'arsenal est initialisé. La bande-son dynamique (native au jeu) accompagne l'approche et s'estompe en douceur (fade out) au débarquement. Possibilité d'interrompre l'introduction en maintenant la touche Espace pendant 1.2 s.
 - **Arsenal de Départ** : Génération d'une caisse d'arsenal optimisée et contextuelle au point d'atterrissage, équipée du drone allié et balisée temporairement, pour permettre aux joueurs de se préparer (avec synchronisation automatique intégrale de l'équipement du leader vers les IA en solo via [fn_syncSquadLoadout.sqf](file:///c:/Users/kevin/Documents/Arma%203/missions/GHOSTS2035.Enoch/Functions/Equipment/fn_syncSquadLoadout.sqf)).
 - **Scénario 100% Automatisé** :

@@ -48,4 +48,20 @@
         <Japanese>目標戦車</Japanese>
         <Chinese>目标坦克</Chinese>
     </Key>
+    <Key ID="STR_LL_Task_07_Officer_Marker">
+        <Original>Officer</Original>
+        <French>Officier</French>
+        <English>Officer</English>
+        <Spanish>Oficial</Spanish>
+        <Italian>Ufficiale</Italian>
+        <German>Offizier</German>
+        <Portuguese>Oficial</Portuguese>
+        <Polish>Oficer</Polish>
+        <Russian>Офицер</Russian>
+        <Czech>Důstojník</Czech>
+        <Turkish>Subay</Turkish>
+        <Korean>장교</Korean>
+        <Japanese>将校</Japanese>
+        <Chinese>军官</Chinese>
+    </Key>
 </Keys>

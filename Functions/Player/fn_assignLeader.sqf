@@ -7,6 +7,8 @@ if (!isServer) exitWith {};
 
     while {true} do {
         sleep 5;
+        
+        if (missionNamespace getVariable ["LL_g_extractionActive", false]) exitWith {};
 
         private _squad = [];
         for "_i" from 0 to 3 do {

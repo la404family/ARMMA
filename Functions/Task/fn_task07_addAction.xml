@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Task_07_Action_CAS">
-        <Original>Transmit CAS Coordinates (Danger Close)</Original>
-        <French>Transmettre coordonnées CAS (Danger Close)</French>
-        <English>Transmit CAS Coordinates (Danger Close)</English>
-        <Spanish>Transmitir coordenadas CAS (Peligro Cercano)</Spanish>
-        <Italian>Trasmettere coordinate CAS (Pericolo Vicino)</Italian>
-        <German>CAS-Koordinaten übertragen (Gefahr im Nahbereich)</German>
-        <Portuguese>Transmitir coordenadas CAS (Perigo Próximo)</Portuguese>
-        <Polish>Prześlij współrzędne CAS (Bliskie niebezpieczeństwo)</Polish>
-        <Russian>Передать координаты CAS (Опасность рядом)</Russian>
-        <Czech>Odeslat souřadnice CAS (Blízké nebezpečí)</Czech>
-        <Turkish>CAS Koordinatlarını İlet (Yakın Tehlike)</Turkish>
-        <Korean>CAS 좌표 전송 (위험 반경 내)</Korean>
-        <Japanese>CAS座標を送信（近接航空支援）</Japanese>
-        <Chinese>传输CAS坐标（危险接近）</Chinese>
+        <Original>[CAS] Désigner Cible</Original>
+        <French>[CAS] Désigner Cible</French>
+        <English>[CAS] Designate Target</English>
+        <Spanish>[CAS] Designar Objetivo</Spanish>
+        <Italian>[CAS] Designare Bersaglio</Italian>
+        <German>[CAS] Ziel markieren</German>
+        <Portuguese>[CAS] Designar Alvo</Portuguese>
+        <Polish>[CAS] Wskaż Cel</Polish>
+        <Russian>[CAS] Обозначить цель</Russian>
+        <Czech>[CAS] Označit cíl</Czech>
+        <Turkish>[CAS] Hedef Belirle</Turkish>
+        <Korean>[CAS] 표적 지정</Korean>
+        <Japanese>[CAS] 目標を指定</Japanese>
+        <Chinese>[CAS] 指定目标</Chinese>
     </Key>
 </Keys>
